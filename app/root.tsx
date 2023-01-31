@@ -15,6 +15,8 @@ export const meta: MetaFunction = () => ({
   title: "New Remix App",
   viewport: "width=device-width,initial-scale=1",
   "theme-color": "#5ea45e",
+  "apple-mobile-web-app-capable": "yes",
+  "mobile-web-app-capable": "yes",
 });
 
 export function links() {
