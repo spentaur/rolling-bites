@@ -72,8 +72,8 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <div className="h-96">
-        <h1 className="text-4xl font-bold font-cuprum text-logo-green-500">
+      <div className="h-screen">
+        <h1 className="text-4xl py-96 font-bold font-cuprum text-logo-green-500">
           test
         </h1>
       </div>
