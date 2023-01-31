@@ -34,13 +34,13 @@ export default function Index() {
   return (
     <>
       <div className="h-full bg-gradient-to-t from-gray-100 to-logo-green-300">
-        <div className="fixed w-full md:relative">
+        <div className="fixed z-50 w-full md:relative">
           <div className="flex pt-2 px-6 md:pt-4 mx-auto">
             <div className="basis-1/3 flex h-12 md:h-20 items-center">
               {/* Search */}
               <button
                 type="button"
-                className="md:inline-flex hidden transition-[padding] ease-in-out duration-500 cursor-text hover:pr-24 items-center rounded-full border border-transparent bg-white pl-4 pr-4 py-2 text-sm font-medium text-logo-green-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="md:inline-flex hidden transition-[padding] ease-in-out duration-500 cursor-text hover:pr-36 items-center rounded-full border border-transparent bg-white pl-4 pr-20 py-2 text-sm font-medium text-logo-green-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 <MagnifyingGlassIcon
                   className="-ml-1 mr-2 h-5 w-5 "
@@ -51,7 +51,7 @@ export default function Index() {
             </div>
             <div className="basis-1/3 h-12 md:h-20 flex justify-center">
               <img
-                className="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300 h-12 md:h-20"
+                className="transition ease-in-out drop-shadow-xl hover:-translate-y-1 hover:scale-110 duration-300 h-12 md:h-20"
                 src="/images/logo-simple.svg"
                 alt="logo"
               />
@@ -71,6 +71,11 @@ export default function Index() {
             </button>
           </div>
         </div>
+      </div>
+      <div className="h-screen">
+        <h1 className="text-4xl py-96 font-bold font-cuprum text-logo-green-500">
+          test
+        </h1>
       </div>
       <div className="h-screen">
         <h1 className="text-4xl py-96 font-bold font-cuprum text-logo-green-500">
