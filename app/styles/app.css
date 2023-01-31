@@ -804,4 +804,9 @@ video {
   .md\:pt-4 {
     padding-top: 1rem;
   }
+
+  .md\:hover\:bg-gray-50:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  }
 }

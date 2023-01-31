@@ -61,7 +61,7 @@ export default function Index() {
           <div className="flex w-full py-2 px-6 md:py-6 md:hidden">
             <button
               type="button"
-              className="inline-flex cursor-text w-full items-center rounded-full border border-transparent bg-white pl-4 pr-4 py-2 text-sm font-medium text-logo-green-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="inline-flex cursor-text w-full items-center rounded-full border border-transparent bg-white pl-4 pr-4 py-2 text-sm font-medium text-logo-green-300 shadow-sm md:hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
               <MagnifyingGlassIcon
                 className="-ml-1 mr-2 h-5 w-5 "
