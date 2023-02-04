@@ -54,7 +54,7 @@ const tiers = [
 export default function Index() {
   return (
     <div className="wrapper">
-      <nav className="fixed bottom-0 z-30 p-2 flex h-20 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100">
+      <nav className="fixed pb-safe bottom-0 z-30 p-2 flex h-20 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100">
         <img src="/images/logo-simple.svg" alt="" className="h-16" />
       </nav>
       <div className="">

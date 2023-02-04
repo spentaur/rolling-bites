@@ -525,12 +525,8 @@ video {
   position: relative;
 }
 
-.sticky {
-  position: sticky;
-}
-
-.top-0 {
-  top: 0px;
+.bottom-0 {
+  bottom: 0px;
 }
 
 .top-1\/2 {
@@ -541,12 +537,12 @@ video {
   left: 50%;
 }
 
-.left-0 {
-  left: 0px;
+.top-0 {
+  top: 0px;
 }
 
-.bottom-0 {
-  bottom: 0px;
+.left-0 {
+  left: 0px;
 }
 
 .isolate {
@@ -564,10 +560,6 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.-mt-20 {
-  margin-top: -5rem;
 }
 
 .mt-6 {
@@ -789,10 +781,6 @@ video {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
-.bg-gradient-to-br {
-  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
-}
-
 .from-logo-green-300 {
   --tw-gradient-from: #5ea45e;
   --tw-gradient-to: rgb(94 164 94 / 0);
@@ -802,11 +790,6 @@ video {
 .via-logo-green-100 {
   --tw-gradient-to: rgb(154 198 154 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), #9AC69A, var(--tw-gradient-to);
-}
-
-.via-gray-100 {
-  --tw-gradient-to: rgb(243 244 246 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), #f3f4f6, var(--tw-gradient-to);
 }
 
 .to-gray-100 {
@@ -1009,6 +992,10 @@ video {
 
 .duration-100 {
   transition-duration: 100ms;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .\[mask-image\:radial-gradient\(closest-side\2c white\2c transparent\)\] {
