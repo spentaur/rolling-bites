@@ -996,7 +996,7 @@ video {
 }
 
 .pb-safe {
-  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .\[mask-image\:radial-gradient\(closest-side\2c white\2c transparent\)\] {
@@ -1134,10 +1134,6 @@ video {
 @media (min-width: 768px) {
   .md\:pt-24 {
     padding-top: 6rem;
-  }
-
-  .md\:pb-2 {
-    padding-bottom: 0.5rem;
   }
 }
 
