@@ -1,4 +1,4 @@
-import { CheckIcon } from "@heroicons/react/20/solid";
+import { CheckIcon, Bars3BottomLeftIcon } from "@heroicons/react/20/solid";
 
 const tiers = [
   {
@@ -54,8 +54,18 @@ const tiers = [
 export default function Index() {
   return (
     <div className="wrapper">
-      <nav className="fixed pb-safe bottom-0 z-30 px-2 flex pt-2 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100">
-        <img src="/images/logo-simple.svg" alt="" className="h-12 md:h-16" />
+      <nav className="fixed pb-safe h-14 bottom-0 z-30 px-4 md:px-12 flex items-center w-full bg-opacity-90 backdrop-blur transition-all duration-100">
+        <div className="basis-1/5">
+          <Bars3BottomLeftIcon className="h-6 w-6 text-gray-700 text-shadow" />
+        </div>
+        <div className="basis-3/5 flex justify-center">
+          <img
+            src="/images/logo-simple.svg"
+            alt=""
+            className="h-12.5 md:h-14"
+          />
+        </div>
+        <div className="basis-1/5"></div>
       </nav>
       <div className="">
         <div className="bg-gradient-to-b from-logo-green-300 via-logo-green-100 to-gray-100">

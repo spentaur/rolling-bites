@@ -27,7 +27,10 @@ module.exports = {
       },
       spacing: {
         '18': '4.5rem',
-      }
+        '12.5': '3.125rem',
+      },
+
+
     },
   },
   plugins: [
