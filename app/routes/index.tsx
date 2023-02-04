@@ -58,7 +58,7 @@ export default function Index() {
         <img src="/images/logo-simple.svg" alt="" className="h-16" />
       </nav>
       <div className="">
-        <div className="bg-gradient-to-b from-logo-green-300 via-logo-green-100 to-gray-100 -mt-20">
+        <div className="bg-gradient-to-b from-logo-green-300 via-logo-green-100 to-gray-100">
           <div className="h-screen">
             {/* <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
               <div className="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
