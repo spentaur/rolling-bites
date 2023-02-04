@@ -54,7 +54,7 @@ const tiers = [
 export default function Index() {
   return (
     <div className="wrapper">
-      <nav className="fixed pb-safe h-14 bottom-0 z-30 px-4 md:px-12 flex items-center w-full bg-opacity-90 backdrop-blur transition-all duration-100">
+      <nav className="fixed pb-safe h-14 bottom-0 z-30 px-6 md:px-12 flex items-center w-full bg-opacity-90 backdrop-blur transition-all duration-100">
         <div className="basis-1/5">
           <Bars3BottomLeftIcon className="h-6 w-6 text-gray-700 text-shadow" />
         </div>
