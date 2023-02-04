@@ -630,6 +630,10 @@ video {
   height: 1.25rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1132,6 +1136,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:h-16 {
+    height: 4rem;
+  }
+
   .md\:pt-24 {
     padding-top: 6rem;
   }

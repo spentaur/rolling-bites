@@ -55,7 +55,7 @@ export default function Index() {
   return (
     <div className="wrapper">
       <nav className="fixed pb-safe bottom-0 z-30 px-2 flex pt-2 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100">
-        <img src="/images/logo-simple.svg" alt="" className="h-16" />
+        <img src="/images/logo-simple.svg" alt="" className="h-12 md:h-16" />
       </nav>
       <div className="">
         <div className="bg-gradient-to-b from-logo-green-300 via-logo-green-100 to-gray-100">
