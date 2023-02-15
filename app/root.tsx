@@ -28,10 +28,7 @@ export function links() {
 
 export default function App() {
   return (
-    <html
-      className="h-full bg-gradient-to-b from-logo-green-300 via-logo-green-100 to-gray-100"
-      lang="en"
-    >
+    <html className="h-full" lang="en">
       <head>
         <Meta />
         <Links />
