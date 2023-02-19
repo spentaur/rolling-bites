@@ -13,7 +13,10 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        'logo-green-500': '#487f48',
+        'logo-green-400': '#569856',
         'logo-green-300': '#5ea45e',
+        'logo-green-200': '#7fb67f',
         'logo-green-100': '#9AC69A',
         sky: colors.sky,
         teal: colors.teal,
@@ -44,7 +47,7 @@ module.exports = {
         { values: theme('textShadow') }
       )
     }),
-    // require('@tailwindcss/forms'),
+    require('@tailwindcss/forms'),
     // require('@tailwindcss/line-clamp'),
   ],
 }
