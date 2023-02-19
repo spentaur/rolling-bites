@@ -140,23 +140,14 @@ export default function Example() {
                     <Dialog.Panel className="pointer-events-auto w-screen max-w-xs">
                       <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
                         <div className="px-4 sm:px-6">
-                          <div className="flex items-start justify-between">
-                            <Dialog.Title className="text-lg font-medium text-gray-900">
-                              Panel title
+                          <div className="flex items-center justify-center">
+                            <Dialog.Title className="flex flex-shrink-0 items-center px-4">
+                              <img
+                                className="h-8 w-auto"
+                                src="/images/logo-simple.svg"
+                                alt="Rolling Bites"
+                              />
                             </Dialog.Title>
-                            <div className="ml-3 flex h-7 items-center">
-                              <button
-                                type="button"
-                                className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                                onClick={() => setSidebarOpen(false)}
-                              >
-                                <span className="sr-only">Close panel</span>
-                                <XMarkIcon
-                                  className="h-6 w-6"
-                                  aria-hidden="true"
-                                />
-                              </button>
-                            </div>
                           </div>
                         </div>
                         <div className="relative mt-6 flex-1 px-4 sm:px-6">
@@ -277,7 +268,7 @@ export default function Example() {
               onClick={() => setSidebarOpen(true)}
             >
               <span className="sr-only">Open sidebar</span>
-              <Bars3BottomRightIcon className="h-8 w-8" aria-hidden="true" />
+              <Bars3BottomRightIcon className="h-7 w-7" aria-hidden="true" />
             </button>
           </div>
           <main className="flex-1 pb-8 lg:pt-5 pt-20">
