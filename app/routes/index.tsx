@@ -37,6 +37,7 @@ import {
   UserGroupIcon,
   XMarkIcon,
   PlusCircleIcon,
+  EllipsisHorizontalIcon,
   GlobeAltIcon,
 } from "@heroicons/react/24/outline";
 import {
@@ -44,8 +45,13 @@ import {
   MapPinIcon,
   CheckCircleIcon,
   ChevronDownIcon,
+  UsersIcon,
   ChevronRightIcon,
+  BellAlertIcon,
   MagnifyingGlassIcon,
+  EyeIcon,
+  BellIcon as BellIconSolid,
+  StarIcon,
 } from "@heroicons/react/20/solid";
 
 const navigation = [
@@ -82,14 +88,12 @@ const statusStyles = {
   failed: "bg-gray-100 text-gray-800",
 };
 const tabs = [
-  { name: "Posts", href: "#", current: true },
+  { name: "About", href: "#", current: true },
   { name: "Schedule", href: "#", current: false },
   { name: "Menu", href: "#", current: false },
   { name: "Reviews", href: "#", current: false },
-  { name: "About", href: "#", current: false },
   { name: "Photos", href: "#", current: false },
   { name: "Inspections", href: "#", current: false },
-  { name: "Search", href: "#", current: false },
 ];
 
 function classNames(...classes) {
@@ -98,6 +102,7 @@ function classNames(...classes) {
 
 export default function Example() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [alertActive, setAlertActive] = useState(false);
 
   return (
     <>
@@ -182,10 +187,10 @@ export default function Example() {
                 />
               </div>
               <nav
-                className="mt-5 flex flex-1 flex-col divide-y divide-gray-100 overflow-y-auto"
+                className="mt-3 flex flex-1 flex-col divide-y divide-gray-100 overflow-y-auto"
                 aria-label="Sidebar"
               >
-                <div className="space-y-1 px-2">
+                <div className="space-y-1 py-2 px-2">
                   {navigation.map((item) => (
                     <a
                       key={item.name}
@@ -304,16 +309,40 @@ export default function Example() {
                           </h1>
                         </div>
                         <dl className="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
-                          <dt className="sr-only">Company</dt>
+                          <dt className="sr-only">Account status</dt>
                           <dd className="flex items-center text-sm font-medium capitalize text-gray-500 sm:mr-6">
+                            <CheckCircleIcon
+                              className="mr-1.5 h-5 w-5 flex-shrink-0 text-logo-green-200"
+                              aria-hidden="true"
+                            />
+                            Verified account
+                          </dd>
+                          <dt className="sr-only">Reviews</dt>
+                          <dd className="mt-3 flex items-center text-sm font-medium text-gray-500 sm:mr-6 sm:mt-0">
+                            <EyeIcon
+                              className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+                              aria-hidden="true"
+                            />
+                            1.2k views/week
+                          </dd>
+                          {/* <dt className="sr-only">Followers</dt>
+                          <dd className="mt-3 flex items-center text-sm font-medium text-gray-500 sm:mr-6 ">
+                            <UsersIcon
+                              className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+                              aria-hidden="true"
+                            />
+                            8.3k followers 
+                          </dd>*/}
+                          {/* <dt className="sr-only">Location</dt>
+                          <dd className="mt-3 flex items-center text-sm font-medium text-gray-500 sm:mr-6 ">
                             <MapPinIcon
                               className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
                               aria-hidden="true"
                             />
                             Champaign, IL
-                          </dd>
-                          <dt className="sr-only">Website</dt>
-                          <dd className="mt-3 flex items-center text-sm font-medium text-gray-500 sm:mr-6 sm:mt-0">
+                          </dd> */}
+                          {/* <dt className="sr-only">Website</dt>
+                          <dd className="mt-3 flex items-center text-sm font-medium text-gray-500 sm:mr-6 ">
                             <GlobeAltIcon
                               className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
                               aria-hidden="true"
@@ -324,15 +353,7 @@ export default function Example() {
                             >
                               watsonschicken.com
                             </a>
-                          </dd>
-                          <dt className="sr-only">Account status</dt>
-                          <dd className="mt-3 flex items-center text-sm font-medium capitalize text-gray-500 sm:mr-6 sm:mt-0">
-                            <CheckCircleIcon
-                              className="mr-1.5 h-5 w-5 flex-shrink-0 text-logo-green-200"
-                              aria-hidden="true"
-                            />
-                            Verified account
-                          </dd>
+                          </dd> */}
                         </dl>
                       </div>
                     </div>
@@ -340,16 +361,114 @@ export default function Example() {
                   <div className="mt-6 flex space-x-3 md:mt-0 md:ml-4">
                     <button
                       type="button"
-                      className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+                      onClick={() => setAlertActive(!alertActive)}
+                      className={classNames(
+                        alertActive
+                          ? "bg-logo-green-300 text-white hover:bg-green-700 focus:ring-green-500"
+                          : "bg-white text-gray-700 hover:bg-gray-50 hover:border-gray-300 focus:ring-cyan-500",
+                        "inline-flex items-center rounded-md border border-transparent  px-2 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2"
+                      )}
                     >
-                      Message
+                      {alertActive ? (
+                        <BellAlertIcon className="h-5 w-5" />
+                      ) : (
+                        <BellIconSolid className="h-5 w-5" />
+                      )}
                     </button>
                     <button
                       type="button"
-                      className="inline-flex items-center rounded-md border border-transparent bg-logo-green-300 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                      className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
                     >
-                      Follow
+                      Message
                     </button>
+
+                    <Menu as="div" className="relative inline-block text-left">
+                      <div>
+                        <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-logo-green-400 focus:ring-offset-2">
+                          <EllipsisHorizontalIcon
+                            className="h-5 w-5"
+                            aria-hidden="true"
+                          />
+                        </Menu.Button>
+                      </div>
+
+                      <Transition
+                        as={Fragment}
+                        enter="transition ease-out duration-100"
+                        enterFrom="transform opacity-0 scale-95"
+                        enterTo="transform opacity-100 scale-100"
+                        leave="transition ease-in duration-75"
+                        leaveFrom="transform opacity-100 scale-100"
+                        leaveTo="transform opacity-0 scale-95"
+                      >
+                        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <div className="py-1">
+                            <Menu.Item>
+                              {({ active }) => (
+                                <a
+                                  href="#"
+                                  className={classNames(
+                                    active
+                                      ? "bg-gray-100 text-gray-900"
+                                      : "text-gray-700",
+                                    "block px-4 py-2 text-sm"
+                                  )}
+                                >
+                                  Account settings
+                                </a>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <a
+                                  href="#"
+                                  className={classNames(
+                                    active
+                                      ? "bg-gray-100 text-gray-900"
+                                      : "text-gray-700",
+                                    "block px-4 py-2 text-sm"
+                                  )}
+                                >
+                                  Support
+                                </a>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <a
+                                  href="#"
+                                  className={classNames(
+                                    active
+                                      ? "bg-gray-100 text-gray-900"
+                                      : "text-gray-700",
+                                    "block px-4 py-2 text-sm"
+                                  )}
+                                >
+                                  License
+                                </a>
+                              )}
+                            </Menu.Item>
+                            <form method="POST" action="#">
+                              <Menu.Item>
+                                {({ active }) => (
+                                  <button
+                                    type="submit"
+                                    className={classNames(
+                                      active
+                                        ? "bg-gray-100 text-gray-900"
+                                        : "text-gray-700",
+                                      "block w-full px-4 py-2 text-left text-sm"
+                                    )}
+                                  >
+                                    Sign out
+                                  </button>
+                                )}
+                              </Menu.Item>
+                            </form>
+                          </div>
+                        </Menu.Items>
+                      </Transition>
+                    </Menu>
                   </div>
                 </div>
               </div>
@@ -394,6 +513,7 @@ export default function Example() {
                 </div>
               </div>
             </div>
+
             <div className="mt-8">
               <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <h2 className="text-lg font-medium leading-6 text-gray-900">
