@@ -41,10 +41,11 @@ import {
   EllipsisHorizontalIcon,
   ClipboardIcon,
   GlobeAltIcon,
+  MapPinIcon,
+  StarIcon,
 } from "@heroicons/react/24/outline";
 import {
   BanknotesIcon,
-  MapPinIcon,
   CheckCircleIcon,
   ChevronDownIcon,
   UsersIcon,
@@ -54,7 +55,6 @@ import {
   MagnifyingGlassIcon,
   EyeIcon,
   BellIcon as BellIconSolid,
-  StarIcon,
 } from "@heroicons/react/20/solid";
 
 const navigation = [
@@ -618,7 +618,7 @@ export default function Example() {
                           <dd className="mt-1 text-sm text-gray-900 sm:col-span-5 sm:mt-0">
                             <a
                               href="https://watsonschicken.com"
-                              className="text-blue-400 hover:underline"
+                              className="hover:underline"
                             >
                               mothershiphospitality@gmail.com
                             </a>
@@ -630,13 +630,13 @@ export default function Example() {
                           </dt>
                           <dd className="mt-1 text-sm text-gray-900 sm:col-span-5 sm:mt-0">
                             <div className="flex items-center">
-                              <p className="text-sm font-bold text-gray-900 ">
+                              <p className="mt-1 text-sm text-gray-900 sm:col-span-5 sm:mt-0">
                                 4.95
                               </p>
                               <span className="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
                               <a
                                 href="#"
-                                className="text-sm font-medium text-gray-500 underline hover:no-underline "
+                                className="text-sm text-gray-900 hover:underline "
                               >
                                 73 reviews
                               </a>
