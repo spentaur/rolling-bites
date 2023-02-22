@@ -21,6 +21,7 @@
   }
   ```
 */
+
 import { Fragment, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
@@ -38,6 +39,7 @@ import {
   XMarkIcon,
   PlusCircleIcon,
   EllipsisHorizontalIcon,
+  ClipboardIcon,
   GlobeAltIcon,
 } from "@heroicons/react/24/outline";
 import {
@@ -47,6 +49,7 @@ import {
   ChevronDownIcon,
   UsersIcon,
   ChevronRightIcon,
+  AtSymbolIcon,
   BellAlertIcon,
   MagnifyingGlassIcon,
   EyeIcon,
@@ -143,27 +146,83 @@ export default function Example() {
                     leaveTo="translate-x-full"
                   >
                     <Dialog.Panel className="pointer-events-auto w-screen max-w-xs">
-                      <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
-                        <div className="px-4 sm:px-6">
-                          <div className="flex items-center justify-center">
-                            <Dialog.Title className="flex flex-shrink-0 items-center px-4">
-                              <img
-                                className="h-8 w-auto"
-                                src="/images/logo-simple.svg"
-                                alt="Rolling Bites"
-                              />
-                            </Dialog.Title>
-                          </div>
-                        </div>
-                        <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                          {/* Replace with your content */}
-                          <div className="absolute inset-0 px-4 sm:px-6">
-                            <div
-                              className="h-full border-2 border-dashed border-gray-200"
-                              aria-hidden="true"
+                      <div className="flex h-full flex-1 flex-col bg-white">
+                        <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
+                          <div className="flex flex-shrink-0 items-center px-4">
+                            <img
+                              className="h-8 w-auto"
+                              src="/images/logo-simple.svg"
+                              alt="Rolling Bites"
                             />
                           </div>
-                          {/* /End replace */}
+                          <nav
+                            className="mt-3 flex flex-1 flex-col divide-y divide-gray-100 overflow-y-auto"
+                            aria-label="Sidebar"
+                          >
+                            <div className="space-y-1 py-2 px-2">
+                              {navigation.map((item) => (
+                                <a
+                                  key={item.name}
+                                  href={item.href}
+                                  className={classNames(
+                                    item.current
+                                      ? "bg-gray-100 text-gray-900"
+                                      : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
+                                    "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                                  )}
+                                >
+                                  <item.icon
+                                    className={classNames(
+                                      item.current
+                                        ? "text-gray-500"
+                                        : "text-gray-400 group-hover:text-gray-500",
+                                      "mr-3 flex-shrink-0 h-6 w-6"
+                                    )}
+                                    aria-hidden="true"
+                                  />
+                                  {item.name}
+                                </a>
+                              ))}
+                            </div>
+                            <div className="mt-6 pt-6">
+                              <div className="space-y-1 px-2">
+                                {secondaryNavigation.map((item) => (
+                                  <a
+                                    key={item.name}
+                                    href={item.href}
+                                    className="group flex items-center rounded-md px-2 py-2 text-sm font-medium leading-6 text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                                  >
+                                    <item.icon
+                                      className="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                                      aria-hidden="true"
+                                    />
+                                    {item.name}
+                                  </a>
+                                ))}
+                              </div>
+                            </div>
+                          </nav>
+                        </div>
+                        <div className="flex flex-shrink-0 p-4">
+                          <a
+                            href="#"
+                            className="group block w-full flex-shrink-0"
+                          >
+                            <div className="flex items-center">
+                              <div>
+                                <img
+                                  className="inline-block h-9 w-9 rounded-full"
+                                  src="https://spenceradams.co/me.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="ml-3">
+                                <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
+                                  Spencer Adams
+                                </p>
+                              </div>
+                            </div>
+                          </a>
                         </div>
                       </div>
                     </Dialog.Panel>
@@ -240,16 +299,13 @@ export default function Example() {
                   <div>
                     <img
                       className="inline-block h-9 w-9 rounded-full"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      src="https://spenceradams.co/me.jpg"
                       alt=""
                     />
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
-                      Tom Cook
-                    </p>
-                    <p className="text-xs font-medium text-gray-500 group-hover:text-gray-700">
-                      View profile
+                      Spencer Adams
                     </p>
                   </div>
                 </div>
@@ -366,13 +422,13 @@ export default function Example() {
                         alertActive
                           ? "bg-logo-green-300 text-white hover:bg-green-700 focus:ring-green-500"
                           : "bg-white text-gray-700 hover:bg-gray-50 hover:border-gray-300 focus:ring-cyan-500",
-                        "inline-flex items-center rounded-md border border-transparent  px-2 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2"
+                        "inline-flex items-center rounded-md border border-gray-300  px-2 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2"
                       )}
                     >
                       {alertActive ? (
                         <BellAlertIcon className="h-5 w-5" />
                       ) : (
-                        <BellIconSolid className="h-5 w-5" />
+                        <BellIcon className="h-5 w-5" />
                       )}
                     </button>
                     <button
@@ -382,7 +438,12 @@ export default function Example() {
                       Message
                     </button>
 
-                    <Menu as="div" className="relative inline-block text-left">
+                    <div className="flex-1 sm:hidden"></div>
+
+                    <Menu
+                      as="div"
+                      className="relative inline-block text-left ml-auto"
+                    >
                       <div>
                         <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-logo-green-400 focus:ring-offset-2">
                           <EllipsisHorizontalIcon
@@ -516,227 +577,99 @@ export default function Example() {
 
             <div className="mt-8">
               <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <h2 className="text-lg font-medium leading-6 text-gray-900">
-                  Overview
-                </h2>
-                <div className="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2">
                   {/* Card */}
-                  {cards.map((card) => (
-                    <div
-                      key={card.name}
-                      className="overflow-hidden border border-gray-200 rounded-lg bg-white shadow"
-                    >
-                      <div className="p-5">
-                        <div className="flex items-center">
-                          <div className="flex-shrink-0">
-                            <card.icon
-                              className="h-6 w-6 text-gray-400"
-                              aria-hidden="true"
-                            />
-                          </div>
-                          <div className="ml-5 w-0 flex-1">
-                            <dl>
-                              <dt className="truncate text-sm font-medium text-gray-500">
-                                {card.name}
-                              </dt>
-                              <dd>
-                                <div className="text-lg font-medium text-gray-900">
-                                  {card.amount}
-                                </div>
-                              </dd>
-                            </dl>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="bg-gray-50 px-5 py-3">
-                        <div className="text-sm">
-                          <a
-                            href={card.href}
-                            className="font-medium text-cyan-700 hover:text-cyan-900"
-                          >
-                            View all
-                          </a>
-                        </div>
-                      </div>
+                  <div className="overflow-hidden bg-white border border-gray-200 shadow rounded-lg">
+                    <div className="px-4 py-5 sm:px-6">
+                      <h3 className="text-lg font-medium leading-6 text-gray-900">
+                        Intro
+                      </h3>
+                      <p className="mt-1 max-w-2xl text-sm text-gray-800">
+                        We serve fried chicken tenders baskets and sandwiches.
+                      </p>
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              <h2 className="mx-auto mt-8 max-w-6xl px-4 text-lg font-medium leading-6 text-gray-900 sm:px-6 lg:px-8">
-                Recent activity
-              </h2>
-
-              {/* Activity list (smallest breakpoint only) */}
-              <div className="shadow sm:hidden">
-                <ul
-                  role="list"
-                  className="mt-2 divide-y divide-gray-200 overflow-hidden shadow sm:hidden"
-                >
-                  {transactions.map((transaction) => (
-                    <li key={transaction.id}>
-                      <a
-                        href={transaction.href}
-                        className="block bg-white px-4 py-4 hover:bg-gray-50"
-                      >
-                        <span className="flex items-center space-x-4">
-                          <span className="flex flex-1 space-x-2 truncate">
-                            <BanknotesIcon
-                              className="h-5 w-5 flex-shrink-0 text-gray-400"
-                              aria-hidden="true"
-                            />
-                            <span className="flex flex-col truncate text-sm text-gray-500">
-                              <span className="truncate">
-                                {transaction.name}
+                    <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
+                      <dl className="sm:divide-y sm:divide-gray-200">
+                        <div className="py-4 sm:grid sm:grid-cols-6 sm:gap-1 sm:py-5 sm:px-6">
+                          <dt className="text-sm font-medium text-gray-500">
+                            <MapPinIcon className="h-5 w-5" />
+                          </dt>
+                          <dd className="mt-1 text-sm text-gray-900 sm:col-span-5 sm:mt-0">
+                            Champaign, IL
+                          </dd>
+                        </div>
+                        <div className="py-4 sm:grid sm:grid-cols-6 sm:gap-4 sm:py-5 sm:px-6">
+                          <dt className="text-sm font-medium text-gray-500">
+                            <GlobeAltIcon className="h-5 w-5" />
+                          </dt>
+                          <dd className="mt-1 text-sm text-gray-900 sm:col-span-5 sm:mt-0">
+                            <a
+                              href="https://watsonschicken.com"
+                              className="text-blue-400 hover:underline"
+                            >
+                              watsonschicken.com
+                            </a>
+                          </dd>
+                        </div>
+                        <div className="py-4 sm:grid sm:grid-cols-6 sm:gap-4 sm:py-5 sm:px-6">
+                          <dt className="text-sm font-medium text-gray-500">
+                            <AtSymbolIcon className="h-5 w-5" />
+                          </dt>
+                          <dd className="mt-1 text-sm text-gray-900 sm:col-span-5 sm:mt-0">
+                            <a
+                              href="https://watsonschicken.com"
+                              className="text-blue-400 hover:underline"
+                            >
+                              mothershiphospitality@gmail.com
+                            </a>
+                          </dd>
+                        </div>
+                        <div className="py-4 sm:grid sm:grid-cols-6 sm:gap-4 sm:py-5 sm:px-6">
+                          <dt className="text-sm font-medium text-gray-500">
+                            <StarIcon className="h-5 w-5" />
+                          </dt>
+                          <dd className="mt-1 text-sm text-gray-900 sm:col-span-5 sm:mt-0">
+                            <div className="flex items-center">
+                              <p className="text-sm font-bold text-gray-900 ">
+                                4.95
+                              </p>
+                              <span className="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
+                              <a
+                                href="#"
+                                className="text-sm font-medium text-gray-500 underline hover:no-underline "
+                              >
+                                73 reviews
+                              </a>
+                            </div>
+                          </dd>
+                        </div>
+                        <div className="py-4 sm:grid sm:grid-cols-6 sm:gap-4 sm:py-5 sm:px-6">
+                          <dt className="text-sm font-medium text-gray-500">
+                            <ClockIcon className="h-5 w-5" />
+                          </dt>
+                          <dd className="mt-1 hover:underline hover:cursor-pointer text-sm text-red-500 sm:col-span-5 sm:mt-0">
+                            Closed now
+                          </dd>
+                        </div>
+                        <div className="py-4 sm:grid sm:grid-cols-6 sm:gap-4 sm:py-5 sm:px-6">
+                          <dt className="text-sm font-medium text-gray-500">
+                            <ClipboardIcon className="h-5 w-5" />
+                          </dt>
+                          <dd className="mt-1 text-sm text-gray-900 sm:col-span-5 sm:mt-0">
+                            <div className="flex items-center">
+                              <span className="text-logo-green-400 hover:underline hover:cursor-pointer">
+                                Health Score
                               </span>
-                              <span>
-                                <span className="font-medium text-gray-900">
-                                  {transaction.amount}
-                                </span>{" "}
-                                {transaction.currency}
-                              </span>
-                              <time dateTime={transaction.datetime}>
-                                {transaction.date}
-                              </time>
-                            </span>
-                          </span>
-                          <ChevronRightIcon
-                            className="h-5 w-5 flex-shrink-0 text-gray-400"
-                            aria-hidden="true"
-                          />
-                        </span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-
-                <nav
-                  className="flex items-center justify-between border-t border-transparent bg-white px-4 py-3"
-                  aria-label="Pagination"
-                >
-                  <div className="flex flex-1 justify-between">
-                    <a
-                      href="#"
-                      className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-500"
-                    >
-                      Previous
-                    </a>
-                    <a
-                      href="#"
-                      className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-500"
-                    >
-                      Next
-                    </a>
+                              <span className="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
+                              Green
+                            </div>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
                   </div>
-                </nav>
-              </div>
-
-              {/* Activity table (small breakpoint and up) */}
-              <div className="hidden sm:block">
-                <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                  <div className="mt-2 flex flex-col">
-                    <div className="min-w-full overflow-hidden border border-gray-200 overflow-x-auto align-middle shadow sm:rounded-lg">
-                      <table className="min-w-full divide-y  divide-gray-200">
-                        <thead>
-                          <tr>
-                            <th
-                              className="bg-gray-50 px-6 py-3 text-left text-sm font-semibold text-gray-900"
-                              scope="col"
-                            >
-                              Transaction
-                            </th>
-                            <th
-                              className="bg-gray-50 px-6 py-3 text-right text-sm font-semibold text-gray-900"
-                              scope="col"
-                            >
-                              Amount
-                            </th>
-                            <th
-                              className="hidden bg-gray-50 px-6 py-3 text-left text-sm font-semibold text-gray-900 md:block"
-                              scope="col"
-                            >
-                              Status
-                            </th>
-                            <th
-                              className="bg-gray-50 px-6 py-3 text-right text-sm font-semibold text-gray-900"
-                              scope="col"
-                            >
-                              Date
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-200 bg-white">
-                          {transactions.map((transaction) => (
-                            <tr key={transaction.id} className="bg-white">
-                              <td className="w-full max-w-0 whitespace-nowrap px-6 py-4 text-sm text-gray-900">
-                                <div className="flex">
-                                  <a
-                                    href={transaction.href}
-                                    className="group inline-flex space-x-2 truncate text-sm"
-                                  >
-                                    <BanknotesIcon
-                                      className="h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                                      aria-hidden="true"
-                                    />
-                                    <p className="truncate text-gray-500 group-hover:text-gray-900">
-                                      {transaction.name}
-                                    </p>
-                                  </a>
-                                </div>
-                              </td>
-                              <td className="whitespace-nowrap px-6 py-4 text-right text-sm text-gray-500">
-                                <span className="font-medium text-gray-900">
-                                  {transaction.amount}
-                                </span>
-                                {transaction.currency}
-                              </td>
-                              <td className="hidden whitespace-nowrap px-6 py-4 text-sm text-gray-500 md:block">
-                                <span
-                                  className={classNames(
-                                    statusStyles[transaction.status],
-                                    "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium capitalize"
-                                  )}
-                                >
-                                  {transaction.status}
-                                </span>
-                              </td>
-                              <td className="whitespace-nowrap px-6 py-4 text-right text-sm text-gray-500">
-                                <time dateTime={transaction.datetime}>
-                                  {transaction.date}
-                                </time>
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                      {/* Pagination */}
-                      <nav
-                        className="flex items-center justify-between border-t border-transparent bg-white px-4 py-3 sm:px-6"
-                        aria-label="Pagination"
-                      >
-                        <div className="hidden sm:block">
-                          <p className="text-sm text-gray-700">
-                            Showing <span className="font-medium">1</span> to{" "}
-                            <span className="font-medium">10</span> of{" "}
-                            <span className="font-medium">20</span> results
-                          </p>
-                        </div>
-                        <div className="flex flex-1 justify-between sm:justify-end">
-                          <a
-                            href="#"
-                            className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-                          >
-                            Previous
-                          </a>
-                          <a
-                            href="#"
-                            className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-                          >
-                            Next
-                          </a>
-                        </div>
-                      </nav>
-                    </div>
+                  <div className="h-36 overflow-hidden border border-gray-200 border-dashed bg-gray-50 flex items-center justify-center shadow sm:rounded-lg">
+                    AD SPACE
                   </div>
                 </div>
               </div>
