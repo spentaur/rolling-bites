@@ -10,6 +10,8 @@ import {
 
 import styles from "./styles/app.css";
 
+import { Navbar } from "./components/navbar";
+
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "New Remix App",
@@ -34,7 +36,12 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full">
-        <Outlet />
+        <Navbar />
+        <div className="flex flex-1 flex-col lg:pl-64">
+          <main className="flex-1 pb-8 lg:pt-5 pt-20">
+            <Outlet />
+          </main>
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
