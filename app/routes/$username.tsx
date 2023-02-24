@@ -250,30 +250,15 @@ export default function Profile() {
       </div>
       {/* Tabs */}
       <div>
-        <div className="sm:hidden px-4 sm:px-6 lg:mx-auto lg:max-w-6xl lg:px-8">
-          <label htmlFor="tabs" className="sr-only">
-            Select a tab
-          </label>
-          {/* Use an "onChange" listener to redirect the user to the selected tab URL. */}
-          <select
-            id="tabs"
-            name="tabs"
-            onChange={handleChange}
-            className="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-            defaultValue={tabs.find((tab) => tab.current).name}
-          >
-            {tabs.map((tab) => (
-              <option value={tab.href} key={tab.name}>
-                {tab.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="hidden sm:block px-4 sm:px-6 lg:mx-auto lg:max-w-6xl lg:px-8">
+        <div className="px-4 sm:px-6 lg:mx-auto lg:max-w-6xl lg:px-8">
           <div className="border-b border-gray-100">
-            <nav className="-mb-px flex space-x-8" aria-label="Tabs">
+            <nav
+              className="-mb-px flex space-x-8 overflow-x-scroll scrollbar-hide"
+              aria-label="Tabs"
+            >
               {tabs.map((tab) => (
                 <NavLink
+                  preventScrollReset={true}
                   key={tab.name}
                   to={tab.href}
                   className={({ isActive }) =>

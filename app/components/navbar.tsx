@@ -227,7 +227,7 @@ export const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex fixed w-full lg:hidden h-14 flex-shrink-0 border-b border-gray-200 bg-white lg:border-none">
+      <div className="flex fixed z-50 w-full lg:hidden h-14 flex-shrink-0 border-b border-gray-200 bg-white lg:border-none">
         <div className="w-14"></div>
         <img
           src="/images/logo-simple.svg"

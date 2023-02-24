@@ -48,6 +48,7 @@ module.exports = {
       )
     }),
     require('@tailwindcss/forms'),
+    require('tailwind-scrollbar-hide')
     // require('@tailwindcss/line-clamp'),
   ],
 }
