@@ -281,7 +281,40 @@ export default function Profile() {
 
       <div className="mt-8">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <Outlet />
+          <div className="flex min-h-screen flex-col">
+            {/* 3 column wrapper */}
+            <div className="mx-auto w-full max-w-7xl flex-grow lg:flex">
+              {/* main wrapper */}
+              <div className="min-w-0 flex-1 bg-white xl:flex">
+                <div className="bg-white lg:min-w-0 lg:flex-1">
+                  <div className="h-full">
+                    {/* Start main area*/}
+                    <div className="h-full">
+                      <div className="rounded-lg shadow-md border border-gray-200">
+                        <Outlet />
+                      </div>
+                    </div>
+                    {/* End main area */}
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:flex-shrink-0">
+                <div className="h-full mt-8 lg:mt-0 lg:pl-6 lg:w-80">
+                  {/* Start right column area */}
+                  <div
+                    className="relative h-full"
+                    style={{ minHeight: "16rem" }}
+                  >
+                    <div className="absolute inset-0 bg-gray-50 rounded-lg border-2 border-dashed border-gray-200">
+                      AD SPACE
+                    </div>
+                  </div>
+                  {/* End right column area */}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
