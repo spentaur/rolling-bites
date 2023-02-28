@@ -10,20 +10,30 @@ import {
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
+import { NavLink } from "@remix-run/react";
 
 const navigation = [
-  { name: "Home", href: "#", icon: HomeIcon, current: true },
-  { name: "Search", href: "#", icon: MagnifyingGlassIcon, current: false },
-  { name: "Notifications", href: "#", icon: BellIcon, current: false },
+  { name: "Home", href: "/", icon: HomeIcon, current: true },
+  {
+    name: "Search",
+    href: "/search",
+    icon: MagnifyingGlassIcon,
+    current: false,
+  },
+  {
+    name: "Notifications",
+    href: "/notifications",
+    icon: BellIcon,
+    current: false,
+  },
 ];
 const secondaryNavigation = [
-  { name: "Settings", href: "#", icon: CogIcon },
-
-  { name: "Help", href: "#", icon: QuestionMarkCircleIcon },
-  { name: "Privacy", href: "#", icon: ShieldCheckIcon },
+  { name: "Settings", href: "/settings", icon: CogIcon },
+  { name: "Help", href: "/help", icon: QuestionMarkCircleIcon },
+  { name: "Privacy", href: "/privacy", icon: ShieldCheckIcon },
 ];
 
-function classNames(...classes: string[]) {
+function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
 }
 
@@ -74,33 +84,39 @@ export const Navbar = () => {
                         >
                           <div className="space-y-1 py-2 px-2">
                             {navigation.map((item) => (
-                              <a
+                              <NavLink
                                 key={item.name}
-                                href={item.href}
-                                className={classNames(
-                                  item.current
-                                    ? "bg-gray-100 text-gray-900"
-                                    : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
-                                  "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                                )}
+                                to={item.href}
+                                className={({ isActive }) =>
+                                  classNames(
+                                    isActive
+                                      ? "bg-gray-100 text-gray-900"
+                                      : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
+                                    "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                                  )
+                                }
                               >
-                                <item.icon
-                                  className={classNames(
-                                    item.current
-                                      ? "text-gray-500"
-                                      : "text-gray-400 group-hover:text-gray-500",
-                                    "mr-3 flex-shrink-0 h-6 w-6"
-                                  )}
-                                  aria-hidden="true"
-                                />
-                                {item.name}
-                              </a>
+                                {({ isActive }) => (
+                                  <>
+                                    <item.icon
+                                      className={classNames(
+                                        isActive
+                                          ? "text-gray-500"
+                                          : "text-gray-400 group-hover:text-gray-500",
+                                        "mr-3 flex-shrink-0 h-6 w-6"
+                                      )}
+                                      aria-hidden="true"
+                                    />
+                                    {item.name}
+                                  </>
+                                )}
+                              </NavLink>
                             ))}
                           </div>
                           <div className="mt-6 pt-6">
                             <div className="space-y-1 px-2">
                               {secondaryNavigation.map((item) => (
-                                <a
+                                <NavLink
                                   key={item.name}
                                   href={item.href}
                                   className="group flex items-center rounded-md px-2 py-2 text-sm font-medium leading-6 text-gray-600 hover:bg-gray-50 hover:text-gray-900"
@@ -110,7 +126,7 @@ export const Navbar = () => {
                                     aria-hidden="true"
                                   />
                                   {item.name}
-                                </a>
+                                </NavLink>
                               ))}
                             </div>
                           </div>
@@ -164,33 +180,39 @@ export const Navbar = () => {
             >
               <div className="space-y-1 py-2 px-2">
                 {navigation.map((item) => (
-                  <a
+                  <NavLink
                     key={item.name}
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? "bg-gray-100 text-gray-900"
-                        : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
-                      "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                    )}
+                    to={item.href}
+                    className={({ isActive }) =>
+                      classNames(
+                        isActive
+                          ? "bg-gray-100 text-gray-900"
+                          : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
+                        "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                      )
+                    }
                   >
-                    <item.icon
-                      className={classNames(
-                        item.current
-                          ? "text-gray-500"
-                          : "text-gray-400 group-hover:text-gray-500",
-                        "mr-3 flex-shrink-0 h-6 w-6"
-                      )}
-                      aria-hidden="true"
-                    />
-                    {item.name}
-                  </a>
+                    {({ isActive }) => (
+                      <>
+                        <item.icon
+                          className={classNames(
+                            isActive
+                              ? "text-gray-500"
+                              : "text-gray-400 group-hover:text-gray-500",
+                            "mr-3 flex-shrink-0 h-6 w-6"
+                          )}
+                          aria-hidden="true"
+                        />
+                        {item.name}
+                      </>
+                    )}
+                  </NavLink>
                 ))}
               </div>
               <div className="mt-6 pt-6">
                 <div className="space-y-1 px-2">
                   {secondaryNavigation.map((item) => (
-                    <a
+                    <NavLink
                       key={item.name}
                       href={item.href}
                       className="group flex items-center rounded-md px-2 py-2 text-sm font-medium leading-6 text-gray-600 hover:bg-gray-50 hover:text-gray-900"
@@ -200,7 +222,7 @@ export const Navbar = () => {
                         aria-hidden="true"
                       />
                       {item.name}
-                    </a>
+                    </NavLink>
                   ))}
                 </div>
               </div>
