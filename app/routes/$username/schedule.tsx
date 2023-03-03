@@ -9,7 +9,7 @@ const meetings = [
     time: "11:00AM-3:00PM",
     datetime: "2023-02-27T11:00",
     name: "Wright & Green",
-    location: "Wright & Green, Champaign, IL",
+    location: "SW Corner Wright & Green, Champaign, IL",
   },
   {
     id: 2,
@@ -60,16 +60,24 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function Schedule() {
   return (
-    <div className="px-4 py-5 sm:px-6">
-      <h2 className="text-base font-semibold leading-6 text-gray-900">
-        Current Schedule
-      </h2>
-      <div className="w-full">
-        <ol className="mt-4 divide-y divide-gray-100 text-sm leading-6">
+    <>
+      <div className="px-4 py-5 sm:px-6">
+        <h3 className="text-lg font-medium leading-6 text-gray-900">
+          Current Schedule
+        </h3>
+        <p className="mt-1 max-w-2xl text-sm text-gray-800">
+          Schedule subject to change.
+        </p>
+      </div>
+      <div className="sm:border-t border-gray-200 px-4 py-5 sm:p-0">
+        <ol className="sm:divide-y sm:divide-gray-200 text-sm">
           {meetings.map((meeting) => (
-            <li key={meeting.id} className="relative flex space-x-6 py-6">
+            <li
+              key={meeting.id}
+              className="relative sm:px-6 flex space-x-6 py-4 sm:py-5"
+            >
               <div className="flex-auto">
                 <h3 className="pr-10 font-semibold text-gray-900 ">
                   {meeting.name}
@@ -98,7 +106,12 @@ export default function Example() {
                       />
                     </dt>
                     <dd>
-                      <a href="#" className="underline hover:no-underline">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                          meeting.location
+                        )}`}
+                        className="underline hover:no-underline"
+                      >
                         {meeting.location}
                       </a>
                     </dd>
@@ -121,6 +134,6 @@ export default function Example() {
           ))}
         </ol>
       </div>
-    </div>
+    </>
   );
 }

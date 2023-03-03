@@ -10,25 +10,25 @@ import {
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import { NavLink } from "@remix-run/react";
+import { Link, NavLink } from "@remix-run/react";
 
 const navigation = [
-  { name: "Home", href: "/", icon: HomeIcon, current: true },
+  // { name: "Home", href: "/", icon: HomeIcon, current: true },
   {
     name: "Search",
     href: "/search",
     icon: MagnifyingGlassIcon,
     current: false,
   },
-  {
-    name: "Notifications",
-    href: "/notifications",
-    icon: BellIcon,
-    current: false,
-  },
+  // {
+  //   name: "Notifications",
+  //   href: "/notifications",
+  //   icon: BellIcon,
+  //   current: false,
+  // },
 ];
 const secondaryNavigation = [
-  { name: "Settings", href: "/settings", icon: CogIcon },
+  // { name: "Settings", href: "/settings", icon: CogIcon },
   { name: "Help", href: "/help", icon: QuestionMarkCircleIcon },
   { name: "Privacy", href: "/privacy", icon: ShieldCheckIcon },
 ];
@@ -72,14 +72,16 @@ export const Navbar = () => {
                     <div className="flex h-full flex-1 flex-col bg-white">
                       <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
                         <div className="flex flex-shrink-0 items-center px-4">
-                          <img
-                            className="h-8 w-auto"
-                            src="/images/logo-simple.svg"
-                            alt="Rolling Bites"
-                          />
+                          <Link to="/">
+                            <img
+                              className="h-8 w-auto"
+                              src="/images/logo-simple.svg"
+                              alt="Rolling Bites"
+                            />
+                          </Link>
                         </div>
                         <nav
-                          className="mt-3 flex flex-1 flex-col divide-y divide-gray-100 overflow-y-auto"
+                          className="mt-3 flex flex-1 flex-col overflow-y-auto"
                           aria-label="Sidebar"
                         >
                           <div className="space-y-1 py-2 px-2">
@@ -132,7 +134,7 @@ export const Navbar = () => {
                           </div>
                         </nav>
                       </div>
-                      <div className="flex flex-shrink-0 p-4">
+                      {/* <div className="flex flex-shrink-0 p-4">
                         <a
                           href="#"
                           className="group block w-full flex-shrink-0"
@@ -152,7 +154,7 @@ export const Navbar = () => {
                             </div>
                           </div>
                         </a>
-                      </div>
+                      </div> */}
                     </div>
                   </Dialog.Panel>
                 </Transition.Child>
@@ -168,14 +170,16 @@ export const Navbar = () => {
         <div className="flex min-h-0 flex-1 flex-col bg-white">
           <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
             <div className="flex flex-shrink-0 items-center px-4">
-              <img
-                className="h-8 w-auto"
-                src="/images/logo-simple.svg"
-                alt="Rolling Bites"
-              />
+              <Link to="/">
+                <img
+                  className="h-8 w-auto"
+                  src="/images/logo-simple.svg"
+                  alt="Rolling Bites"
+                />
+              </Link>
             </div>
             <nav
-              className="mt-3 flex flex-1 flex-col divide-y divide-gray-100 overflow-y-auto"
+              className="mt-3 flex flex-1 divide-y divide-gray-100 flex-col overflow-y-auto"
               aria-label="Sidebar"
             >
               <div className="space-y-1 py-2 px-2">
@@ -209,26 +213,24 @@ export const Navbar = () => {
                   </NavLink>
                 ))}
               </div>
-              <div className="mt-6 pt-6">
-                <div className="space-y-1 px-2">
-                  {secondaryNavigation.map((item) => (
-                    <NavLink
-                      key={item.name}
-                      href={item.href}
-                      className="group flex items-center rounded-md px-2 py-2 text-sm font-medium leading-6 text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-                    >
-                      <item.icon
-                        className="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500"
-                        aria-hidden="true"
-                      />
-                      {item.name}
-                    </NavLink>
-                  ))}
-                </div>
+              <div className="space-y-1 py-2 px-2">
+                {secondaryNavigation.map((item) => (
+                  <NavLink
+                    key={item.name}
+                    to={item.href}
+                    className="group flex items-center rounded-md px-2 py-2 text-sm font-medium leading-6 text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                  >
+                    <item.icon
+                      className="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                      aria-hidden="true"
+                    />
+                    {item.name}
+                  </NavLink>
+                ))}
               </div>
             </nav>
           </div>
-          <div className="flex flex-shrink-0 p-4">
+          {/* <div className="flex flex-shrink-0 p-4">
             <a href="#" className="group block w-full flex-shrink-0">
               <div className="flex items-center">
                 <div>
@@ -245,7 +247,7 @@ export const Navbar = () => {
                 </div>
               </div>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 

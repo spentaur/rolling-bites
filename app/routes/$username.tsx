@@ -25,9 +25,9 @@ const tabs = [
   { name: "About", href: "", current: true },
   { name: "Schedule", href: "schedule", current: false },
   { name: "Menu", href: "menu", current: false },
-  { name: "Reviews", href: "reviews", current: false },
-  { name: "Photos", href: "photos", current: false },
-  { name: "Inspections", href: "inspections", current: false },
+  // { name: "Reviews", href: "reviews", current: false },
+  // { name: "Photos", href: "photos", current: false },
+  // { name: "Inspections", href: "inspections", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -85,9 +85,9 @@ export default function Profile() {
                         className="mr-1.5 h-5 w-5 flex-shrink-0 text-logo-green-200"
                         aria-hidden="true"
                       />
-                      Verified account
+                      Verified profile
                     </dd>
-                    <dt className="sr-only">Reviews</dt>
+                    <dt className="sr-only">Views</dt>
                     <dd className="mt-3 flex items-center text-sm font-medium text-gray-500 sm:mr-6 sm:mt-0">
                       <EyeIcon
                         className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
@@ -129,7 +129,7 @@ export default function Profile() {
               </div>
             </div>
             <div className="mt-6 flex space-x-3 md:mt-0 md:ml-4">
-              <button
+              {/* <button
                 type="button"
                 onClick={() => setAlertActive(!alertActive)}
                 className={classNames(
@@ -144,7 +144,7 @@ export default function Profile() {
                 ) : (
                   <BellIcon className="h-5 w-5" />
                 )}
-              </button>
+              </button> */}
               {/* <button
                 type="button"
                 className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
@@ -180,8 +180,8 @@ export default function Profile() {
                     <div className="py-1">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <Link
+                            to="report"
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900"
@@ -189,57 +189,10 @@ export default function Profile() {
                               "block px-4 py-2 text-sm"
                             )}
                           >
-                            Account settings
-                          </a>
+                            Report an issue
+                          </Link>
                         )}
                       </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Support
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            License
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <form method="POST" action="#">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <button
-                              type="submit"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-gray-700",
-                                "block w-full px-4 py-2 text-left text-sm"
-                              )}
-                            >
-                              Sign out
-                            </button>
-                          )}
-                        </Menu.Item>
-                      </form>
                     </div>
                   </Menu.Items>
                 </Transition>
@@ -280,7 +233,7 @@ export default function Profile() {
       </div>
 
       <div className="mt-6">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl sm:px-6 lg:px-8">
           <div className="flex min-h-screen flex-col">
             {/* 3 column wrapper */}
             <div className="mx-auto w-full max-w-7xl flex-grow lg:flex">
@@ -290,7 +243,7 @@ export default function Profile() {
                   <div className="h-full">
                     {/* Start main area*/}
                     <div className="h-full">
-                      <div className="rounded-lg shadow-md border border-gray-200">
+                      <div className="sm:rounded-lg sm:shadow-md sm:border border-gray-200">
                         <Outlet />
                       </div>
                     </div>
@@ -306,7 +259,7 @@ export default function Profile() {
                     className="relative h-full"
                     style={{ minHeight: "16rem" }}
                   >
-                    <div className="absolute inset-0 bg-gray-50 rounded-lg border-2 border-dashed border-gray-200">
+                    <div className="absolute inset-0 bg-gray-50 sm:rounded-lg sm:border-2 border-dashed border-gray-200">
                       AD SPACE
                     </div>
                   </div>
