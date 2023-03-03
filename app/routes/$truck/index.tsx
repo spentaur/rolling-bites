@@ -12,7 +12,7 @@ export default function About() {
       <div className="px-4 py-5 sm:px-6">
         <h3 className="text-lg font-medium leading-6 text-gray-900">Intro</h3>
         <p className="mt-1 max-w-2xl text-sm text-gray-800">
-          We serve fried chicken tenders baskets and sandwiches.
+          {truck.about.description}
         </p>
       </div>
       <div className="sm:border-t border-gray-200 px-4 sm:px-0">
