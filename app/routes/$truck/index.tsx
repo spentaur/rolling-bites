@@ -1,32 +1,12 @@
-import {
-  ClockIcon,
-  ClipboardIcon,
-  GlobeAltIcon,
-  StarIcon,
-} from "@heroicons/react/24/outline";
+import { ClockIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
 import { AtSymbolIcon, MapPinIcon } from "@heroicons/react/20/solid";
 import InstagramIcon from "~/components/InstagramIcon";
 import FacebookIcon from "~/components/FacebookIcon";
-import { Link } from "@remix-run/react";
-
-const info = {
-  location: "Champaign, IL",
-  website: "watsonschicken.com",
-  instagram: "watsonschicken",
-  facebook: {
-    name: "Watson's Shack & Rail",
-    url: "watsonschicken",
-  },
-  email: "mothershiphospitality@gmail.com",
-  schedule: "Closed Now",
-  // inspection: "Green",
-};
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
+import { Link, useMatches } from "@remix-run/react";
 
 export default function About() {
+  const truck = useMatches().find((m) => m.id === "routes/$truck")?.data;
+
   return (
     <>
       <div className="px-4 py-5 sm:px-6">
@@ -37,90 +17,93 @@ export default function About() {
       </div>
       <div className="sm:border-t border-gray-200 px-4 sm:px-0">
         <dl className="sm:divide-y sm:divide-gray-200">
-          {info.location && (
+          {truck.about.location && (
             <div className="flex items-center space-x-3 py-4 sm:py-5 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <MapPinIcon className="h-5 w-5" />
               </dt>
-              <dd className="text-sm text-gray-900">{info.location}</dd>
+              <dd className="text-sm text-gray-900">{truck.about.location}</dd>
             </div>
           )}
 
-          {info.website && (
+          {truck.about.website && (
             <div className="flex items-center space-x-3 py-4 sm:py-5 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <GlobeAltIcon className="h-5 w-5" />
               </dt>
               <dd className="text-sm">
                 <a
-                  href={info.website}
+                  href={truck.about.website}
                   className="text-blue-400 hover:underline"
                 >
-                  {info.website}
+                  {truck.about.website}
                 </a>
               </dd>
             </div>
           )}
 
-          {info.instagram && (
+          {truck.about.instagram && (
             <div className="flex items-center space-x-3 py-4 sm:py-5 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <InstagramIcon className="h-5 w-5" />
               </dt>
               <dd className="text-sm text-gray-900">
                 <a
-                  href={`https://instagram.com/${info.instagram}`}
+                  href={`https://instagram.com/${truck.about.instagram}`}
                   className="hover:underline"
                 >
-                  @{info.instagram}
+                  @{truck.about.instagram}
                 </a>
               </dd>
             </div>
           )}
 
-          {info.facebook && (
+          {truck.about.facebook && (
             <div className="flex items-center space-x-3 py-4 sm:py-5 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <FacebookIcon className="h-5 w-5" />
               </dt>
               <dd className="text-sm text-gray-900">
                 <a
-                  href={`https://facebook.com/${info.facebook.url}`}
+                  href={`https://facebook.com/${truck.about.facebook.url}`}
                   className="hover:underline"
                 >
-                  {info.facebook.name}
+                  {truck.about.facebook.name}
                 </a>
               </dd>
             </div>
           )}
 
-          {info.email && (
+          {truck.about.email && (
             <div className="flex items-center space-x-3 py-4 sm:py-5 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <AtSymbolIcon className="h-5 w-5" />
               </dt>
               <dd className="text-sm text-gray-900">
-                <a href={`mailto:${info.email}`} className="hover:underline">
-                  {info.email}
+                <a
+                  href={`mailto:${truck.about.email}`}
+                  className="hover:underline"
+                >
+                  {truck.about.email}
                 </a>
               </dd>
             </div>
           )}
 
-          {info.schedule && (
+          {truck.about.schedule && (
             <div className="flex items-center space-x-3 py-4 sm:py-5 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <ClockIcon className="h-5 w-5" />
               </dt>
               <dd className="text-sm text-gray-900">
                 <Link to="schedule" className="text-red-500 hover:underline">
-                  {info.schedule}
+                  {truck.about.schedule}
                 </Link>
               </dd>
             </div>
           )}
 
-          {info.inspection && (
+          {/* {truck.about.inspection && (
             <div className="flex items-center space-x-3 py-4 sm:py-5 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <ClipboardIcon className="h-5 w-5" />
@@ -131,11 +114,11 @@ export default function About() {
                     Health Score
                   </span>
                   <span className="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
-                  {info.inspection}
+                  {truck.about.inspection}
                 </div>
               </dd>
             </div>
-          )}
+          )} */}
         </dl>
       </div>
     </>

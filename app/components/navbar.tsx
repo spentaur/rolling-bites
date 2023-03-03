@@ -3,9 +3,6 @@ import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import {
   Bars3BottomRightIcon,
-  BellIcon,
-  CogIcon,
-  HomeIcon,
   QuestionMarkCircleIcon,
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
@@ -120,7 +117,7 @@ export const Navbar = () => {
                               {secondaryNavigation.map((item) => (
                                 <NavLink
                                   key={item.name}
-                                  href={item.href}
+                                  to={item.href}
                                   className="group flex items-center rounded-md px-2 py-2 text-sm font-medium leading-6 text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                                 >
                                   <item.icon
