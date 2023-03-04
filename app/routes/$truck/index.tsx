@@ -15,10 +15,10 @@ export default function About() {
           {truck.about.description}
         </p>
       </div>
-      <div className="sm:border-t border-gray-200">
-        <dl className="sm:divide-y divide-gray-200">
+      <div className="pb-5">
+        <dl className="">
           {truck.about.location && (
-            <div className="flex items-center space-x-3  py-5 px-4 sm:px-6">
+            <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <MapPinIcon className="h-5 w-5" />
               </dt>
@@ -27,7 +27,7 @@ export default function About() {
           )}
 
           {truck.about.website && (
-            <div className="flex items-center space-x-3 py-5 px-4 sm:px-6">
+            <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <GlobeAltIcon className="h-5 w-5" />
               </dt>
@@ -43,7 +43,7 @@ export default function About() {
           )}
 
           {truck.about.instagram && (
-            <div className="flex items-center space-x-3 py-5 px-4 sm:px-6">
+            <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <InstagramIcon className="h-5 w-5" />
               </dt>
@@ -59,7 +59,7 @@ export default function About() {
           )}
 
           {truck.about.facebook && (
-            <div className="flex items-center space-x-3 py-5 px-4 sm:px-6">
+            <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <FacebookIcon className="h-5 w-5" />
               </dt>
@@ -75,7 +75,7 @@ export default function About() {
           )}
 
           {truck.about.email && (
-            <div className="flex items-center space-x-3 py-5 px-4 sm:px-6">
+            <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <AtSymbolIcon className="h-5 w-5" />
               </dt>
@@ -91,7 +91,7 @@ export default function About() {
           )}
 
           {truck.about.schedule && (
-            <div className="flex items-center space-x-3 py-5 px-4 sm:px-6">
+            <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
                 <ClockIcon className="h-5 w-5" />
               </dt>

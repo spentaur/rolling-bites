@@ -1,58 +1,8 @@
-import {
-  ClockIcon,
-  ClipboardIcon,
-  GlobeAltIcon,
-  MapPinIcon,
-  StarIcon,
-} from "@heroicons/react/24/outline";
-import { AtSymbolIcon } from "@heroicons/react/20/solid";
-
-const menu = [
-  {
-    title: "Tenders",
-    items: [
-      {
-        id: 1,
-        name: "4 Tenders and 1 Sauce",
-        description:
-          "Pickle brinded white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and 1 sauce.",
-        price: "$10.00",
-      },
-      {
-        id: 2,
-        name: "6 Tenders and 2 Sauces",
-        description:
-          "Pickle brinded white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and 1 sauce.",
-        price: "$15.00",
-      },
-    ],
-  },
-  {
-    title: "Sandwiches",
-    items: [
-      {
-        id: 3,
-        name: "Watson's Hot",
-        description:
-          "Crunchy chicken tenders dipped in Watson's Hot, served on a brioche bun with creamy coleslaw, dill pickles, & comeback sauce.",
-        price: "$14.00",
-      },
-      {
-        id: 4,
-        name: "Buffalo Starchild",
-        description:
-          "Crunchy chicken tenders tossed in buffal sauce, served on a brioche bun with sorghum glazed bacon, black pepper ranch, blue cheese crumbles, & mixed greens.",
-        price: "$14.00",
-      },
-    ],
-  },
-];
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
+import { useMatches } from "@remix-run/react";
 
 export default function Menu() {
+  const truck = useMatches().find((m) => m.id === "routes/$truck")?.data;
+
   return (
     <>
       <div className="px-4 py-5 sm:px-6">
@@ -62,8 +12,8 @@ export default function Menu() {
           not reflect exactly what is available on any given day.
         </p>
       </div>
-      <div className="w-full px-4 py-5 sm:p-0">
-        {menu.map((section) => (
+      <div className="w-full px-4 pb-5 sm:px-0">
+        {truck.menu.map((section) => (
           <>
             <div className="relative">
               <div
@@ -80,7 +30,7 @@ export default function Menu() {
             </div>
             <dl className="">
               {section.items.map((item) => (
-                <div key={item.id} className="py-4 sm:py-5 sm:px-6">
+                <div key={item.id} className="py-3 sm:px-6">
                   <dt className="text-sm font-medium">{item.name}</dt>
                   <dd className="text-sm text-gray-900 mt-1">{item.price}</dd>
                   <dd className="text-sm text-gray-500 mt-1">
