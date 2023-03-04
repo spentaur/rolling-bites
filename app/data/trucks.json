@@ -66,7 +66,7 @@
         "time": "11:00AM-3:00PM",
         "datetime": "2023-02-28T11:00",
         "name": "Wright & Green",
-        "location": "Wright & Green, Champaign, IL"
+        "location": "SW Corner Wright & Green, Champaign, IL"
       },
       {
         "id": 3,
@@ -74,7 +74,7 @@
         "time": "11:00AM-3:00PM",
         "datetime": "2023-03-01T11:00",
         "name": "Wright & Green",
-        "location": "Wright & Green, Champaign, IL"
+        "location": "SW Corner Wright & Green, Champaign, IL"
       },
       {
         "id": 4,
@@ -99,7 +99,7 @@
         "time": "11:00AM-3:00PM",
         "datetime": "2023-03-03T11:00",
         "name": "Wright & Green",
-        "location": "Wright & Green, Champaign, IL"
+        "location": "SW Corner Wright & Green, Champaign, IL"
       }
     ]
   },
@@ -169,7 +169,7 @@
         "time": "11:00AM-3:00PM",
         "datetime": "2023-02-28T11:00",
         "name": "Wright & Green",
-        "location": "Wright & Green, Champaign, IL"
+        "location": "SW Corner Wright & Green, Champaign, IL"
       },
       {
         "id": 3,
@@ -177,7 +177,7 @@
         "time": "11:00AM-3:00PM",
         "datetime": "2023-03-01T11:00",
         "name": "Wright & Green",
-        "location": "Wright & Green, Champaign, IL"
+        "location": "SW Corner Wright & Green, Champaign, IL"
       },
       {
         "id": 4,
@@ -202,7 +202,7 @@
         "time": "11:00AM-3:00PM",
         "datetime": "2023-03-03T11:00",
         "name": "Wright & Green",
-        "location": "Wright & Green, Champaign, IL"
+        "location": "SW Corner Wright & Green, Champaign, IL"
       }
     ]
   }

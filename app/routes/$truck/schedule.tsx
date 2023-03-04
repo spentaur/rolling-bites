@@ -72,7 +72,7 @@ export default function Schedule() {
         </p>
       </div>
       <div className="sm:border-t border-gray-200 px-4 py-5 sm:p-0">
-        <ol className="sm:divide-y sm:divide-gray-200 text-sm">
+        <ol className="sm:divide-y divide-gray-200 text-sm">
           {meetings.map((meeting) => (
             <li
               key={meeting.id}

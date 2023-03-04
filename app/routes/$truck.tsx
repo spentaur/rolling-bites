@@ -41,28 +41,23 @@ export default function Profile() {
               className="w-full h-48 rounded-lg shadow object-cover"
             />
           </div>
-          <div className="py-6 md:flex md:items-center md:justify-between lg:border-t lg:border-transparent">
+          <div className="pt-6 md:flex md:items-center md:justify-between lg:border-t lg:border-transparent">
             <div className="min-w-0 flex-1">
               {/* Profile */}
 
               <div className="flex items-center">
                 <img
-                  className="hidden h-16 w-16 object-contain rounded-full sm:block"
+                  className="h-16 w-16 object-contain rounded-full"
                   src={truck.avatar}
                   alt=""
                 />
-                <div>
-                  <div className="flex items-center">
-                    <img
-                      className="h-16 w-16 rounded-full sm:hidden"
-                      src={truck.avatar}
-                      alt=""
-                    />
-                    <h1 className="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:leading-9">
-                      {truck.name}
-                    </h1>
-                  </div>
-                  <dl className="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
+                <h1 className="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:leading-9">
+                  {truck.name}
+                </h1>
+              </div>
+              <div className="mt-1 flex items-center">
+                <div className="flex items-center">
+                  <dl className="flex flex-col sm:flex-row sm:flex-wrap">
                     {truck.verified && (
                       <>
                         <dt className="sr-only">Account status</dt>
@@ -75,6 +70,7 @@ export default function Profile() {
                         </dd>
                       </>
                     )}
+
                     {/* <dt className="sr-only">Views</dt>
                     <dd className="mt-3 flex items-center text-sm font-medium text-gray-500 sm:mr-6 sm:mt-0">
                       <EyeIcon
@@ -114,10 +110,53 @@ export default function Profile() {
                         </dd> */}
                   </dl>
                 </div>
+                <Menu
+                  as="div"
+                  className="relative inline-block text-left ml-auto"
+                >
+                  <div>
+                    <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-logo-green-400 focus:ring-offset-2">
+                      <EllipsisHorizontalIcon
+                        className="h-5 w-5"
+                        aria-hidden="true"
+                      />
+                    </Menu.Button>
+                  </div>
+
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <div className="py-1">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              to="report"
+                              className={classNames(
+                                active
+                                  ? "bg-gray-100 text-gray-900"
+                                  : "text-gray-700",
+                                "block px-4 py-2 text-sm"
+                              )}
+                            >
+                              Report an issue
+                            </Link>
+                          )}
+                        </Menu.Item>
+                      </div>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
               </div>
             </div>
-            <div className="mt-6 flex space-x-3 md:mt-0 md:ml-4">
-              {/* <button
+            {/*<div className="mt-6 flex space-x-3 md:mt-0 md:ml-4">
+               <button
                 type="button"
                 onClick={() => setAlertActive(!alertActive)}
                 className={classNames(
@@ -133,59 +172,16 @@ export default function Profile() {
                   <BellIcon className="h-5 w-5" />
                 )}
               </button> */}
-              {/* <button
+            {/* <button
                 type="button"
                 className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
               >
                 Message
-              </button> */}
+              </button> 
 
               <div className="flex-1 sm:hidden"></div>
-
-              <Menu
-                as="div"
-                className="relative inline-block text-left ml-auto"
-              >
-                <div>
-                  <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-logo-green-400 focus:ring-offset-2">
-                    <EllipsisHorizontalIcon
-                      className="h-5 w-5"
-                      aria-hidden="true"
-                    />
-                  </Menu.Button>
-                </div>
-
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="report"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Report an issue
-                          </Link>
-                        )}
-                      </Menu.Item>
-                    </div>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
             </div>
+            */}
           </div>
         </div>
       </div>
@@ -221,7 +217,7 @@ export default function Profile() {
       </div>
 
       <div className="mt-6">
-        <div className="mx-auto max-w-6xl sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex min-h-screen flex-col">
             {/* 3 column wrapper */}
             <div className="mx-auto w-full max-w-7xl flex-grow lg:flex">
@@ -231,7 +227,7 @@ export default function Profile() {
                   <div className="h-full">
                     {/* Start main area*/}
                     <div className="h-full">
-                      <div className="sm:rounded-lg sm:shadow-md sm:border border-gray-200">
+                      <div className="rounded-lg shadow-md border border-gray-200">
                         <Outlet />
                       </div>
                     </div>
