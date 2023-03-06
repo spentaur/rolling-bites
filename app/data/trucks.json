@@ -1,6 +1,7 @@
-{
-  "watsonschicken": {
+[
+  {
     "name": "Watson's Chicken",
+    "path": "/watsonschicken",
     "banner": "https://images.squarespace-cdn.com/content/v1/5faae45cf877175a51267735/4409d131-04cd-4aa4-b5ae-c57ae8263c28/IMG03169.jpg?format=2500w",
     "avatar": "https://static1.squarespace.com/static/5faae45cf877175a51267735/t/63c0383faf64d77c00de1afa/1673541695809/watsons-square-logo.svg",
     "verified": true,
@@ -13,7 +14,8 @@
         "name": "Watson's Shack & Rail",
         "url": "watsonschicken"
       },
-      "email": "mothershiphospitality@gmail.com"
+      "email": "mothershiphospitality@gmail.com",
+      "tags": ["chicken", "tenders", "sandwiches", "fried chicken"]
     },
     "menu": [
       {
@@ -62,10 +64,11 @@
       }
     ]
   },
-  "pastamania": {
+  {
     "name": "Pastamania",
+    "path": "/pastamania",
     "banner": "https://img1.wsimg.com/isteam/ip/acdaf85c-728e-44bf-abb7-46c3815139a9/front-0002.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1968,h:814",
-    "avatar": "https://img1.wsimg.com/isteam/ip/acdaf85c-728e-44bf-abb7-46c3815139a9/LOGO.png/:/rs=w:238,h:200,cg:true,m/cr=w:238,h:200/qt=q:95",
+    "avatar": "https://scontent-ord5-2.xx.fbcdn.net/v/t1.6435-9/188211476_100365745582848_4466692820808777871_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=0DXwLYNg47UAX_cI6l7&_nc_ht=scontent-ord5-2.xx&oh=00_AfA1o4-fSH-ajE-5fl3opgMyQ6sF88436ePLo4EbXZ9DBw&oe=642B4AF1",
     "verified": true,
     "about": {
       "description": "Delicious pastas, sandwiches, soups salads and lasagnas",
@@ -75,7 +78,8 @@
         "name": "PastaMania",
         "url": "PastaManiaUIUC"
       },
-      "email": "info@pastamania.us"
+      "email": "info@pastamania.us",
+      "tags": ["pasta", "sandwiches", "salads", "lasagna"]
     },
     "menu": [
       {
@@ -165,4 +169,4 @@
       }
     ]
   }
-}
+]

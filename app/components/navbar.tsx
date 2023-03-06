@@ -5,15 +5,16 @@ import {
   Bars3BottomRightIcon,
   QuestionMarkCircleIcon,
   ShieldCheckIcon,
+  HomeIcon,
 } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { Link, NavLink } from "@remix-run/react";
 
 const navigation = [
-  // { name: "Home", href: "/", icon: HomeIcon, current: true },
+  { name: "Home", href: "/", icon: HomeIcon, current: true },
   {
     name: "Search",
-    href: "/search",
+    href: "?search=true",
     icon: MagnifyingGlassIcon,
     current: false,
   },
@@ -86,24 +87,13 @@ export const Navbar = () => {
                               <NavLink
                                 key={item.name}
                                 to={item.href}
-                                className={({ isActive }) =>
-                                  classNames(
-                                    isActive
-                                      ? "bg-gray-100 text-gray-900"
-                                      : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
-                                    "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                                  )
-                                }
+                                className="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                                end
                               >
                                 {({ isActive }) => (
                                   <>
                                     <item.icon
-                                      className={classNames(
-                                        isActive
-                                          ? "text-gray-500"
-                                          : "text-gray-400 group-hover:text-gray-500",
-                                        "mr-3 flex-shrink-0 h-6 w-6"
-                                      )}
+                                      className="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6"
                                       aria-hidden="true"
                                     />
                                     {item.name}
@@ -184,29 +174,14 @@ export const Navbar = () => {
                   <NavLink
                     key={item.name}
                     to={item.href}
-                    className={({ isActive }) =>
-                      classNames(
-                        isActive
-                          ? "bg-gray-100 text-gray-900"
-                          : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
-                        "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                      )
-                    }
+                    className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                    end
                   >
-                    {({ isActive }) => (
-                      <>
-                        <item.icon
-                          className={classNames(
-                            isActive
-                              ? "text-gray-500"
-                              : "text-gray-400 group-hover:text-gray-500",
-                            "mr-3 flex-shrink-0 h-6 w-6"
-                          )}
-                          aria-hidden="true"
-                        />
-                        {item.name}
-                      </>
-                    )}
+                    <item.icon
+                      className="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6"
+                      aria-hidden="true"
+                    />
+                    {item.name}
                   </NavLink>
                 ))}
               </div>
@@ -250,11 +225,13 @@ export const Navbar = () => {
 
       <div className="flex fixed z-10 w-full lg:hidden h-14 flex-shrink-0 border-b border-gray-200 bg-white lg:border-none">
         <div className="w-14"></div>
-        <img
-          src="/images/logo-simple.svg"
-          className="h-auto py-4 w-full flex-1"
-          alt=""
-        />
+        <Link className="flex-1 flex" to="/">
+          <img
+            src="/images/logo-simple.svg"
+            className="h-auto py-4 w-full "
+            alt=""
+          />
+        </Link>
         <button
           type="button"
           className="border-r border-transparent px-4 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500 lg:hidden"

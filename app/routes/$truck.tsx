@@ -5,6 +5,7 @@ import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import { Outlet, Link, NavLink, useLoaderData } from "@remix-run/react";
 import type { LoaderArgs } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
+import Fuse from "fuse.js";
 const tabs = [
   { name: "About", href: "", current: true },
   { name: "Schedule", href: "schedule", current: false },
@@ -16,11 +17,16 @@ const tabs = [
 
 export const loader = async ({ params, request }: LoaderArgs) => {
   const data = require("../data/trucks.json");
-  const truck = data[params.truck];
-  if (!truck) {
+  const options = {
+    keys: ["path"],
+    useExtendedSearch: true,
+  };
+  const fuse = new Fuse(data, options);
+  const truck = fuse.search(`=/${params.truck}`);
+  if (!truck.length) {
     throw new Response("What a joke! Not found.", { status: 404 });
   }
-  return json(truck);
+  return json(truck[0].item);
 };
 
 function classNames(...classes: string[]) {
