@@ -33,7 +33,6 @@ export function links() {
 
 export default function App() {
   const [searchParams] = useSearchParams();
-  const [open, setOpen] = useState(true);
 
   return (
     <html className="h-full" lang="en">
@@ -42,8 +41,8 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full">
-        <Navbar context={[open, setOpen]} />
-        {searchParams.get("search") && <Search context={[open, setOpen]} />}
+        <Navbar />
+        {searchParams.get("search") && <Search />}
 
         <div className="flex flex-1 flex-col lg:pl-64">
           <main className="flex-1 pb-8 lg:pt-5 pt-20">
