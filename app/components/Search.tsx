@@ -17,7 +17,8 @@ import { Combobox, Dialog, Transition } from "@headlessui/react";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 import Fuse from "fuse.js";
-import { useSearchParams } from "@remix-run/react";
+import { Link, useSearchParams } from "@remix-run/react";
+import { useNavigate } from "@remix-run/react";
 
 const data = require("../data/trucks.json");
 const options = {
@@ -35,6 +36,7 @@ function classNames(...classes) {
 
 export const Search = () => {
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   const [open, setOpen] = useState(true);
 
@@ -46,10 +48,17 @@ export const Search = () => {
     <Transition.Root
       show={open}
       as={Fragment}
-      afterLeave={() => setSearchParams("")}
+      afterLeave={() => setQuery("")}
       appear
     >
-      <Dialog as="div" className="relative z-10" onClose={setOpen}>
+      <Dialog
+        as="div"
+        className="relative z-10"
+        onClose={() => {
+          setOpen(false);
+          setSearchParams("");
+        }}
+      >
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -73,9 +82,7 @@ export const Search = () => {
             leaveTo="opacity-0 scale-95"
           >
             <Dialog.Panel className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
-              <Combobox
-                onChange={(truck) => (window.location = truck.item.path)}
-              >
+              <Combobox onChange={(truck) => navigate(truck.item.path)}>
                 <div className="relative">
                   <MagnifyingGlassIcon
                     className="pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-gray-400"
@@ -136,6 +143,11 @@ export const Search = () => {
                     </p>
                   </div>
                 )}
+                <div className="flex flex-wrap items-center bg-gray-50 py-2.5 px-4 text-xs">
+                  <Link to="/search" className="text-blue-500 hover:underline">
+                    Advanced Search
+                  </Link>
+                </div>
               </Combobox>
             </Dialog.Panel>
           </Transition.Child>

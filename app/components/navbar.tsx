@@ -1,14 +1,15 @@
 // create and empty Sidebar component
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import {
   Bars3BottomRightIcon,
   QuestionMarkCircleIcon,
-  ShieldCheckIcon,
+  // ShieldCheckIcon,
   HomeIcon,
 } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { Link, NavLink } from "@remix-run/react";
+import { useLocation } from "@remix-run/react";
 
 const navigation = [
   { name: "Home", href: "/", icon: HomeIcon, current: true },
@@ -28,7 +29,7 @@ const navigation = [
 const secondaryNavigation = [
   // { name: "Settings", href: "/settings", icon: CogIcon },
   { name: "Help", href: "/help", icon: QuestionMarkCircleIcon },
-  { name: "Privacy", href: "/privacy", icon: ShieldCheckIcon },
+  // { name: "Privacy", href: "/privacy", icon: ShieldCheckIcon },
 ];
 
 function classNames(...classes: any[]) {
@@ -37,6 +38,10 @@ function classNames(...classes: any[]) {
 
 export const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  let location = useLocation();
+  useEffect(() => {
+    setSidebarOpen(false);
+  }, [location]);
   return (
     <>
       {/* Off-canvas menu for mobile, show/hide based on off-canvas menu state. */}

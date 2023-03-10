@@ -20,23 +20,23 @@
     "menu": [
       {
         "title": "Tenders",
+        "description": "Pickle-brined white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and sauce.",
         "items": [
           {
             "id": 1,
             "name": "4 Tenders and 1 Sauce",
-            "description": "Pickle brinded white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and 1 sauce.",
             "price": "$10.00"
           },
           {
             "id": 2,
             "name": "6 Tenders and 2 Sauces",
-            "description": "Pickle brinded white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and 1 sauce.",
             "price": "$15.00"
           }
         ]
       },
       {
         "title": "Sandwiches",
+        "description": "All sandwiches served with waffle fries.",
         "items": [
           {
             "id": 3,
@@ -49,6 +49,130 @@
             "name": "Buffalo Starchild",
             "description": "Crunchy chicken tenders tossed in buffal sauce, served on a brioche bun with sorghum glazed bacon, black pepper ranch, blue cheese crumbles, & mixed greens.",
             "price": "$14.00"
+          },
+          {
+            "id": 5,
+            "name": "Classic Fried",
+            "description": "Crunchy fried chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
+            "price": "$13.00"
+          },
+          {
+            "id": 6,
+            "name": "Classic Grilled",
+            "description": "Grilled chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
+            "price": "$13.00"
+          },
+          {
+            "id": 7,
+            "name": "Watson's Hot Fish",
+            "description": "Fried perch dipped in Watson's hot sauce served on a hoagie roll with creamy coleslaw, dill pickles, and comeback sauce.",
+            "price": "$14.00"
+          },
+          {
+            "id": 8,
+            "name": "Tofu Po'boy",
+            "description": "Crispy tofu served on a hoagie roll with mixed greens, dill pickles, red onion, and vegan remoulade.",
+            "price": "$13.00"
+          }
+        ]
+      },
+      {
+        "title": "Sides",
+        "items": [
+          {
+            "id": 9,
+            "name": "Waffle Fries",
+            "price": "$4.00"
+          },
+          {
+            "id": 10,
+            "name": "Creamy Coleslaw",
+            "price": "$4.00"
+          },
+          {
+            "id": 11,
+            "name": "Mac & Cheese",
+            "price": "$4.00"
+          }
+        ]
+      },
+      {
+        "title": "Sauces",
+        "items": [
+          {
+            "id": 12,
+            "name": "Buffalo",
+            "price": "$1.00"
+          },
+          {
+            "id": 13,
+            "name": "Black Pepper Ranch",
+            "price": "$1.00"
+          },
+          {
+            "id": 14,
+            "name": "Honey Mustard",
+            "price": "$1.00"
+          },
+          {
+            "id": 15,
+            "name": "Carolina Gold",
+            "price": "$1.00"
+          },
+          {
+            "id": 16,
+            "name": "Comeback Sauce",
+            "price": "$1.00"
+          }
+        ]
+      },
+      {
+        "title": "Additons",
+        "items": [
+          {
+            "id": 22,
+            "name": "Sorghum-glazed bacon",
+            "price": "$3.00"
+          },
+          {
+            "id": 23,
+            "name": "American Cheese",
+            "price": "$1.00"
+          },
+          {
+            "id": 24,
+            "name": "Pickles",
+            "price": "$1.00"
+          }
+        ]
+      },
+      {
+        "title": "Drinks",
+        "items": [
+          {
+            "id": 17,
+            "name": "Coke",
+            "price": "$3.00"
+          },
+          {
+            "id": 18,
+            "name": "Diet Coke",
+            "price": "$3.00"
+          },
+          {
+            "id": 19,
+            "name": "Sprite",
+            "price": "$3.00"
+          },
+          {
+            "id": 20,
+            "name": "Bottle Water",
+            "price": "$3.00"
+          },
+          {
+            "id": 21,
+            "name": "Iced Tea",
+            "price": "$3.00"
           }
         ]
       }
@@ -64,6 +188,7 @@
       }
     ]
   },
+
   {
     "name": "Pastamania",
     "path": "/pastamania",
@@ -83,35 +208,55 @@
     },
     "menu": [
       {
-        "title": "Tenders",
+        "title": "Pastas",
+        "description": "Topped with chives, parsely and parmesan cheese. Served with cheese garlic bread",
         "items": [
           {
             "id": 1,
-            "name": "4 Tenders and 1 Sauce",
-            "description": "Pickle brinded white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and 1 sauce.",
-            "price": "$10.00"
+            "name": "Chicken Alfredo",
+            "description": "Delicious alfredo sauce, fettuccine and chicken",
+            "price": "$15.00"
           },
           {
             "id": 2,
-            "name": "6 Tenders and 2 Sauces",
-            "description": "Pickle brinded white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and 1 sauce.",
-            "price": "$15.00"
-          }
-        ]
-      },
-      {
-        "title": "Sandwiches",
-        "items": [
+            "name": "Inferno Pasta",
+            "description": "Penne pasta, spicy cream sauce, sundried tomatoes, chicken and spinach",
+            "price": "$14.50"
+          },
           {
             "id": 3,
-            "name": "Watson's Hot",
-            "description": "Crunchy chicken tenders dipped in Watson's Hot, served on a brioche bun with creamy coleslaw, dill pickles, & comeback sauce.",
-            "price": "$14.00"
+            "name": "Shrimp Pasta",
+            "description": "Fettuccine, alfredo sauce, roasted red peppers, shrimp and mushrooms",
+            "price": "$16.00"
           },
           {
             "id": 4,
-            "name": "Buffalo Starchild",
-            "description": "Crunchy chicken tenders tossed in buffal sauce, served on a brioche bun with sorghum glazed bacon, black pepper ranch, blue cheese crumbles, & mixed greens.",
+            "name": "All American Macaroni",
+            "description": "Penne pasta and delicious cheese sauce topped with mix cheese",
+            "price": "$11.00"
+          },
+          {
+            "id": 5,
+            "name": "Pesto Pasta (veggie)",
+            "description": "Penne noodles, pesto sauce, zucchini, broccoli, carrots",
+            "price": "$12.00"
+          },
+          {
+            "id": 6,
+            "name": "Three Meat Pasta",
+            "description": "Penne, alfrecio sauce, andouille sausage, chicken, bacon",
+            "price": "$15.00"
+          },
+          {
+            "id": 7,
+            "name": "Cajun Jambalaya Pasta",
+            "description": "Fettuccine, tomato sauce, andouille sausage, chicken, bacon, red pepper, red onion",
+            "price": "$15.00"
+          },
+          {
+            "id": 8,
+            "name": "Mexican Pasta",
+            "description": "Fettuccine, creamy sauce, chorizo, onions and cherry tomatoes",
             "price": "$14.00"
           }
         ]

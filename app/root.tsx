@@ -13,6 +13,7 @@ import styles from "./styles/app.css";
 
 import { Navbar } from "./components/Navbar";
 import { Search } from "./components/Search";
+import { useState } from "react";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -32,6 +33,7 @@ export function links() {
 
 export default function App() {
   const [searchParams] = useSearchParams();
+  const [open, setOpen] = useState(true);
 
   return (
     <html className="h-full" lang="en">
@@ -40,8 +42,8 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full">
-        <Navbar />
-        {searchParams.get("search") && <Search />}
+        <Navbar context={[open, setOpen]} />
+        {searchParams.get("search") && <Search context={[open, setOpen]} />}
 
         <div className="flex flex-1 flex-col lg:pl-64">
           <main className="flex-1 pb-8 lg:pt-5 pt-20">

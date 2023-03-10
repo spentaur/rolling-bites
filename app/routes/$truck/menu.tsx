@@ -28,6 +28,11 @@ export default function Menu() {
                 </span>
               </div>
             </div>
+            {section.description && (
+              <div className="py-3 text-center italic sm:px-6 text-sm text-gray-500">
+                {section.description}
+              </div>
+            )}
             <dl className="">
               {section.items.map((item) => (
                 <div key={item.id} className="py-3 sm:px-6">
