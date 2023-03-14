@@ -46,11 +46,7 @@ export const Search = (props: Props) => {
 
   return (
     <Transition.Root show={props.open} as={Fragment} appear>
-      <Dialog
-        as="div"
-        className="relative z-10"
-        onClose={() => props.setOpen(false)}
-      >
+      <Dialog as="div" className="relative z-10" onClose={props.setOpen}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -74,7 +70,12 @@ export const Search = (props: Props) => {
             leaveTo="opacity-0 scale-95"
           >
             <Dialog.Panel className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
-              <Combobox onChange={(truck) => navigate(truck.item.path)}>
+              <Combobox
+                onChange={(truck) => {
+                  props.setOpen(false);
+                  navigate(truck.item.path);
+                }}
+              >
                 <div className="relative">
                   <MagnifyingGlassIcon
                     className="pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-gray-400"
