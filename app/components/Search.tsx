@@ -136,6 +136,25 @@ export const Search = (props: Props) => {
                     </p>
                   </div>
                 )}
+                <div className="py-2.5 px-4">
+                  <div className="text-xs text-logo-green-300">Promoted:</div>
+                  <Link
+                    to="/pastamania"
+                    className="flex hover:bg-gray-100 rounded-xl p-3 cursor-default"
+                  >
+                    <img
+                      src="https://scontent-ord5-2.xx.fbcdn.net/v/t1.6435-9/188211476_100365745582848_4466692820808777871_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=0DXwLYNg47UAX_cI6l7&_nc_ht=scontent-ord5-2.xx&oh=00_AfA1o4-fSH-ajE-5fl3opgMyQ6sF88436ePLo4EbXZ9DBw&oe=642B4AF1"
+                      alt=""
+                      className="h-10 w-10 flex-none rounded-full"
+                    />
+                    <div className="">
+                      <div className="ml-3">Pastamania</div>
+                      <div className="ml-4 text-xs text-gray-500">
+                        Delicious pastas, sandwiches, soups salads and lasagnas
+                      </div>
+                    </div>
+                  </Link>
+                </div>
                 <div className="flex flex-wrap items-center bg-gray-50 py-2.5 px-4 text-xs">
                   <Link to="/search" className="text-blue-500 hover:underline">
                     Advanced Search
