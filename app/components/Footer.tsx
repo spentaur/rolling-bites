@@ -1,3 +1,5 @@
+import type { SVGProps } from "react";
+
 const navigation = {
   main: [
     { name: "About", href: "#" },
@@ -11,7 +13,7 @@ const navigation = {
     {
       name: "Facebook",
       href: "#",
-      icon: (props) => (
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -24,7 +26,7 @@ const navigation = {
     {
       name: "Instagram",
       href: "#",
-      icon: (props) => (
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -37,7 +39,7 @@ const navigation = {
     {
       name: "GitHub",
       href: "#",
-      icon: (props) => (
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"

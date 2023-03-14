@@ -223,8 +223,8 @@ export default function Profile() {
       </div>
 
       <div className="mt-6">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="flex min-h-screen flex-col">
+        <div className="mx-auto max-w-6xl sm:px-6 lg:px-8">
+          <div className="flex flex-col">
             {/* 3 column wrapper */}
             <div className="mx-auto w-full max-w-7xl flex-grow lg:flex">
               {/* main wrapper */}
@@ -233,7 +233,7 @@ export default function Profile() {
                   <div className="h-full">
                     {/* Start main area*/}
                     <div className="h-full">
-                      <div className="rounded-lg shadow-md border border-gray-200">
+                      <div className="rounded-lg sm:shadow-md sm:border border-gray-200">
                         <Outlet />
                       </div>
                     </div>
@@ -242,18 +242,12 @@ export default function Profile() {
                 </div>
               </div>
 
-              <div className="lg:flex-shrink-0">
-                <div className="h-full mt-8 lg:mt-0 lg:pl-6 lg:w-80">
-                  {/* Start right column area */}
-                  <div
-                    className="relative h-full"
-                    style={{ minHeight: "16rem" }}
-                  >
-                    <div className="absolute inset-0 bg-gray-50 sm:rounded-lg sm:border-2 border-dashed border-gray-200">
-                      AD SPACE
-                    </div>
-                  </div>
-                  {/* End right column area */}
+              <div className="mt-8 space-y-6 lg:mt-0 lg:pl-6 lg:w-80">
+                <div className="bg-gray-50 h-32 lg:h-80 sm:rounded-lg sm:border-2 border-dashed border-gray-200">
+                  AD SPACE
+                </div>
+                <div className="bg-gray-50 h-32 lg:h-80 sm:rounded-lg sm:border-2 border-dashed border-gray-200">
+                  AD SPACE
                 </div>
               </div>
             </div>

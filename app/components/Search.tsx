@@ -17,7 +17,7 @@ import { Combobox, Dialog, Transition } from "@headlessui/react";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 import Fuse from "fuse.js";
-import { Link, useSearchParams } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 import { useNavigate } from "@remix-run/react";
 const data = require("../data/trucks.json");
 const options = {
@@ -29,7 +29,7 @@ const options = {
 };
 const fuse = new Fuse(data, options);
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 

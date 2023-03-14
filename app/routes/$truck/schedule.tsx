@@ -1,3 +1,10 @@
+import type {
+  JSXElementConstructor,
+  Key,
+  ReactElement,
+  ReactFragment,
+  ReactPortal,
+} from "react";
 import { Fragment } from "react";
 import { CalendarIcon, MapPinIcon } from "@heroicons/react/20/solid";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
@@ -18,62 +25,99 @@ export default function Schedule() {
       </div>
       <div className="pb-5 px-4 sm:px-0">
         <ol className=" text-sm">
-          {truck.schedule.map((event) => (
-            <li key={event.id} className="relative sm:px-6 flex space-x-6 py-3">
-              <div className="flex-auto">
-                <h3 className="pr-10 font-semibold text-gray-900 ">
-                  {event.name}
-                </h3>
-                <dl className="mt-2 mx-2 flex flex-col text-gray-500">
-                  <div className="flex items-start space-x-3">
-                    <dt className="mt-0.5">
-                      <span className="sr-only">Date</span>
-                      <CalendarIcon
-                        className="h-5 w-5 text-gray-400"
-                        aria-hidden="true"
-                      />
-                    </dt>
-                    <dd>
-                      <time dateTime={event.datetime}>
-                        {event.date} <br /> {event.time}
-                      </time>
-                    </dd>
-                  </div>
-                  <div className="mt-2 flex items-start space-x-3">
-                    <dt className="mt-0.5">
-                      <span className="sr-only">Location</span>
-                      <MapPinIcon
-                        className="h-5 w-5 text-gray-400"
-                        aria-hidden="true"
-                      />
-                    </dt>
-                    <dd>
-                      <a
-                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                          event.location
-                        )}`}
-                        className="underline hover:no-underline"
-                      >
-                        {event.location}
-                      </a>
-                    </dd>
-                  </div>
-                  {event.info && (
-                    <div className="mt-2 flex items-start space-x-3">
+          {truck.schedule.map(
+            (event: {
+              id: Key | null | undefined;
+              name:
+                | string
+                | number
+                | boolean
+                | ReactElement<any, string | JSXElementConstructor<any>>
+                | ReactFragment
+                | ReactPortal
+                | null
+                | undefined;
+              datetime: string | undefined;
+              date:
+                | string
+                | number
+                | boolean
+                | ReactElement<any, string | JSXElementConstructor<any>>
+                | ReactFragment
+                | ReactPortal
+                | null
+                | undefined;
+              time:
+                | string
+                | number
+                | boolean
+                | ReactElement<any, string | JSXElementConstructor<any>>
+                | ReactFragment
+                | ReactPortal
+                | null
+                | undefined;
+              location: string;
+              info: string | null | undefined;
+            }) => (
+              <li
+                key={event.id}
+                className="relative sm:px-6 flex space-x-6 py-3"
+              >
+                <div className="flex-auto">
+                  <h3 className="pr-10 font-semibold text-gray-900 ">
+                    {event.name}
+                  </h3>
+                  <dl className="mt-2 mx-2 flex flex-col text-gray-500">
+                    <div className="flex items-start space-x-3">
                       <dt className="mt-0.5">
-                        <span className="sr-only">Information</span>
-                        <InformationCircleIcon
+                        <span className="sr-only">Date</span>
+                        <CalendarIcon
                           className="h-5 w-5 text-gray-400"
                           aria-hidden="true"
                         />
                       </dt>
-                      <dd>{event.info}</dd>
+                      <dd>
+                        <time dateTime={event.datetime}>
+                          {event.date} <br /> {event.time}
+                        </time>
+                      </dd>
                     </div>
-                  )}
-                </dl>
-              </div>
-            </li>
-          ))}
+                    <div className="mt-2 flex items-start space-x-3">
+                      <dt className="mt-0.5">
+                        <span className="sr-only">Location</span>
+                        <MapPinIcon
+                          className="h-5 w-5 text-gray-400"
+                          aria-hidden="true"
+                        />
+                      </dt>
+                      <dd>
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                            event.location
+                          )}`}
+                          className="underline hover:no-underline"
+                        >
+                          {event.location}
+                        </a>
+                      </dd>
+                    </div>
+                    {event.info && (
+                      <div className="mt-2 flex items-start space-x-3">
+                        <dt className="mt-0.5">
+                          <span className="sr-only">Information</span>
+                          <InformationCircleIcon
+                            className="h-5 w-5 text-gray-400"
+                            aria-hidden="true"
+                          />
+                        </dt>
+                        <dd>{event.info}</dd>
+                      </div>
+                    )}
+                  </dl>
+                </div>
+              </li>
+            )
+          )}
         </ol>
       </div>
     </>
