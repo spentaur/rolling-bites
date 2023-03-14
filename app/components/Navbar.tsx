@@ -29,7 +29,7 @@ export const Navbar = () => {
   return (
     <>
       <Search open={open} setOpen={setOpen} />
-      <div className="sticky shadow-sm top-0 z-10 w-full backdrop-blur-sm border-b lg:border-slate-900/10 bg-white/90">
+      <div className="sticky top-0 z-10 w-full backdrop-blur-sm bg-white/90">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between lg:grid lg:grid-cols-12">
             <div className="w-10 lg:col-span-3"></div>
