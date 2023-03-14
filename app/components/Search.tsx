@@ -19,7 +19,6 @@ import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 import Fuse from "fuse.js";
 import { Link, useSearchParams } from "@remix-run/react";
 import { useNavigate } from "@remix-run/react";
-
 const data = require("../data/trucks.json");
 const options = {
   includeScore: true,
@@ -34,30 +33,23 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export const Search = () => {
+type Props = {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const Search = (props: Props) => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
-
-  const [open, setOpen] = useState(true);
-
-  const [searchParams, setSearchParams] = useSearchParams();
 
   const filteredPeople = query === "" ? [] : fuse.search(query);
 
   return (
-    <Transition.Root
-      show={open}
-      as={Fragment}
-      afterLeave={() => setQuery("")}
-      appear
-    >
+    <Transition.Root show={props.open} as={Fragment} appear>
       <Dialog
         as="div"
         className="relative z-10"
-        onClose={() => {
-          setOpen(false);
-          setSearchParams("");
-        }}
+        onClose={() => props.setOpen(false)}
       >
         <Transition.Child
           as={Fragment}

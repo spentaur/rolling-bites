@@ -13,6 +13,7 @@ import styles from "./styles/app.css";
 
 import { Navbar } from "./components/Navbar";
 import { Search } from "./components/Search";
+import { Footer } from "./components/Footer";
 import { useState } from "react";
 
 export const meta: MetaFunction = () => ({
@@ -35,23 +36,20 @@ export default function App() {
   const [searchParams] = useSearchParams();
 
   return (
-    <html className="h-full" lang="en">
+    <html className="h-full bg-white" lang="en">
       <head>
         <Meta />
         <Links />
       </head>
-      <body className="h-full">
+      <body className="">
         <Navbar />
-        {searchParams.get("search") && <Search />}
-
-        <div className="flex flex-1 flex-col lg:pl-64">
-          <main className="flex-1 pb-8 lg:pt-5 pt-20">
-            <Outlet />
-          </main>
-        </div>
+        <main className="pb-8 pt-5">
+          <Outlet />
+        </main>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <Footer />
       </body>
     </html>
   );

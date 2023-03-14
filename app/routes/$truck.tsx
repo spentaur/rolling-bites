@@ -194,7 +194,7 @@ export default function Profile() {
       {/* Tabs */}
       <div>
         <div className="px-4 sm:px-6 lg:mx-auto lg:max-w-6xl lg:px-8">
-          <div className="border-b border-gray-100">
+          <div className="border-b border-gray-200">
             <nav
               className="-mb-px flex space-x-8 overflow-x-scroll scrollbar-hide"
               aria-label="Tabs"
