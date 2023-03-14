@@ -1,5 +1,11 @@
-import { ClockIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
-import { AtSymbolIcon, MapPinIcon } from "@heroicons/react/20/solid";
+import {
+  ClockIcon,
+  GlobeAltIcon,
+  TruckIcon,
+  ShoppingBagIcon,
+  MapPinIcon,
+} from "@heroicons/react/24/outline";
+import { AtSymbolIcon } from "@heroicons/react/20/solid";
 import InstagramIcon from "~/components/InstagramIcon";
 import FacebookIcon from "~/components/FacebookIcon";
 import { Link, useMatches } from "@remix-run/react";
@@ -102,6 +108,44 @@ export default function About() {
               </dd>
             </div>
           )}
+          {truck.about.delivery && (
+            <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">
+              <dt className="text-sm font-medium text-gray-500">
+                <ShoppingBagIcon className="h-5 w-5" />
+              </dt>
+              <dd className="text-sm text-gray-900">
+                <div className="flex items-center">
+                  {truck.about.delivery.map(
+                    (app: { name: string; url: string }, index) => (
+                      <>
+                        <a
+                          href={app.url}
+                          className="text-blue-400 hover:underline"
+                        >
+                          {app.name}
+                        </a>
+                        {truck.about.delivery.length - 1 !== index && (
+                          <>
+                            <span className="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>{" "}
+                          </>
+                        )}
+                      </>
+                    )
+                  )}
+                </div>
+              </dd>
+            </div>
+          )}
+
+          <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">
+              <TruckIcon className="h-5 w-5" />
+            </dt>
+            <dd className="text-sm text-gray-900">
+              {truck.about.privateEvents ? "A" : "Not a"}
+              vailable for private events
+            </dd>
+          </div>
 
           {/* {truck.about.inspection && (
             <div className="flex items-center space-x-3 py-4 sm:py-5 sm:px-6">

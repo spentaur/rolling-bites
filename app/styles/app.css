@@ -890,6 +890,10 @@ select {
   max-height: 24rem;
 }
 
+.max-h-72 {
+  max-height: 18rem;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -999,6 +1003,11 @@ select {
 .scroll-py-3 {
   scroll-padding-top: 0.75rem;
   scroll-padding-bottom: 0.75rem;
+}
+
+.scroll-py-2 {
+  scroll-padding-top: 0.5rem;
+  scroll-padding-bottom: 0.5rem;
 }
 
 .columns-2 {
@@ -1214,6 +1223,15 @@ select {
 .bg-gray-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
+.bg-indigo-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+
+.bg-opacity-25 {
+  --tw-bg-opacity: 0.25;
 }
 
 .object-contain {

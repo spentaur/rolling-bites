@@ -15,7 +15,9 @@
         "url": "watsonschicken"
       },
       "email": "mothershiphospitality@gmail.com",
-      "tags": ["chicken", "tenders", "sandwiches", "fried chicken"]
+      "tags": ["chicken", "tenders", "sandwiches", "fried chicken"],
+      "delivery": false,
+      "privateEvents": false
     },
     "menu": [
       {
@@ -204,7 +206,22 @@
         "url": "PastaManiaUIUC"
       },
       "email": "info@pastamania.us",
-      "tags": ["pasta", "sandwiches", "salads", "lasagna"]
+      "tags": ["pasta", "sandwiches", "salads", "lasagna"],
+      "delivery": [
+        {
+          "name": "Grubhub",
+          "url": "https://www.grubhub.com/restaurant/pastamania-1004-w-university-ave-urbana/2745315"
+        },
+        {
+          "name": "Uber Eats",
+          "url": "https://www.ubereats.com/store/pasta-mania/8OkEhraPQgio_WGnHFLwaw"
+        },
+        {
+          "name": "DoorDash",
+          "url": "https://www.doordash.com/store/pastamania-urbana-1749604/"
+        }
+      ],
+      "privateEvents": true
     },
     "menu": [
       {
