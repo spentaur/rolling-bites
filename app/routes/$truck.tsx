@@ -242,12 +242,20 @@ export default function Profile() {
                 </div>
               </div>
 
-              <div className="mt-8 space-y-6 lg:mt-0 lg:pl-6 lg:w-80">
-                <div className="bg-gray-50 h-32 lg:h-80 sm:rounded-lg sm:border-2 border-dashed border-gray-200">
-                  AD SPACE
+              <div className="mt-8 px-4 sm:px-0 space-y-6 lg:mt-0 flex flex-col items-center lg:pl-6">
+                <div className="lg:h-auto lg:w-72">
+                  <img
+                    src="/images/ad.jpeg"
+                    className="w-72 rounded-lg"
+                    alt="ad"
+                  />
                 </div>
-                <div className="bg-gray-50 h-32 lg:h-80 sm:rounded-lg sm:border-2 border-dashed border-gray-200">
-                  AD SPACE
+                <div className="lg:h-auto lg:w-72">
+                  <img
+                    src="/images/ad2.png"
+                    className="w-72 rounded-lg"
+                    alt="ad"
+                  />
                 </div>
               </div>
             </div>
