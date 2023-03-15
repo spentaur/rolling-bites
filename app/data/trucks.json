@@ -1,0 +1,882 @@
+[
+  {
+    "name": "Watson's Chicken",
+    "path": "/watsonschicken",
+    "banner": "https://images.squarespace-cdn.com/content/v1/5faae45cf877175a51267735/4409d131-04cd-4aa4-b5ae-c57ae8263c28/IMG03169.jpg?format=2500w",
+    "avatar": "https://static1.squarespace.com/static/5faae45cf877175a51267735/t/63c0383faf64d77c00de1afa/1673541695809/watsons-square-logo.svg",
+    "verified": true,
+    "about": {
+      "description": "We serve fried chicken tenders baskets and sandwiches.",
+      "location": "Champaign, IL",
+      "website": "watsonschicken.com",
+      "instagram": "watsonschicken",
+      "facebook": {
+        "name": "Watson's Shack & Rail",
+        "url": "https://www.facebook.com/watsonschicken"
+      },
+      "email": "mothershiphospitality@gmail.com",
+      "tags": ["chicken", "tenders", "sandwiches", "fried chicken"],
+      "delivery": false,
+      "privateEvents": true
+    },
+    "menu": [
+      {
+        "title": "Tenders",
+        "description": "Pickle-brined white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and sauce.",
+        "items": [
+          {
+            "id": 1,
+            "name": "4 Tenders and 1 Sauce",
+            "price": "$10.00"
+          },
+          {
+            "id": 2,
+            "name": "6 Tenders and 2 Sauces",
+            "price": "$15.00"
+          }
+        ]
+      },
+      {
+        "title": "Sandwiches",
+        "description": "All sandwiches served with waffle fries.",
+        "items": [
+          {
+            "id": 3,
+            "name": "Watson's Hot",
+            "description": "Crunchy chicken tenders dipped in Watson's Hot, served on a brioche bun with creamy coleslaw, dill pickles, & comeback sauce.",
+            "price": "$14.00"
+          },
+          {
+            "id": 4,
+            "name": "Buffalo Starchild",
+            "description": "Crunchy chicken tenders tossed in buffal sauce, served on a brioche bun with sorghum glazed bacon, black pepper ranch, blue cheese crumbles, & mixed greens.",
+            "price": "$14.00"
+          },
+          {
+            "id": 5,
+            "name": "Classic Fried",
+            "description": "Crunchy fried chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
+            "price": "$13.00"
+          },
+          {
+            "id": 6,
+            "name": "Classic Grilled",
+            "description": "Grilled chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
+            "price": "$13.00"
+          },
+          {
+            "id": 7,
+            "name": "Watson's Hot Fish",
+            "description": "Fried perch dipped in Watson's hot sauce served on a hoagie roll with creamy coleslaw, dill pickles, and comeback sauce.",
+            "price": "$14.00"
+          },
+          {
+            "id": 8,
+            "name": "Tofu Po'boy",
+            "description": "Crispy tofu served on a hoagie roll with mixed greens, dill pickles, red onion, and vegan remoulade.",
+            "price": "$13.00"
+          }
+        ]
+      },
+      {
+        "title": "Sides",
+        "items": [
+          {
+            "id": 9,
+            "name": "Waffle Fries",
+            "price": "$4.00"
+          },
+          {
+            "id": 10,
+            "name": "Creamy Coleslaw",
+            "price": "$4.00"
+          },
+          {
+            "id": 11,
+            "name": "Mac & Cheese",
+            "price": "$4.00"
+          }
+        ]
+      },
+      {
+        "title": "Sauces",
+        "items": [
+          {
+            "id": 12,
+            "name": "Buffalo",
+            "price": "$1.00"
+          },
+          {
+            "id": 13,
+            "name": "Black Pepper Ranch",
+            "price": "$1.00"
+          },
+          {
+            "id": 14,
+            "name": "Honey Mustard",
+            "price": "$1.00"
+          },
+          {
+            "id": 15,
+            "name": "Carolina Gold",
+            "price": "$1.00"
+          },
+          {
+            "id": 16,
+            "name": "Comeback Sauce",
+            "price": "$1.00"
+          }
+        ]
+      },
+      {
+        "title": "Additons",
+        "items": [
+          {
+            "id": 22,
+            "name": "Sorghum-glazed bacon",
+            "price": "$3.00"
+          },
+          {
+            "id": 23,
+            "name": "American Cheese",
+            "price": "$1.00"
+          },
+          {
+            "id": 24,
+            "name": "Pickles",
+            "price": "$1.00"
+          }
+        ]
+      },
+      {
+        "title": "Drinks",
+        "items": [
+          {
+            "id": 17,
+            "name": "Coke",
+            "price": "$3.00"
+          },
+          {
+            "id": 18,
+            "name": "Diet Coke",
+            "price": "$3.00"
+          },
+          {
+            "id": 19,
+            "name": "Sprite",
+            "price": "$3.00"
+          },
+          {
+            "id": 20,
+            "name": "Bottle Water",
+            "price": "$3.00"
+          },
+          {
+            "id": 21,
+            "name": "Iced Tea",
+            "price": "$3.00"
+          }
+        ]
+      }
+    ],
+    "schedule": [
+      {
+        "id": 1,
+        "date": "Wednesday, March 15th, 2023",
+        "time": "11:00AM-2:00PM",
+        "datetime": "2023-03-15T11:00",
+        "name": "Carle Sports Medicine",
+        "location": "2300 S 1st St, Champaign, IL"
+      },
+      {
+        "id": 2,
+        "date": "Wednesday, March 15th, 2023",
+        "time": "5:00PM-8:00PM",
+        "datetime": "2023-03-15T16:00",
+        "name": "Triptych Brewing",
+        "description": "WING WEDNESDAY!",
+        "location": "1703 Woodfield Dr, Savoy, IL"
+      },
+      {
+        "id": 3,
+        "date": "Friday, March 17th, 2023",
+        "time": "10:30AM-2:30PM",
+        "datetime": "2023-03-17T11:00",
+        "name": "Carle at the Fields",
+        "location": "3105 Fields South Dr, Champaign, IL"
+      }
+    ]
+  },
+
+  {
+    "name": "Pastamania",
+    "path": "/pastamania",
+    "banner": "https://img1.wsimg.com/isteam/ip/acdaf85c-728e-44bf-abb7-46c3815139a9/front-0002.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1968,h:814",
+    "avatar": "https://scontent-ord5-2.xx.fbcdn.net/v/t1.6435-9/188211476_100365745582848_4466692820808777871_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=0DXwLYNg47UAX_cI6l7&_nc_ht=scontent-ord5-2.xx&oh=00_AfA1o4-fSH-ajE-5fl3opgMyQ6sF88436ePLo4EbXZ9DBw&oe=642B4AF1",
+    "verified": true,
+    "about": {
+      "description": "Delicious pastas, sandwiches, soups salads and lasagnas",
+      "location": "Champaign, IL",
+      "website": "pastamania.us",
+      "facebook": {
+        "name": "PastaMania",
+        "url": "https://www.facebook.com/PastaManiaUIUC"
+      },
+      "email": "info@pastamania.us",
+      "phone": "(217) 600-0845",
+      "tags": ["pasta", "sandwiches", "salads", "lasagna"],
+      "delivery": [
+        {
+          "name": "Grubhub",
+          "url": "https://www.grubhub.com/restaurant/pastamania-1004-w-university-ave-urbana/2745315"
+        },
+        {
+          "name": "Uber Eats",
+          "url": "https://www.ubereats.com/store/pasta-mania/8OkEhraPQgio_WGnHFLwaw"
+        },
+        {
+          "name": "DoorDash",
+          "url": "https://www.doordash.com/store/pastamania-urbana-1749604/"
+        }
+      ],
+      "privateEvents": true
+    },
+    "menu": [
+      {
+        "title": "Pastas",
+        "description": "Topped with chives, parsely and parmesan cheese. Served with cheese garlic bread",
+        "items": [
+          {
+            "id": 1,
+            "name": "Chicken Alfredo",
+            "description": "Delicious alfredo sauce, fettuccine and chicken",
+            "price": "$15.00"
+          },
+          {
+            "id": 2,
+            "name": "Inferno Pasta",
+            "description": "Penne pasta, spicy cream sauce, sundried tomatoes, chicken and spinach",
+            "price": "$14.50"
+          },
+          {
+            "id": 3,
+            "name": "Shrimp Pasta",
+            "description": "Fettuccine, alfredo sauce, roasted red peppers, shrimp and mushrooms",
+            "price": "$16.00"
+          },
+          {
+            "id": 4,
+            "name": "All American Macaroni",
+            "description": "Penne pasta and delicious cheese sauce topped with mix cheese",
+            "price": "$11.00"
+          },
+          {
+            "id": 5,
+            "name": "Pesto Pasta (veggie)",
+            "description": "Penne noodles, pesto sauce, zucchini, broccoli, carrots",
+            "price": "$12.00"
+          },
+          {
+            "id": 6,
+            "name": "Three Meat Pasta",
+            "description": "Penne, alfrecio sauce, andouille sausage, chicken, bacon",
+            "price": "$15.00"
+          },
+          {
+            "id": 7,
+            "name": "Cajun Jambalaya Pasta",
+            "description": "Fettuccine, tomato sauce, andouille sausage, chicken, bacon, red pepper, red onion",
+            "price": "$15.00"
+          },
+          {
+            "id": 8,
+            "name": "Mexican Pasta",
+            "description": "Fettuccine, creamy sauce, chorizo, onions and cherry tomatoes",
+            "price": "$14.00"
+          },
+          {
+            "id": 9,
+            "name": "Seafood Pasta",
+            "description": "Shrimp, octopus, mussels, squid, fettuccine and homemade alfredo sauce",
+            "price": "$16.00"
+          },
+          {
+            "id": 10,
+            "name": "Meatball Pasta",
+            "description": "Spaghetti, delicious tomato sauce, meatballs and cherry tomatoes",
+            "price": "$14.00"
+          },
+          {
+            "id": 11,
+            "name": "Chicken and Ham Carbonara",
+            "description": "Spaghetti, creamy sauce, red roasted peppers and bacon",
+            "price": "$14.00"
+          },
+          {
+            "id": 12,
+            "name": "Chili Mac",
+            "description": "Cheese Spaghetti topped with beef and bean chili, Monterrey jack (mix cheese)",
+            "price": "$12.50"
+          },
+          {
+            "id": 13,
+            "name": "Chicken Marinera",
+            "description": "Home made marinera sauce, cherry tomatoes and penne noodles",
+            "price": "$14.00"
+          }
+        ]
+      },
+      {
+        "title": "Lasagnas",
+        "items": [
+          {
+            "id": 1,
+            "name": "Veggie Lasagna",
+            "description": "Creamy tomato sauce, alfredo sauce and diced veggies",
+            "price": "$12.00"
+          },
+          {
+            "id": 2,
+            "name": "Beef and Bacon Lasagna",
+            "description": "Creamy tomato sauce, alfredo sauce, ground beef, bacon, cheese",
+            "price": "$13.00"
+          }
+        ]
+      },
+      {
+        "title": "Soups",
+        "items": [
+          {
+            "id": 1,
+            "name": "Chili with Beans",
+            "price": "$5.50"
+          },
+          {
+            "id": 2,
+            "name": "Veggie",
+            "price": "$5.00"
+          }
+        ]
+      },
+      {
+        "title": "Sandwiches",
+        "items": [
+          {
+            "id": 1,
+            "name": "Philly Cheesesteak",
+            "description": "Steak, provolone cheese, sautéed onions, fresh mushrooms, banana peppers and mayo",
+            "price": "$11.50"
+          },
+          {
+            "id": 2,
+            "name": "Turkey Club Sandwich",
+            "description": "Turkey, smoked ham, bacon, provolone, lettuce, tomato and mayo",
+            "price": "$11.50"
+          },
+          {
+            "id": 3,
+            "name": "Italian Beef",
+            "description": "Slice Italian beef, hot giardiniera peppers",
+            "extras": [{ "name": "Add cheese", "price": "$1.00" }],
+            "price": "$11.50"
+          },
+          {
+            "id": 4,
+            "name": "Meatball Sandwich",
+            "description": "Homemade meatballs sauté with our delicious tomato sauce Topped with provolone cheese",
+            "price": "$11.50"
+          },
+          {
+            "id": 5,
+            "name": "Chicken Philly Sandwich",
+            "description": "Chicken, lettuce tomato mayo and provolone cheese",
+            "price": "$11.50"
+          }
+        ]
+      },
+      {
+        "title": "Salads",
+        "description": "Dressings: Raspberry Vinaigrette, Ranch, Italian, Coconut, Caesar",
+        "items": [
+          {
+            "id": 1,
+            "name": "Strawberry Salad",
+            "description": "Spring mix lettuce, tresh strawberries, pecans, grapes, mandarin oranges, feta cheese and raspberry vinaigrette",
+            "price": "$10.00"
+          },
+          {
+            "id": 2,
+            "name": "House Salad",
+            "description": "Cucumber, croutons, red onions, mixed cheese, and cherry tomatoes",
+            "price": "$10.00"
+          },
+          {
+            "id": 3,
+            "name": "Berry Salad",
+            "description": "Strawberrys, blueberrys, cashews, sesame seeds coconut dressing and spring mix lettuce",
+            "price": "$10.00"
+          },
+          {
+            "id": 4,
+            "name": "Pasta Salad",
+            "description": "Romaine lettuce, penne pasta, croutons, cesar dressing and topped with parmesan cheese",
+            "price": "$10.00"
+          }
+        ]
+      },
+      {
+        "title": "Additons",
+        "items": [
+          {
+            "id": 1,
+            "name": "Shrimp",
+            "price": "$4.00"
+          },
+          {
+            "id": 2,
+            "name": "Steak",
+            "price": "$4.00"
+          },
+          {
+            "id": 3,
+            "name": "Chicken",
+            "price": "$2.00"
+          },
+          {
+            "id": 4,
+            "name": "Meatball",
+            "price": "$2.00"
+          },
+          {
+            "id": 5,
+            "name": "Chorizo",
+            "price": "$2.00"
+          },
+          {
+            "id": 6,
+            "name": "Bacon",
+            "price": "$1.00"
+          },
+          {
+            "id": 7,
+            "name": "Cheese",
+            "price": "$0.50"
+          },
+          {
+            "id": 8,
+            "name": "Red Onion",
+            "price": "$1.00"
+          },
+          {
+            "id": 9,
+            "name": "Cherry Tomatoes",
+            "price": "$1.00"
+          },
+          {
+            "id": 10,
+            "name": "Garlic Bread",
+            "price": "$1.00"
+          },
+          {
+            "id": 11,
+            "name": "Sausage",
+            "price": "$2.00"
+          },
+          {
+            "id": 12,
+            "name": "Veggies",
+            "price": "$1.50"
+          },
+          {
+            "id": 13,
+            "name": "Broccoli",
+            "price": "$1.50"
+          },
+          {
+            "id": 14,
+            "name": "Mushrooms",
+            "price": "$1.00"
+          },
+          {
+            "id": 15,
+            "name": "Red Peppers",
+            "price": "$1.00"
+          },
+          {
+            "id": 16,
+            "name": "Spinach",
+            "price": "$1.00"
+          }
+        ]
+      },
+      {
+        "title": "Drinks",
+        "items": [
+          {
+            "id": 1,
+            "name": "Coke",
+            "price": "$1.80"
+          },
+          {
+            "id": 2,
+            "name": "Diet Coke",
+            "price": "$2.00"
+          },
+          {
+            "id": 3,
+            "name": "Sprite",
+            "price": "$1.80"
+          },
+          {
+            "id": 4,
+            "name": "S. Pellegrino",
+            "price": "$3.00"
+          },
+          {
+            "id": 5,
+            "name": "Perrier",
+            "price": "$3.00"
+          },
+          {
+            "id": 6,
+            "name": "Unsweetened Tea",
+            "price": "$2.50"
+          },
+          {
+            "id": 7,
+            "name": "Sweet Tea",
+            "price": "$2.50"
+          },
+          {
+            "id": 8,
+            "name": "Water",
+            "price": "$1.50"
+          }
+        ]
+      }
+    ],
+    "schedule": [
+      {
+        "id": 1,
+        "date": "Monday, March 13th, 2023",
+        "time": "11:00AM-8:00PM",
+        "datetime": "2023-03-13T11:00",
+        "name": "1004 West University Avenue",
+        "location": "1004 West University Avenue, Urbana, IL"
+      },
+      {
+        "id": 2,
+        "date": "Tuesday, March 14th, 2023",
+        "time": "11:00AM-8:00PM",
+        "datetime": "2023-03-14T11:00",
+        "name": "1004 West University Avenue",
+        "location": "1004 West University Avenue, Urbana, IL"
+      },
+      {
+        "id": 3,
+        "date": "Wednesday, March 15th, 2023",
+        "time": "11:00AM-8:00PM",
+        "datetime": "2023-03-15T11:00",
+        "name": "1004 West University Avenue",
+        "location": "1004 West University Avenue, Urbana, IL"
+      },
+      {
+        "id": 4,
+        "date": "Thursday, March 16th, 2023",
+        "time": "11:00AM-8:00PM",
+        "datetime": "2023-03-16T11:00",
+        "name": "1004 West University Avenue",
+        "location": "1004 West University Avenue, Urbana, IL"
+      },
+      {
+        "id": 5,
+        "date": "Friday, March 17th, 2023",
+        "time": "11:00AM-8:00PM",
+        "datetime": "2023-03-17T11:00",
+        "name": "1004 West University Avenue",
+        "location": "1004 West University Avenue, Urbana, IL"
+      },
+      {
+        "id": 6,
+        "date": "Saturday, March 18th, 2023",
+        "time": "11:00AM-8:00PM",
+        "datetime": "2023-03-18T11:00",
+        "name": "1004 West University Avenue",
+        "location": "1004 West University Avenue, Urbana, IL"
+      },
+      {
+        "id": 7,
+        "date": "Monday, March 20th, 2023",
+        "time": "11:00AM-8:00PM",
+        "datetime": "2023-03-20T11:00",
+        "name": "1004 West University Avenue",
+        "location": "1004 West University Avenue, Urbana, IL"
+      },
+      {
+        "id": 8,
+        "date": "Tuesday, March 21st, 2023",
+        "time": "11:00AM-8:00PM",
+        "datetime": "2023-03-21T11:00",
+        "name": "1004 West University Avenue",
+        "location": "1004 West University Avenue, Urbana, IL"
+      },
+      {
+        "id": 9,
+        "date": "Wednesday, March 22nd, 2023",
+        "time": "11:00AM-8:00PM",
+        "datetime": "2023-03-22T11:00",
+        "name": "1004 West University Avenue",
+        "location": "1004 West University Avenue, Urbana, IL"
+      },
+      {
+        "id": 10,
+        "date": "Thursday, March 23rd, 2023",
+        "time": "11:00AM-8:00PM",
+        "datetime": "2023-03-23T11:00",
+        "name": "1004 West University Avenue",
+        "location": "1004 West University Avenue, Urbana, IL"
+      },
+      {
+        "id": 11,
+        "date": "Friday, March 24th, 2023",
+        "time": "11:00AM-8:00PM",
+        "datetime": "2023-03-24T11:00",
+        "name": "1004 West University Avenue",
+        "location": "1004 West University Avenue, Urbana, IL"
+      },
+      {
+        "id": 12,
+        "date": "Saturday, March 25th, 2023",
+        "time": "11:00AM-8:00PM",
+        "datetime": "2023-03-25T11:00",
+        "name": "1004 West University Avenue",
+        "location": "1004 West University Avenue, Urbana, IL"
+      }
+    ]
+  },
+
+  {
+    "name": "Smith Burger",
+    "path": "/smithburger",
+    "banner": "https://www.smithburgerco.com/uploads/b/f5e3c6b2d6b554bcf6e3434e5a814c100d3d8ace4c954770e4658d8b1a8b8f51/1631212744829_3005489-2%20(3)_1631214321.jpg?width=2000",
+    "avatar": "https://www.smithburgerco.com/uploads/b/f5e3c6b2d6b554bcf6e3434e5a814c100d3d8ace4c954770e4658d8b1a8b8f51/Smith%20Burger%20Co%20Logo%20Final_1614618838.png?width=400",
+    "verified": true,
+    "about": {
+      "description": "One of CU's hottest food trailers featuring craft smash burgers 🤤 For catering requests, please visit our website!",
+      "location": "Champaign, IL",
+      "website": "smithburgerco.com",
+      "instagram": "smithburgerco",
+      "facebook": {
+        "name": "Smith Burger Co.",
+        "url": "https://www.facebook.com/smithburgerco"
+      },
+      "email": "smithburgerco@gmail.com",
+      "tags": ["burgers", "sandwiches", "fried food"],
+      "delivery": false,
+      "privateEvents": true,
+      "phone": "(217) 888-0615"
+    },
+    "menu": [
+      {
+        "title": "Tenders",
+        "description": "Pickle-brined white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and sauce.",
+        "items": [
+          {
+            "id": 1,
+            "name": "4 Tenders and 1 Sauce",
+            "price": "$10.00"
+          },
+          {
+            "id": 2,
+            "name": "6 Tenders and 2 Sauces",
+            "price": "$15.00"
+          }
+        ]
+      },
+      {
+        "title": "Sandwiches",
+        "description": "All sandwiches served with waffle fries.",
+        "items": [
+          {
+            "id": 3,
+            "name": "Watson's Hot",
+            "description": "Crunchy chicken tenders dipped in Watson's Hot, served on a brioche bun with creamy coleslaw, dill pickles, & comeback sauce.",
+            "price": "$14.00"
+          },
+          {
+            "id": 4,
+            "name": "Buffalo Starchild",
+            "description": "Crunchy chicken tenders tossed in buffal sauce, served on a brioche bun with sorghum glazed bacon, black pepper ranch, blue cheese crumbles, & mixed greens.",
+            "price": "$14.00"
+          },
+          {
+            "id": 5,
+            "name": "Classic Fried",
+            "description": "Crunchy fried chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
+            "price": "$13.00"
+          },
+          {
+            "id": 6,
+            "name": "Classic Grilled",
+            "description": "Grilled chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
+            "price": "$13.00"
+          },
+          {
+            "id": 7,
+            "name": "Watson's Hot Fish",
+            "description": "Fried perch dipped in Watson's hot sauce served on a hoagie roll with creamy coleslaw, dill pickles, and comeback sauce.",
+            "price": "$14.00"
+          },
+          {
+            "id": 8,
+            "name": "Tofu Po'boy",
+            "description": "Crispy tofu served on a hoagie roll with mixed greens, dill pickles, red onion, and vegan remoulade.",
+            "price": "$13.00"
+          }
+        ]
+      },
+      {
+        "title": "Sides",
+        "items": [
+          {
+            "id": 9,
+            "name": "Waffle Fries",
+            "price": "$4.00"
+          },
+          {
+            "id": 10,
+            "name": "Creamy Coleslaw",
+            "price": "$4.00"
+          },
+          {
+            "id": 11,
+            "name": "Mac & Cheese",
+            "price": "$4.00"
+          }
+        ]
+      },
+      {
+        "title": "Sauces",
+        "items": [
+          {
+            "id": 12,
+            "name": "Buffalo",
+            "price": "$1.00"
+          },
+          {
+            "id": 13,
+            "name": "Black Pepper Ranch",
+            "price": "$1.00"
+          },
+          {
+            "id": 14,
+            "name": "Honey Mustard",
+            "price": "$1.00"
+          },
+          {
+            "id": 15,
+            "name": "Carolina Gold",
+            "price": "$1.00"
+          },
+          {
+            "id": 16,
+            "name": "Comeback Sauce",
+            "price": "$1.00"
+          }
+        ]
+      },
+      {
+        "title": "Additons",
+        "items": [
+          {
+            "id": 22,
+            "name": "Sorghum-glazed bacon",
+            "price": "$3.00"
+          },
+          {
+            "id": 23,
+            "name": "American Cheese",
+            "price": "$1.00"
+          },
+          {
+            "id": 24,
+            "name": "Pickles",
+            "price": "$1.00"
+          }
+        ]
+      },
+      {
+        "title": "Drinks",
+        "items": [
+          {
+            "id": 17,
+            "name": "Coke",
+            "price": "$3.00"
+          },
+          {
+            "id": 18,
+            "name": "Diet Coke",
+            "price": "$3.00"
+          },
+          {
+            "id": 19,
+            "name": "Sprite",
+            "price": "$3.00"
+          },
+          {
+            "id": 20,
+            "name": "Bottle Water",
+            "price": "$3.00"
+          },
+          {
+            "id": 21,
+            "name": "Iced Tea",
+            "price": "$3.00"
+          }
+        ]
+      }
+    ],
+    "schedule": [
+      {
+        "id": 1,
+        "date": "Tuesday, March 14th, 2023",
+        "time": "11:00AM-2:00PM",
+        "datetime": "2023-03-14T11:00",
+        "name": "Caliber Collision",
+        "location": "701 N Mattis Ave, Champaign, IL"
+      },
+      {
+        "id": 2,
+        "date": "Wednesday, March 15th, 2023",
+        "time": "10:30AM-2:00PM",
+        "datetime": "2023-03-15T16:00",
+        "name": "Carle South Clinic",
+        "location": "601 W. University Ave, Urbana, IL"
+      },
+      {
+        "id": 3,
+        "date": "Thursday, March 16th, 2023",
+        "time": "11:00AM-2:00PM",
+        "datetime": "2023-03-16T11:00",
+        "name": "Advance Auto",
+        "location": "110 N Vine St, Urbana, IL"
+      },
+      {
+        "id": 4,
+        "date": "Friday, March 17th, 2023",
+        "time": "11:00AM-2:00PM",
+        "datetime": "2023-03-17T11:00",
+        "name": "The Pines",
+        "location": "2860 S. Philo Rd, Urbana, IL"
+      },
+      {
+        "id": 5,
+        "date": "Saturday, March 18th, 2023",
+        "time": "12:00PM-3:00PM",
+        "datetime": "2023-03-18T12:00",
+        "name": "Riggs Brewery",
+        "location": "1901 S High Cross Rd, Urbana, IL"
+      }
+    ]
+  }
+]
