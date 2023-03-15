@@ -922,8 +922,8 @@ select {
   width: 14rem;
 }
 
-.w-72 {
-  width: 18rem;
+.w-80 {
+  width: 20rem;
 }
 
 .w-4 {
@@ -1904,8 +1904,8 @@ select {
     height: auto;
   }
 
-  .lg\:w-72 {
-    width: 18rem;
+  .lg\:w-80 {
+    width: 20rem;
   }
 
   .lg\:min-w-0 {

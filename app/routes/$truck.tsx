@@ -243,17 +243,17 @@ export default function Profile() {
               </div>
 
               <div className="mt-8 px-4 sm:px-0 space-y-6 lg:mt-0 flex flex-col items-center lg:pl-6">
-                <div className="lg:h-auto lg:w-72">
+                <div className="lg:h-auto lg:w-80">
                   <img
                     src="/images/ad.jpeg"
-                    className="w-72 rounded-lg"
+                    className="w-80 rounded-lg"
                     alt="ad"
                   />
                 </div>
-                <div className="lg:h-auto lg:w-72">
+                <div className="lg:h-auto lg:w-80">
                   <img
-                    src="/images/ad2.png"
-                    className="w-72 rounded-lg"
+                    src="/images/ad2.jpeg"
+                    className="w-80 rounded-lg"
                     alt="ad"
                   />
                 </div>
