@@ -794,10 +794,6 @@ select {
   margin-top: 0.5rem;
 }
 
-.ml-4 {
-  margin-left: 1rem;
-}
-
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -878,8 +874,8 @@ select {
   height: 2.5rem;
 }
 
-.h-48 {
-  height: 12rem;
+.h-32 {
+  height: 8rem;
 }
 
 .h-16 {
@@ -1745,6 +1741,10 @@ select {
 
   .sm\:hidden {
     display: none;
+  }
+
+  .sm\:h-60 {
+    height: 15rem;
   }
 
   .sm\:flex-row {

@@ -12,12 +12,12 @@
       "instagram": "watsonschicken",
       "facebook": {
         "name": "Watson's Shack & Rail",
-        "url": "watsonschicken"
+        "url": "https://www.facebook.com/watsonschicken"
       },
       "email": "mothershiphospitality@gmail.com",
       "tags": ["chicken", "tenders", "sandwiches", "fried chicken"],
       "delivery": false,
-      "privateEvents": false
+      "privateEvents": true
     },
     "menu": [
       {
@@ -220,7 +220,7 @@
       "website": "pastamania.us",
       "facebook": {
         "name": "PastaMania",
-        "url": "PastaManiaUIUC"
+        "url": "https://www.facebook.com/PastaManiaUIUC"
       },
       "email": "info@pastamania.us",
       "phone": "(217) 600-0845",
@@ -651,6 +651,231 @@
         "datetime": "2023-03-25T11:00",
         "name": "1004 West University Avenue",
         "location": "1004 West University Avenue, Urbana, IL"
+      }
+    ]
+  },
+
+  {
+    "name": "Smith Burger",
+    "path": "/smithburger",
+    "banner": "https://www.smithburgerco.com/uploads/b/f5e3c6b2d6b554bcf6e3434e5a814c100d3d8ace4c954770e4658d8b1a8b8f51/1631212744829_3005489-2%20(3)_1631214321.jpg?width=2000",
+    "avatar": "https://www.smithburgerco.com/uploads/b/f5e3c6b2d6b554bcf6e3434e5a814c100d3d8ace4c954770e4658d8b1a8b8f51/Smith%20Burger%20Co%20Logo%20Final_1614618838.png?width=400",
+    "verified": true,
+    "about": {
+      "description": "One of CU's hottest food trailers featuring craft smash burgers 🤤 For catering requests, please visit our website!",
+      "location": "Champaign, IL",
+      "website": "smithburgerco.com",
+      "instagram": "smithburgerco",
+      "facebook": {
+        "name": "Smith Burger Co.",
+        "url": "https://www.facebook.com/smithburgerco"
+      },
+      "email": "smithburgerco@gmail.com",
+      "tags": ["burgers", "sandwiches", "fried food"],
+      "delivery": false,
+      "privateEvents": true,
+      "phone": "(217) 888-0615"
+    },
+    "menu": [
+      {
+        "title": "Tenders",
+        "description": "Pickle-brined white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and sauce.",
+        "items": [
+          {
+            "id": 1,
+            "name": "4 Tenders and 1 Sauce",
+            "price": "$10.00"
+          },
+          {
+            "id": 2,
+            "name": "6 Tenders and 2 Sauces",
+            "price": "$15.00"
+          }
+        ]
+      },
+      {
+        "title": "Sandwiches",
+        "description": "All sandwiches served with waffle fries.",
+        "items": [
+          {
+            "id": 3,
+            "name": "Watson's Hot",
+            "description": "Crunchy chicken tenders dipped in Watson's Hot, served on a brioche bun with creamy coleslaw, dill pickles, & comeback sauce.",
+            "price": "$14.00"
+          },
+          {
+            "id": 4,
+            "name": "Buffalo Starchild",
+            "description": "Crunchy chicken tenders tossed in buffal sauce, served on a brioche bun with sorghum glazed bacon, black pepper ranch, blue cheese crumbles, & mixed greens.",
+            "price": "$14.00"
+          },
+          {
+            "id": 5,
+            "name": "Classic Fried",
+            "description": "Crunchy fried chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
+            "price": "$13.00"
+          },
+          {
+            "id": 6,
+            "name": "Classic Grilled",
+            "description": "Grilled chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
+            "price": "$13.00"
+          },
+          {
+            "id": 7,
+            "name": "Watson's Hot Fish",
+            "description": "Fried perch dipped in Watson's hot sauce served on a hoagie roll with creamy coleslaw, dill pickles, and comeback sauce.",
+            "price": "$14.00"
+          },
+          {
+            "id": 8,
+            "name": "Tofu Po'boy",
+            "description": "Crispy tofu served on a hoagie roll with mixed greens, dill pickles, red onion, and vegan remoulade.",
+            "price": "$13.00"
+          }
+        ]
+      },
+      {
+        "title": "Sides",
+        "items": [
+          {
+            "id": 9,
+            "name": "Waffle Fries",
+            "price": "$4.00"
+          },
+          {
+            "id": 10,
+            "name": "Creamy Coleslaw",
+            "price": "$4.00"
+          },
+          {
+            "id": 11,
+            "name": "Mac & Cheese",
+            "price": "$4.00"
+          }
+        ]
+      },
+      {
+        "title": "Sauces",
+        "items": [
+          {
+            "id": 12,
+            "name": "Buffalo",
+            "price": "$1.00"
+          },
+          {
+            "id": 13,
+            "name": "Black Pepper Ranch",
+            "price": "$1.00"
+          },
+          {
+            "id": 14,
+            "name": "Honey Mustard",
+            "price": "$1.00"
+          },
+          {
+            "id": 15,
+            "name": "Carolina Gold",
+            "price": "$1.00"
+          },
+          {
+            "id": 16,
+            "name": "Comeback Sauce",
+            "price": "$1.00"
+          }
+        ]
+      },
+      {
+        "title": "Additons",
+        "items": [
+          {
+            "id": 22,
+            "name": "Sorghum-glazed bacon",
+            "price": "$3.00"
+          },
+          {
+            "id": 23,
+            "name": "American Cheese",
+            "price": "$1.00"
+          },
+          {
+            "id": 24,
+            "name": "Pickles",
+            "price": "$1.00"
+          }
+        ]
+      },
+      {
+        "title": "Drinks",
+        "items": [
+          {
+            "id": 17,
+            "name": "Coke",
+            "price": "$3.00"
+          },
+          {
+            "id": 18,
+            "name": "Diet Coke",
+            "price": "$3.00"
+          },
+          {
+            "id": 19,
+            "name": "Sprite",
+            "price": "$3.00"
+          },
+          {
+            "id": 20,
+            "name": "Bottle Water",
+            "price": "$3.00"
+          },
+          {
+            "id": 21,
+            "name": "Iced Tea",
+            "price": "$3.00"
+          }
+        ]
+      }
+    ],
+    "schedule": [
+      {
+        "id": 1,
+        "date": "Tuesday, March 14th, 2023",
+        "time": "11:00AM-2:00PM",
+        "datetime": "2023-03-14T11:00",
+        "name": "Caliber Collision",
+        "location": "701 N Mattis Ave, Champaign, IL"
+      },
+      {
+        "id": 2,
+        "date": "Wednesday, March 15th, 2023",
+        "time": "10:30AM-2:00PM",
+        "datetime": "2023-03-15T16:00",
+        "name": "Carle South Clinic",
+        "location": "601 W. University Ave, Urbana, IL"
+      },
+      {
+        "id": 3,
+        "date": "Thursday, March 16th, 2023",
+        "time": "11:00AM-2:00PM",
+        "datetime": "2023-03-16T11:00",
+        "name": "Advance Auto",
+        "location": "110 N Vine St, Urbana, IL"
+      },
+      {
+        "id": 4,
+        "date": "Friday, March 17th, 2023",
+        "time": "11:00AM-2:00PM",
+        "datetime": "2023-03-17T11:00",
+        "name": "The Pines",
+        "location": "2860 S. Philo Rd, Urbana, IL"
+      },
+      {
+        "id": 5,
+        "date": "Saturday, March 18th, 2023",
+        "time": "12:00PM-3:00PM",
+        "datetime": "2023-03-18T12:00",
+        "name": "Riggs Brewery",
+        "location": "1901 S High Cross Rd, Urbana, IL"
       }
     ]
   }

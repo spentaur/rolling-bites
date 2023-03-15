@@ -40,7 +40,7 @@ export default function About() {
               </dt>
               <dd className="text-sm">
                 <a
-                  href={truck.about.website}
+                  href={`https://${truck.about.website}`}
                   className="text-blue-400 hover:underline"
                 >
                   {truck.about.website}
@@ -71,10 +71,7 @@ export default function About() {
                 <FacebookIcon className="h-5 w-5" />
               </dt>
               <dd className="text-sm text-gray-900">
-                <a
-                  href={`https://facebook.com/${truck.about.facebook.url}`}
-                  className="hover:underline"
-                >
+                <a href={truck.about.facebook.url} className="hover:underline">
                   {truck.about.facebook.name}
                 </a>
               </dd>

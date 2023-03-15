@@ -44,7 +44,7 @@ export default function Profile() {
             <img
               src={truck.banner}
               alt=""
-              className="w-full h-48 rounded-lg shadow object-cover"
+              className="w-full h-32 sm:h-60 rounded-lg shadow object-cover"
             />
           </div>
           <div className="pt-6 md:flex md:items-center md:justify-between lg:border-t lg:border-transparent">
