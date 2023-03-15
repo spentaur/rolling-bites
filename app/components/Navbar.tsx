@@ -36,7 +36,7 @@ export const Navbar = () => {
             <div className="flex justify-center items-center lg:col-span-6">
               <Link to="/">
                 <img
-                  className="block h-7 lg:h-8 w-auto"
+                  className="block cursor-pointer h-7 lg:h-8 w-auto"
                   src="/images/logo-simple.svg"
                   alt="Your Company"
                 />

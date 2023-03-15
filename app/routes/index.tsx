@@ -21,10 +21,50 @@ export default function Example() {
             </li>
             <li className="flex items-center">
               <div className="flex flex-shrink-0">
+                <span className="h-6 w-6 mr-3 flex items-center justify-center bg-green-500 rounded-full">
+                  <CheckIcon className="h-4 w-4 text-white" />
+                </span>
+                Pastamania menu
+              </div>
+            </li>
+            <li className="flex items-center">
+              <div className="flex flex-shrink-0">
+                <span className="h-6 w-6 mr-3 flex items-center justify-center bg-green-500 rounded-full">
+                  <CheckIcon className="h-4 w-4 text-white" />
+                </span>
+                Pastamania schedule
+              </div>
+            </li>
+            <li className="flex items-center">
+              <div className="flex flex-shrink-0">
                 <span className="h-6 w-6 mr-3 flex items-center justify-center border border-gray-500 bg-transparent rounded-full">
                   <div className="h-4 w-4" />
                 </span>
-                Change the things
+                smith burger menu and schedule
+              </div>
+            </li>
+            <li className="flex items-center">
+              <div className="flex flex-shrink-0">
+                <span className="h-6 w-6 mr-3 flex items-center justify-center border border-gray-500 bg-transparent rounded-full">
+                  <div className="h-4 w-4" />
+                </span>
+                flour and fire menu and schedule
+              </div>
+            </li>
+            <li className="flex items-center">
+              <div className="flex flex-shrink-0">
+                <span className="h-6 w-6 mr-3 flex items-center justify-center border border-gray-500 bg-transparent rounded-full">
+                  <div className="h-4 w-4" />
+                </span>
+                home page
+              </div>
+            </li>
+            <li className="flex items-center">
+              <div className="flex flex-shrink-0">
+                <span className="h-6 w-6 mr-3 flex items-center justify-center border border-gray-500 bg-transparent rounded-full">
+                  <div className="h-4 w-4" />
+                </span>
+                about,blog,jobs, help,partners, press
               </div>
             </li>
           </ul>

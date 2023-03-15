@@ -4,6 +4,7 @@ import {
   TruckIcon,
   ShoppingBagIcon,
   MapPinIcon,
+  PhoneIcon,
 } from "@heroicons/react/24/outline";
 import { AtSymbolIcon } from "@heroicons/react/20/solid";
 import InstagramIcon from "~/components/InstagramIcon";
@@ -93,6 +94,14 @@ export default function About() {
                   {truck.about.email}
                 </a>
               </dd>
+            </div>
+          )}
+          {truck.about.phone && (
+            <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">
+              <dt className="text-sm font-medium text-gray-500">
+                <PhoneIcon className="h-5 w-5" />
+              </dt>
+              <dd className="text-sm text-gray-900">{truck.about.phone}</dd>
             </div>
           )}
 
