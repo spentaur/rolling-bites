@@ -16,7 +16,7 @@ import { Footer } from "./components/Footer";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "New Remix App",
+  title: "Rolling Bites",
   viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
   "theme-color": "#5ea45e",
   "apple-mobile-web-app-capable": "yes",
