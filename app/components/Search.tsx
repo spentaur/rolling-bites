@@ -42,7 +42,7 @@ export const Search = (props: Props) => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
 
-  const filteredPeople = query === "" ? [] : fuse.search(query);
+  const filteredPeople = query === "" ? [] : fuse.search(query, { limit: 5 });
 
   return (
     <Transition.Root show={props.open} as={Fragment} appear>

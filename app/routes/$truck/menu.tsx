@@ -11,6 +11,14 @@ export default function Menu() {
           Menu prices and availability subject to change and this website may
           not reflect exactly what is available on any given day.
         </div>
+        {truck.menuAdvisory && (
+          <div className="mt-1 max-w-2xl text-center text-xs text-gray-500">
+            <p>CONSUMER ADVISORY</p> *Consuming raw or undercooked meats,
+            poultry, seafood, shellfish, or eggs may increase your risk of
+            foodborne illness, especially if you have certain medical
+            conditions.
+          </div>
+        )}
       </div>
       <div className="w-full px-4 pb-5 sm:px-0">
         {truck.menu.map(
@@ -42,7 +50,34 @@ export default function Menu() {
                 {section.items.map((item) => (
                   <div key={item.id} className="py-3 sm:px-6">
                     <dt className="text-sm font-medium">{item.name}</dt>
-                    <dd className="text-sm text-gray-900 mt-1">{item.price}</dd>
+                    {item.multiple ? (
+                      <dd className="text-sm text-gray-500">
+                        {item.price.map((priceItem) => (
+                          <div key={priceItem.name} className="mt-1">
+                            <span className="text-gray-900">
+                              {priceItem.price}{" "}
+                            </span>
+                            {priceItem.name}
+                          </div>
+                        ))}
+                      </dd>
+                    ) : (
+                      <dd className="text-sm text-gray-900 mt-1">
+                        {item.price}
+                      </dd>
+                    )}
+                    {item.extras && (
+                      <dd className="text-sm text-gray-500">
+                        {item.extras.map((extra) => (
+                          <div key={extra.name} className="mt-1">
+                            <span className="text-gray-900">
+                              {extra.price}{" "}
+                            </span>
+                            {extra.name}
+                          </div>
+                        ))}
+                      </dd>
+                    )}
                     <dd className="text-sm text-gray-500 mt-1">
                       {item.description}
                     </dd>

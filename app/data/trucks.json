@@ -129,7 +129,7 @@
         ]
       },
       {
-        "title": "Additons",
+        "title": "Additions",
         "items": [
           {
             "id": 22,
@@ -425,7 +425,7 @@
         ]
       },
       {
-        "title": "Additons",
+        "title": "Additions",
         "items": [
           {
             "id": 1,
@@ -656,8 +656,8 @@
   },
 
   {
-    "name": "Smith Burger",
-    "path": "/smithburger",
+    "name": "Smith Burger Co.",
+    "path": "/smithburgerco",
     "banner": "https://www.smithburgerco.com/uploads/b/f5e3c6b2d6b554bcf6e3434e5a814c100d3d8ace4c954770e4658d8b1a8b8f51/1631212744829_3005489-2%20(3)_1631214321.jpg?width=2000",
     "avatar": "https://www.smithburgerco.com/uploads/b/f5e3c6b2d6b554bcf6e3434e5a814c100d3d8ace4c954770e4658d8b1a8b8f51/Smith%20Burger%20Co%20Logo%20Final_1614618838.png?width=400",
     "verified": true,
@@ -676,132 +676,196 @@
       "privateEvents": true,
       "phone": "(217) 888-0615"
     },
+    "menuAdvisory": true,
     "menu": [
       {
-        "title": "Tenders",
-        "description": "Pickle-brined white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and sauce.",
+        "title": "Smash Burgers",
+        "description": "**SUB BEEF FOR GRILLED OR FRIED CHICKEN $.50, BLACK BEAN BURGER $2.00** \n FREEBIES: lettuce, tomato, onion, pickle, ketchup, mustard, and mayo available upon request",
         "items": [
           {
             "id": 1,
-            "name": "4 Tenders and 1 Sauce",
-            "price": "$10.00"
+            "name": "Plain Jane",
+            "description": "Double beef on a toasted bun",
+            "price": "$7.50"
           },
           {
             "id": 2,
-            "name": "6 Tenders and 2 Sauces",
-            "price": "$15.00"
+            "name": "Average Joe",
+            "description": "Double beef with American cheese",
+            "price": "$8.50"
+          },
+          {
+            "id": 3,
+            "name": "All American",
+            "description": "Double beef with bacon and American cheese",
+            "price": "$9.50"
+          },
+          {
+            "id": 4,
+            "name": "Bacon Ranch",
+            "description": "Double beef, bacon, house made ranch and American cheese",
+            "price": "$9.75"
+          },
+          {
+            "id": 5,
+            "name": "City Slicker",
+            "description": "Double beef, bacon, jalapenos, pepper jack cheese and onion ring with house made western sauce",
+            "price": "$11.25"
+          },
+          {
+            "id": 6,
+            "name": "Sunday Morning",
+            "description": "Double beef, bacon, runny egg cooked to order* and American cheese",
+            "price": "$10.00"
+          },
+          {
+            "id": 7,
+            "name": "The Melt",
+            "description": "Double beef, sautéed onions & mushrooms, Swiss cheese and 1000 island dressing on Texas toast",
+            "price": "$10.25"
+          },
+          {
+            "id": 8,
+            "name": "Mama Mia",
+            "description": "Double beef, pepperoni, provolone cheese and marinara",
+            "price": "$10.50"
+          },
+          {
+            "id": 9,
+            "name": "Spicy Greenga",
+            "description": "Double beef, green chilies, and pepper jack cheese",
+            "price": "$10.50"
+          },
+          {
+            "id": 10,
+            "name": "Swiss n' Mushroom",
+            "description": "Double beef, sautéed mushrooms, and Swiss cheese",
+            "price": "$9.50"
+          },
+          {
+            "id": 11,
+            "name": "My Boy Blue",
+            "description": "Double beef, bacon, sautéed mushrooms, Swiss and blue cheese",
+            "price": "$11.00"
+          },
+          {
+            "id": 12,
+            "name": "Rocky  Balboa",
+            "description": "Double beef, sautéed onions & bell peppers, provolone cheese and marinara",
+            "price": "$11.00"
+          },
+          {
+            "id": 13,
+            "name": "Bacon Mac Attack",
+            "description": "Double beef, bacon, pepper jack cheese topped with white cheddar pepper jack mac & cheese and southern sauce",
+            "price": "$11.00"
           }
         ]
       },
       {
         "title": "Sandwiches",
-        "description": "All sandwiches served with waffle fries.",
         "items": [
           {
+            "id": 1,
+            "name": "BBLT",
+            "description": "Loads of bacon, lettuce, tomato, and mayo on Texas toast",
+            "price": "$9.00"
+          },
+          {
+            "id": 2,
+            "name": "Buffalo Chicken",
+            "description": "Grilled or fried, tossed in spicy buffalo sauce with pepper jack cheese on a brioche bun",
+            "price": "$9.00"
+          },
+          {
             "id": 3,
-            "name": "Watson's Hot",
-            "description": "Crunchy chicken tenders dipped in Watson's Hot, served on a brioche bun with creamy coleslaw, dill pickles, & comeback sauce.",
-            "price": "$14.00"
+            "name": "Classic Southern Chicken",
+            "description": "Grilled or fried topped with house made southern sauce and sliced pickles on a brioche bun",
+            "price": "$8.75"
           },
           {
             "id": 4,
-            "name": "Buffalo Starchild",
-            "description": "Crunchy chicken tenders tossed in buffal sauce, served on a brioche bun with sorghum glazed bacon, black pepper ranch, blue cheese crumbles, & mixed greens.",
-            "price": "$14.00"
+            "name": "Grilled Cheese",
+            "description": "A traditional grilled cheese with American cheese on Texas toast",
+            "price": "$5.50"
           },
           {
             "id": 5,
-            "name": "Classic Fried",
-            "description": "Crunchy fried chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
-            "price": "$13.00"
+            "name": "Ripper",
+            "description": "Deep fried hot dog on a toasted bun",
+            "price": "$5.50"
           },
           {
             "id": 6,
-            "name": "Classic Grilled",
-            "description": "Grilled chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
-            "price": "$13.00"
+            "name": "Chili Cheese Ripper",
+            "description": "Deep fried hot dog topped with house made chili, American cheese and Onion on a toasted bun",
+            "price": "$7.75"
           },
           {
             "id": 7,
-            "name": "Watson's Hot Fish",
-            "description": "Fried perch dipped in Watson's hot sauce served on a hoagie roll with creamy coleslaw, dill pickles, and comeback sauce.",
-            "price": "$14.00"
-          },
-          {
-            "id": 8,
-            "name": "Tofu Po'boy",
-            "description": "Crispy tofu served on a hoagie roll with mixed greens, dill pickles, red onion, and vegan remoulade.",
-            "price": "$13.00"
+            "name": "Bacon Mac Attack Riper",
+            "description": "Deep fried hot dog topped with bacon, white cheddar pepper jack mac & cheese and southern sauce on a toasted bun",
+            "price": "$7.50"
           }
         ]
       },
       {
-        "title": "Sides",
+        "title": "Sides & Shareables",
         "items": [
           {
             "id": 9,
-            "name": "Waffle Fries",
-            "price": "$4.00"
+            "name": "French Fries",
+            "multiple": true,
+            "price": [
+              { "name": "side", "price": "$2.25" },
+              { "name": "basket", "price": "$4.50" }
+            ]
           },
           {
             "id": 10,
-            "name": "Creamy Coleslaw",
-            "price": "$4.00"
+            "name": "Cajun French Fries",
+            "multiple": true,
+            "price": [
+              { "name": "side", "price": "$2.25" },
+              { "name": "basket", "price": "$4.50" }
+            ]
           },
           {
             "id": 11,
-            "name": "Mac & Cheese",
-            "price": "$4.00"
-          }
-        ]
-      },
-      {
-        "title": "Sauces",
-        "items": [
+            "name": "Onion Rings",
+            "description": "w/western dipping sauce",
+            "multiple": true,
+            "price": [
+              { "name": "side", "price": "$4.25" },
+              { "name": "basket", "price": "$8.50" }
+            ]
+          },
           {
             "id": 12,
-            "name": "Buffalo",
-            "price": "$1.00"
+            "name": "Sweet Potato Tots",
+            "extras": [{ "name": "add malo creame", "price": "$0.25" }],
+            "multiple": true,
+            "price": [
+              { "name": "side", "price": "$4.50" },
+              { "name": "basket", "price": "$8.75" }
+            ]
           },
           {
             "id": 13,
-            "name": "Black Pepper Ranch",
-            "price": "$1.00"
+            "name": "Wisconsin White Cheddar Cheese Curds",
+            "description": "w/ marinara dipping sauce",
+            "price": "$7.75"
           },
           {
             "id": 14,
-            "name": "Honey Mustard",
-            "price": "$1.00"
+            "name": "Jalepeno Poppers",
+            "description": "w/ sweet chili dipping sauce",
+            "price": "$7.00"
           },
           {
             "id": 15,
-            "name": "Carolina Gold",
-            "price": "$1.00"
-          },
-          {
-            "id": 16,
-            "name": "Comeback Sauce",
-            "price": "$1.00"
-          }
-        ]
-      },
-      {
-        "title": "Additons",
-        "items": [
-          {
-            "id": 22,
-            "name": "Sorghum-glazed bacon",
-            "price": "$3.00"
-          },
-          {
-            "id": 23,
-            "name": "American Cheese",
-            "price": "$1.00"
-          },
-          {
-            "id": 24,
-            "name": "Pickles",
-            "price": "$1.00"
+            "name": "White Cheddar Pepper Jack Mac",
+            "price": "$5.00"
           }
         ]
       },
@@ -810,28 +874,13 @@
         "items": [
           {
             "id": 17,
-            "name": "Coke",
-            "price": "$3.00"
+            "name": "Canned Soda",
+            "price": "$1.50"
           },
           {
             "id": 18,
-            "name": "Diet Coke",
-            "price": "$3.00"
-          },
-          {
-            "id": 19,
-            "name": "Sprite",
-            "price": "$3.00"
-          },
-          {
-            "id": 20,
             "name": "Bottle Water",
-            "price": "$3.00"
-          },
-          {
-            "id": 21,
-            "name": "Iced Tea",
-            "price": "$3.00"
+            "price": "$2.00"
           }
         ]
       }
@@ -873,6 +922,250 @@
         "id": 5,
         "date": "Saturday, March 18th, 2023",
         "time": "12:00PM-3:00PM",
+        "datetime": "2023-03-18T12:00",
+        "name": "Riggs Brewery",
+        "location": "1901 S High Cross Rd, Urbana, IL"
+      }
+    ]
+  },
+
+  {
+    "name": "Flour and Fire Pizza",
+    "path": "/FlourandFirePizza",
+    "banner": "https://img1.wsimg.com/isteam/ip/a3402013-da00-4773-9d0e-367241b18918/IMG_7538.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/fx-gs/rs=w:3070,m",
+    "avatar": "/images/ffpizza.png",
+    "verified": true,
+    "about": {
+      "description": "Mobile wood-fired pizza trailer serving Neapolitan style pizza to the Champaign-Urbana area",
+      "location": "Champaign, IL",
+      "website": "https://flourandfirepizza.com",
+      "instagram": "flour_and_fire_pizza",
+      "facebook": {
+        "name": "Flour and Fire Pizza",
+        "url": "https://www.facebook.com/FlourandFirePizza/"
+      },
+      "email": "ffirepizza@gmail.com",
+      "tags": ["wood fired", "pizza", "Neapolitan style"],
+      "delivery": false,
+      "privateEvents": true
+    },
+    "menu": [
+      {
+        "title": "Specialty Pizzas",
+        "items": [
+          {
+            "id": 1,
+            "name": "Margherita",
+            "description": "Fresh mozzarella cheese with basil leaves and an olive oil drizzle over red San Marzano sauce--a Neapolitan classic!",
+            "price": "$11.75"
+          },
+          {
+            "id": 2,
+            "name": "Funghi",
+            "description": "Fresh mushroom, herbs and cheese over white sauce, finished with truffle oil",
+            "price": "$12.75"
+          },
+          {
+            "id": 3,
+            "name": "BBQ Chicken Ranch",
+            "description": "Tender smoked chicken, real bacon, and our shredded mozzarella atop a BBQ sauce base, and finished with a swirl of house-made buttermilk ranch on top",
+            "price": "$12.75"
+          },
+          {
+            "id": 4,
+            "name": "Sweet Heat",
+            "description": "Char and cup pepperoni with a bold twist—Mike's Hot Honey—atop our cheese blend and San Marzano tomato base.",
+            "price": "$11.75"
+          },
+          {
+            "id": 5,
+            "name": "Buffalo Chicken",
+            "description": "Tender, smoked chicken and our shredded mozzarella cheese, drizzled in buffalo and house-made buttermilk ranch",
+            "price": "$12.75"
+          },
+          {
+            "id": 6,
+            "name": "Supreme",
+            "description": "Sausage, pepperoni, fresh mushroom, olive, onion and fire roasted red pepper, with our cheese blend and San Marzano tomato sauce.",
+            "price": "$13.75"
+          },
+          {
+            "id": 7,
+            "name": "Garden/Veggie Supreme",
+            "description": "Mushroom, olives, onion and fire roasted red pepper covered in our mozzarella blend, all on top of crushed San Marzano tomato sauce.",
+            "price": "$12.75"
+          },
+          {
+            "id": 8,
+            "name": "Motz Lover",
+            "description": "Fresh mozzarella on top of our shredded mozzarella all melted on top of our San Marzano tomato base",
+            "price": "$11.75"
+          },
+          {
+            "id": 9,
+            "name": "Hotta Ricotta",
+            "description": "Sausage and basil over San Marzano sauce, topped with shredded mozzarella then finished with dollops of ricotta and a drizzle of hot honey",
+            "price": "$14.75"
+          },
+          {
+            "id": 10,
+            "name": "Meat-za",
+            "description": "Pepperoni, sausage and bacon smothered by our shredded mozzarella on our San Marzano tomato base. Try it with Mike’s Hot Honey for an extra kick!",
+            "price": "$12.75"
+          },
+          {
+            "id": 11,
+            "name": "Cheese Pizza (Build Your Own)",
+            "description": "Any of our toppings, any of our sauces--prepared your way",
+            "price": "$9.75"
+          }
+        ]
+      },
+      {
+        "title": "Add-ons",
+        "items": [
+          {
+            "id": 1,
+            "name": "Red Sauce"
+          },
+          {
+            "id": 2,
+            "name": "White Sauce"
+          },
+          {
+            "id": 3,
+            "name": "BBQ Sauce"
+          },
+          {
+            "id": 4,
+            "name": "Sausage",
+            "price": "$1.00"
+          },
+          {
+            "id": 5,
+            "name": "Bacon",
+            "price": "$1.00"
+          },
+          {
+            "id": 6,
+            "name": "Pepperoni",
+            "price": "$1.00"
+          },
+          {
+            "id": 7,
+            "name": "Chicken",
+            "price": "$1.00"
+          },
+          {
+            "id": 8,
+            "name": "Fresh Mozzarella",
+            "price": "$2.00"
+          },
+          {
+            "id": 9,
+            "name": "Extra Cheese",
+            "price": "$1.00"
+          },
+          {
+            "id": 10,
+            "name": "Olives",
+            "price": "$1.00"
+          },
+          {
+            "id": 11,
+            "name": "Fire Roasted Peppers",
+            "price": "$1.00"
+          },
+          {
+            "id": 12,
+            "name": "Mushrooms",
+            "price": "$1.00"
+          },
+          {
+            "id": 13,
+            "name": "Onions",
+            "price": "$1.00"
+          },
+          {
+            "id": 14,
+            "name": "Hot Honey",
+            "price": "$1.00"
+          },
+          {
+            "id": 15,
+            "name": "Mike's Extra Hot Honey",
+            "price": "$1.00"
+          },
+          {
+            "id": 16,
+            "name": "Ranche",
+            "price": "$1.00"
+          },
+          {
+            "id": 17,
+            "name": "Truffle Oil",
+            "price": "$1.00"
+          },
+          {
+            "id": 18,
+            "name": "Fresh Basil",
+            "price": "$1.00"
+          },
+          {
+            "id": 19,
+            "name": "Ricotta",
+            "price": "$2.00"
+          }
+        ]
+      },
+      {
+        "title": "Drinks",
+        "items": [
+          {
+            "id": 18,
+            "name": "Bottle Water",
+            "price": "$2.50"
+          }
+        ]
+      }
+    ],
+    "schedule": [
+      {
+        "id": 1,
+        "date": "Thursday, March 16th, 2023",
+        "time": "10:30AM-2:00PM",
+        "datetime": "2023-03-16T11:00",
+        "name": "Carle South Clinic",
+        "location": "601 W. University Ave, Urbana, IL"
+      },
+      {
+        "id": 2,
+        "date": "Thursday, March 16th, 2023",
+        "time": "4:00PM-7:00PM",
+        "datetime": "2023-03-16T11:00",
+        "name": "T+T Tavern",
+        "location": "101 N Century Blvd, Rantoul, IL"
+      },
+      {
+        "id": 3,
+        "date": "Friday, March 17th, 2023",
+        "time": "10:30AM-1:00PM",
+        "datetime": "2023-03-17T11:00",
+        "name": "Gibson Area Hospital",
+        "location": "1120 N Melvin St, Gibson City, IL"
+      },
+      {
+        "id": 4,
+        "date": "Friday, March 17th, 2023",
+        "time": "4:30PM-7:30PM",
+        "datetime": "2023-03-17T11:00",
+        "name": "Triptych Brewing",
+        "location": "1703 Woodfield Dr, Savoy, IL"
+      },
+      {
+        "id": 5,
+        "date": "Saturday, March 18th, 2023",
+        "time": "4:00PM-7:00PM",
         "datetime": "2023-03-18T12:00",
         "name": "Riggs Brewery",
         "location": "1901 S High Cross Rd, Urbana, IL"
