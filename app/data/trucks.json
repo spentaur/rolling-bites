@@ -951,7 +951,7 @@
     },
     "menu": [
       {
-        "title": "Specialty Pizza",
+        "title": "Specialty Pizzas",
         "items": [
           {
             "id": 1,
@@ -1012,113 +1012,109 @@
             "name": "Meat-za",
             "description": "Pepperoni, sausage and bacon smothered by our shredded mozzarella on our San Marzano tomato base. Try it with Mike’s Hot Honey for an extra kick!",
             "price": "$12.75"
-          }
-        ]
-      },
-      {
-        "title": "Sandwiches",
-        "items": [
-          {
-            "id": 1,
-            "name": "BBLT",
-            "description": "Loads of bacon, lettuce, tomato, and mayo on Texas toast",
-            "price": "$9.00"
-          },
-          {
-            "id": 2,
-            "name": "Buffalo Chicken",
-            "description": "Grilled or fried, tossed in spicy buffalo sauce with pepper jack cheese on a brioche bun",
-            "price": "$9.00"
-          },
-          {
-            "id": 3,
-            "name": "Classic Southern Chicken",
-            "description": "Grilled or fried topped with house made southern sauce and sliced pickles on a brioche bun",
-            "price": "$8.75"
-          },
-          {
-            "id": 4,
-            "name": "Grilled Cheese",
-            "description": "A traditional grilled cheese with American cheese on Texas toast",
-            "price": "$5.50"
-          },
-          {
-            "id": 5,
-            "name": "Ripper",
-            "description": "Deep fried hot dog on a toasted bun",
-            "price": "$5.50"
-          },
-          {
-            "id": 6,
-            "name": "Chili Cheese Ripper",
-            "description": "Deep fried hot dog topped with house made chili, American cheese and Onion on a toasted bun",
-            "price": "$7.75"
-          },
-          {
-            "id": 7,
-            "name": "Bacon Mac Attack Riper",
-            "description": "Deep fried hot dog topped with bacon, white cheddar pepper jack mac & cheese and southern sauce on a toasted bun",
-            "price": "$7.50"
-          }
-        ]
-      },
-      {
-        "title": "Sides & Shareables",
-        "items": [
-          {
-            "id": 9,
-            "name": "French Fries",
-            "multiple": true,
-            "price": [
-              { "name": "side", "price": "$2.25" },
-              { "name": "basket", "price": "$4.50" }
-            ]
-          },
-          {
-            "id": 10,
-            "name": "Cajun French Fries",
-            "multiple": true,
-            "price": [
-              { "name": "side", "price": "$2.25" },
-              { "name": "basket", "price": "$4.50" }
-            ]
           },
           {
             "id": 11,
-            "name": "Onion Rings",
-            "description": "w/western dipping sauce",
-            "multiple": true,
-            "price": [
-              { "name": "side", "price": "$4.25" },
-              { "name": "basket", "price": "$8.50" }
-            ]
+            "name": "Cheese Pizza (Build Your Own)",
+            "description": "Any of our toppings, any of our sauces--prepared your way",
+            "price": "$9.75"
+          }
+        ]
+      },
+      {
+        "title": "Add-ons",
+        "items": [
+          {
+            "id": 1,
+            "name": "Red Sauce"
+          },
+          {
+            "id": 2,
+            "name": "White Sauce"
+          },
+          {
+            "id": 3,
+            "name": "BBQ Sauce"
+          },
+          {
+            "id": 4,
+            "name": "Sausage",
+            "price": "$1.00"
+          },
+          {
+            "id": 5,
+            "name": "Bacon",
+            "price": "$1.00"
+          },
+          {
+            "id": 6,
+            "name": "Pepperoni",
+            "price": "$1.00"
+          },
+          {
+            "id": 7,
+            "name": "Chicken",
+            "price": "$1.00"
+          },
+          {
+            "id": 8,
+            "name": "Fresh Mozzarella",
+            "price": "$2.00"
+          },
+          {
+            "id": 9,
+            "name": "Extra Cheese",
+            "price": "$1.00"
+          },
+          {
+            "id": 10,
+            "name": "Olives",
+            "price": "$1.00"
+          },
+          {
+            "id": 11,
+            "name": "Fire Roasted Peppers",
+            "price": "$1.00"
           },
           {
             "id": 12,
-            "name": "Sweet Potato Tots",
-            "extras": [{ "name": "add malo creame", "price": "$0.25" }],
-            "multiple": true,
-            "price": [
-              { "name": "side", "price": "$4.50" },
-              { "name": "basket", "price": "$8.75" }
-            ]
+            "name": "Mushrooms",
+            "price": "$1.00"
           },
           {
             "id": 13,
-            "name": "Wisconsin White Cheddar Cheese Curds",
-            "description": "w/ marinara dipping sauce",
-            "price": "$7.75"
+            "name": "Onions",
+            "price": "$1.00"
           },
           {
             "id": 14,
-            "name": "Jalepeno Poppers",
-            "description": "w/ sweet chili dipping sauce",
-            "price": "$7.00"
+            "name": "Hot Honey",
+            "price": "$1.00"
           },
           {
             "id": 15,
-            "name": "White Cheddar Pepper Jack Mac",
-            "price": "$5.00"
+            "name": "Mike's Extra Hot Honey",
+            "price": "$1.00"
+          },
+          {
+            "id": 16,
+            "name": "Ranche",
+            "price": "$1.00"
+          },
+          {
+            "id": 17,
+            "name": "Truffle Oil",
+            "price": "$1.00"
+          },
+          {
+            "id": 18,
+            "name": "Fresh Basil",
+            "price": "$1.00"
+          },
+          {
+            "id": 19,
+            "name": "Ricotta",
+            "price": "$2.00"
           }
         ]
       },
@@ -1126,14 +1122,9 @@
         "title": "Drinks",
         "items": [
           {
-            "id": 17,
-            "name": "Canned Soda",
-            "price": "$1.50"
-          },
-          {
             "id": 18,
             "name": "Bottle Water",
-            "price": "$2.00"
+            "price": "$2.50"
           }
         ]
       }
