@@ -149,7 +149,7 @@ export const Search = (props: Props) => {
                     />
                     <div className="">
                       <div className="ml-3">Pastamania</div>
-                      <div className="ml-4 text-xs text-gray-500">
+                      <div className="ml-3 text-xs text-gray-500">
                         Delicious pastas, sandwiches, soups salads and lasagnas
                       </div>
                     </div>
