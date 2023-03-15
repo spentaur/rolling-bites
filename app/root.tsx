@@ -6,15 +6,13 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useSearchParams,
 } from "@remix-run/react";
 
 import styles from "./styles/app.css";
 
 import { Navbar } from "./components/Navbar";
-import { Search } from "./components/Search";
+
 import { Footer } from "./components/Footer";
-import { useState } from "react";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -33,8 +31,6 @@ export function links() {
 }
 
 export default function App() {
-  const [searchParams] = useSearchParams();
-
   return (
     <html className="h-full bg-white" lang="en">
       <head>
