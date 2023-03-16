@@ -233,10 +233,8 @@ export default function Profile() {
       <div className="relative isolate overflow-hidden mt-6 lg:overflow-visible">
         <div className="max-w-6xl sm:px-6 lg:px-8 grid grid-cols-1 mx-auto lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-8 rounded-lg sm:shadow-md sm:border border-gray-200 lg:mx-auto lg:w-full lg:max-w-7xl ">
-            <div className="lg:pr-4">
-              <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
-                <Outlet />
-              </div>
+            <div className="">
+              <Outlet />
             </div>
           </div>
           <div className="mt-8 lg:-mt-12 lg:-ml-4 lg:p-12 lg:col-span-4 lg:sticky lg:top-8 lg:col-start-9 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
