@@ -11,6 +11,7 @@ import {
   LockClosedIcon,
   ServerIcon,
 } from "@heroicons/react/20/solid";
+import TruckAlertModal from "~/components/TruckAlertModal";
 const tabs = [
   { name: "About", href: "", current: true },
   { name: "Schedule", href: "schedule", current: false },
@@ -102,6 +103,7 @@ export default function Profile() {
                   <BellIcon className="h-5 w-5" />
                 )}
               </button>
+              <TruckAlertModal />
 
               <div className="flex-1 sm:hidden"></div>
 
