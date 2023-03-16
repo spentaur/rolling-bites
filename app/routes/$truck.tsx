@@ -1,11 +1,17 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { EllipsisHorizontalIcon } from "@heroicons/react/24/outline";
-import { CheckCircleIcon } from "@heroicons/react/20/solid";
+import { EllipsisHorizontalIcon, BellIcon } from "@heroicons/react/24/outline";
+import { BellAlertIcon, CheckCircleIcon } from "@heroicons/react/20/solid";
 import { Outlet, Link, NavLink, useLoaderData } from "@remix-run/react";
 import type { LoaderArgs } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import Fuse from "fuse.js";
+import {
+  CloudArrowUpIcon,
+  LockClosedIcon,
+  ServerIcon,
+} from "@heroicons/react/20/solid";
+import { TruckAlertModal } from "~/components/TruckAlertModal";
 const tabs = [
   { name: "About", href: "", current: true },
   { name: "Schedule", href: "schedule", current: false },
@@ -34,7 +40,8 @@ function classNames(...classes: string[]) {
 }
 
 export default function Profile() {
-  // const [alertActive, setAlertActive] = useState(false);
+  const [alertActive, setAlertActive] = useState(false);
+  const [open, setOpen] = useState(false);
   const truck = useLoaderData<typeof loader>();
   return (
     <>
@@ -61,7 +68,7 @@ export default function Profile() {
                   {truck.name}
                 </h1>
               </div>
-              <div className="mt-1 flex items-center">
+              <div className="mt-1 h-10 flex items-center">
                 <div className="flex items-center">
                   <dl className="flex flex-col sm:flex-row sm:flex-wrap">
                     {truck.verified && (
@@ -76,95 +83,14 @@ export default function Profile() {
                         </dd>
                       </>
                     )}
-
-                    {/* <dt className="sr-only">Views</dt>
-                    <dd className="mt-3 flex items-center text-sm font-medium text-gray-500 sm:mr-6 sm:mt-0">
-                      <EyeIcon
-                        className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-                        aria-hidden="true"
-                      />
-                      1.2k views/week
-                    </dd> */}
-                    {/* <dt className="sr-only">Followers</dt>
-                        <dd className="mt-3 flex items-center text-sm font-medium text-gray-500 sm:mr-6 ">
-                        <UsersIcon
-                            className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-                            aria-hidden="true"
-                        />
-                        8.3k followers 
-                        </dd>*/}
-                    {/* <dt className="sr-only">Location</dt>
-                        <dd className="mt-3 flex items-center text-sm font-medium text-gray-500 sm:mr-6 ">
-                        <MapPinIcon
-                            className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-                            aria-hidden="true"
-                        />
-                        Champaign, IL
-                        </dd> */}
-                    {/* <dt className="sr-only">Website</dt>
-                        <dd className="mt-3 flex items-center text-sm font-medium text-gray-500 sm:mr-6 ">
-                        <GlobeAltIcon
-                            className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-                            aria-hidden="true"
-                        />
-                        <a
-                            href="https://watsonschicken.com"
-                            className="text-cyan-500 hover:underline"
-                        >
-                            watsonschicken.com
-                        </a>
-                        </dd> */}
                   </dl>
                 </div>
-                <Menu
-                  as="div"
-                  className="relative inline-block text-left ml-auto"
-                >
-                  <div>
-                    <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-logo-green-400 focus:ring-offset-2">
-                      <EllipsisHorizontalIcon
-                        className="h-5 w-5"
-                        aria-hidden="true"
-                      />
-                    </Menu.Button>
-                  </div>
-
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <div className="py-1">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              to="report"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-gray-700",
-                                "block px-4 py-2 text-sm"
-                              )}
-                            >
-                              Report an issue
-                            </Link>
-                          )}
-                        </Menu.Item>
-                      </div>
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
               </div>
             </div>
-            {/*<div className="mt-6 flex space-x-3 md:mt-0 md:ml-4">
-               <button
+            <div className="mt-2 flex space-x-3 md:mt-0 md:ml-4">
+              <button
                 type="button"
-                onClick={() => setAlertActive(!alertActive)}
+                onClick={() => setOpen(true)}
                 className={classNames(
                   alertActive
                     ? "bg-logo-green-300 text-white hover:bg-green-700 focus:ring-green-500"
@@ -177,17 +103,59 @@ export default function Profile() {
                 ) : (
                   <BellIcon className="h-5 w-5" />
                 )}
-              </button> */}
-            {/* <button
-                type="button"
-                className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
-              >
-                Message
-              </button> 
+              </button>
+              <TruckAlertModal
+                open={open}
+                truckName={truck.name}
+                setOpen={setOpen}
+              />
 
               <div className="flex-1 sm:hidden"></div>
+
+              <Menu
+                as="div"
+                className="relative inline-block text-left ml-auto"
+              >
+                <div>
+                  <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-logo-green-400 focus:ring-offset-2">
+                    <EllipsisHorizontalIcon
+                      className="h-5 w-5"
+                      aria-hidden="true"
+                    />
+                  </Menu.Button>
+                </div>
+
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div className="py-1">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={classNames(
+                              active
+                                ? "bg-gray-100 text-gray-900"
+                                : "text-gray-700",
+                              "block px-4 py-2 text-sm"
+                            )}
+                          >
+                            Report an issue
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
             </div>
-            */}
           </div>
         </div>
       </div>
@@ -222,42 +190,21 @@ export default function Profile() {
         </div>
       </div>
 
-      <div className="mt-6">
-        <div className="mx-auto max-w-6xl sm:px-6 lg:px-8">
-          <div className="flex flex-col">
-            {/* 3 column wrapper */}
-            <div className="mx-auto w-full max-w-7xl flex-grow lg:flex">
-              {/* main wrapper */}
-              <div className="min-w-0 flex-1 bg-white xl:flex">
-                <div className="bg-white lg:min-w-0 lg:flex-1">
-                  <div className="h-full">
-                    {/* Start main area*/}
-                    <div className="h-full">
-                      <div className="rounded-lg sm:shadow-md sm:border border-gray-200">
-                        <Outlet />
-                      </div>
-                    </div>
-                    {/* End main area */}
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 px-4 sm:px-0 space-y-6 lg:mt-0 flex flex-col items-center lg:pl-6">
-                <div className="lg:h-auto lg:w-80">
-                  <img
-                    src="/images/ad.jpeg"
-                    className="w-80 rounded-lg"
-                    alt="ad"
-                  />
-                </div>
-                <div className="lg:h-auto lg:w-80">
-                  <img
-                    src="/images/ad2.jpeg"
-                    className="w-80 rounded-lg"
-                    alt="ad"
-                  />
-                </div>
-              </div>
+      <div className="relative isolate overflow-hidden mt-6 lg:overflow-visible">
+        <div className="max-w-6xl sm:px-6 lg:px-8 grid grid-cols-1 mx-auto lg:grid-cols-12 lg:items-start">
+          <div className="lg:col-span-8 rounded-lg sm:shadow-md sm:border border-gray-200 lg:mx-auto lg:w-full lg:max-w-7xl ">
+            <div className="">
+              <Outlet />
+            </div>
+          </div>
+          <div className="mt-8 lg:-mt-12 lg:-ml-4 lg:p-12 lg:col-span-4 lg:sticky lg:top-8 lg:col-start-9 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+            <img
+              className="w-80 max-w-none mx-auto rounded-lg border shadow-md border-gray-200  bg-gray-900"
+              src="/images/ad2.jpeg"
+              alt=""
+            />
+            <div className="w-80 mx-auto text-xs mt-2 text-logo-green-400 font-semibold">
+              Promoted
             </div>
           </div>
         </div>
