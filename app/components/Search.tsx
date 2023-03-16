@@ -137,7 +137,9 @@ export const Search = (props: Props) => {
                   </div>
                 )}
                 <div className="py-2.5 px-4">
-                  <div className="text-xs text-logo-green-300">Promoted:</div>
+                  <div className="text-xs text-semibold text-logo-green-300">
+                    Promoted:
+                  </div>
                   <Link
                     to="/pastamania"
                     className="flex hover:bg-gray-100 rounded-xl p-3 cursor-default"

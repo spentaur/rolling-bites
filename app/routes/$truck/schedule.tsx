@@ -26,10 +26,10 @@ export default function Schedule() {
       <div className="px-4 pb-5 sm:px-6 w-full sm:hidden">
         <img
           src="/images/ad-long-3.jpeg"
-          className="md:border border-gray-200 md:shadow-md rounded-lg"
+          className="border border-gray-200 shadow-md rounded-lg"
           alt="ad"
         />
-        <div className="w-80 mx-auto text-xs mt-2 text-logo-green-400 font-semibold">
+        <div className="mx-auto text-xs mt-2 text-logo-green-400 font-semibold">
           Promoted
         </div>
       </div>
