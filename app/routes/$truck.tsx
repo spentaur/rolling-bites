@@ -6,6 +6,11 @@ import { Outlet, Link, NavLink, useLoaderData } from "@remix-run/react";
 import type { LoaderArgs } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import Fuse from "fuse.js";
+import {
+  CloudArrowUpIcon,
+  LockClosedIcon,
+  ServerIcon,
+} from "@heroicons/react/20/solid";
 const tabs = [
   { name: "About", href: "", current: true },
   { name: "Schedule", href: "schedule", current: false },
@@ -222,43 +227,21 @@ export default function Profile() {
         </div>
       </div>
 
-      <div className="mt-6">
-        <div className="mx-auto max-w-6xl sm:px-6 lg:px-8">
-          <div className="flex flex-col">
-            {/* 3 column wrapper */}
-            <div className="mx-auto w-full max-w-7xl flex-grow lg:flex">
-              {/* main wrapper */}
-              <div className="min-w-0 flex-1 bg-white xl:flex">
-                <div className="bg-white lg:min-w-0 lg:flex-1">
-                  <div className="h-full">
-                    {/* Start main area*/}
-                    <div className="h-full">
-                      <div className="rounded-lg sm:shadow-md sm:border border-gray-200">
-                        <Outlet />
-                      </div>
-                    </div>
-                    {/* End main area */}
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 px-4 sm:px-0 space-y-6 lg:mt-0 flex flex-col items-center lg:pl-6">
-                <div className="lg:h-auto lg:w-80">
-                  <img
-                    src="/images/ad.jpeg"
-                    className="w-80 rounded-lg"
-                    alt="ad"
-                  />
-                </div>
-                <div className="lg:h-auto lg:w-80">
-                  <img
-                    src="/images/ad2.jpeg"
-                    className="w-80 rounded-lg"
-                    alt="ad"
-                  />
-                </div>
+      <div className="relative isolate overflow-hidden mt-6 lg:overflow-visible">
+        <div className="max-w-6xl sm:px-6 lg:px-8 grid grid-cols-1 mx-auto lg:grid-cols-12 lg:items-start">
+          <div className="lg:col-span-8 rounded-lg sm:shadow-md sm:border border-gray-200 lg:mx-auto lg:w-full lg:max-w-7xl ">
+            <div className="lg:pr-4">
+              <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
+                <Outlet />
               </div>
             </div>
+          </div>
+          <div className="mt-8 lg:-mt-12 lg:-ml-4 lg:p-12 lg:col-span-4 lg:sticky lg:top-8 lg:col-start-9 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+            <img
+              className="w-80 max-w-none mx-auto rounded-lg shadow-md border-2 border-logo-green-200 bg-gray-900"
+              src="/images/ad2.jpeg"
+              alt=""
+            />
           </div>
         </div>
       </div>

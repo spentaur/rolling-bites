@@ -75,6 +75,30 @@ export default function Example() {
                 about,blog,jobs, help,partners, press
               </div>
             </li>
+            <li className="flex items-center">
+              <div className="flex flex-shrink-0">
+                <span className="h-6 w-6 mr-3 flex items-center justify-center border border-gray-500 bg-transparent rounded-full">
+                  <div className="h-4 w-4" />
+                </span>
+                add photos locally
+              </div>
+            </li>
+            <li className="flex items-center">
+              <div className="flex flex-shrink-0">
+                <span className="h-6 w-6 mr-3 flex items-center justify-center border border-gray-500 bg-transparent rounded-full">
+                  <div className="h-4 w-4" />
+                </span>
+                better ads
+              </div>
+            </li>
+            <li className="flex items-center">
+              <div className="flex flex-shrink-0">
+                <span className="h-6 w-6 mr-3 flex items-center justify-center border border-gray-500 bg-transparent rounded-full">
+                  <div className="h-4 w-4" />
+                </span>
+                add more trucks
+              </div>
+            </li>
           </ul>
         </div>
       </div>
