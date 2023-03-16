@@ -11,7 +11,7 @@ import {
   LockClosedIcon,
   ServerIcon,
 } from "@heroicons/react/20/solid";
-import TruckAlertModal from "~/components/TruckAlertModal";
+import { TruckAlertModal } from "~/components/TruckAlertModal";
 const tabs = [
   { name: "About", href: "", current: true },
   { name: "Schedule", href: "schedule", current: false },
@@ -41,6 +41,7 @@ function classNames(...classes: string[]) {
 
 export default function Profile() {
   const [alertActive, setAlertActive] = useState(false);
+  const [open, setOpen] = useState(false);
   const truck = useLoaderData<typeof loader>();
   return (
     <>
@@ -89,7 +90,7 @@ export default function Profile() {
             <div className="mt-2 flex space-x-3 md:mt-0 md:ml-4">
               <button
                 type="button"
-                onClick={() => setAlertActive(!alertActive)}
+                onClick={() => setOpen(true)}
                 className={classNames(
                   alertActive
                     ? "bg-logo-green-300 text-white hover:bg-green-700 focus:ring-green-500"
@@ -103,7 +104,11 @@ export default function Profile() {
                   <BellIcon className="h-5 w-5" />
                 )}
               </button>
-              <TruckAlertModal />
+              <TruckAlertModal
+                open={open}
+                truckName={truck.name}
+                setOpen={setOpen}
+              />
 
               <div className="flex-1 sm:hidden"></div>
 
@@ -142,57 +147,10 @@ export default function Profile() {
                               "block px-4 py-2 text-sm"
                             )}
                           >
-                            Account settings
+                            Report an issue
                           </a>
                         )}
                       </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Support
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            License
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <form method="POST" action="#">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <button
-                              type="submit"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-gray-700",
-                                "block w-full px-4 py-2 text-left text-sm"
-                              )}
-                            >
-                              Sign out
-                            </button>
-                          )}
-                        </Menu.Item>
-                      </form>
                     </div>
                   </Menu.Items>
                 </Transition>
