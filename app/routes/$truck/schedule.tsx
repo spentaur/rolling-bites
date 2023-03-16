@@ -23,6 +23,16 @@ export default function Schedule() {
           Schedule subject to change.
         </p>
       </div>
+      <div className="px-4 pb-5 sm:px-6 w-full sm:hidden">
+        <img
+          src="/images/ad-long-3.jpeg"
+          className="md:border border-gray-200 md:shadow-md rounded-lg"
+          alt="ad"
+        />
+        <div className="w-80 mx-auto text-xs mt-2 text-logo-green-400 font-semibold">
+          Promoted
+        </div>
+      </div>
       <div className="pb-5 px-4 sm:px-0">
         <ol className=" text-sm">
           {truck.schedule

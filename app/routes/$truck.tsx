@@ -238,10 +238,13 @@ export default function Profile() {
           </div>
           <div className="mt-8 lg:-mt-12 lg:-ml-4 lg:p-12 lg:col-span-4 lg:sticky lg:top-8 lg:col-start-9 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
             <img
-              className="w-80 max-w-none mx-auto rounded-lg shadow-md border-2 border-logo-green-200 bg-gray-900"
+              className="w-80 max-w-none mx-auto rounded-lg border shadow-md border-gray-200  bg-gray-900"
               src="/images/ad2.jpeg"
               alt=""
             />
+            <div className="w-80 mx-auto text-xs mt-2 text-logo-green-400 font-semibold">
+              Promoted
+            </div>
           </div>
         </div>
       </div>
