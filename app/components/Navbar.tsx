@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { Link, useLocation } from "@remix-run/react";
-import { Search } from "./Search";
+import { SearchModal } from "./SearchModal";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -28,7 +28,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <Search open={open} setOpen={setOpen} />
+      <SearchModal open={open} setOpen={setOpen} />
       <div className="sticky top-0 z-10 w-full backdrop-blur-sm bg-white/90">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between lg:grid lg:grid-cols-12">
