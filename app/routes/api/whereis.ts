@@ -15,7 +15,11 @@ export const loader = async ({ request }: LoaderArgs) => {
   if (!truck.length) {
     throw new Response("What a joke! Not found.", { status: 404 });
   }
-  const schedule = truck[0].item.schedule;
+  const schedule = truck[0].item.schedule.filter(
+    (event: { datetimeClose: string }) =>
+      new Date(event.datetimeClose) >= new Date()
+  );
+
   const current = schedule.filter((item) => {
     const open = new Date(item.datetimeOpen);
     const close = new Date(item.datetimeClose);
@@ -32,6 +36,6 @@ export const loader = async ({ request }: LoaderArgs) => {
     });
   }
   return json({
-    message: `${truck[0].item.name} is not open right now`,
+    message: `${truck[0].item.name} is not open right now. Their next event is ${schedule[0].date} from ${schedule[0].time} at ${schedule[0].name}, ${schedule[0].location}`,
   });
 };
