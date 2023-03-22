@@ -182,28 +182,58 @@
     "schedule": [
       {
         "id": 1,
-        "date": "Wednesday, March 15th, 2023",
-        "time": "11:00AM-2:00PM",
-        "datetime": "2023-03-15T11:00",
-        "name": "Carle Sports Medicine",
-        "location": "2300 S 1st St, Champaign, IL"
+        "date": "Tuesday, March 21st, 2023",
+        "time": "11:00AM-3:00PM",
+        "datetimeOpen": "2023-03-21T11:00-05:00",
+        "datetimeClose": "2023-03-21T15:00-05:00",
+        "name": "Wright & Green",
+        "location": "SW Corner Wright & Green, Champaign, IL"
       },
       {
         "id": 2,
-        "date": "Wednesday, March 15th, 2023",
+        "date": "Wednesday, March 22nd, 2023",
+        "time": "11:00AM-2:00PM",
+        "datetimeOpen": "2023-03-22T11:00-05:00",
+        "datetimeClose": "2023-03-22T14:00-05:00",
+        "name": "Armory",
+        "location": "6th & Gregory, Champaign, IL"
+      },
+      {
+        "id": 3,
+        "date": "Wednesday, March 22nd, 2023",
         "time": "5:00PM-8:00PM",
-        "datetime": "2023-03-15T16:00",
+        "datetimeOpen": "2023-03-22T14:00-05:00",
+        "datetimeClose": "2023-03-22T20:00-05:00",
         "name": "Triptych Brewing",
         "description": "WING WEDNESDAY!",
         "location": "1703 Woodfield Dr, Savoy, IL"
       },
       {
-        "id": 3,
-        "date": "Friday, March 17th, 2023",
-        "time": "10:30AM-2:30PM",
-        "datetime": "2023-03-17T11:00",
-        "name": "Carle at the Fields",
-        "location": "3105 Fields South Dr, Champaign, IL"
+        "id": 4,
+        "date": "Thursday, March 23rd, 2023",
+        "time": "11:00AM-3:00PM",
+        "datetimeOpen": "2023-03-23T11:00-05:00",
+        "datetimeClose": "2023-03-23T15:00-05:00",
+        "name": "Wright & Green",
+        "location": "SW Corner Wright & Green, Champaign, IL"
+      },
+      {
+        "id": 5,
+        "date": "Saturday, March 25th, 2023",
+        "time": "10:30AM-6:00PM",
+        "datetimeOpen": "2023-03-25T10:30-05:00",
+        "datetimeClose": "2023-03-25T18:00-05:00",
+        "name": "Rantoul Family Sports Complex",
+        "location": "744 Murray Rd, Rantoul, IL"
+      },
+      {
+        "id": 6,
+        "date": "Sunday, March 26th, 2023",
+        "time": "10:30AM-2:00PM",
+        "datetimeOpen": "2023-03-26T10:30-05:00",
+        "datetimeClose": "2023-03-26T14:00-05:00",
+        "name": "Rantoul Family Sports Complex",
+        "location": "744 Murray Rd, Rantoul, IL"
       }
     ]
   },
@@ -558,97 +588,55 @@
     "schedule": [
       {
         "id": 1,
-        "date": "Monday, March 13th, 2023",
+        "date": "Monday, March 20th, 2023",
         "time": "11:00AM-8:00PM",
-        "datetime": "2023-03-13T11:00",
+        "datetimeOpen": "2023-03-20T11:00-05:00",
+        "datetimeClose": "2023-03-20T20:00-05:00",
         "name": "1004 West University Avenue",
         "location": "1004 West University Avenue, Urbana, IL"
       },
       {
         "id": 2,
-        "date": "Tuesday, March 14th, 2023",
+        "date": "Tuesday, March 21st, 2023",
         "time": "11:00AM-8:00PM",
-        "datetime": "2023-03-14T11:00",
+        "datetimeOpen": "2023-03-21T11:00-05:00",
+        "datetimeClose": "2023-03-21T20:00-05:00",
         "name": "1004 West University Avenue",
         "location": "1004 West University Avenue, Urbana, IL"
       },
       {
         "id": 3,
-        "date": "Wednesday, March 15th, 2023",
+        "date": "Wednesday, March 22nd, 2023",
         "time": "11:00AM-8:00PM",
-        "datetime": "2023-03-15T11:00",
+        "datetimeOpen": "2023-03-22T11:00-05:00",
+        "datetimeClose": "2023-03-22T20:00-05:00",
         "name": "1004 West University Avenue",
         "location": "1004 West University Avenue, Urbana, IL"
       },
       {
         "id": 4,
-        "date": "Thursday, March 16th, 2023",
+        "date": "Thursday, March 23rd, 2023",
         "time": "11:00AM-8:00PM",
-        "datetime": "2023-03-16T11:00",
+        "datetimeOpen": "2023-03-23T11:00-05:00",
+        "datetimeClose": "2023-03-23T20:00-05:00",
         "name": "1004 West University Avenue",
         "location": "1004 West University Avenue, Urbana, IL"
       },
       {
         "id": 5,
-        "date": "Friday, March 17th, 2023",
+        "date": "Friday, March 24th, 2023",
         "time": "11:00AM-8:00PM",
-        "datetime": "2023-03-17T11:00",
+        "datetimeOpen": "2023-03-24T11:00-05:00",
+        "datetimeClose": "2023-03-24T20:00-05:00",
         "name": "1004 West University Avenue",
         "location": "1004 West University Avenue, Urbana, IL"
       },
       {
         "id": 6,
-        "date": "Saturday, March 18th, 2023",
-        "time": "11:00AM-8:00PM",
-        "datetime": "2023-03-18T11:00",
-        "name": "1004 West University Avenue",
-        "location": "1004 West University Avenue, Urbana, IL"
-      },
-      {
-        "id": 7,
-        "date": "Monday, March 20th, 2023",
-        "time": "11:00AM-8:00PM",
-        "datetime": "2023-03-20T11:00",
-        "name": "1004 West University Avenue",
-        "location": "1004 West University Avenue, Urbana, IL"
-      },
-      {
-        "id": 8,
-        "date": "Tuesday, March 21st, 2023",
-        "time": "11:00AM-8:00PM",
-        "datetime": "2023-03-21T11:00",
-        "name": "1004 West University Avenue",
-        "location": "1004 West University Avenue, Urbana, IL"
-      },
-      {
-        "id": 9,
-        "date": "Wednesday, March 22nd, 2023",
-        "time": "11:00AM-8:00PM",
-        "datetime": "2023-03-22T11:00",
-        "name": "1004 West University Avenue",
-        "location": "1004 West University Avenue, Urbana, IL"
-      },
-      {
-        "id": 10,
-        "date": "Thursday, March 23rd, 2023",
-        "time": "11:00AM-8:00PM",
-        "datetime": "2023-03-23T11:00",
-        "name": "1004 West University Avenue",
-        "location": "1004 West University Avenue, Urbana, IL"
-      },
-      {
-        "id": 11,
-        "date": "Friday, March 24th, 2023",
-        "time": "11:00AM-8:00PM",
-        "datetime": "2023-03-24T11:00",
-        "name": "1004 West University Avenue",
-        "location": "1004 West University Avenue, Urbana, IL"
-      },
-      {
-        "id": 12,
         "date": "Saturday, March 25th, 2023",
         "time": "11:00AM-8:00PM",
-        "datetime": "2023-03-25T11:00",
+        "datetimeOpen": "2023-03-25T11:00-05:00",
+        "datetimeClose": "2023-03-25T20:00-05:00",
         "name": "1004 West University Avenue",
         "location": "1004 West University Avenue, Urbana, IL"
       }
@@ -888,41 +876,46 @@
     "schedule": [
       {
         "id": 1,
-        "date": "Tuesday, March 14th, 2023",
-        "time": "11:00AM-2:00PM",
-        "datetime": "2023-03-14T11:00",
-        "name": "Caliber Collision",
-        "location": "701 N Mattis Ave, Champaign, IL"
+        "date": "Tuesday, March 21st, 2023",
+        "time": "11:00AM - 2:00PM",
+        "datetimeOpen": "2023-03-21T11:00-05:00",
+        "datetimeClose": "2023-03-21T14:00-05:00",
+        "name": "CRIS Healthy Aging",
+        "location": "4116 Fieldstone Rd, Champaign, IL"
       },
       {
         "id": 2,
-        "date": "Wednesday, March 15th, 2023",
-        "time": "10:30AM-2:00PM",
-        "datetime": "2023-03-15T16:00",
+        "date": "Wednesday, March 22nd, 2023",
+        "time": "10:30AM - 2:00PM",
+        "datetimeOpen": "2023-03-22T10:30-05:00",
+        "datetimeClose": "2023-03-22T14:00-05:00",
         "name": "Carle South Clinic",
         "location": "601 W. University Ave, Urbana, IL"
       },
       {
         "id": 3,
-        "date": "Thursday, March 16th, 2023",
-        "time": "11:00AM-2:00PM",
-        "datetime": "2023-03-16T11:00",
+        "date": "Thursday, March 23rd, 2023",
+        "time": "11:00AM - 2:00PM",
+        "datetimeOpen": "2023-03-23T11:00-05:00",
+        "datetimeClose": "2023-03-23T14:00-05:00",
         "name": "Advance Auto",
         "location": "110 N Vine St, Urbana, IL"
       },
       {
         "id": 4,
-        "date": "Friday, March 17th, 2023",
-        "time": "11:00AM-2:00PM",
-        "datetime": "2023-03-17T11:00",
-        "name": "The Pines",
-        "location": "2860 S. Philo Rd, Urbana, IL"
+        "date": "Friday, March 24th, 2023",
+        "time": "11:00AM - 2:00PM",
+        "datetimeOpen": "2023-03-24T11:00-05:00",
+        "datetimeClose": "2023-03-24T14:00-05:00",
+        "name": "Jiffy Lube",
+        "location": "701 N Mattis Ave, Champaign, IL"
       },
       {
         "id": 5,
-        "date": "Saturday, March 18th, 2023",
-        "time": "12:00PM-3:00PM",
-        "datetime": "2023-03-18T12:00",
+        "date": "Saturday, March 25th, 2023",
+        "time": "12:00PM - 3:00PM",
+        "datetimeOpen": "2023-03-25T12:00-05:00",
+        "datetimeClose": "2023-03-25T15:00-05:00",
         "name": "Riggs Brewery",
         "location": "1901 S High Cross Rd, Urbana, IL"
       }
@@ -1132,42 +1125,65 @@
     "schedule": [
       {
         "id": 1,
-        "date": "Thursday, March 16th, 2023",
-        "time": "10:30AM-2:00PM",
-        "datetime": "2023-03-16T11:00",
-        "name": "Carle South Clinic",
-        "location": "601 W. University Ave, Urbana, IL"
+        "date": "Wednesday, March 22nd, 2023",
+        "time": "10:30AM - 1:30PM",
+        "datetimeOpen": "2023-03-22T10:30-05:00",
+        "datetimeClose": "2023-03-22T13:30-05:00",
+        "name": "Carle Orthopedics",
+        "location": "2300 S 1st St, Champaign, IL"
       },
       {
         "id": 2,
-        "date": "Thursday, March 16th, 2023",
-        "time": "4:00PM-7:00PM",
-        "datetime": "2023-03-16T11:00",
-        "name": "T+T Tavern",
-        "location": "101 N Century Blvd, Rantoul, IL"
+        "date": "Wednesday, March 22nd, 2023",
+        "time": "4:30PM - 7:00PM",
+        "datetimeOpen": "2023-03-22T16:30-05:00",
+        "datetimeClose": "2023-03-22T19:00-05:00",
+        "name": "Downtown Mahomet",
+        "location": "E Main St, Mahomet, IL"
       },
       {
         "id": 3,
-        "date": "Friday, March 17th, 2023",
-        "time": "10:30AM-1:00PM",
-        "datetime": "2023-03-17T11:00",
-        "name": "Gibson Area Hospital",
-        "location": "1120 N Melvin St, Gibson City, IL"
+        "date": "Thursday, March 23rd, 2023",
+        "time": "10:30AM - 2:00PM",
+        "datetimeOpen": "2023-03-23T10:30-05:00",
+        "datetimeClose": "2023-03-23T14:00-05:00",
+        "name": "Carle Hospital - South",
+        "location": "601 W. University Ave, Urbana, IL"
       },
       {
         "id": 4,
-        "date": "Friday, March 17th, 2023",
-        "time": "4:30PM-7:30PM",
-        "datetime": "2023-03-17T11:00",
+        "date": "Friday, March 24th, 2023",
+        "time": "10:30AM - 1:30PM",
+        "datetimeOpen": "2023-03-24T10:30-05:00",
+        "datetimeClose": "2023-03-24T13:30-05:00",
+        "name": "Carle at the Fields Surgery Center",
+        "location": "3105 Fields South Dr, Champaign, IL"
+      },
+      {
+        "id": 5,
+        "date": "Friday, March 24th, 2023",
+        "time": "4:30PM - 7:30PM",
+        "datetimeOpen": "2023-03-24T16:30-05:00",
+        "datetimeClose": "2023-03-24T19:30-05:00",
         "name": "Triptych Brewing",
         "location": "1703 Woodfield Dr, Savoy, IL"
       },
       {
-        "id": 5,
-        "date": "Saturday, March 18th, 2023",
-        "time": "4:00PM-7:00PM",
-        "datetime": "2023-03-18T12:00",
-        "name": "Riggs Brewery",
+        "id": 6,
+        "date": "Saturday, March 25th, 2023",
+        "time": "4:00PM - 7:00PM",
+        "datetimeOpen": "2023-03-25T16:00-05:00",
+        "datetimeClose": "2023-03-25T19:00-05:00",
+        "name": "Riggs Beer Company",
+        "location": "1901 S High Cross Rd, Urbana, IL"
+      },
+      {
+        "id": 7,
+        "date": "Sunday, March 26th, 2023",
+        "time": "1:00PM - 7:00PM",
+        "datetimeOpen": "2023-03-26T13:00-05:00",
+        "datetimeClose": "2023-03-26T19:00-05:00",
+        "name": "Riggs Beer Company",
         "location": "1901 S High Cross Rd, Urbana, IL"
       }
     ]

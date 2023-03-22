@@ -10,10 +10,15 @@ import { AtSymbolIcon } from "@heroicons/react/20/solid";
 import InstagramIcon from "~/components/InstagramIcon";
 import FacebookIcon from "~/components/FacebookIcon";
 import { Link, useMatches } from "@remix-run/react";
+import { isOpen } from "~/utils/search";
+
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
+}
 
 export default function About() {
   const truck = useMatches().find((m) => m.id === "routes/$truck")?.data;
-
+  const isTruckOpen = isOpen(truck.schedule);
   return (
     <>
       <div className="px-4 py-5 sm:px-6">
@@ -32,6 +37,24 @@ export default function About() {
               <dd className="text-sm text-gray-900">{truck.about.location}</dd>
             </div>
           )}
+
+          <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">
+              <ClockIcon className="h-5 w-5" />
+            </dt>
+            <dd className="mt-1 sm:col-span-5 sm:mt-0">
+              <Link
+                to="schedule"
+                preventScrollReset={true}
+                className={classNames(
+                  isTruckOpen ? "text-logo-green-500" : "text-red-500",
+                  "hover:underline hover:cursor-pointer text-sm"
+                )}
+              >
+                {isTruckOpen ? <>Open</> : <>Closed</>} now
+              </Link>
+            </dd>
+          </div>
 
           {truck.about.website && (
             <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">

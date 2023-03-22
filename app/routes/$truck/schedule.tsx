@@ -9,10 +9,14 @@ import { Fragment } from "react";
 import { CalendarIcon, MapPinIcon } from "@heroicons/react/20/solid";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { useMatches } from "@remix-run/react";
+import { isCurrentShift } from "~/utils/search";
+
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
+}
 
 export default function Schedule() {
   const truck = useMatches().find((m) => m.id === "routes/$truck")?.data;
-
   return (
     <>
       <div className="px-4 py-5 sm:px-6">
@@ -39,23 +43,26 @@ export default function Schedule() {
         <ol className=" text-sm">
           {truck.schedule
             .filter(
-              (event: { datetime: string }) =>
-                new Date(event.datetime).setHours(0, 0, 0, 0) >=
-                new Date().setHours(0, 0, 0, 0)
+              (event: { datetimeClose: string }) =>
+                new Date(event.datetimeClose) >= new Date()
             )
             .map(
               (event: {
                 id: Key | null | undefined;
                 name: number;
-                datetime: string;
+                datetimeOpen: string;
+                datetimeClose: string;
                 date: string;
                 time: string;
                 location: string;
-                info: string | null | undefined;
+                description: string | null | undefined;
               }) => (
                 <li
                   key={event.id}
-                  className="relative sm:px-6 flex space-x-6 py-3"
+                  className={classNames(
+                    isCurrentShift(event) ? "bg-logo-green-100/20" : "",
+                    "relative sm:px-6 flex space-x-6 py-3"
+                  )}
                 >
                   <div className="flex-auto">
                     <h3 className="pr-10 font-semibold text-gray-900 ">
@@ -71,7 +78,7 @@ export default function Schedule() {
                           />
                         </dt>
                         <dd>
-                          <time dateTime={event.datetime}>
+                          <time dateTime={event.datetimeOpen}>
                             {event.date} <br /> {event.time}
                           </time>
                         </dd>
@@ -95,7 +102,7 @@ export default function Schedule() {
                           </a>
                         </dd>
                       </div>
-                      {event.info && (
+                      {event.description && (
                         <div className="mt-2 flex items-start space-x-3">
                           <dt className="mt-0.5">
                             <span className="sr-only">Information</span>
@@ -104,7 +111,7 @@ export default function Schedule() {
                               aria-hidden="true"
                             />
                           </dt>
-                          <dd>{event.info}</dd>
+                          <dd>{event.description}</dd>
                         </div>
                       )}
                     </dl>

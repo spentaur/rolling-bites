@@ -1,0 +1,240 @@
+[
+  {
+    "name": "Watson's Chicken",
+    "path": "/watsonschicken",
+    "banner": "https://images.squarespace-cdn.com/content/v1/5faae45cf877175a51267735/4409d131-04cd-4aa4-b5ae-c57ae8263c28/IMG03169.jpg?format=2500w",
+    "avatar": "https://static1.squarespace.com/static/5faae45cf877175a51267735/t/63c0383faf64d77c00de1afa/1673541695809/watsons-square-logo.svg",
+    "verified": true,
+    "about": {
+      "description": "We serve fried chicken tenders baskets and sandwiches.",
+      "location": "Champaign, IL",
+      "website": "watsonschicken.com",
+      "instagram": "watsonschicken",
+      "facebook": {
+        "name": "Watson's Shack & Rail",
+        "url": "https://www.facebook.com/watsonschicken"
+      },
+      "email": "mothershiphospitality@gmail.com",
+      "tags": ["chicken", "tenders", "sandwiches", "fried chicken"],
+      "delivery": false,
+      "privateEvents": true
+    },
+    "menu": [
+      {
+        "title": "Tenders",
+        "description": "Pickle-brined white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and sauce.",
+        "items": [
+          {
+            "id": 1,
+            "name": "4 Tenders and 1 Sauce",
+            "price": "$10.00"
+          },
+          {
+            "id": 2,
+            "name": "6 Tenders and 2 Sauces",
+            "price": "$15.00"
+          }
+        ]
+      },
+      {
+        "title": "Sandwiches",
+        "description": "All sandwiches served with waffle fries.",
+        "items": [
+          {
+            "id": 3,
+            "name": "Watson's Hot",
+            "description": "Crunchy chicken tenders dipped in Watson's Hot, served on a brioche bun with creamy coleslaw, dill pickles, & comeback sauce.",
+            "price": "$14.00"
+          },
+          {
+            "id": 4,
+            "name": "Buffalo Starchild",
+            "description": "Crunchy chicken tenders tossed in buffal sauce, served on a brioche bun with sorghum glazed bacon, black pepper ranch, blue cheese crumbles, & mixed greens.",
+            "price": "$14.00"
+          },
+          {
+            "id": 5,
+            "name": "Classic Fried",
+            "description": "Crunchy fried chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
+            "price": "$13.00"
+          },
+          {
+            "id": 6,
+            "name": "Classic Grilled",
+            "description": "Grilled chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
+            "price": "$13.00"
+          },
+          {
+            "id": 7,
+            "name": "Watson's Hot Fish",
+            "description": "Fried perch dipped in Watson's hot sauce served on a hoagie roll with creamy coleslaw, dill pickles, and comeback sauce.",
+            "price": "$14.00"
+          },
+          {
+            "id": 8,
+            "name": "Tofu Po'boy",
+            "description": "Crispy tofu served on a hoagie roll with mixed greens, dill pickles, red onion, and vegan remoulade.",
+            "price": "$13.00"
+          }
+        ]
+      },
+      {
+        "title": "Sides",
+        "items": [
+          {
+            "id": 9,
+            "name": "Waffle Fries",
+            "price": "$4.00"
+          },
+          {
+            "id": 10,
+            "name": "Creamy Coleslaw",
+            "price": "$4.00"
+          },
+          {
+            "id": 11,
+            "name": "Mac & Cheese",
+            "price": "$4.00"
+          }
+        ]
+      },
+      {
+        "title": "Sauces",
+        "items": [
+          {
+            "id": 12,
+            "name": "Buffalo",
+            "price": "$1.00"
+          },
+          {
+            "id": 13,
+            "name": "Black Pepper Ranch",
+            "price": "$1.00"
+          },
+          {
+            "id": 14,
+            "name": "Honey Mustard",
+            "price": "$1.00"
+          },
+          {
+            "id": 15,
+            "name": "Carolina Gold",
+            "price": "$1.00"
+          },
+          {
+            "id": 16,
+            "name": "Comeback Sauce",
+            "price": "$1.00"
+          }
+        ]
+      },
+      {
+        "title": "Additions",
+        "items": [
+          {
+            "id": 22,
+            "name": "Sorghum-glazed bacon",
+            "price": "$3.00"
+          },
+          {
+            "id": 23,
+            "name": "American Cheese",
+            "price": "$1.00"
+          },
+          {
+            "id": 24,
+            "name": "Pickles",
+            "price": "$1.00"
+          }
+        ]
+      },
+      {
+        "title": "Drinks",
+        "items": [
+          {
+            "id": 17,
+            "name": "Coke",
+            "price": "$3.00"
+          },
+          {
+            "id": 18,
+            "name": "Diet Coke",
+            "price": "$3.00"
+          },
+          {
+            "id": 19,
+            "name": "Sprite",
+            "price": "$3.00"
+          },
+          {
+            "id": 20,
+            "name": "Bottle Water",
+            "price": "$3.00"
+          },
+          {
+            "id": 21,
+            "name": "Iced Tea",
+            "price": "$3.00"
+          }
+        ]
+      }
+    ],
+    "schedule": [
+      {
+        "id": 1,
+        "date": "Tuesday, March 21st, 2023",
+        "time": "11:00AM-3:00PM",
+        "datetimeOpen": "2023-03-21T11:00-05:00",
+        "datetimeClose": "2023-03-21T15:00-05:00",
+        "name": "Wright & Green",
+        "location": "SW Corner Wright & Green, Champaign, IL"
+      },
+      {
+        "id": 2,
+        "date": "Wednesday, March 22nd, 2023",
+        "time": "11:00AM-2:00PM",
+        "datetimeOpen": "2023-03-22T11:00-05:00",
+        "datetimeClose": "2023-03-22T14:00-05:00",
+        "name": "Armory",
+        "location": "6th & Gregory, Champaign, IL"
+      },
+      {
+        "id": 3,
+        "date": "Wednesday, March 22nd, 2023",
+        "time": "5:00PM-8:00PM",
+        "datetimeOpen": "2023-03-22T17:00-05:00",
+        "datetimeClose": "2023-03-22T20:00-05:00",
+        "name": "Triptych Brewing",
+        "description": "WING WEDNESDAY!",
+        "location": "1703 Woodfield Dr, Savoy, IL"
+      },
+      {
+        "id": 4,
+        "date": "Thursday, March 23rd, 2023",
+        "time": "11:00AM-3:00PM",
+        "datetimeOpen": "2023-03-23T11:00-05:00",
+        "datetimeClose": "2023-03-23T15:00-05:00",
+        "name": "Wright & Green",
+        "location": "SW Corner Wright & Green, Champaign, IL"
+      },
+      {
+        "id": 5,
+        "date": "Saturday, March 25th, 2023",
+        "time": "10:30AM-6:00PM",
+        "datetimeOpen": "2023-03-25T10:30-05:00",
+        "datetimeClose": "2023-03-25T18:00-05:00",
+        "name": "Rantoul Family Sports Complex",
+        "location": "744 Murray Rd, Rantoul, IL"
+      },
+      {
+        "id": 6,
+        "date": "Sunday, March 26th, 2023",
+        "time": "10:30AM-2:00PM",
+        "datetimeOpen": "2023-03-26T10:30-05:00",
+        "datetimeClose": "2023-03-26T14:00-05:00",
+        "name": "Rantoul Family Sports Complex",
+        "location": "744 Murray Rd, Rantoul, IL"
+      }
+    ]
+  }
+]
