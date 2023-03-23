@@ -10,10 +10,6 @@ import {
 
 import styles from "./styles/app.css";
 
-import { Navbar } from "./components/Navbar";
-
-import { Footer } from "./components/Footer";
-
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "Rolling Bites",
@@ -38,14 +34,10 @@ export default function App() {
         <Links />
       </head>
       <body className="">
-        <Navbar />
-        <main className="pb-8 pt-5">
-          <Outlet />
-        </main>
+        <Outlet />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <Footer />
       </body>
     </html>
   );

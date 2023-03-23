@@ -17,8 +17,9 @@ function classNames(...classes: string[]) {
 }
 
 export default function About() {
-  const truck = useMatches().find((m) => m.id === "routes/$truck")?.data;
+  const truck = useMatches().find((m) => m.id === "routes/__app/$truck")?.data;
   const isTruckOpen = isOpen(truck.schedule);
+
   return (
     <>
       <div className="px-4 py-5 sm:px-6">

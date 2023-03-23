@@ -7,7 +7,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export const Navbar = () => {
+export const Navbar = (props) => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   useEffect(() => {
@@ -29,7 +29,12 @@ export const Navbar = () => {
   return (
     <>
       <SearchModal open={open} setOpen={setOpen} />
-      <div className="sticky top-0 z-10 w-full backdrop-blur-sm bg-white/90">
+      <div
+        className={classNames(
+          props.index ? "" : "backdrop-blur-sm bg-white/90 sticky top-0 z-10",
+          "w-ful "
+        )}
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between lg:grid lg:grid-cols-12">
             <div className="w-10 lg:col-span-3"></div>
@@ -46,7 +51,7 @@ export const Navbar = () => {
               <button
                 onClick={() => setOpen(true)}
                 type="button"
-                className="max-w-xs w-full bg-white/50 backdrop-blur-sm flex items-center text-sm leading-6 text-slate-400 sm:rounded-md sm:ring-1 ring-slate-900/20 shadow-sm sm:py-1.5 pl-2 pr-3 py-3 hover:ring-slate-400"
+                className="max-w-xs w-full bg-white/75 backdrop-blur-sm flex items-center text-sm leading-6 text-slate-400 sm:rounded-md sm:ring-1 ring-slate-900/20 shadow-sm sm:py-1.5 pl-2 pr-3 py-3 hover:ring-slate-400"
               >
                 <span className="sr-only">Open search</span>
                 <MagnifyingGlassIcon className="h-5 w-5 mr-3 flex-none" />

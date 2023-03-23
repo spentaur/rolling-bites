@@ -1,7 +1,7 @@
 import { useMatches } from "@remix-run/react";
 
 export default function Menu() {
-  const truck = useMatches().find((m) => m.id === "routes/$truck")?.data;
+  const truck = useMatches().find((m) => m.id === "routes/__app/$truck")?.data;
 
   return (
     <>

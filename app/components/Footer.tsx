@@ -4,8 +4,8 @@ import type { SVGProps } from "react";
 const navigation = {
   main: [
     { name: "About", href: "/about" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
+    { name: "Blog", href: "/blog" },
+    { name: "Explore", href: "/explore" },
     { name: "Help", href: "#" },
     { name: "Partners", href: "#" },
     { name: "Press", href: "#" },

@@ -22,7 +22,7 @@ const tabs = [
 ];
 
 export const loader = async ({ params, request }: LoaderArgs) => {
-  const data = require("../data/trucks.json");
+  const data = require("~/data/trucks.json");
   const options = {
     keys: ["path"],
     useExtendedSearch: true,

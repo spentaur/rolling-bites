@@ -16,7 +16,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function Schedule() {
-  const truck = useMatches().find((m) => m.id === "routes/$truck")?.data;
+  const truck = useMatches().find((m) => m.id === "routes/__app/$truck")?.data;
   return (
     <>
       <div className="px-4 py-5 sm:px-6">
