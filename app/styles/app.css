@@ -1406,15 +1406,6 @@ select {
   background-color: rgb(13 148 136 / var(--tw-bg-opacity));
 }
 
-.bg-logo-green-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(154 198 154 / var(--tw-bg-opacity));
-}
-
-.bg-logo-green-100\/10 {
-  background-color: rgb(154 198 154 / 0.1);
-}
-
 .bg-logo-green-100\/20 {
   background-color: rgb(154 198 154 / 0.2);
 }

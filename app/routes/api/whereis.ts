@@ -32,10 +32,19 @@ export const loader = async ({ request }: LoaderArgs) => {
   });
   if (current.length > 0) {
     return json({
-      message: `${truck[0].item.name} is open right now from ${current[0].time} at ${current[0].name}, ${current[0].location}`,
+      message: `${truck[0].item.name} is open right now until ${
+        current[0].time.split("-")[1]
+      }. They are at ${current[0].name}, ${current[0].location}`,
     });
   }
   return json({
-    message: `${truck[0].item.name} is not open right now. Their next event is ${schedule[0].date} from ${schedule[0].time} at ${schedule[0].name}, ${schedule[0].location}`,
+    message: `${
+      truck[0].item.name
+    } is not open right now. Their next event is on ${schedule[0].date
+      .split(",")
+      .slice(0, -1)
+      .join(",")} from ${schedule[0].time.replace("-", " to ")} at ${
+      schedule[0].name
+    }, ${schedule[0].location}`,
   });
 };
