@@ -17,6 +17,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment, useState } from "react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { FunnelIcon, MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
+import Datepicker from "react-tailwindcss-datepicker";
 
 const cities = [
   { id: 1, name: "Champaign, IL" },
@@ -26,6 +27,20 @@ const cities = [
   { id: 5, name: "Mahomet, IL" },
 ];
 
+const sortOptions = [
+  { name: "Most Popular", href: "#", current: true },
+  { name: "Best Rating", href: "#", current: false },
+  { name: "Newest", href: "#", current: false },
+  { name: "Price: Low to High", href: "#", current: false },
+  { name: "Price: High to Low", href: "#", current: false },
+];
+const subCategories = [
+  { name: "Totes", href: "#" },
+  { name: "Backpacks", href: "#" },
+  { name: "Travel Bags", href: "#" },
+  { name: "Hip Bags", href: "#" },
+  { name: "Laptop Sleeves", href: "#" },
+];
 const filters = [
   {
     id: "color",
@@ -69,6 +84,14 @@ function classNames(...classes) {
 }
 
 export default function Search() {
+  const [value, setValue] = useState({
+    startDate: null,
+    endDate: null,
+  });
+  const handleValueChange = (newValue) => {
+    console.log("newValue:", newValue);
+    setValue(newValue);
+  };
   const [selected, setSelected] = useState(null);
   const [query, setQuery] = useState("");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
@@ -133,81 +156,130 @@ export default function Search() {
                   {/* Filters */}
                   <form className="mt-4 border-t border-gray-200">
                     <h3 className="sr-only">Categories</h3>
-                    <div>
+                    <div className="px-2 py-3 text-gray-900">
                       <label
-                        htmlFor="email"
+                        htmlFor="keywords"
                         className="block text-sm font-medium leading-6 text-gray-900"
                       >
-                        Email
+                        Keywords
                       </label>
                       <div className="mt-2">
                         <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                          placeholder="you@example.com"
+                          type="text"
+                          name="keywords"
+                          id="keywords"
+                          className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
+                          placeholder="Fried Chicken"
                         />
                       </div>
                     </div>
-
-                    {filters.map((section) => (
-                      <Disclosure
-                        as="div"
-                        key={section.id}
-                        className="border-t border-gray-200 px-4 py-6"
+                    <div className="px-2 py-3 text-gray-900">
+                      <label
+                        htmlFor="keywords"
+                        className="block text-sm font-medium leading-6 text-gray-900"
                       >
-                        {({ open }) => (
-                          <>
-                            <h3 className="-mx-2 -my-3 flow-root">
-                              <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
-                                <span className="font-medium text-gray-900">
-                                  {section.name}
-                                </span>
-                                <span className="ml-6 flex items-center">
-                                  {open ? (
-                                    <MinusIcon
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  ) : (
-                                    <PlusIcon
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  )}
-                                </span>
-                              </Disclosure.Button>
-                            </h3>
-                            <Disclosure.Panel className="pt-6">
-                              <div className="space-y-6">
-                                {section.options.map((option, optionIdx) => (
-                                  <div
-                                    key={option.value}
-                                    className="flex items-center"
-                                  >
-                                    <input
-                                      id={`filter-mobile-${section.id}-${optionIdx}`}
-                                      name={`${section.id}[]`}
-                                      defaultValue={option.value}
-                                      type="checkbox"
-                                      defaultChecked={option.checked}
-                                      className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                    />
-                                    <label
-                                      htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
-                                      className="ml-3 min-w-0 flex-1 text-gray-500"
-                                    >
-                                      {option.label}
-                                    </label>
+                        City
+                      </label>
+                      <div className="mt-2">
+                        <Combobox
+                          value={selected}
+                          onChange={setSelected}
+                          nullable
+                        >
+                          <div className="relative mt-1">
+                            <div className="relative w-full cursor-default overflow-hidden rounded-lg text-left">
+                              <Combobox.Input
+                                className="w-full border-none leading-5 text-gray-900 rounded-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 py-1.5 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                onChange={(event) =>
+                                  setQuery(event.target.value)
+                                }
+                                placeholder="Castle Rock, ME"
+                                displayValue={(city) => city?.name}
+                              />
+                              <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+                                <ChevronUpDownIcon
+                                  className="h-5 w-5 text-gray-400"
+                                  aria-hidden="true"
+                                />
+                              </Combobox.Button>
+                            </div>
+                            <Transition
+                              as={Fragment}
+                              leave="transition ease-in duration-100"
+                              leaveFrom="opacity-100"
+                              leaveTo="opacity-0"
+                              afterLeave={() => setQuery("")}
+                            >
+                              <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                                {filteredCities.length === 0 && query !== "" ? (
+                                  <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                                    Nothing found.
                                   </div>
-                                ))}
-                              </div>
-                            </Disclosure.Panel>
-                          </>
-                        )}
-                      </Disclosure>
-                    ))}
+                                ) : (
+                                  filteredCities.map((city) => (
+                                    <Combobox.Option
+                                      key={city.id}
+                                      className={({ active }) =>
+                                        `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                                          active
+                                            ? "bg-teal-600 text-white"
+                                            : "text-gray-900"
+                                        }`
+                                      }
+                                      value={city}
+                                    >
+                                      {({ selected, active }) => (
+                                        <>
+                                          <span
+                                            className={`block truncate ${
+                                              selected
+                                                ? "font-medium"
+                                                : "font-normal"
+                                            }`}
+                                          >
+                                            {city.name}
+                                          </span>
+                                          {selected ? (
+                                            <span
+                                              className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                                                active
+                                                  ? "text-white"
+                                                  : "text-teal-600"
+                                              }`}
+                                            >
+                                              <CheckIcon
+                                                className="h-5 w-5"
+                                                aria-hidden="true"
+                                              />
+                                            </span>
+                                          ) : null}
+                                        </>
+                                      )}
+                                    </Combobox.Option>
+                                  ))
+                                )}
+                              </Combobox.Options>
+                            </Transition>
+                          </div>
+                        </Combobox>
+                      </div>
+                    </div>
+                    <div className="px-2 py-3 text-gray-900">
+                      <label
+                        htmlFor="keywords"
+                        className="block text-sm font-medium leading-6 text-gray-900"
+                      >
+                        Date
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          type="date"
+                          id="start"
+                          className="w-full border-none leading-5 text-gray-900 rounded-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 py-1.5 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                          name="trip-start"
+                        />
+                      </div>
+                    </div>
                   </form>
                 </Dialog.Panel>
               </Transition.Child>
@@ -235,7 +307,7 @@ export default function Search() {
 
           <section aria-labelledby="products-heading" className="pt-6 pb-24">
             <h2 id="products-heading" className="sr-only">
-              Products
+              Trucks
             </h2>
 
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
@@ -271,7 +343,7 @@ export default function Search() {
                       <div className="relative mt-1">
                         <div className="relative w-full cursor-default overflow-hidden rounded-lg text-left">
                           <Combobox.Input
-                            className="w-full border-none text-sm leading-5 text-gray-900 rounded-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 py-1.5 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="w-full border-none leading-5 text-gray-900 rounded-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 py-1.5 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             onChange={(event) => setQuery(event.target.value)}
                             placeholder="Castle Rock, ME"
                             displayValue={(city) => city?.name}
@@ -344,64 +416,22 @@ export default function Search() {
                     </Combobox>
                   </div>
                 </div>
-
-                {filters.map((section) => (
-                  <Disclosure
-                    as="div"
-                    key={section.id}
-                    className="border-b border-gray-200 py-6"
+                <div className="pb-6">
+                  <label
+                    htmlFor="keywords"
+                    className="block text-sm font-medium leading-6 text-gray-900"
                   >
-                    {({ open }) => (
-                      <>
-                        <h3 className="-my-3 flow-root">
-                          <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                            <span className="font-medium text-gray-900">
-                              {section.name}
-                            </span>
-                            <span className="ml-6 flex items-center">
-                              {open ? (
-                                <MinusIcon
-                                  className="h-5 w-5"
-                                  aria-hidden="true"
-                                />
-                              ) : (
-                                <PlusIcon
-                                  className="h-5 w-5"
-                                  aria-hidden="true"
-                                />
-                              )}
-                            </span>
-                          </Disclosure.Button>
-                        </h3>
-                        <Disclosure.Panel className="pt-6">
-                          <div className="space-y-4">
-                            {section.options.map((option, optionIdx) => (
-                              <div
-                                key={option.value}
-                                className="flex items-center"
-                              >
-                                <input
-                                  id={`filter-${section.id}-${optionIdx}`}
-                                  name={`${section.id}[]`}
-                                  defaultValue={option.value}
-                                  type="checkbox"
-                                  defaultChecked={option.checked}
-                                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label
-                                  htmlFor={`filter-${section.id}-${optionIdx}`}
-                                  className="ml-3 text-sm text-gray-600"
-                                >
-                                  {option.label}
-                                </label>
-                              </div>
-                            ))}
-                          </div>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                ))}
+                    Date
+                  </label>
+                  <div className="mt-2">
+                    <input
+                      type="date"
+                      id="start"
+                      className="w-full border-none leading-5 text-gray-900 rounded-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 py-1.5 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      name="trip-start"
+                    />
+                  </div>
+                </div>
               </form>
 
               {/* Product grid */}

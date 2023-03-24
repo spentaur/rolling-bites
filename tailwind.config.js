@@ -6,6 +6,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",
   ],
   theme: {
     extend: {
@@ -50,5 +51,6 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('tailwind-scrollbar-hide'),
     require('@tailwindcss/line-clamp'),
+    require('flowbite/plugin')
   ],
 }
