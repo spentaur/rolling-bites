@@ -187,7 +187,7 @@ export default function Search() {
                           nullable
                         >
                           <div className="relative mt-1">
-                            <div className="relative w-full cursor-default overflow-hidden rounded-lg text-left">
+                            <div className="relative w-full cursor-default overflow-hidden rounded-md text-left">
                               <Combobox.Input
                                 className="w-full border-none text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6 "
                                 onChange={(event) =>
