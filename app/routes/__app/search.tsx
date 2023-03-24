@@ -168,7 +168,7 @@ export default function Search() {
                           type="text"
                           name="keywords"
                           id="keywords"
-                          className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
+                          className="w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
                           placeholder="Fried Chicken"
                         />
                       </div>
@@ -189,7 +189,7 @@ export default function Search() {
                           <div className="relative mt-1">
                             <div className="relative w-full cursor-default overflow-hidden rounded-lg text-left">
                               <Combobox.Input
-                                className="w-full border-none leading-5 text-gray-900 rounded-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 py-1.5 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className="w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
                                 onChange={(event) =>
                                   setQuery(event.target.value)
                                 }
@@ -275,7 +275,7 @@ export default function Search() {
                         <input
                           type="date"
                           id="start"
-                          className="w-full border-none leading-5 text-gray-900 rounded-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 py-1.5 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                          className="w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
                           name="trip-start"
                         />
                       </div>
@@ -326,7 +326,7 @@ export default function Search() {
                       type="text"
                       name="keywords"
                       id="keywords"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="w-full text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
                       placeholder="Fried Chicken"
                     />
                   </div>
@@ -343,7 +343,7 @@ export default function Search() {
                       <div className="relative mt-1">
                         <div className="relative w-full cursor-default overflow-hidden rounded-lg text-left">
                           <Combobox.Input
-                            className="w-full border-none leading-5 text-gray-900 rounded-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 py-1.5 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="w-full text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
                             onChange={(event) => setQuery(event.target.value)}
                             placeholder="Castle Rock, ME"
                             displayValue={(city) => city?.name}
@@ -427,7 +427,7 @@ export default function Search() {
                     <input
                       type="date"
                       id="start"
-                      className="w-full border-none leading-5 text-gray-900 rounded-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 py-1.5 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="w-full text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
                       name="trip-start"
                     />
                   </div>
