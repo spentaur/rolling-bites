@@ -17,6 +17,10 @@ function classNames(...classes: string[]) {
 
 export default function Schedule() {
   const truck = useMatches().find((m) => m.id === "routes/__app/$truck")?.data;
+  const filteredSchedule = truck.schedule.filter(
+    (event: { datetimeClose: string }) =>
+      new Date(event.datetimeClose) >= new Date()
+  );
   return (
     <>
       <div className="px-4 py-5 sm:px-6">
@@ -27,26 +31,21 @@ export default function Schedule() {
           Schedule subject to change.
         </p>
       </div>
-      {truck.schedule.length > 1 && (
-        <div className="px-4 pb-5 sm:px-6 w-full sm:hidden">
-          <img
-            src="/images/ad-long-3.jpeg"
-            className="border border-gray-200 shadow-md rounded-lg"
-            alt="ad"
-          />
-          <div className="mx-auto text-xs mt-2 text-logo-green-400 font-semibold">
-            Promoted
-          </div>
+      {/* <div className="px-4 pb-5 sm:px-6 w-full sm:hidden">
+        <img
+          src="/images/ad-long-3.jpeg"
+          className="border border-gray-200 shadow-md rounded-lg"
+          alt="ad"
+        />
+        <div className="mx-auto text-xs mt-2 text-logo-green-400 font-semibold">
+          Promoted
         </div>
-      )}
+      </div> */}
+
       <div className="pb-5 px-4 sm:px-0">
         <ol className=" text-sm">
-          {truck.schedule
-            .filter(
-              (event: { datetimeClose: string }) =>
-                new Date(event.datetimeClose) >= new Date()
-            )
-            .map(
+          {filteredSchedule.length > 1 ? (
+            filteredSchedule.map(
               (event: {
                 id: Key | null | undefined;
                 name: number;
@@ -118,7 +117,16 @@ export default function Schedule() {
                   </div>
                 </li>
               )
-            )}
+            )
+          ) : (
+            <li className="relative sm:px-6 flex space-x-6 py-3">
+              <div className="flex-auto">
+                <h3 className="pr-10 font-semibold text-gray-900 ">
+                  There are not events currently scheduled
+                </h3>
+              </div>
+            </li>
+          )}
         </ol>
       </div>
     </>
