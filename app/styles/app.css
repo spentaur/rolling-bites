@@ -2214,8 +2214,16 @@ input[type="range"]::-ms-fill-lower {
   fill: #F9FAFB;
 }
 
+.fill-logo-green-100 {
+  fill: #9AC69A;
+}
+
 .stroke-logo-green-100\/40 {
   stroke: rgb(154 198 154 / 0.4);
+}
+
+.stroke-logo-green-100\/50 {
+  stroke: rgb(154 198 154 / 0.5);
 }
 
 .object-contain {

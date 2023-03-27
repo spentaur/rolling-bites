@@ -237,9 +237,25 @@ export default function Search() {
                   <div className="mt-2">
                     <input
                       type="date"
-                      id="start"
+                      id="date"
+                      name="date"
                       className="w-full text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
-                      name="trip-start"
+                    />
+                  </div>
+                </div>
+                <div className="pb-6">
+                  <label
+                    htmlFor="keywords"
+                    className="block text-sm font-medium leading-6 text-gray-900"
+                  >
+                    Time
+                  </label>
+                  <div className="mt-2">
+                    <input
+                      type="time"
+                      id="time"
+                      className="w-full text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
+                      name="time"
                     />
                   </div>
                 </div>

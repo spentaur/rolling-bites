@@ -58,7 +58,7 @@ export const Search = (props: Props) => {
         />
         <Combobox.Input
           className="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
-          placeholder="Search..."
+          placeholder="Truck name..."
           onChange={(event) => setQuery(event.target.value)}
           displayValue={(truck) => truck?.item.name}
         />

@@ -20,7 +20,7 @@ export default function Example() {
       <Navbar index="true" />
       <div className="relative isolate">
         <svg
-          className="absolute inset-x-0 top-0 -z-10 h-[52rem] w-full stroke-logo-green-100/40 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+          className="absolute inset-x-0 top-0 -z-10 h-[52rem] w-full stroke-logo-green-100/50 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
           aria-hidden="true"
         >
           <defs>

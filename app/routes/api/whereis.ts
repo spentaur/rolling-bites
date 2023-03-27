@@ -37,14 +37,19 @@ export const loader = async ({ request }: LoaderArgs) => {
       }. They are at ${current[0].name}, ${current[0].location}`,
     });
   }
+  if (schedule.length > 0) {
+    return json({
+      message: `${
+        truck[0].item.name
+      } is not open right now. Their next event is on ${schedule[0].date
+        .split(",")
+        .slice(0, -1)
+        .join(",")} from ${schedule[0].time.replace("-", " to ")} at ${
+        schedule[0].name
+      }, ${schedule[0].location}`,
+    });
+  }
   return json({
-    message: `${
-      truck[0].item.name
-    } is not open right now. Their next event is on ${schedule[0].date
-      .split(",")
-      .slice(0, -1)
-      .join(",")} from ${schedule[0].time.replace("-", " to ")} at ${
-      schedule[0].name
-    }, ${schedule[0].location}`,
+    message: `${truck[0].item.name} is not open right now, and there are no upcoming events.`,
   });
 };
