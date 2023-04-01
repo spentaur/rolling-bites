@@ -32,7 +32,7 @@ export const Navbar = (props) => {
       <div
         className={classNames(
           props.index ? "" : "backdrop-blur-sm bg-white/90 sticky top-0 z-10",
-          "w-ful "
+          "w-full "
         )}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -41,7 +41,7 @@ export const Navbar = (props) => {
             <div className="flex justify-center items-center lg:col-span-6">
               <Link to="/">
                 <img
-                  className="block cursor-pointer h-7 lg:h-8 w-auto"
+                  className="block cursor-pointer h-7 w-auto"
                   src="/images/logo-simple.svg"
                   alt="Your Company"
                 />

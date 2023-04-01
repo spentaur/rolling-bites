@@ -34,7 +34,9 @@ export const loader = async ({ request }: LoaderArgs) => {
     return json({
       message: `${truck[0].item.name} is open right now until ${
         current[0].time.split("-")[1]
-      }. They are at ${current[0].name}, ${current[0].location}`,
+      }. They are at ${current[0].name}, ${
+        current[0].location && current[0].location
+      }`,
     });
   }
   if (schedule.length > 0) {
@@ -46,7 +48,7 @@ export const loader = async ({ request }: LoaderArgs) => {
         .slice(0, -1)
         .join(",")} from ${schedule[0].time.replace("-", " to ")} at ${
         schedule[0].name
-      }, ${schedule[0].location}`,
+      }, ${current[0].location && current[0].location}`,
     });
   }
   return json({

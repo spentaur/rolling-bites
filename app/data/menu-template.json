@@ -1,0 +1,160 @@
+[
+  {
+    "title": "Tenders",
+    "description": "Pickle-brined white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and sauce.",
+    "items": [
+      {
+        "id": 1,
+        "name": "4 Tenders and 1 Sauce",
+        "price": "$10.00"
+      },
+      {
+        "id": 2,
+        "name": "6 Tenders and 2 Sauces",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "title": "Sandwiches",
+    "description": "All sandwiches served with waffle fries.",
+    "items": [
+      {
+        "id": 3,
+        "name": "Watson's Hot",
+        "description": "Crunchy chicken tenders dipped in Watson's Hot, served on a brioche bun with creamy coleslaw, dill pickles, & comeback sauce.",
+        "price": "$14.00"
+      },
+      {
+        "id": 4,
+        "name": "Buffalo Starchild",
+        "description": "Crunchy chicken tenders tossed in buffal sauce, served on a brioche bun with sorghum glazed bacon, black pepper ranch, blue cheese crumbles, & mixed greens.",
+        "price": "$14.00"
+      },
+      {
+        "id": 5,
+        "name": "Classic Fried",
+        "description": "Crunchy fried chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
+        "price": "$13.00"
+      },
+      {
+        "id": 6,
+        "name": "Classic Grilled",
+        "description": "Grilled chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
+        "price": "$13.00"
+      },
+      {
+        "id": 7,
+        "name": "Watson's Hot Fish",
+        "description": "Fried perch dipped in Watson's hot sauce served on a hoagie roll with creamy coleslaw, dill pickles, and comeback sauce.",
+        "price": "$14.00"
+      },
+      {
+        "id": 8,
+        "name": "Tofu Po'boy",
+        "description": "Crispy tofu served on a hoagie roll with mixed greens, dill pickles, red onion, and vegan remoulade.",
+        "price": "$13.00"
+      }
+    ]
+  },
+  {
+    "title": "Sides",
+    "items": [
+      {
+        "id": 9,
+        "name": "Waffle Fries",
+        "price": "$4.00"
+      },
+      {
+        "id": 10,
+        "name": "Creamy Coleslaw",
+        "price": "$4.00"
+      },
+      {
+        "id": 11,
+        "name": "Mac & Cheese",
+        "price": "$4.00"
+      }
+    ]
+  },
+  {
+    "title": "Sauces",
+    "items": [
+      {
+        "id": 12,
+        "name": "Buffalo",
+        "price": "$1.00"
+      },
+      {
+        "id": 13,
+        "name": "Black Pepper Ranch",
+        "price": "$1.00"
+      },
+      {
+        "id": 14,
+        "name": "Honey Mustard",
+        "price": "$1.00"
+      },
+      {
+        "id": 15,
+        "name": "Carolina Gold",
+        "price": "$1.00"
+      },
+      {
+        "id": 16,
+        "name": "Comeback Sauce",
+        "price": "$1.00"
+      }
+    ]
+  },
+  {
+    "title": "Additions",
+    "items": [
+      {
+        "id": 22,
+        "name": "Sorghum-glazed bacon",
+        "price": "$3.00"
+      },
+      {
+        "id": 23,
+        "name": "American Cheese",
+        "price": "$1.00"
+      },
+      {
+        "id": 24,
+        "name": "Pickles",
+        "price": "$1.00"
+      }
+    ]
+  },
+  {
+    "title": "Drinks",
+    "items": [
+      {
+        "id": 17,
+        "name": "Coke",
+        "price": "$3.00"
+      },
+      {
+        "id": 18,
+        "name": "Diet Coke",
+        "price": "$3.00"
+      },
+      {
+        "id": 19,
+        "name": "Sprite",
+        "price": "$3.00"
+      },
+      {
+        "id": 20,
+        "name": "Bottle Water",
+        "price": "$3.00"
+      },
+      {
+        "id": 21,
+        "name": "Iced Tea",
+        "price": "$3.00"
+      }
+    ]
+  }
+]

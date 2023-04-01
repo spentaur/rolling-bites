@@ -1,0 +1,60 @@
+Please reformat the following data into JSON format, including the appropriate locations from the provided location data, removing the days that are closed, and adding "datetimeOpen" and "datetimeClose" fields in ISO format using the Central Time Zone (UTC-5:00). If the location is not found, the name might be slightly different. if you think the name is wrong, please correct it based on the names in the location data, and add a "- ?" to the end of the name in the formated data. if you think you cant find the event, which may be possible, set the location value to "NEEDED". 
+
+Original Data:
+MARCH 30
+Carle Hospital South
+10:30am - 2pm
+MARCH 31
+Triptych Brewing
+4:30pm - 7:30pm
+APRIL 1
+Meadowbrook Church
+10am - 1pm
+APRIL 2
+Riggs Beer Company
+3pm - 7pm
+
+Location Data:
+{
+  "1004 West University Avenue": "1004 West University Avenue, Urbana, IL",
+  "Advance Auto": "110 N Vine St, Urbana, IL",
+  "Caliber Collision": "701 N Mattis Ave, Champaign, IL",
+  "Carle South Clinic": "601 W. University Ave, Urbana, IL",
+  "Carle Sports Medicine": "2300 S 1st St, Champaign, IL",
+  "Carle Orthopedics": "2300 S 1st St, Champaign, IL",
+  "Carle at the Fields": "3105 Fields South Dr, Champaign, IL",
+  "CRIS Healthy Aging": "4116 Fieldstone Rd, Champaign, IL",
+  "Downtown Mahomet": "E Main St, Mahomet, IL",
+  "Gibson Area Hospital": "1120 N Melvin St, Gibson City, IL",
+  "Riggs Brewery": "1901 S High Cross Rd, Urbana, IL",
+  "T+T Tavern": "101 N Century Blvd, Rantoul, IL",
+  "The Pines": "2860 S. Philo Rd, Urbana, IL",
+  "Triptych Brewing": "1703 Woodfield Dr, Savoy, IL",
+  "Wright & Green": "SW Corner Wright & Green, Champaign, IL",
+  "Rantoul Family Sports Complex": "744 N Murray Rd, Rantoul, IL",
+  "U of I Baseball": "601 E W Kirby Ave, Champaign, IL",
+  "Jiffy Lube": "1201 N Prospect Ave, Champaign, IL"
+}
+
+
+Format: 
+[
+  {
+    "id": 1,
+    "date": "Wednesday, March 22nd, 2023",
+    "time": "10:30AM - 1:30PM",
+    "datetimeOpen": "2023-03-22T10:30-05:00",
+    "datetimeClose": "2023-03-22T13:30-05:00",
+    "name": "Carle Orthopedics",
+    "location": "2300 S 1st St, Champaign, IL"
+  },
+  {
+    "id": 2,
+    "date": "Wednesday, March 22nd, 2023",
+    "time": "4:30PM - 7:00PM",
+    "datetimeOpen": "2023-03-22T16:30-05:00",
+    "datetimeClose": "2023-03-22T19:00-05:00",
+    "name": "Downtown Mahomet",
+    "location": "E Main St, Mahomet, IL"
+  }
+]

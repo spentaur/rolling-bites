@@ -21,6 +21,7 @@ export default function Schedule() {
     (event: { datetimeClose: string }) =>
       new Date(event.datetimeClose) >= new Date()
   );
+  console.log(filteredSchedule);
   return (
     <>
       <div className="px-4 py-5 sm:px-6">
@@ -44,7 +45,7 @@ export default function Schedule() {
 
       <div className="pb-5 px-4 sm:px-0">
         <ol className=" text-sm">
-          {filteredSchedule.length > 1 ? (
+          {filteredSchedule.length > 0 ? (
             filteredSchedule.map(
               (event: {
                 id: Key | null | undefined;
@@ -82,25 +83,28 @@ export default function Schedule() {
                           </time>
                         </dd>
                       </div>
-                      <div className="mt-2 flex items-start space-x-3">
-                        <dt className="mt-0.5">
-                          <span className="sr-only">Location</span>
-                          <MapPinIcon
-                            className="h-5 w-5 text-gray-400"
-                            aria-hidden="true"
-                          />
-                        </dt>
-                        <dd>
-                          <a
-                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                              event.location
-                            )}`}
-                            className="underline hover:no-underline"
-                          >
-                            {event.location}
-                          </a>
-                        </dd>
-                      </div>
+                      {event.location && (
+                        <div className="mt-2 flex items-start space-x-3">
+                          <dt className="mt-0.5">
+                            <span className="sr-only">Location</span>
+                            <MapPinIcon
+                              className="h-5 w-5 text-gray-400"
+                              aria-hidden="true"
+                            />
+                          </dt>
+
+                          <dd>
+                            <a
+                              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                event.location
+                              )}`}
+                              className="underline hover:no-underline"
+                            >
+                              {event.location}
+                            </a>
+                          </dd>
+                        </div>
+                      )}
                       {event.description && (
                         <div className="mt-2 flex items-start space-x-3">
                           <dt className="mt-0.5">
