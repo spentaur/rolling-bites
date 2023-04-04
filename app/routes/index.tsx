@@ -116,7 +116,7 @@ export default function Example() {
                 <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                   <div className="relative">
                     <img
-                      src="https://images.squarespace-cdn.com/content/v1/5faae45cf877175a51267735/a940af41-4287-4fe5-9b15-56e074024ef8/watsons-at-triptych.jpeg"
+                      src="/images/watsons-at-triptych.jpeg"
                       alt=""
                       className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
@@ -126,7 +126,7 @@ export default function Example() {
                 <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                   <div className="relative">
                     <img
-                      src="/images/pastamania-homepage.jpeg"
+                      src="/images/pastamania-homepage-2.jpeg"
                       alt=""
                       className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
@@ -134,7 +134,7 @@ export default function Example() {
                   </div>
                   <div className="relative">
                     <img
-                      src="https://www.smithburgerco.com/uploads/b/f5e3c6b2d6b554bcf6e3434e5a814c100d3d8ace4c954770e4658d8b1a8b8f51/267641680_362581108961018_8530130572894552748_n_1648821337.jpg?width=800"
+                      src="/images/smithburger-index.jpeg"
                       alt=""
                       className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
@@ -144,7 +144,7 @@ export default function Example() {
                 <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                   <div className="relative">
                     <img
-                      src="https://img1.wsimg.com/isteam/ip/a3402013-da00-4773-9d0e-367241b18918/IMG_0392.jpg/:/cr=t:0%25,l:20.88%25,w:56.25%25,h:100%25/rs=w:2320,h:3093"
+                      src="/images/ff-index.jpeg"
                       alt=""
                       className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
