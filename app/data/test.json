@@ -1,146 +1,85 @@
 {
   "menu": [
     {
-      "title": "Entrees",
+      "title": "Breakfast",
       "items": [
         {
           "id": 1,
-          "name": "Big Chubby",
-          "description": "(Russet Potato) Pork, Brisket, Brisket or Pulled Pork - Coleslaw, Cheese - Sour Cream Butter",
-          "price": [
-            { "name": "Pork", "price": "$10.00" },
-            { "name": "Brisket", "price": "$12.00" }
-          ]
-        },
-        {
-          "id": 2,
-          "name": "Sweet Chubby",
-          "description": "(Sweet Potato) Pork, Brisket, Brisket or Pulled Pork - Coleslaw, Cheese - Sour Cream - Butter",
-          "price": [
-            { "name": "Pork", "price": "$10.00" },
-            { "name": "Brisket", "price": "$12.00" }
-          ]
-        },
-        {
-          "id": 3,
-          "name": "Chubby Platter",
-          "description": "Pork, Brisket, Coleslaw, Cheese - Sour Cream - Butter, Baked Beans - Potato Salad",
-          "price": [
-            { "name": "Pork", "price": "$13.00" },
-            { "name": "Brisket", "price": "$15.00" }
-          ]
-        },
-        {
-          "id": 4,
-          "name": "Big Chubby Max",
-          "description": "Pork, Brisket, Same as Big Chubby plus Pork Belly, Burnt Ends",
-          "price": [
-            { "name": "Pork", "price": "$15.00" },
-            { "name": "Brisket", "price": "$17.00" }
-          ]
-        },
-        {
-          "id": 5,
-          "name": "Brisket Sandwich",
-          "description": "Pickle - Chips",
-          "price": "$12.00"
-        },
-        {
-          "id": 6,
-          "name": "Brisket Platter",
-          "description": "(Choice of 2) Coleslaw - Baked Beans - Potato Salad",
-          "price": "$15.00"
-        },
-        {
-          "id": 7,
-          "name": "Pulled Pork Sandwich",
-          "description": "Pickle - Chips",
-          "price": "$0.00"
-        },
-        {
-          "id": 8,
-          "name": "Pulled Pork Platter",
-          "description": "(Choice of 2) Coleslaw - Baked Beans - Potato Salad",
-          "price": "$13.00"
-        },
-        {
-          "id": 9,
-          "name": "Pork Belly Burnt Ends",
-          "description": "Pickle - Chips",
-          "price": null
-        },
-        {
-          "id": 10,
-          "name": "Pork Belly Burnt Ends Platter",
-          "description": "(Choice of 2) Coleslaw - Baked Beans - Potato Salad",
-          "price": "$17.00"
-        },
-        {
-          "id": 11,
-          "name": "BBQ Chicken Platter",
-          "description": "(Choice of 2) Coleslaw - Baked Beans - Potato Salad",
-          "price": "$12.00"
+          "name": "Breakfast",
+          "description": "Rice, beans, scramble eggs, cheese, lettuce, tomatoes, cilantro, onions, sour cream, and sweet corn. Choice of chorizo, or any choice below.",
+          "price": "$10.50"
         }
       ]
     },
     {
-      "title": "Snacks",
+      "title": "Mexican Dishes",
       "items": [
         {
+          "id": 2,
+          "name": "Quesadilla",
+          "description": "Choice of meat, tomatoes, rice, cheese dip, sour cream, lettuce",
+          "price": ""
+        },
+        {
+          "id": 3,
+          "name": "Burrito",
+          "description": "Choice of meat, beans, rice, sweet corn, lettuce, cheese, sour cream, onion, cilantro, tomatoes",
+          "price": ""
+        },
+        {
+          "id": 4,
+          "name": "King Nachos",
+          "description": "Choice of meat, lettuce, tomatoes, onions, cilantro, jalapeños, beans, sour cream, cheese dip",
+          "price": "$10.50"
+        },
+        {
+          "id": 5,
+          "name": "Quesadela",
+          "description": "Choice of meat, bell pepper, lettuce, tomatoes, grilled onions, rice, cheese dip, sour cream",
+          "price": "$11.00"
+        },
+        {
+          "id": 6,
+          "name": "Guacamole Dip",
+          "price": "$5.50"
+        },
+        {
+          "id": 7,
+          "name": "Torta",
+          "description": "Choice of meat, lettuce, tomatoes, onions, cilantro, jalapeños, beans, cheese, avocado, mayonnaise or sour cream",
+          "price": "$11.00"
+        },
+        {
+          "id": 8,
+          "name": "Taco",
+          "description": "Choice of meat, Mexican style (cilantro and onions) or American style (lettuce, cheese, tomatoes and sour cream)",
+          "price": ""
+        },
+        {
+          "id": 9,
+          "name": "Elote",
+          "price": "$3.25"
+        },
+        {
+          "id": 10,
+          "name": "Meats",
+          "description": "Grilled Steak, Grilled Chicken, Ground Beef, Spicy Pork (pastor), Pork (carnitas), Mexican Sausage (chorizo), Veggie",
+          "price": ""
+        },
+        {
+          "id": 11,
+          "name": "Rice",
+          "price": "$2.50"
+        },
+        {
           "id": 12,
-          "name": "Pig in a Pouch",
-          "description": "Fritos - Smoked Pulled Pork - Cheddar Cheese - Coleslaw - Baked Beans",
-          "price": "$10.00"
+          "name": "Beans",
+          "price": "$2.50"
         },
         {
           "id": 13,
-          "name": "Bull in a Box",
-          "description": "Fritos - Smoked Brisket - Cheddar Cheese, Coleslaw - Baked Beans",
-          "price": "$12.00"
-        },
-        {
-          "id": 14,
-          "name": "The Meateater",
-          "description": "Brisket - Pulled Pork - Pork Belly",
-          "price": "$25.00"
-        },
-        {
-          "id": 15,
-          "name": "Meateater Max",
-          "description": "Brisket - Pulled Pork - Pork Belly - BBQ Ribs",
-          "price": "$35.00"
-        },
-        {
-          "id": 16,
-          "name": "Half Slab BBQ Ribs",
-          "description": "2 sides",
-          "price": "$20.00"
-        },
-        {
-          "id": 17,
-          "name": "Full Slab BBQ Ribs",
-          "description": "2 sides",
-          "price": "$30.00"
-        },
-        {
-          "id": 18,
-          "name": "Brisket Mac",
-          "price": "$14.00"
-        },
-        {
-          "id": 19,
-          "name": "Pulled Pork Mac",
-          "price": "$12.00"
-        },
-        {
-          "id": 20,
-          "name": "Brisket Nachos",
-          "price": "$14.00"
-        },
-        {
-          "id": 21,
-          "name": "Pulled Pork Nachos",
-          "price": "$12.00"
+          "name": "8oz Salsa",
+          "price": "$1.99"
         }
       ]
     },
@@ -148,34 +87,39 @@
       "title": "Drinks",
       "items": [
         {
-          "id": 1,
+          "id": 14,
+          "name": "Jarrito",
+          "price": "$2.50"
+        },
+        {
+          "id": 15,
           "name": "Coke",
-          "price": "$2.00"
+          "price": "$1.00"
         },
         {
-          "id": 2,
+          "id": 16,
           "name": "Diet Coke",
-          "price": "$2.00"
+          "price": "$1.00"
         },
         {
-          "id": 3,
-          "name": "Sprite",
-          "price": "$2.00"
-        },
-        {
-          "id": 4,
+          "id": 17,
           "name": "Water",
-          "price": "$2.00"
+          "price": "$1.00"
         }
       ]
     },
     {
-      "title": "Extra Side",
+      "title": "Extras",
       "items": [
         {
-          "id": 1,
-          "name": "Extra Side",
-          "price": "$3.00"
+          "id": 18,
+          "name": "Cheese Dip and Chips",
+          "price": "$10.50"
+        },
+        {
+          "id": 19,
+          "name": "Chips",
+          "price": "$1.25"
         }
       ]
     }

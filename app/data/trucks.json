@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "name": "Watson's Chicken",
     "path": "/watsonschicken",
     "banner": "https://images.squarespace-cdn.com/content/v1/5faae45cf877175a51267735/4409d131-04cd-4aa4-b5ae-c57ae8263c28/IMG03169.jpg?format=2500w",
@@ -239,6 +240,7 @@
   },
 
   {
+    "id": "2",
     "name": "Pastamania",
     "path": "/pastamania",
     "banner": "https://img1.wsimg.com/isteam/ip/acdaf85c-728e-44bf-abb7-46c3815139a9/front-0002.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1968,h:814",
@@ -644,6 +646,7 @@
   },
 
   {
+    "id": "3",
     "name": "Smith Burger Co.",
     "path": "/smithburgerco",
     "banner": "https://www.smithburgerco.com/uploads/b/f5e3c6b2d6b554bcf6e3434e5a814c100d3d8ace4c954770e4658d8b1a8b8f51/1631212744829_3005489-2%20(3)_1631214321.jpg?width=2000",
@@ -932,6 +935,7 @@
   },
 
   {
+    "id": "4",
     "name": "Flour and Fire Pizza",
     "path": "/FlourandFirePizza",
     "banner": "https://img1.wsimg.com/isteam/ip/a3402013-da00-4773-9d0e-367241b18918/IMG_7538.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/fx-gs/rs=w:3070,m",
@@ -1172,6 +1176,7 @@
   },
 
   {
+    "id": "5",
     "name": "Piato To Go",
     "path": "/piato",
     "banner": "/images/piato-homepage.jpeg",
@@ -1454,6 +1459,7 @@
   },
 
   {
+    "id": "6",
     "name": "The House of Brisket/Paris",
     "path": "/thehouseofbrisketparis",
     "banner": "/images/house-of-brisket-homepage.jpeg",
@@ -1744,6 +1750,7 @@
   },
 
   {
+    "id": "7",
     "name": "Burrito King",
     "path": "/burritoking",
     "banner": "/images/burrito-king-homepage.jpeg",
@@ -1764,130 +1771,51 @@
     },
     "menu": [
       {
-        "title": "Tenders",
-        "description": "Pickle-brined white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and sauce.",
+        "title": "Entrees",
+        "description": "Meats: Grilled Steak, Grilled Chicken, Ground Beef, Spicy Pork (pastor), Pork (carnitas), Mexican Sausage (chorizo), Veggie",
         "items": [
           {
             "id": 1,
-            "name": "4 Tenders and 1 Sauce",
-            "price": "$10.00"
+            "name": "Breakfast Burrito",
+            "description": "Rice, beans, scramble eggs, cheese, lettuce, tomatoes, cilantro, onions, sour cream, and sweet corn. Choice of chorizo, or any choice below.",
+            "price": "$10.50"
           },
           {
             "id": 2,
-            "name": "6 Tenders and 2 Sauces",
-            "price": "$15.00"
-          }
-        ]
-      },
-      {
-        "title": "Sandwiches",
-        "description": "All sandwiches served with waffle fries.",
-        "items": [
+            "name": "Quesadilla",
+            "description": "Choice of meat, tomatoes, rice, cheese dip, sour cream, lettuce",
+            "price": ""
+          },
           {
             "id": 3,
-            "name": "Watson's Hot",
-            "description": "Crunchy chicken tenders dipped in Watson's Hot, served on a brioche bun with creamy coleslaw, dill pickles, & comeback sauce.",
-            "price": "$14.00"
+            "name": "Burrito",
+            "description": "Choice of meat, beans, rice, sweet corn, lettuce, cheese, sour cream, onion, cilantro, tomatoes",
+            "price": ""
           },
           {
             "id": 4,
-            "name": "Buffalo Starchild",
-            "description": "Crunchy chicken tenders tossed in buffal sauce, served on a brioche bun with sorghum glazed bacon, black pepper ranch, blue cheese crumbles, & mixed greens.",
-            "price": "$14.00"
+            "name": "King Nachos",
+            "description": "Choice of meat, lettuce, tomatoes, onions, cilantro, jalapeños, beans, sour cream, cheese dip",
+            "price": "$10.50"
           },
           {
             "id": 5,
-            "name": "Classic Fried",
-            "description": "Crunchy fried chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
-            "price": "$13.00"
+            "name": "Quesadela",
+            "description": "Choice of meat, bell pepper, lettuce, tomatoes, grilled onions, rice, cheese dip, sour cream",
+            "price": "$11.00"
           },
-          {
-            "id": 6,
-            "name": "Classic Grilled",
-            "description": "Grilled chicken tenders with herb mayo, dill pickles, and mixed greens on a brioche bun.",
-            "price": "$13.00"
-          },
+
           {
             "id": 7,
-            "name": "Watson's Hot Fish",
-            "description": "Fried perch dipped in Watson's hot sauce served on a hoagie roll with creamy coleslaw, dill pickles, and comeback sauce.",
-            "price": "$14.00"
+            "name": "Torta",
+            "description": "Choice of meat, lettuce, tomatoes, onions, cilantro, jalapeños, beans, cheese, avocado, mayonnaise or sour cream",
+            "price": "$11.00"
           },
           {
             "id": 8,
-            "name": "Tofu Po'boy",
-            "description": "Crispy tofu served on a hoagie roll with mixed greens, dill pickles, red onion, and vegan remoulade.",
-            "price": "$13.00"
-          }
-        ]
-      },
-      {
-        "title": "Sides",
-        "items": [
-          {
-            "id": 9,
-            "name": "Waffle Fries",
-            "price": "$4.00"
-          },
-          {
-            "id": 10,
-            "name": "Creamy Coleslaw",
-            "price": "$4.00"
-          },
-          {
-            "id": 11,
-            "name": "Mac & Cheese",
-            "price": "$4.00"
-          }
-        ]
-      },
-      {
-        "title": "Sauces",
-        "items": [
-          {
-            "id": 12,
-            "name": "Buffalo",
-            "price": "$1.00"
-          },
-          {
-            "id": 13,
-            "name": "Black Pepper Ranch",
-            "price": "$1.00"
-          },
-          {
-            "id": 14,
-            "name": "Honey Mustard",
-            "price": "$1.00"
-          },
-          {
-            "id": 15,
-            "name": "Carolina Gold",
-            "price": "$1.00"
-          },
-          {
-            "id": 16,
-            "name": "Comeback Sauce",
-            "price": "$1.00"
-          }
-        ]
-      },
-      {
-        "title": "Additions",
-        "items": [
-          {
-            "id": 22,
-            "name": "Sorghum-glazed bacon",
-            "price": "$3.00"
-          },
-          {
-            "id": 23,
-            "name": "American Cheese",
-            "price": "$1.00"
-          },
-          {
-            "id": 24,
-            "name": "Pickles",
-            "price": "$1.00"
+            "name": "Taco",
+            "description": "Choice of meat, Mexican style (cilantro and onions) or American style (lettuce, cheese, tomatoes and sour cream)",
+            "price": "$3.25"
           }
         ]
       },
@@ -1895,29 +1823,64 @@
         "title": "Drinks",
         "items": [
           {
-            "id": 17,
-            "name": "Coke",
-            "price": "$3.00"
+            "id": 14,
+            "name": "Jarrito",
+            "price": "$2.50"
           },
           {
-            "id": 18,
+            "id": 15,
+            "name": "Coke",
+            "price": "$1.00"
+          },
+          {
+            "id": 16,
             "name": "Diet Coke",
-            "price": "$3.00"
+            "price": "$1.00"
+          },
+          {
+            "id": 17,
+            "name": "Water",
+            "price": "$1.00"
+          }
+        ]
+      },
+      {
+        "title": "Extras",
+        "items": [
+          {
+            "id": 18,
+            "name": "Cheese Dip and Chips",
+            "price": "$10.50"
           },
           {
             "id": 19,
-            "name": "Sprite",
-            "price": "$3.00"
+            "name": "Chips",
+            "price": "$1.25"
           },
           {
-            "id": 20,
-            "name": "Bottle Water",
-            "price": "$3.00"
+            "id": 6,
+            "name": "Guacamole Dip and Chips",
+            "price": "$5.50"
           },
           {
-            "id": 21,
-            "name": "Iced Tea",
-            "price": "$3.00"
+            "id": 9,
+            "name": "Elote",
+            "price": "$3.25"
+          },
+          {
+            "id": 11,
+            "name": "Rice",
+            "price": "$2.50"
+          },
+          {
+            "id": 12,
+            "name": "Beans",
+            "price": "$2.50"
+          },
+          {
+            "id": 13,
+            "name": "8oz Salsa",
+            "price": "$1.99"
           }
         ]
       }

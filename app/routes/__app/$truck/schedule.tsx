@@ -21,7 +21,6 @@ export default function Schedule() {
     (event: { datetimeClose: string }) =>
       new Date(event.datetimeClose) >= new Date()
   );
-  console.log(filteredSchedule);
   return (
     <>
       <div className="px-4 py-5 sm:px-6">

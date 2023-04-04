@@ -28,6 +28,11 @@ const options = {
   keys: ["name", "path", "about.location", "about.tags"],
 };
 const fuse = new Fuse(data, options);
+const promotedFuse = new Fuse(data, { keys: ["id"] });
+
+const min = 1;
+const max = 7;
+const randomInt = Math.floor(Math.random() * (max - min + 1)) + min;
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -43,6 +48,7 @@ export const Search = (props: Props) => {
   const navigate = useNavigate();
 
   const filteredPeople = query === "" ? [] : fuse.search(query, { limit: 5 });
+  const promoted = promotedFuse.search(`${randomInt}`)[0];
 
   return (
     <Combobox
@@ -115,18 +121,18 @@ export const Search = (props: Props) => {
           Promoted:
         </div>
         <Link
-          to="/pastamania"
+          to={promoted.item.path}
           className="flex hover:bg-gray-100 rounded-xl p-3 cursor-default"
         >
           <img
-            src="https://scontent-ord5-2.xx.fbcdn.net/v/t1.6435-9/188211476_100365745582848_4466692820808777871_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=0DXwLYNg47UAX_cI6l7&_nc_ht=scontent-ord5-2.xx&oh=00_AfA1o4-fSH-ajE-5fl3opgMyQ6sF88436ePLo4EbXZ9DBw&oe=642B4AF1"
+            src={promoted.item.avatar}
             alt=""
             className="h-10 w-10 flex-none rounded-full"
           />
           <div className="">
-            <div className="ml-3">Pastamania</div>
+            <div className="ml-3">{promoted.item.name}</div>
             <div className="ml-3 text-xs text-gray-500">
-              Delicious pastas, sandwiches, soups salads and lasagnas
+              {promoted.item.about.description}
             </div>
           </div>
         </Link>
