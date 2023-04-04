@@ -1,18 +1,11 @@
-Please reformat the following data into JSON format, including the appropriate locations from the provided location data, removing the days that are closed, and adding "datetimeOpen" and "datetimeClose" fields in ISO format using the Central Time Zone (UTC-5:00). If the location is not found, the name might be slightly different. if you think the name is wrong, please correct it based on the names in the location data, and add a "- ?" to the end of the name in the formated data. if you think you cant find the event, which may be possible, set the location value to "NEEDED". 
+Please reformat the following data into JSON format, including the appropriate locations from the provided location data, removing the days that are closed or private, and adding "datetimeOpen" and "datetimeClose" fields in ISO format using the Central Time Zone (UTC-5:00). If the location is not found, the name might be slightly different. if you think the name is wrong, please correct it based on the names in the location data, and add a "- ?" to the end of the name in the formated data. if you think you cant find the event, which may be possible, set the location value to "NEEDED". And make sure the time is in the proper format: "10:30AM - 3:00PM" 
 
 Original Data:
-MARCH 30
-Carle Hospital South
-10:30am - 2pm
-MARCH 31
-Triptych Brewing
-4:30pm - 7:30pm
-APRIL 1
-Meadowbrook Church
-10am - 1pm
-APRIL 2
-Riggs Beer Company
-3pm - 7pm
+Thurs 4/6: Dieterich lunch. 11-1:30. Probst Auto Body
+Thurs 4/6: Robinson evening. 4-6:30. 1301 W Main St. Robinson School Transportation Lot
+Fri 4/7: Mattoon lunch. 11-1:30. Harbor Freight Lot. w/ SweeTea'z
+Fri 4/7: Rantoul evening. 4:30-7:30. TNT Tavern. 
+Sat 4/8: Tuscola. 11-2. Do It Best Hardware 
 
 Location Data:
 {
@@ -33,8 +26,17 @@ Location Data:
   "Wright & Green": "SW Corner Wright & Green, Champaign, IL",
   "Rantoul Family Sports Complex": "744 N Murray Rd, Rantoul, IL",
   "U of I Baseball": "601 E W Kirby Ave, Champaign, IL",
-  "Jiffy Lube": "1201 N Prospect Ave, Champaign, IL"
+  "Jiffy Lube": "1201 N Prospect Ave, Champaign, IL",
+  "Meadowbrook Church": "1902 S Duncan Rd, Champaign, IL",
+  "Don's Auto Center": "202 N Main St, Homer, IL 61849",
+  "Carle on Curtis": "1701 Curtis Rd, Champaign, IL 61822",
+  "Research Park": "1915 S 1st St, Champaign, IL 61820",
+  "Downtown Urbana": "101 E Main St, Urbana, IL 61801",
+  "Jarling's Custard Cup": "309 W Kirby Ave, Champaign, IL",
+  "Collective Pour": "340 N Neil St #101, Champaign, IL"
 }
+
+
 
 
 Format: 

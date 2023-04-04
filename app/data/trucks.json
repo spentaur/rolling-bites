@@ -183,58 +183,59 @@
     "schedule": [
       {
         "id": 1,
-        "date": "Wednesday, March 29th, 2023",
-        "time": "11:00AM - 2:00PM",
-        "datetimeOpen": "2023-03-29T11:00:00-05:00",
-        "datetimeClose": "2023-03-29T14:00:00-05:00",
+        "date": "Tuesday, April 4th, 2023",
+        "time": "11:00AM - 3:00PM",
+        "datetimeOpen": "2023-04-04T11:00-05:00",
+        "datetimeClose": "2023-04-04T15:00-05:00",
         "name": "Wright & Green",
         "location": "SW Corner Wright & Green, Champaign, IL"
       },
       {
         "id": 2,
-        "date": "Wednesday, March 29th, 2023",
-        "time": "5:00PM - 8:00PM",
-        "datetimeOpen": "2023-03-29T17:00:00-05:00",
-        "datetimeClose": "2023-03-29T20:00:00-05:00",
-        "name": "Triptych Brewing",
-        "location": "1703 Woodfield Dr, Savoy, IL",
-        "description": "WING WEDNESDAY!"
-      },
-      {
-        "id": 3,
-        "date": "Thursday, March 30th, 2023",
-        "time": "11:00AM - 3:00PM",
-        "datetimeOpen": "2023-03-30T11:00:00-05:00",
-        "datetimeClose": "2023-03-30T15:00:00-05:00",
-        "name": "Wright & Green",
-        "location": "SW Corner Wright & Green, Champaign, IL"
-      },
-      {
-        "id": 4,
-        "date": "Friday, March 31st, 2023",
+        "date": "Wednesday, April 5th, 2023",
         "time": "10:30AM - 2:30PM",
-        "datetimeOpen": "2023-03-31T10:30:00-05:00",
-        "datetimeClose": "2023-03-31T14:30:00-05:00",
+        "datetimeOpen": "2023-04-05T10:30-05:00",
+        "datetimeClose": "2023-04-05T14:30-05:00",
         "name": "Carle at the Fields",
         "location": "3105 Fields South Dr, Champaign, IL"
       },
       {
+        "id": 3,
+        "date": "Wednesday, April 5th, 2023",
+        "time": "5:00PM - 8:00PM",
+        "datetimeOpen": "2023-04-05T17:00-05:00",
+        "datetimeClose": "2023-04-05T20:00-05:00",
+        "name": "Triptych Brewing",
+        "location": "1703 Woodfield Dr, Savoy, IL",
+        "description": "WINGS!"
+      },
+      {
+        "id": 4,
+        "date": "Thursday, April 6th, 2023",
+        "time": "4:00PM - 8:00PM",
+        "datetimeOpen": "2023-04-06T16:00-05:00",
+        "datetimeClose": "2023-04-06T20:00-05:00",
+        "name": "Riggs Beer Co.",
+        "location": "1901 S High Cross Rd, Urbana, IL",
+        "description": "BEER RELEASE: Maibock is a traditional German-style lager with a malty, slightly sweet flavor profile, and a moderate hop bitterness, typically enjoyed in the springtime."
+      },
+      {
         "id": 5,
-        "date": "Friday, March 31st, 2023",
-        "time": "5:00PM - 8:30PM",
-        "datetimeOpen": "2023-03-31T17:00:00-05:00",
-        "datetimeClose": "2023-03-31T20:30:00-05:00",
-        "name": "U of I Baseball",
-        "location": "601 E W Kirby Ave, Champaign, IL"
+        "date": "Friday, April 7th, 2023",
+        "time": "11:00AM - 2:00PM",
+        "datetimeOpen": "2023-04-07T11:00-05:00",
+        "datetimeClose": "2023-04-07T14:00-05:00",
+        "name": "Wright & Green",
+        "location": "SW Corner Wright & Green, Champaign, IL"
       },
       {
         "id": 6,
-        "date": "Saturday, April 1st, 2023",
-        "time": "4:00PM - 8:00PM",
-        "datetimeOpen": "2023-04-01T16:00:00-05:00",
-        "datetimeClose": "2023-04-01T20:00:00-05:00",
-        "name": "Riggs Beer Co.",
-        "location": "1901 S High Cross Rd, Urbana, IL"
+        "date": "Friday, April 7th, 2023",
+        "time": "5:00PM - 8:00PM",
+        "datetimeOpen": "2023-04-07T17:00-05:00",
+        "datetimeClose": "2023-04-07T20:00-05:00",
+        "name": "Downtown Mahomet",
+        "location": "402 E Main St, Mahomet, IL"
       }
     ]
   },
@@ -878,56 +879,56 @@
     ],
     "schedule": [
       {
-        "id": 1,
-        "date": "Tuesday, March 28th, 2023",
-        "time": "11:00AM - 2:00PM",
-        "datetimeOpen": "2023-03-28T11:00:00-05:00",
-        "datetimeClose": "2023-03-28T14:00:00-05:00",
-        "name": "Caliber Collision",
-        "location": "701 N Mattis Ave, Champaign, IL"
+        "id": 2,
+        "date": "Tuesday, April 4th, 2023",
+        "time": "5:00PM - 8:00PM",
+        "datetimeOpen": "2023-04-04T17:00-05:00",
+        "datetimeClose": "2023-04-04T20:00-05:00",
+        "name": "Jarling's Custard Cup",
+        "location": "309 W Kirby Ave, Champaign, IL"
       },
       {
-        "id": 2,
-        "date": "Wednesday, March 29th, 2023",
+        "id": 3,
+        "date": "Wednesday, April 5th, 2023",
         "time": "10:30AM - 2:00PM",
-        "datetimeOpen": "2023-03-29T10:30:00-05:00",
-        "datetimeClose": "2023-03-29T14:00:00-05:00",
+        "datetimeOpen": "2023-04-05T10:30-05:00",
+        "datetimeClose": "2023-04-05T14:00-05:00",
         "name": "Carle South Clinic",
         "location": "601 W. University Ave, Urbana, IL"
       },
       {
-        "id": 3,
-        "date": "Thursday, March 30th, 2023",
+        "id": 4,
+        "date": "Thursday, April 6th, 2023",
         "time": "11:00AM - 2:00PM",
-        "datetimeOpen": "2023-03-30T11:00:00-05:00",
-        "datetimeClose": "2023-03-30T14:00:00-05:00",
+        "datetimeOpen": "2023-04-06T11:00-05:00",
+        "datetimeClose": "2023-04-06T14:00-05:00",
         "name": "Advance Auto",
         "location": "110 N Vine St, Urbana, IL"
       },
       {
-        "id": 4,
-        "date": "Friday, March 31st, 2023",
+        "id": 5,
+        "date": "Friday, April 7th, 2023",
         "time": "11:00AM - 2:00PM",
-        "datetimeOpen": "2023-03-31T11:00:00-05:00",
-        "datetimeClose": "2023-03-31T14:00:00-05:00",
+        "datetimeOpen": "2023-04-07T11:00-05:00",
+        "datetimeClose": "2023-04-07T14:00-05:00",
         "name": "Jiffy Lube",
         "location": "1201 N Prospect Ave, Champaign, IL"
       },
       {
-        "id": 5,
-        "date": "Saturday, April 1st, 2023",
-        "time": "12:00PM - 3:00PM",
-        "datetimeOpen": "2023-04-01T12:00:00-05:00",
-        "datetimeClose": "2023-04-01T15:00:00-05:00",
-        "name": "Riggs Brewery",
-        "location": "1901 S High Cross Rd, Urbana, IL"
+        "id": 6,
+        "date": "Friday, April 7th, 2023",
+        "time": "5:00PM - 8:00PM",
+        "datetimeOpen": "2023-04-07T17:00-05:00",
+        "datetimeClose": "2023-04-07T20:00-05:00",
+        "name": "Collective Pour",
+        "location": "340 N Neil St #101, Champaign, IL"
       },
       {
-        "id": 6,
-        "date": "Sunday, April 2nd, 2023",
+        "id": 7,
+        "date": "Saturday, April 8th, 2023",
         "time": "12:00PM - 3:00PM",
-        "datetimeOpen": "2023-04-02T12:00:00-05:00",
-        "datetimeClose": "2023-04-02T15:00:00-05:00",
+        "datetimeOpen": "2023-04-08T12:00-05:00",
+        "datetimeClose": "2023-04-08T15:00-05:00",
         "name": "Riggs Brewery",
         "location": "1901 S High Cross Rd, Urbana, IL"
       }
@@ -1138,37 +1139,46 @@
     "schedule": [
       {
         "id": 1,
-        "date": "Thursday, March 30th, 2023",
+        "date": "Thursday, April 6th, 2023",
         "time": "10:30AM - 2:00PM",
-        "datetimeOpen": "2023-03-30T10:30-05:00",
-        "datetimeClose": "2023-03-30T14:00-05:00",
-        "name": "Carle South Clinic",
+        "datetimeOpen": "2023-04-06T10:30-05:00",
+        "datetimeClose": "2023-04-06T14:00-05:00",
+        "name": "Carle Hospital South",
         "location": "601 W. University Ave, Urbana, IL"
       },
       {
         "id": 2,
-        "date": "Friday, March 31st, 2023",
+        "date": "Thursday, April 6th, 2023",
+        "time": "4:30PM - 7:00PM",
+        "datetimeOpen": "2023-04-06T16:30-05:00",
+        "datetimeClose": "2023-04-06T19:00-05:00",
+        "name": "Downtown Mahomet",
+        "location": "E Main St, Mahomet, IL"
+      },
+      {
+        "id": 3,
+        "date": "Friday, April 7th, 2023",
+        "time": "10:30AM - 1:00PM",
+        "datetimeOpen": "2023-04-07T10:30-05:00",
+        "datetimeClose": "2023-04-07T13:00-05:00",
+        "name": "Gibson City Hospital",
+        "location": "1120 N Melvin St, Gibson City, IL"
+      },
+      {
+        "id": 4,
+        "date": "Friday, April 7th, 2023",
         "time": "4:30PM - 7:30PM",
-        "datetimeOpen": "2023-03-31T16:30-05:00",
-        "datetimeClose": "2023-03-31T19:30-05:00",
+        "datetimeOpen": "2023-04-07T16:30-05:00",
+        "datetimeClose": "2023-04-07T19:30-05:00",
         "name": "Triptych Brewing",
         "location": "1703 Woodfield Dr, Savoy, IL"
       },
       {
-        "id": 3,
-        "date": "Saturday, April 1st, 2023",
-        "time": "10:00AM - 1:00PM",
-        "datetimeOpen": "2023-04-01T10:00-05:00",
-        "datetimeClose": "2023-04-01T13:00-05:00",
-        "name": "Meadowbrook Church",
-        "location": "1902 S Duncan Rd, Champaign, IL "
-      },
-      {
-        "id": 4,
-        "date": "Sunday, April 2nd, 2023",
-        "time": "3:00PM - 7:00PM",
-        "datetimeOpen": "2023-04-02T15:00-05:00",
-        "datetimeClose": "2023-04-02T19:00-05:00",
+        "id": 5,
+        "date": "Saturday, April 8th, 2023",
+        "time": "4:00PM - 8:00PM",
+        "datetimeOpen": "2023-04-08T16:00-05:00",
+        "datetimeClose": "2023-04-08T20:00-05:00",
         "name": "Riggs Beer Company",
         "location": "1901 S High Cross Rd, Urbana, IL"
       }
@@ -1377,83 +1387,75 @@
     "schedule": [
       {
         "id": 1,
-        "date": "Monday, March 27th, 2023",
+        "date": "Monday, April 3rd, 2023",
         "time": "11:00AM - 2:00PM",
-        "datetimeOpen": "2023-03-27T11:00-05:00",
-        "datetimeClose": "2023-03-27T14:00-05:00",
-        "name": "Downtown Urbana",
-        "location": "101 E Main St, Urbana, IL 61801"
+        "datetimeOpen": "2023-04-03T11:00-05:00",
+        "datetimeClose": "2023-04-03T14:00-05:00",
+        "name": "Carle at the Fields",
+        "location": "3105 Fields South Dr, Champaign, IL"
       },
       {
         "id": 2,
-        "date": "Tuesday, March 28th, 2023",
+        "date": "Tuesday, April 4th, 2023",
         "time": "11:00AM - 2:00PM",
-        "datetimeOpen": "2023-03-28T11:00-05:00",
-        "datetimeClose": "2023-03-28T14:00-05:00",
+        "datetimeOpen": "2023-04-04T11:00-05:00",
+        "datetimeClose": "2023-04-04T14:00-05:00",
         "name": "Research Park",
         "location": "1915 S 1st St, Champaign, IL 61820"
       },
       {
         "id": 3,
-        "date": "Wednesday, March 29th, 2023",
+        "date": "Tuesday, April 4th, 2023",
+        "time": "5:00PM - 7:00PM",
+        "datetimeOpen": "2023-04-04T17:00-05:00",
+        "datetimeClose": "2023-04-04T19:00-05:00",
+        "name": "Top Flight",
+        "location": "202 N Main St, Seymour, IL"
+      },
+      {
+        "id": 4,
+        "date": "Wednesday, April 5th, 2023",
         "time": "11:00AM - 2:00PM",
-        "datetimeOpen": "2023-03-29T11:00-05:00",
-        "datetimeClose": "2023-03-29T14:00-05:00",
+        "datetimeOpen": "2023-04-05T11:00-05:00",
+        "datetimeClose": "2023-04-05T14:00-05:00",
         "name": "Carle Sports Medicine",
         "location": "2300 S 1st St, Champaign, IL"
       },
       {
-        "id": 4,
-        "date": "Wednesday, March 29th, 2023",
+        "id": 5,
+        "date": "Wednesday, April 5th, 2023",
         "time": "4:30PM - 7:00PM",
-        "datetimeOpen": "2023-03-29T16:30-05:00",
-        "datetimeClose": "2023-03-29T19:00-05:00",
-        "name": "Don's Auto Center",
+        "datetimeOpen": "2023-04-05T16:30-05:00",
+        "datetimeClose": "2023-04-05T19:00-05:00",
+        "name": "Homer (Don's Auto)",
         "location": "202 N Main St, Homer, IL 61849"
       },
       {
-        "id": 5,
-        "date": "Thursday, March 30th, 2023",
-        "time": "11:00AM - 2:00PM",
-        "datetimeOpen": "2023-03-30T11:00-05:00",
-        "datetimeClose": "2023-03-30T14:00-05:00",
-        "name": "Carle on Curtis",
-        "location": "1701 Curtis Rd, Champaign, IL 61822"
-      },
-      {
         "id": 6,
-        "date": "Thursday, March 30th, 2023",
-        "time": "4:30PM - 8:00PM",
-        "datetimeOpen": "2023-03-30T16:30-05:00",
-        "datetimeClose": "2023-03-30T20:00-05:00",
-        "name": "Riggs Brewery",
-        "location": "1901 S High Cross Rd, Urbana, IL"
+        "date": "Thursday, April 6th, 2023",
+        "time": "11:00AM - 7:00PM",
+        "datetimeOpen": "2023-04-06T11:00-05:00",
+        "datetimeClose": "2023-04-06T19:00-05:00",
+        "name": "Gibson Area Hospital",
+        "location": "1120 N Melvin St, Gibson City, IL"
       },
       {
         "id": 7,
-        "date": "Friday, March 31st, 2023",
+        "date": "Friday, April 7th, 2023",
         "time": "10:30AM - 2:00PM",
-        "datetimeOpen": "2023-03-31T10:30-05:00",
-        "datetimeClose": "2023-03-31T14:00-05:00",
+        "datetimeOpen": "2023-04-07T10:30-05:00",
+        "datetimeClose": "2023-04-07T14:00-05:00",
         "name": "Carle South Clinic",
         "location": "601 W. University Ave, Urbana, IL"
       },
       {
         "id": 8,
-        "date": "Friday, March 31st, 2023",
-        "time": "5:30PM - 8:30PM",
-        "datetimeOpen": "2023-03-31T17:30-05:00",
-        "datetimeClose": "2023-03-31T20:30-05:00",
-        "name": "U of I Baseball Game",
-        "location": "601 E W Kirby Ave, Champaign, IL"
-      },
-      {
-        "id": 9,
-        "date": "Saturday, April 1st, 2023",
-        "time": "12:00PM - 5:00PM",
-        "datetimeOpen": "2023-04-01T12:00-05:00",
-        "datetimeClose": "2023-04-01T17:00-05:00",
-        "name": "Adult Easter Egg Hunt"
+        "date": "Friday, April 7th, 2023",
+        "time": "5:00PM - 7:00PM",
+        "datetimeOpen": "2023-04-07T17:00-05:00",
+        "datetimeClose": "2023-04-07T19:00-05:00",
+        "name": "Elks Lodge",
+        "location": "903 N Dunlap Ave, Savoy, IL"
       }
     ]
   },
@@ -1668,83 +1670,48 @@
     "schedule": [
       {
         "id": 1,
-        "date": "Monday, March 27th, 2023",
-        "time": "11:00AM - 2:00PM",
-        "datetimeOpen": "2023-03-27T11:00-05:00",
-        "datetimeClose": "2023-03-27T14:00-05:00",
-        "name": "Downtown Urbana",
-        "location": "101 E Main St, Urbana, IL 61801"
+        "date": "Thursday, April 6th, 2023",
+        "time": "11:00AM - 1:30PM",
+        "datetimeOpen": "2023-04-06T11:00-05:00",
+        "datetimeClose": "2023-04-06T13:30-05:00",
+        "name": "Probst Auto Body",
+        "location": "101 Norb Ave, Dieterich, IL"
       },
       {
         "id": 2,
-        "date": "Tuesday, March 28th, 2023",
-        "time": "11:00AM - 2:00PM",
-        "datetimeOpen": "2023-03-28T11:00-05:00",
-        "datetimeClose": "2023-03-28T14:00-05:00",
-        "name": "Research Park",
-        "location": "1915 S 1st St, Champaign, IL 61820"
+        "date": "Thursday, April 6th, 2023",
+        "time": "4:00PM - 6:30PM",
+        "datetimeOpen": "2023-04-06T16:00-05:00",
+        "datetimeClose": "2023-04-06T18:30-05:00",
+        "name": "Robinson School Transportation Lot",
+        "location": "1301 W Main St, Robinson, IL"
       },
       {
         "id": 3,
-        "date": "Wednesday, March 29th, 2023",
-        "time": "11:00AM - 2:00PM",
-        "datetimeOpen": "2023-03-29T11:00-05:00",
-        "datetimeClose": "2023-03-29T14:00-05:00",
-        "name": "Carle Sports Medicine",
-        "location": "2300 S 1st St, Champaign, IL"
+        "date": "Friday, April 7th, 2023",
+        "time": "11:00AM - 1:30PM",
+        "datetimeOpen": "2023-04-07T11:00-05:00",
+        "datetimeClose": "2023-04-07T13:30-05:00",
+        "name": "Harbor Freight",
+        "location": "1201 Charleston Ave E, Mattoon, IL"
       },
       {
         "id": 4,
-        "date": "Wednesday, March 29th, 2023",
-        "time": "4:30PM - 7:00PM",
-        "datetimeOpen": "2023-03-29T16:30-05:00",
-        "datetimeClose": "2023-03-29T19:00-05:00",
-        "name": "Don's Auto Center",
-        "location": "202 N Main St, Homer, IL 61849"
+        "date": "Friday, April 7th, 2023",
+        "time": "4:30PM - 7:30PM",
+        "datetimeOpen": "2023-04-07T16:30-05:00",
+        "datetimeClose": "2023-04-07T19:30-05:00",
+        "name": "T+T Tavern",
+        "location": "101 N Century Blvd, Rantoul, IL"
       },
       {
         "id": 5,
-        "date": "Thursday, March 30th, 2023",
+        "date": "Saturday, April 8th, 2023",
         "time": "11:00AM - 2:00PM",
-        "datetimeOpen": "2023-03-30T11:00-05:00",
-        "datetimeClose": "2023-03-30T14:00-05:00",
-        "name": "Carle on Curtis",
-        "location": "1701 Curtis Rd, Champaign, IL 61822"
-      },
-      {
-        "id": 6,
-        "date": "Thursday, March 30th, 2023",
-        "time": "4:30PM - 8:00PM",
-        "datetimeOpen": "2023-03-30T16:30-05:00",
-        "datetimeClose": "2023-03-30T20:00-05:00",
-        "name": "Riggs Brewery",
-        "location": "1901 S High Cross Rd, Urbana, IL"
-      },
-      {
-        "id": 7,
-        "date": "Friday, March 31st, 2023",
-        "time": "10:30AM - 2:00PM",
-        "datetimeOpen": "2023-03-31T10:30-05:00",
-        "datetimeClose": "2023-03-31T14:00-05:00",
-        "name": "Carle South Clinic",
-        "location": "601 W. University Ave, Urbana, IL"
-      },
-      {
-        "id": 8,
-        "date": "Friday, March 31st, 2023",
-        "time": "5:30PM - 8:30PM",
-        "datetimeOpen": "2023-03-31T17:30-05:00",
-        "datetimeClose": "2023-03-31T20:30-05:00",
-        "name": "U of I Baseball Game",
-        "location": "601 E W Kirby Ave, Champaign, IL"
-      },
-      {
-        "id": 9,
-        "date": "Saturday, April 1st, 2023",
-        "time": "12:00PM - 5:00PM",
-        "datetimeOpen": "2023-04-01T12:00-05:00",
-        "datetimeClose": "2023-04-01T17:00-05:00",
-        "name": "Adult Easter Egg Hunt"
+        "datetimeOpen": "2023-04-08T11:00-05:00",
+        "datetimeClose": "2023-04-08T14:00-05:00",
+        "name": "Do It Best Hardware",
+        "location": "407 E Southline Rd, Tuscola, IL"
       }
     ]
   },

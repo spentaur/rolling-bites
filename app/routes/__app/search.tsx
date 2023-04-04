@@ -100,7 +100,6 @@ export default function Search() {
                       <Combobox
                         value={selected}
                         onChange={setSelected}
-                        nullable
                         name="city"
                       >
                         <div className="relative mt-1">
@@ -218,6 +217,7 @@ export default function Search() {
                           aria-describedby="comments-description"
                           name="openNow"
                           type="checkbox"
+                          value="true"
                           className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                         />
                       </div>
