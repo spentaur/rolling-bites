@@ -13,18 +13,151 @@
   ```
 */
 import { Transition, Combobox } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
-import { useActionData, Form, useTransition } from "@remix-run/react";
-import type { ActionArgs } from "@remix-run/node"; // or cloudflare/deno
+import {
+  Form,
+  useTransition,
+  useLoaderData,
+  useSearchParams,
+  Link,
+} from "@remix-run/react";
+import type { LoaderFunction } from "@remix-run/cloudflare";
+import { json } from "@remix-run/cloudflare";
+import Fuse from "fuse.js";
+// or cloudflare/deno
+
+function getFoodTruckLocations(foodTruckData) {
+  const locations = new Set();
+  foodTruckData.schedule.forEach((event) => {
+    locations.add(event.location);
+  });
+  return Array.from(locations);
+}
 
 const cities = [
   "Champaign, IL",
   "Urbana, IL",
   "Rantoul, IL",
-  "Savoy, IL",
   "Mahomet, IL",
+  "Saint Joseph, IL",
+  "Monticello, IL",
+  "Savoy, IL",
+  "Tuscola, IL",
+  "Tolono, IL",
+  "Fisher, IL",
+  "Villa Grove, IL",
+  "Sidney, IL",
+  "Philo, IL",
+  "Hoopeston, IL",
+  "Gibson City, IL",
+  "Paxton, IL",
+  "Mattoon, IL",
+  "Charleston, IL",
+  "Danville, IL",
+  "Clinton, IL",
+  "Decatur, IL",
+  "Paris, IL",
 ];
+
+export let loader: LoaderFunction = ({ request }) => {
+  const url = new URL(request.url);
+  const search = new URLSearchParams(url.search);
+  if (search.toString()) {
+    const searchParams = {
+      city: search.get("city"),
+      keywords: search.get("keywords"),
+      date: search.get("date"),
+      time: search.get("time"),
+      privateEvents: search.get("privateEvents"),
+    };
+    const truckData = require("~/data/trucks.json");
+    const options = {
+      keys: [
+        "about.description",
+        "about.location",
+        "about.areasServed",
+        "about.website",
+        "about.instagram",
+        "about.facebook.name",
+        "about.email",
+        "about.tags",
+        "about.privateEvents",
+        "name",
+        "path",
+      ],
+      includeMatches: true,
+      includeScore: true,
+      findAllMatches: true,
+      threshold: 0.3,
+    };
+    const fuse = new Fuse(truckData, options);
+    // Step 1: Search using Fuse.js based on keyword input
+    let keywordResults;
+
+    if (searchParams.keywords) {
+      keywordResults = fuse.search(searchParams.keywords);
+    } else {
+      keywordResults = truckData.map((foodTruck, index) => ({
+        item: foodTruck,
+        refIndex: index,
+        matches: [], // Populate the matches array as needed
+        score: 0, // Provide the actual score value as needed
+      }));
+    }
+    // Step 2: Filter results based on form inputs
+    return keywordResults
+      .map((result) => result) // Return the whole object instead of just item
+      .filter((result) => {
+        const item = result.item;
+        // Filter by city
+        if (
+          searchParams.city &&
+          !searchParams.time &&
+          !searchParams.date &&
+          !item.about.areasServed
+            .map((city) => city.toLowerCase())
+            .includes(searchParams.city.toLowerCase())
+        ) {
+          return false;
+        }
+
+        // Filter by dateOpen
+        if (searchParams.date) {
+          const hasDateOpen = item.schedule.some(
+            (s) => s.date === searchParams.date
+          );
+          if (!hasDateOpen) {
+            return false;
+          }
+        }
+
+        // Filter by timeOpen
+        if (searchParams.time) {
+          const hasTimeOpen = item.schedule.some(
+            (s) => s.time === searchParams.time
+          );
+          if (!hasTimeOpen) {
+            return false;
+          }
+        }
+
+        // Filter by privateEvents
+        if (searchParams.privateEvents) {
+          if (
+            item.about.privateEvents.toString() !==
+            searchParams.privateEvents.toString()
+          ) {
+            return false;
+          }
+        }
+
+        // If all conditions are met, keep the item
+        return true;
+      });
+  }
+  return null;
+};
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -34,7 +167,11 @@ export default function Search() {
   const [selected, setSelected] = useState(null);
   const [query, setQuery] = useState("");
   const transition = useTransition();
-  const actionData = useActionData<typeof action>();
+  const data = useLoaderData();
+  const [params] = useSearchParams();
+  useEffect(() => {
+    params.get("city") && setSelected(params.get("city"));
+  }, [params]);
 
   const filteredCities =
     query === ""
@@ -66,11 +203,6 @@ export default function Search() {
               <Form method="get" action="/search">
                 <fieldset disabled={transition.state === "submitting"}>
                   <h3 className="sr-only">Categories</h3>
-                  {actionData && actionData.errors.description ? (
-                    <p style={{ color: "red" }}>
-                      {actionData.errors.description}
-                    </p>
-                  ) : null}
 
                   <div>
                     <label
@@ -86,6 +218,7 @@ export default function Search() {
                         id="keywords"
                         className="w-full text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
                         placeholder="Fried Chicken"
+                        defaultValue={params.get("keywords")}
                       />
                     </div>
                   </div>
@@ -101,6 +234,7 @@ export default function Search() {
                         value={selected}
                         onChange={setSelected}
                         name="city"
+                        nullable
                       >
                         <div className="relative mt-1">
                           <div className="relative w-full cursor-default overflow-hidden rounded-md text-left">
@@ -189,6 +323,7 @@ export default function Search() {
                         type="date"
                         id="date"
                         name="date"
+                        defaultValue={params.get("date")}
                         className="w-full text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
                       />
                     </div>
@@ -206,19 +341,23 @@ export default function Search() {
                         id="time"
                         className="w-full text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
                         name="time"
+                        defaultValue={params.get("time")}
                       />
                     </div>
                   </div>
                   <div className="pb-6">
-                    <div className="relative flex items-start">
+                    <div className="flex items-start">
                       <div className="flex h-6 items-center">
                         <input
                           id="comments"
                           aria-describedby="comments-description"
-                          name="openNow"
+                          name="privateEvents"
                           type="checkbox"
                           value="true"
                           className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                          defaultChecked={
+                            params.get("privateEvents") === "true"
+                          }
                         />
                       </div>
                       <div className="ml-3 text-sm leading-6">
@@ -226,7 +365,7 @@ export default function Search() {
                           htmlFor="comments"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
-                          Open Now
+                          Private Events
                         </label>
                       </div>
                     </div>
@@ -247,7 +386,36 @@ export default function Search() {
               </Form>
 
               {/* Product grid */}
-              <div className="lg:col-span-3">{/* Your content */}</div>
+              <div className="lg:col-span-3">
+                {/* if data present */}
+                {data && data.length > 0 ? (
+                  <ul className="max-w-xl mx-auto">
+                    {data.map((item) => (
+                      <li
+                        key={item.item.id}
+                        className="flex hover:bg-gray-100 select-none rounded-xl p-3"
+                      >
+                        <Link
+                          to={item.item.path}
+                          className="flex hover:bg-gray-100 rounded-xl p-3"
+                        >
+                          <img
+                            src={item.item.avatar}
+                            alt=""
+                            className="h-10 w-10 object-contain flex-none rounded-full"
+                          />
+                          <div className="">
+                            <div className="ml-3">{item.item.name}</div>
+                            <div className="ml-3 text-xs text-gray-500">
+                              {item.item.about.description}
+                            </div>
+                          </div>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
             </div>
           </section>
         </main>

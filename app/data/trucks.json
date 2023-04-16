@@ -18,7 +18,31 @@
       "email": "mothershiphospitality@gmail.com",
       "tags": ["chicken", "tenders", "sandwiches", "fried chicken"],
       "delivery": false,
-      "privateEvents": true
+      "privateEvents": true,
+      "areasServed": [
+        "Champaign, IL",
+        "Urbana, IL",
+        "Rantoul, IL",
+        "Mahomet, IL",
+        "Saint Joseph, IL",
+        "Monticello, IL",
+        "Savoy, IL",
+        "Tuscola, IL",
+        "Tolono, IL",
+        "Fisher, IL",
+        "Villa Grove, IL",
+        "Sidney, IL",
+        "Philo, IL",
+        "Hoopeston, IL",
+        "Gibson City, IL",
+        "Paxton, IL",
+        "Mattoon, IL",
+        "Charleston, IL",
+        "Danville, IL",
+        "Clinton, IL",
+        "Decatur, IL",
+        "Paris, IL"
+      ]
     },
     "menu": [
       {
@@ -272,7 +296,31 @@
           "url": "https://www.doordash.com/store/pastamania-urbana-1749604/"
         }
       ],
-      "privateEvents": true
+      "privateEvents": true,
+      "areasServed": [
+        "Champaign, IL",
+        "Urbana, IL",
+        "Rantoul, IL",
+        "Mahomet, IL",
+        "Saint Joseph, IL",
+        "Monticello, IL",
+        "Savoy, IL",
+        "Tuscola, IL",
+        "Tolono, IL",
+        "Fisher, IL",
+        "Villa Grove, IL",
+        "Sidney, IL",
+        "Philo, IL",
+        "Hoopeston, IL",
+        "Gibson City, IL",
+        "Paxton, IL",
+        "Mattoon, IL",
+        "Charleston, IL",
+        "Danville, IL",
+        "Clinton, IL",
+        "Decatur, IL",
+        "Paris, IL"
+      ]
     },
     "menu": [
       {
@@ -666,7 +714,31 @@
       "tags": ["burgers", "sandwiches", "fried food", "smash burgers"],
       "delivery": false,
       "privateEvents": true,
-      "phone": "(217) 888-0615"
+      "phone": "(217) 888-0615",
+      "areasServed": [
+        "Champaign, IL",
+        "Urbana, IL",
+        "Rantoul, IL",
+        "Mahomet, IL",
+        "Saint Joseph, IL",
+        "Monticello, IL",
+        "Savoy, IL",
+        "Tuscola, IL",
+        "Tolono, IL",
+        "Fisher, IL",
+        "Villa Grove, IL",
+        "Sidney, IL",
+        "Philo, IL",
+        "Hoopeston, IL",
+        "Gibson City, IL",
+        "Paxton, IL",
+        "Mattoon, IL",
+        "Charleston, IL",
+        "Danville, IL",
+        "Clinton, IL",
+        "Decatur, IL",
+        "Paris, IL"
+      ]
     },
     "menuAdvisory": true,
     "menu": [
@@ -954,7 +1026,31 @@
       "email": "ffirepizza@gmail.com",
       "tags": ["wood fired", "pizza", "Neapolitan style"],
       "delivery": false,
-      "privateEvents": true
+      "privateEvents": true,
+      "areasServed": [
+        "Champaign, IL",
+        "Urbana, IL",
+        "Rantoul, IL",
+        "Mahomet, IL",
+        "Saint Joseph, IL",
+        "Monticello, IL",
+        "Savoy, IL",
+        "Tuscola, IL",
+        "Tolono, IL",
+        "Fisher, IL",
+        "Villa Grove, IL",
+        "Sidney, IL",
+        "Philo, IL",
+        "Hoopeston, IL",
+        "Gibson City, IL",
+        "Paxton, IL",
+        "Mattoon, IL",
+        "Charleston, IL",
+        "Danville, IL",
+        "Clinton, IL",
+        "Decatur, IL",
+        "Paris, IL"
+      ]
     },
     "menu": [
       {
@@ -1203,7 +1299,31 @@
       "email": "info@piatocafe.com",
       "tags": ["sandwiches", "smoothies"],
       "delivery": false,
-      "privateEvents": true
+      "privateEvents": true,
+      "areasServed": [
+        "Champaign, IL",
+        "Urbana, IL",
+        "Rantoul, IL",
+        "Mahomet, IL",
+        "Saint Joseph, IL",
+        "Monticello, IL",
+        "Savoy, IL",
+        "Tuscola, IL",
+        "Tolono, IL",
+        "Fisher, IL",
+        "Villa Grove, IL",
+        "Sidney, IL",
+        "Philo, IL",
+        "Hoopeston, IL",
+        "Gibson City, IL",
+        "Paxton, IL",
+        "Mattoon, IL",
+        "Charleston, IL",
+        "Danville, IL",
+        "Clinton, IL",
+        "Decatur, IL",
+        "Paris, IL"
+      ]
     },
     "menu": [
       {
@@ -1479,7 +1599,31 @@
       "tags": ["bbq", "brisket"],
       "phone": "(217) 264-1330",
       "delivery": false,
-      "privateEvents": true
+      "privateEvents": true,
+      "areasServed": [
+        "Champaign, IL",
+        "Urbana, IL",
+        "Rantoul, IL",
+        "Mahomet, IL",
+        "Saint Joseph, IL",
+        "Monticello, IL",
+        "Savoy, IL",
+        "Tuscola, IL",
+        "Tolono, IL",
+        "Fisher, IL",
+        "Villa Grove, IL",
+        "Sidney, IL",
+        "Philo, IL",
+        "Hoopeston, IL",
+        "Gibson City, IL",
+        "Paxton, IL",
+        "Mattoon, IL",
+        "Charleston, IL",
+        "Danville, IL",
+        "Clinton, IL",
+        "Decatur, IL",
+        "Paris, IL"
+      ]
     },
 
     "menu": [
@@ -1734,7 +1878,31 @@
       "email": "info@burritoking.us",
       "tags": ["mexican", "burritos", "tacos", "jarritos"],
       "delivery": false,
-      "privateEvents": true
+      "privateEvents": true,
+      "areasServed": [
+        "Champaign, IL",
+        "Urbana, IL",
+        "Rantoul, IL",
+        "Mahomet, IL",
+        "Saint Joseph, IL",
+        "Monticello, IL",
+        "Savoy, IL",
+        "Tuscola, IL",
+        "Tolono, IL",
+        "Fisher, IL",
+        "Villa Grove, IL",
+        "Sidney, IL",
+        "Philo, IL",
+        "Hoopeston, IL",
+        "Gibson City, IL",
+        "Paxton, IL",
+        "Mattoon, IL",
+        "Charleston, IL",
+        "Danville, IL",
+        "Clinton, IL",
+        "Decatur, IL",
+        "Paris, IL"
+      ]
     },
     "menu": [
       {

@@ -26,6 +26,11 @@ export const Navbar = (props) => {
     };
   }, []);
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    setOpen(true);
+  };
+
   return (
     <>
       <SearchModal open={open} setOpen={setOpen} />
@@ -48,9 +53,9 @@ export const Navbar = (props) => {
               </Link>
             </div>
             <div className="hidden lg:flex justify-center px-6 py-4 min-w-0 flex-1 lg:px-0 lg:col-span-3">
-              <button
-                onClick={() => setOpen(true)}
-                type="button"
+              <Link
+                onClick={handleClick}
+                to="/search"
                 className="max-w-xs w-full bg-white/75 backdrop-blur-sm flex items-center text-sm leading-6 text-slate-400 sm:rounded-md sm:ring-1 ring-slate-900/20 shadow-sm sm:py-1.5 pl-2 pr-3 py-3 hover:ring-slate-400"
               >
                 <span className="sr-only">Open search</span>
@@ -59,7 +64,7 @@ export const Navbar = (props) => {
                 <span className="ml-auto pl-3 flex-none text-xs font-semibold">
                   ⌘K
                 </span>
-              </button>
+              </Link>
             </div>
             <div className="flex py-2 items-center lg:hidden">
               <button
