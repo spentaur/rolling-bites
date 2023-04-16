@@ -35,6 +35,20 @@ function getFoodTruckLocations(foodTruckData) {
   return Array.from(locations);
 }
 
+function createDateFromString(dateString) {
+  const cleanDateString = dateString.replace(/(,)?\s?(?:st|nd|rd|th)\b/g, "");
+  console.log(cleanDateString, dateString);
+  return cleanDateString;
+}
+
+function areDatesEqual(dateString1, dateString2) {
+  const date1 = new Date(dateString1);
+  const date2 = new Date(dateString2);
+  console.log(date1, date2);
+  console.log(dateString1, dateString2);
+  return date1.getTime() === date2.getTime();
+}
+
 const cities = [
   "Champaign, IL",
   "Urbana, IL",
@@ -124,8 +138,8 @@ export let loader: LoaderFunction = ({ request }) => {
 
         // Filter by dateOpen
         if (searchParams.date) {
-          const hasDateOpen = item.schedule.some(
-            (s) => s.date === searchParams.date
+          const hasDateOpen = item.schedule.some((s) =>
+            areDatesEqual(createDateFromString(s.date), searchParams.date)
           );
           if (!hasDateOpen) {
             return false;
