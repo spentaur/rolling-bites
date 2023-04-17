@@ -1,47 +1,74 @@
 [
   {
     "id": 1,
-    "date": "Thursday, April 6th, 2023",
-    "time": "11:00AM - 1:30PM",
-    "datetimeOpen": "2023-04-06T11:00-05:00",
-    "datetimeClose": "2023-04-06T13:30-05:00",
-    "name": "Probst Auto Body",
-    "location": "101 Norb Ave, Dieterich, IL"
+    "date": "Tuesday, April 18th, 2023",
+    "time": "10:00AM - 4:00PM",
+    "datetimeOpen": "2023-04-18T10:00-05:00",
+    "datetimeClose": "2023-04-18T16:00-05:00",
+    "name": "Downtown Urbana",
+    "location": "101 E Main St, Urbana, IL 61801"
   },
   {
     "id": 2,
-    "date": "Thursday, April 6th, 2023",
-    "time": "4:00PM - 6:30PM",
-    "datetimeOpen": "2023-04-06T16:00-05:00",
-    "datetimeClose": "2023-04-06T18:30-05:00",
-    "name": "Robinson School Transportation Lot",
-    "location": "1301 W Main St, Robinson, IL"
+    "date": "Wednesday, April 19th, 2023",
+    "time": "10:30AM - 1:00PM",
+    "datetimeOpen": "2023-04-19T10:30-05:00",
+    "datetimeClose": "2023-04-19T13:00-05:00",
+    "name": "Gibson Area Hospital",
+    "location": "1120 N Melvin St, Gibson City, IL"
   },
   {
     "id": 3,
-    "date": "Friday, April 7th, 2023",
-    "time": "11:00AM - 1:30PM",
-    "datetimeOpen": "2023-04-07T11:00-05:00",
-    "datetimeClose": "2023-04-07T13:30-05:00",
-    "name": "Harbor Freight",
-    "location": "1201 Charleston Ave E, Mattoon, IL"
+    "date": "Thursday, April 20th, 2023",
+    "time": "10:30AM - 2:00PM",
+    "datetimeOpen": "2023-04-20T10:30-05:00",
+    "datetimeClose": "2023-04-20T14:00-05:00",
+    "name": "Carle Hospital South",
+    "location": "601 W. University Ave, Urbana, IL"
   },
   {
     "id": 4,
-    "date": "Friday, April 7th, 2023",
-    "time": "4:30PM - 7:30PM",
-    "datetimeOpen": "2023-04-07T16:30-05:00",
-    "datetimeClose": "2023-04-07T19:30-05:00",
-    "name": "T+T Tavern",
-    "location": "101 N Century Blvd, Rantoul, IL"
+    "date": "Thursday, April 20th, 2023",
+    "time": "3:00PM - 7:00PM",
+    "datetimeOpen": "2023-04-20T15:00-05:00",
+    "datetimeClose": "2023-04-20T19:00-05:00",
+    "name": "NuEra Urbana",
+    "location": "105 E University Ave, Urbana, IL"
   },
   {
     "id": 5,
-    "date": "Saturday, April 8th, 2023",
-    "time": "11:00AM - 2:00PM",
-    "datetimeOpen": "2023-04-08T11:00-05:00",
-    "datetimeClose": "2023-04-08T14:00-05:00",
-    "name": "Do It Best Hardware",
-    "location": "407 E Southline Rd, Tuscola, IL"
+    "date": "Friday, April 21st, 2023",
+    "time": "4:30PM - 7:30PM",
+    "datetimeOpen": "2023-04-21T16:30-05:00",
+    "datetimeClose": "2023-04-21T19:30-05:00",
+    "name": "Triptych Brewing",
+    "location": "1703 Woodfield Dr, Savoy, IL"
+  },
+  {
+    "id": 6,
+    "date": "Saturday, April 22nd, 2023",
+    "time": "10:30AM - 2:00PM",
+    "datetimeOpen": "2023-04-22T10:30-05:00",
+    "datetimeClose": "2023-04-22T14:00-05:00",
+    "name": "Robeson Elementary",
+    "location": "2501 Southmoor Dr, Champaign, IL"
+  },
+  {
+    "id": 7,
+    "date": "Saturday, April 22nd, 2023",
+    "time": "4:00PM - 8:00PM",
+    "datetimeOpen": "2023-04-22T16:00-05:00",
+    "datetimeClose": "2023-04-22T20:00-05:00",
+    "name": "Riggs Beer Company",
+    "location": "1901 S High Cross Rd, Urbana, IL"
+  },
+  {
+    "id": 8,
+    "date": "Sunday, April 23rd, 2023",
+    "time": "1:00PM - 7:00PM",
+    "datetimeOpen": "2023-04-23T13:00-05:00",
+    "datetimeClose": "2023-04-23T19:00-05:00",
+    "name": "Riggs Beer Company",
+    "location": "1901 S High Cross Rd, Urbana, IL"
   }
 ]

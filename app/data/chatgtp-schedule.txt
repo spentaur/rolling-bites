@@ -1,11 +1,27 @@
 Please reformat the following data into JSON format, including the appropriate locations from the provided location data, removing the days that are closed or private, and adding "datetimeOpen" and "datetimeClose" fields in ISO format using the Central Time Zone (UTC-5:00). If the location is not found, the name might be slightly different. if you think the name is wrong, please correct it based on the names in the location data, and add a "- ?" to the end of the name in the formated data. if you think you cant find the event, which may be possible, set the location value to "NEEDED". And make sure the time is in the proper format: "10:30AM - 3:00PM" 
 
 Original Data:
-Thurs 4/6: Dieterich lunch. 11-1:30. Probst Auto Body
-Thurs 4/6: Robinson evening. 4-6:30. 1301 W Main St. Robinson School Transportation Lot
-Fri 4/7: Mattoon lunch. 11-1:30. Harbor Freight Lot. w/ SweeTea'z
-Fri 4/7: Rantoul evening. 4:30-7:30. TNT Tavern. 
-Sat 4/8: Tuscola. 11-2. Do It Best Hardware 
+APRIL 19
+Gibson Area Hospital
+10:30am - 1pm
+APRIL 20
+Carle Hospital South
+10:30am - 2pm
+APRIL 20
+NuEra Urbana
+3pm - 7pm
+APRIL 21
+Triptych Brewing
+4:30pm - 7:30pm
+APRIL 22
+Robeson Elementary
+10:30am - 2pm
+APRIL 23
+Riggs Beer Company
+1pm - 7pm
+APRIL 22
+Riggs Beer Company
+4pm - 8pm
 
 Location Data:
 {
@@ -33,11 +49,13 @@ Location Data:
   "Research Park": "1915 S 1st St, Champaign, IL 61820",
   "Downtown Urbana": "101 E Main St, Urbana, IL 61801",
   "Jarling's Custard Cup": "309 W Kirby Ave, Champaign, IL",
-  "Collective Pour": "340 N Neil St #101, Champaign, IL"
+  "Collective Pour": "340 N Neil St #101, Champaign, IL",
+  "Top Flight": "202 N Main St, Seymour, IL",
+  "Elks Lodge": "903 N Dunlap Ave, Savoy, IL",
+  "Probst Auto Body": "101 Norb Ave, Dieterich, IL",
+  "NuEra Urbana": "105 E University Ave, Urbana, IL",
+  "Robeson Elementary": "2501 Southmoor Dr, Champaign, IL"
 }
-
-
-
 
 Format: 
 [
