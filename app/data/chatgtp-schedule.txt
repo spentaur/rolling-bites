@@ -1,27 +1,11 @@
 Please reformat the following data into JSON format, including the appropriate locations from the provided location data, removing the days that are closed or private, and adding "datetimeOpen" and "datetimeClose" fields in ISO format using the Central Time Zone (UTC-5:00). If the location is not found, the name might be slightly different. if you think the name is wrong, please correct it based on the names in the location data, and add a "- ?" to the end of the name in the formated data. if you think you cant find the event, which may be possible, set the location value to "NEEDED". And make sure the time is in the proper format: "10:30AM - 3:00PM" 
 
 Original Data:
-APRIL 19
-Gibson Area Hospital
-10:30am - 1pm
-APRIL 20
-Carle Hospital South
-10:30am - 2pm
-APRIL 20
-NuEra Urbana
-3pm - 7pm
-APRIL 21
-Triptych Brewing
-4:30pm - 7:30pm
-APRIL 22
-Robeson Elementary
-10:30am - 2pm
-APRIL 23
-Riggs Beer Company
-1pm - 7pm
-APRIL 22
-Riggs Beer Company
-4pm - 8pm
+Mon 4/17: Private event Marathon
+Wed 4/19: Private event Marathon
+Thurs 4/20-Sat 4/22: EIU Doudna Charleston TH- 11:30-6, Fri
+10-6, Sat 12-6
+Sun 4/23: Private event Indiana State
 
 Location Data:
 {
@@ -54,8 +38,10 @@ Location Data:
   "Elks Lodge": "903 N Dunlap Ave, Savoy, IL",
   "Probst Auto Body": "101 Norb Ave, Dieterich, IL",
   "NuEra Urbana": "105 E University Ave, Urbana, IL",
-  "Robeson Elementary": "2501 Southmoor Dr, Champaign, IL"
+  "Robeson Elementary": "2501 Southmoor Dr, Champaign, IL",
+  "Rose Bowl Tavern": "106 N Race St, Urbana, IL"
 }
+
 
 Format: 
 [
