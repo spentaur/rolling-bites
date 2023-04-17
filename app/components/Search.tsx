@@ -73,7 +73,7 @@ export const Search = (props: Props) => {
       {filteredPeople.length > 0 && (
         <Combobox.Options
           static
-          className="max-h-96 scroll-py-3 overflow-y-auto p-3"
+          className="max-h-96 scroll-py-3 bg-white overflow-y-auto p-3"
         >
           {filteredPeople.map((truck) => (
             <Combobox.Option
