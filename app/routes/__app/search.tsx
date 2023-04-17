@@ -23,7 +23,7 @@ import {
   Link,
 } from "@remix-run/react";
 import type { LoaderFunction } from "@remix-run/cloudflare";
-import { json } from "@remix-run/cloudflare";
+// import { json } from "@remix-run/cloudflare";
 import Fuse from "fuse.js";
 // or cloudflare/deno
 
@@ -37,16 +37,223 @@ function getFoodTruckLocations(foodTruckData) {
 
 function createDateFromString(dateString) {
   const cleanDateString = dateString.replace(/(,)?\s?(?:st|nd|rd|th)\b/g, "");
-  console.log(cleanDateString, dateString);
   return cleanDateString;
+}
+
+function createTimeFromString(timeString, dateString) {
+  const [hour, minute] = timeString.split(":").map(Number);
+  const date = dateString ? new Date(dateString) : new Date();
+  date.setHours(hour, minute, 0, 0);
+  return date;
+}
+
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function isTimeWithinRange(searchDate, searchTime, openTime, closeTime) {
+  const createDateWithOffset = (dateString) => {
+    const date = new Date(dateString);
+    const localOffset = date.getTimezoneOffset() * 60 * 1000;
+    const originalOffset =
+      -parseInt(dateString.slice(-5, -3), 10) * 60 * 60 * 1000;
+    date.setTime(date.getTime() - localOffset + originalOffset);
+    return date;
+  };
+
+  const dateTimeOpen = createDateWithOffset(openTime);
+  const dateTimeClose = createDateWithOffset(closeTime);
+
+  if (!searchDate) {
+    searchDate = formatDate(dateTimeOpen);
+  }
+
+  // Create a Date object from searchParams.date and adjust its time
+  const [searchHour, searchMinute] = searchTime.split(":").map(Number);
+  const searchDateTime = new Date(searchDate);
+  searchDateTime.setHours(searchHour, searchMinute, 0, 0);
+
+  // Apply the timezone offset from dateTimeOpen
+  searchDateTime.setTime(
+    searchDateTime.getTime() -
+      searchDateTime.getTimezoneOffset() * 60 * 1000 +
+      dateTimeOpen.getTimezoneOffset() * 60 * 1000
+  );
+
+  console.log(searchDateTime, dateTimeOpen, dateTimeClose);
+  console.log(searchDateTime >= dateTimeOpen);
+  console.log(searchDateTime <= dateTimeClose);
+
+  return searchDateTime >= dateTimeOpen && searchDateTime <= dateTimeClose;
 }
 
 function areDatesEqual(dateString1, dateString2) {
   const date1 = new Date(dateString1);
   const date2 = new Date(dateString2);
-  console.log(date1, date2);
-  console.log(dateString1, dateString2);
   return date1.getTime() === date2.getTime();
+}
+
+function filterByCity(searchParams, item) {
+  if (
+    searchParams.city &&
+    !searchParams.time &&
+    !searchParams.date &&
+    !item.about.areasServed
+      .map((city) => city.toLowerCase())
+      .includes(searchParams.city.toLowerCase())
+  ) {
+    return false;
+  }
+  return true;
+}
+
+function filterByDate(searchParams, item) {
+  if (searchParams.date && !searchParams.city && !searchParams.time) {
+    const hasDateOpen = item.schedule.some((s) =>
+      areDatesEqual(createDateFromString(s.date), searchParams.date)
+    );
+    if (!hasDateOpen) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function filterByCityAndDate(searchParams, item) {
+  if (searchParams.city && searchParams.date && !searchParams.time) {
+    const hasEventInCityOnDate = item.schedule.some((event) => {
+      const cityInLocation = event.location
+        .toLowerCase()
+        .includes(searchParams.city.toLowerCase());
+      const eventDateMatches = areDatesEqual(
+        createDateFromString(event.date),
+        searchParams.date
+      );
+
+      return cityInLocation && eventDateMatches;
+    });
+
+    if (!hasEventInCityOnDate) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function filterByCityDateAndTime(searchParams, item) {
+  if (searchParams.city && searchParams.date && searchParams.time) {
+    const hasEventInCityOnDateAndTime = item.schedule.some((event) => {
+      const cityInLocation = event.location
+        .toLowerCase()
+        .includes(searchParams.city.toLowerCase());
+      const eventDateMatches = areDatesEqual(
+        createDateFromString(event.date),
+        searchParams.date
+      );
+      const eventTimeMatches = isTimeWithinRange(
+        searchParams.date,
+        searchParams.time,
+        event.datetimeOpen,
+        event.datetimeClose
+      );
+
+      console.log(
+        item.name,
+        cityInLocation,
+        eventDateMatches,
+        eventTimeMatches
+      );
+
+      return cityInLocation && eventDateMatches && eventTimeMatches;
+    });
+
+    if (!hasEventInCityOnDateAndTime) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function filterByDateAndTime(searchParams, item) {
+  if (searchParams.date && searchParams.time && !searchParams.city) {
+    const hasEventOnDateAndTime = item.schedule.some((event) => {
+      const eventDateMatches = areDatesEqual(
+        createDateFromString(event.date),
+        searchParams.date
+      );
+      const eventTimeMatches = isTimeWithinRange(
+        searchParams.date,
+        searchParams.time,
+        event.datetimeOpen,
+        event.datetimeClose
+      );
+
+      return eventDateMatches && eventTimeMatches;
+    });
+
+    if (!hasEventOnDateAndTime) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function filterByTime(searchParams, item) {
+  if (searchParams.time && !searchParams.date && !searchParams.city) {
+    const hasEventWithMatchingTime = item.schedule.some((event) => {
+      const eventTimeMatches = isTimeWithinRange(
+        null, // No specific date
+        searchParams.time,
+        event.datetimeOpen,
+        event.datetimeClose
+      );
+
+      return eventTimeMatches;
+    });
+
+    if (!hasEventWithMatchingTime) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function filterByCityAndTime(searchParams, item) {
+  if (searchParams.city && searchParams.time && !searchParams.date) {
+    const hasEventInCityAtTime = item.schedule.some((event) => {
+      const cityInLocation = event.location
+        .toLowerCase()
+        .includes(searchParams.city.toLowerCase());
+      const eventTimeMatches = isTimeWithinRange(
+        null, // No specific date
+        searchParams.time,
+        event.datetimeOpen,
+        event.datetimeClose
+      );
+
+      return cityInLocation && eventTimeMatches;
+    });
+
+    if (!hasEventInCityAtTime) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function filterByPrivateEvents(searchParams, item) {
+  if (searchParams.privateEvents) {
+    if (
+      item.about.privateEvents.toString() !==
+      searchParams.privateEvents.toString()
+    ) {
+      return false;
+    }
+  }
+  return true;
 }
 
 const cities = [
@@ -72,11 +279,15 @@ const cities = [
   "Clinton, IL",
   "Decatur, IL",
   "Paris, IL",
+  "Homer, IL",
+  "Thomasboro, IL",
 ];
 
 export let loader: LoaderFunction = ({ request }) => {
   const url = new URL(request.url);
   const search = new URLSearchParams(url.search);
+
+  // Main filter function
   if (search.toString()) {
     const searchParams = {
       city: search.get("city"),
@@ -119,57 +330,27 @@ export let loader: LoaderFunction = ({ request }) => {
         score: 0, // Provide the actual score value as needed
       }));
     }
+    // ... (previous code)
+
     // Step 2: Filter results based on form inputs
     return keywordResults
       .map((result) => result) // Return the whole object instead of just item
       .filter((result) => {
         const item = result.item;
-        // Filter by city
-        if (
-          searchParams.city &&
-          !searchParams.time &&
-          !searchParams.date &&
-          !item.about.areasServed
-            .map((city) => city.toLowerCase())
-            .includes(searchParams.city.toLowerCase())
-        ) {
-          return false;
-        }
 
-        // Filter by dateOpen
-        if (searchParams.date) {
-          const hasDateOpen = item.schedule.some((s) =>
-            areDatesEqual(createDateFromString(s.date), searchParams.date)
-          );
-          if (!hasDateOpen) {
-            return false;
-          }
-        }
-
-        // Filter by timeOpen
-        if (searchParams.time) {
-          const hasTimeOpen = item.schedule.some(
-            (s) => s.time === searchParams.time
-          );
-          if (!hasTimeOpen) {
-            return false;
-          }
-        }
-
-        // Filter by privateEvents
-        if (searchParams.privateEvents) {
-          if (
-            item.about.privateEvents.toString() !==
-            searchParams.privateEvents.toString()
-          ) {
-            return false;
-          }
-        }
-
-        // If all conditions are met, keep the item
-        return true;
+        return (
+          filterByCity(searchParams, item) &&
+          filterByDate(searchParams, item) &&
+          filterByCityAndDate(searchParams, item) &&
+          filterByCityDateAndTime(searchParams, item) &&
+          filterByTime(searchParams, item) &&
+          filterByCityAndTime(searchParams, item) &&
+          filterByPrivateEvents(searchParams, item) &&
+          filterByDateAndTime(searchParams, item)
+        );
       });
   }
+
   return null;
 };
 

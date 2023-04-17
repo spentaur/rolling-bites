@@ -23,6 +23,7 @@
     "flowbite": "^1.6.4",
     "flowbite-react": "^0.4.2",
     "fuse.js": "^6.6.2",
+    "luxon": "^3.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-tailwindcss-datepicker": "^1.5.1",
