@@ -25,6 +25,7 @@ import {
 import type { LoaderFunction } from "@remix-run/cloudflare";
 // import { json } from "@remix-run/cloudflare";
 import Fuse from "fuse.js";
+import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 // or cloudflare/deno
 
 function getFoodTruckLocations(foodTruckData) {
@@ -301,7 +302,6 @@ export let loader: LoaderFunction = ({ request }) => {
       keys: [
         "about.description",
         "about.location",
-        "about.areasServed",
         "about.website",
         "about.instagram",
         "about.facebook.name",
@@ -609,7 +609,23 @@ export default function Search() {
                       </li>
                     ))}
                   </ul>
-                ) : null}
+                ) : (
+                  params.toString() !== "" && (
+                    <div className="py-14 px-6 text-center text-sm sm:px-14">
+                      <ExclamationCircleIcon
+                        type="outline"
+                        name="exclamation-circle"
+                        className="mx-auto h-6 w-6 text-gray-400"
+                      />
+                      <p className="mt-4 font-semibold text-gray-900">
+                        No results found
+                      </p>
+                      <p className="mt-2 text-gray-500">
+                        No trucks found for this search term. Please try again.
+                      </p>
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </section>
