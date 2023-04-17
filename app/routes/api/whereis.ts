@@ -31,6 +31,7 @@ export const loader = async ({ request }: LoaderArgs) => {
     return false;
   });
   if (current.length > 0) {
+    console.log(current);
     return json({
       message: `${truck[0].item.name} is open right now until ${
         current[0].time.split("-")[1]
@@ -40,6 +41,7 @@ export const loader = async ({ request }: LoaderArgs) => {
     });
   }
   if (schedule.length > 0) {
+    console.log(current);
     return json({
       message: `${
         truck[0].item.name
@@ -48,7 +50,7 @@ export const loader = async ({ request }: LoaderArgs) => {
         .slice(0, -1)
         .join(",")} from ${schedule[0].time.replace("-", " to ")} at ${
         schedule[0].name
-      }, ${current[0].location && current[0].location}`,
+      }, ${schedule[0].location}`,
     });
   }
   return json({

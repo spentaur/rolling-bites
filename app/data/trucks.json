@@ -1248,7 +1248,7 @@
         "datetimeOpen": "2023-04-18T10:00-05:00",
         "datetimeClose": "2023-04-18T16:00-05:00",
         "name": "Downtown Urbana",
-        "location": "101 E Main St, Urbana, IL 61801"
+        "location": "101 E Main St, Urbana, IL"
       },
       {
         "id": 2,
@@ -1558,7 +1558,7 @@
         "datetimeOpen": "2023-04-04T11:00-05:00",
         "datetimeClose": "2023-04-04T14:00-05:00",
         "name": "Research Park",
-        "location": "1915 S 1st St, Champaign, IL 61820"
+        "location": "1915 S 1st St, Champaign, IL"
       },
       {
         "id": 3,
@@ -1585,7 +1585,7 @@
         "datetimeOpen": "2023-04-05T16:30-05:00",
         "datetimeClose": "2023-04-05T19:00-05:00",
         "name": "Homer (Don's Auto)",
-        "location": "202 N Main St, Homer, IL 61849"
+        "location": "202 N Main St, Homer, IL"
       },
       {
         "id": 6,

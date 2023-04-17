@@ -597,7 +597,7 @@ export default function Search() {
                           <img
                             src={item.item.avatar}
                             alt=""
-                            className="h-10 w-10 object-contain flex-none rounded-full"
+                            className="h-14 w-14   object-contain flex-none rounded-full"
                           />
                           <div className="">
                             <div className="ml-3">{item.item.name}</div>
