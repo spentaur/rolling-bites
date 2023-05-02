@@ -1,0 +1,157 @@
+{
+  "1004 West University Avenue": {
+    "address": "1004 West University Avenue, Urbana, IL",
+    "lat": 40.1167803,
+    "lon": -88.2214029
+  },
+  "Advance Auto": {
+    "address": "110 N Vine St, Urbana, IL",
+    "lat": 40.1131959,
+    "lon": -88.20431004153363
+  },
+  "Caliber Collision": {
+    "address": "701 N Mattis Ave, Champaign, IL",
+    "lat": 40.12255010414678,
+    "lon": -88.27682797837599
+  },
+  "Carle South Clinic": {
+    "address": "601 W. University Ave, Urbana, IL",
+    "lat": 40.11653185019251,
+    "lon": -88.21461966258319
+  },
+  "Carle Sports Medicine": {
+    "address": "2300 S 1st St, Champaign, IL",
+    "lat": 40.3106792,
+    "lon": -88.3467015
+  },
+  "Carle Orthopedics": {
+    "address": "2300 S 1st St, Champaign, IL",
+    "lat": 40.3106792,
+    "lon": -88.3467015
+  },
+  "Carle at the Fields": {
+    "address": "3105 Fields South Dr, Champaign, IL",
+    "lat": 40.074983141414144,
+    "lon": -88.30952462626263
+  },
+  "CRIS Healthy Aging": {
+    "address": "4116 Fieldstone Rd, Champaign, IL",
+    "lat": 40.11454117974309,
+    "lon": -88.31090228455467
+  },
+  "Downtown Mahomet": {
+    "address": "E Main St, Mahomet, IL",
+    "lat": 40.1949595,
+    "lon": -88.4031173
+  },
+  "Gibson Area Hospital": {
+    "address": "1120 N Melvin St, Gibson City, IL",
+    "lat": 40.4786488,
+    "lon": -88.36962537556212
+  },
+  "Riggs Brewery": {
+    "address": "1901 S High Cross Rd, Urbana, IL",
+    "lat": 40.093711482291475,
+    "lon": -88.16212009451667
+  },
+  "T+T Tavern": {
+    "address": "101 N Century Blvd, Rantoul, IL",
+    "lat": 40.311426,
+    "lon": -88.155943
+  },
+  "The Pines": {
+    "address": "2860 S. Philo Rd, Urbana, IL",
+    "lat": 40.081687873205745,
+    "lon": -88.19068817942583
+  },
+  "Triptych Brewing": {
+    "address": "1703 Woodfield Dr, Savoy, IL",
+    "lat": 40.0768564,
+    "lon": -88.24927593162235
+  },
+  "Wright & Green": {
+    "address": "SW Corner Wright & Green, Champaign, IL",
+    "lat": null,
+    "lon": null
+  },
+  "Rantoul Family Sports Complex": {
+    "address": "744 N Murray Rd, Rantoul, IL",
+    "lat": null,
+    "lon": null
+  },
+  "U of I Baseball": {
+    "address": "601 E W Kirby Ave, Champaign, IL",
+    "lat": 40.09802,
+    "lon": -88.251242
+  },
+  "Jiffy Lube": {
+    "address": "1201 N Prospect Ave, Champaign, IL",
+    "lat": 40.1276017,
+    "lon": -88.25840027525562
+  },
+  "Meadowbrook Church": {
+    "address": "1902 S Duncan Rd, Champaign, IL",
+    "lat": 40.09246225,
+    "lon": -88.29396421457233
+  },
+  "Don's Auto Center": {
+    "address": "202 N Main St, Homer, IL 61849",
+    "lat": null,
+    "lon": null
+  },
+  "Carle on Curtis": {
+    "address": "1701 Curtis Rd, Champaign, IL 61822",
+    "lat": 40.067874849999995,
+    "lon": -88.2749925913688
+  },
+  "Research Park": {
+    "address": "1915 S 1st St, Champaign, IL 61820",
+    "lat": 40.3106792,
+    "lon": -88.3467015
+  },
+  "Downtown Urbana": {
+    "address": "101 E Main St, Urbana, IL 61801",
+    "lat": 40.112403,
+    "lon": -88.206152
+  },
+  "Jarling's Custard Cup": {
+    "address": "309 W Kirby Ave, Champaign, IL",
+    "lat": 40.09800436363636,
+    "lon": -88.24688262626263
+  },
+  "Collective Pour": {
+    "address": "340 N Neil St #101, Champaign, IL",
+    "lat": 40.11869185459889,
+    "lon": -88.24344442808491
+  },
+  "Top Flight": {
+    "address": "202 N Main St, Seymour, IL",
+    "lat": 40.09544,
+    "lon": -88.426438
+  },
+  "Elks Lodge": {
+    "address": "903 N Dunlap Ave, Savoy, IL",
+    "lat": 40.06442849857259,
+    "lon": -88.24993698782521
+  },
+  "Probst Auto Body": {
+    "address": "101 Norb Ave, Dieterich, IL",
+    "lat": 39.065284,
+    "lon": -88.391555
+  },
+  "NuEra Urbana": {
+    "address": "105 E University Ave, Urbana, IL",
+    "lat": 40.11630972211808,
+    "lon": -88.20734222666346
+  },
+  "Robeson Elementary": {
+    "address": "2501 Southmoor Dr, Champaign, IL",
+    "lat": 40.090608950000004,
+    "lon": -88.28743665462197
+  },
+  "Rose Bowl Tavern": {
+    "address": "106 N Race St, Urbana, IL",
+    "lat": 40.112889100000004,
+    "lon": -88.2087609
+  }
+}

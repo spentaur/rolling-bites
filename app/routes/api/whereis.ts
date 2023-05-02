@@ -5,7 +5,7 @@ export const loader = async ({ request }: LoaderArgs) => {
   const url = new URL(request.url);
   const t = url.searchParams.get("t");
 
-  const data = require("../../data/trucks.json");
+  const data = require("../../content/data/trucks.json");
   const options = {
     keys: ["name"],
     useExtendedSearch: true,

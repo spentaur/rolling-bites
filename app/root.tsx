@@ -37,12 +37,12 @@ export function links() {
 
 export default function App() {
   return (
-    <html className="h-full bg-white" lang="en">
+    <html className="h-full bg-gray-50" lang="en">
       <head>
         <Meta />
         <Links />
       </head>
-      <body className="">
+      <body className="bg-white">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

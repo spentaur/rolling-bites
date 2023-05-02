@@ -72,7 +72,7 @@ export default function Example() {
                 <span className="h-6 w-6 mr-3 flex items-center justify-center border border-gray-500 bg-transparent rounded-full">
                   <div className="h-4 w-4" />
                 </span>
-                about,blog,jobs, help,partners, press
+                blog
               </div>
             </li>
             <li className="flex items-center">
@@ -92,6 +92,14 @@ export default function Example() {
               </div>
             </li>
             <li className="flex items-center">
+              <div className="flex font-bold flex-shrink-0">
+                <span className="h-6 w-6 mr-3 flex items-center justify-center border border-gray-500 bg-transparent rounded-full">
+                  <div className="h-4 w-4" />
+                </span>
+                explore page
+              </div>
+            </li>
+            <li className="flex items-center">
               <div className="flex flex-shrink-0">
                 <span className="h-6 w-6 mr-3 flex items-center justify-center border border-gray-500 bg-transparent rounded-full">
                   <div className="h-4 w-4" />
@@ -100,7 +108,7 @@ export default function Example() {
               </div>
             </li>
             <li className="flex items-center">
-              <div className="flex flex-shrink-0">
+              <div className="flex font-bold flex-shrink-0">
                 <span className="h-6 w-6 mr-3 flex items-center justify-center border border-gray-500 bg-transparent rounded-full">
                   <div className="h-4 w-4" />
                 </span>

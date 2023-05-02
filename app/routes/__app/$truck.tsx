@@ -22,7 +22,7 @@ const tabs = [
 ];
 
 export const loader = async ({ params, request }: LoaderArgs) => {
-  const data = require("~/data/trucks.json");
+  const data = require("~/content/data/trucks.json");
   const options = {
     keys: ["path"],
     useExtendedSearch: true,
@@ -32,6 +32,9 @@ export const loader = async ({ params, request }: LoaderArgs) => {
   if (!truck.length) {
     throw new Response("What a joke! Not found.", { status: 404 });
   }
+
+  console.log(request);
+
   return json(truck[0].item);
 };
 
@@ -198,11 +201,9 @@ export default function Profile() {
             </div>
           </div>
           <div className="mt-8 lg:-mt-12 lg:-ml-4 lg:p-12 lg:col-span-4 lg:sticky lg:top-8 lg:col-start-9 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-            <img
-              className="w-80 max-w-none mx-auto rounded-lg border shadow-md border-gray-200  bg-gray-900"
-              src="/images/gordon.jpeg"
-              alt=""
-            />
+            <div className="w-80 h-80 flex justify-center items-center text-gray-500 text-xl font-bold max-w-none mx-auto rounded-lg border shadow-md border-gray-200  bg-gray-50">
+              YOUR AD HERE
+            </div>
             <div className="w-80 mx-auto text-xs mt-2 text-logo-green-400 font-semibold">
               Promoted
             </div>

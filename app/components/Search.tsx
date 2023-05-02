@@ -19,7 +19,7 @@ import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 import Fuse from "fuse.js";
 import { Link } from "@remix-run/react";
 import { useNavigate } from "@remix-run/react";
-const data = require("../data/trucks.json");
+const data = require("../content/data/trucks.json");
 const options = {
   includeScore: true,
   findAllMatches: true,
@@ -91,7 +91,7 @@ export const Search = (props: Props) => {
                   <img
                     src={truck.item.avatar}
                     alt=""
-                    className="h-6 w-6 flex-none rounded-full"
+                    className="h-6 w-6 object-contain flex-none rounded-full"
                   />
                   <span className="ml-3 flex-auto truncate">
                     {truck.item.name}
@@ -127,7 +127,7 @@ export const Search = (props: Props) => {
           <img
             src={promoted.item.avatar}
             alt=""
-            className="h-10 w-10 flex-none rounded-full"
+            className="h-10 w-10 object-contain flex-none rounded-full"
           />
           <div className="">
             <div className="ml-3">{promoted.item.name}</div>

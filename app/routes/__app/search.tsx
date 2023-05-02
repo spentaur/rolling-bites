@@ -297,7 +297,7 @@ export let loader: LoaderFunction = ({ request }) => {
       time: search.get("time"),
       privateEvents: search.get("privateEvents"),
     };
-    const truckData = require("~/data/trucks.json");
+    const truckData = require("~/content/data/trucks.json");
     const options = {
       keys: [
         "about.description",
