@@ -38,10 +38,6 @@ export const loader = async ({ context, params }) => {
   );
   const data1 = await ps.first();
 
-  console.log(data1);
-
-  truck[0].item.testtruck = data1;
-
   return json(truck[0].item);
 };
 
