@@ -33,7 +33,7 @@ export const loader = async ({ context, params }) => {
     throw new Response("What a joke! Not found.", { status: 404 });
   }
 
-  const ps = context.TRUCKS_DB.prepare(
+  const ps = context.env.TRUCKS_DB.prepare(
     "SELECT name FROM sqlite_master WHERE type='table'"
   );
   const data1 = await ps.first();
