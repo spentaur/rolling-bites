@@ -21,7 +21,7 @@ const tabs = [
   // { name: "Inspections", href: "inspections", current: false },
 ];
 
-export const loader = async ({ params, request }: LoaderArgs) => {
+export const loader = async ({ context, params }) => {
   const data = require("~/content/data/trucks.json");
   const options = {
     keys: ["path"],
@@ -33,7 +33,14 @@ export const loader = async ({ params, request }: LoaderArgs) => {
     throw new Response("What a joke! Not found.", { status: 404 });
   }
 
-  console.log(request);
+  const ps = context.TRUCKS_DB.prepare(
+    "SELECT name FROM sqlite_master WHERE type='table'"
+  );
+  const data1 = await ps.first();
+
+  console.log(data1);
+
+  truck[0].item.tables = data1;
 
   return json(truck[0].item);
 };

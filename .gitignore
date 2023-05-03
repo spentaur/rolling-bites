@@ -5,3 +5,4 @@ node_modules
 /functions/\[\[path\]\].js.map
 /public/build
 .env
+.wrangler/state/d1/TRUCKS_DB.sqlite3
