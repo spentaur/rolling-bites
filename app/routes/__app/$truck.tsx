@@ -22,6 +22,7 @@ const tabs = [
 ];
 
 export const loader = async ({ context, params }) => {
+  const ctx = context as Context;
   const data = require("~/content/data/trucks.json");
   const options = {
     keys: ["path"],
@@ -33,10 +34,10 @@ export const loader = async ({ context, params }) => {
     throw new Response("What a joke! Not found.", { status: 404 });
   }
 
-  const ps = context.TRUCKS_DB.prepare(
+  const ps = ctx.TRUCKS_DB.prepare(
     "SELECT name FROM Trucks WHERE path='/watsonschicken'"
   );
-  const data1 = await ps.first();
+  // const data1 = await ps.first();
 
   return json(truck[0].item);
 };
