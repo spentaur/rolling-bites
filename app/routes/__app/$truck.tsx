@@ -34,7 +34,7 @@ export const loader = async ({ context, params }) => {
   }
 
   const ps = context.TRUCKS_DB.prepare(
-    `SELECT name FROM Trucks WHERE path='/${params.truck}'`
+    "SELECT name FROM Trucks WHERE path='/watsonschicken'"
   );
   const data1 = await ps.first();
 
