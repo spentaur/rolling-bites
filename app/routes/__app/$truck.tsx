@@ -34,13 +34,13 @@ export const loader = async ({ context, params }) => {
   }
 
   const ps = context.env.TRUCKS_DB.prepare(
-    "SELECT name FROM sqlite_master WHERE type='table'"
+    `SELECT name FROM trucks WHERE path='${params.truck}'`
   );
   const data1 = await ps.first();
 
   console.log(data1);
 
-  truck[0].item.tables = data1;
+  truck[0].item.testtruck = data1;
 
   return json(truck[0].item);
 };
@@ -78,7 +78,7 @@ export default function Profile() {
                   {truck.name}
                 </h1>
                 <h1 className="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:leading-9">
-                  {truck.tables}
+                  {truck.testtruck.name}
                 </h1>
               </div>
               <div className="mt-1 h-10 flex items-center">
