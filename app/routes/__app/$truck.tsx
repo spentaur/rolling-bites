@@ -35,9 +35,10 @@ export const loader = async ({ context, params }) => {
   }
 
   const ps = ctx.TRUCKS_DB.prepare(
-    "SELECT name FROM Trucks WHERE path='/watsonschicken'"
+    "SELECT * FROM Trucks WHERE path='/watsonschicken'"
   );
-  // const data1 = await ps.first();
+  const data1 = await ps.first();
+  console.log(data1);
 
   return json(truck[0].item);
 };
@@ -73,9 +74,6 @@ export default function Profile() {
                 />
                 <h1 className="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:leading-9">
                   {truck.name}
-                </h1>
-                <h1 className="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:leading-9">
-                  {truck.testtruck.name}
                 </h1>
               </div>
               <div className="mt-1 h-10 flex items-center">
