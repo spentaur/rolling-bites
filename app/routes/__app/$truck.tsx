@@ -77,6 +77,9 @@ export default function Profile() {
                 <h1 className="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:leading-9">
                   {truck.name}
                 </h1>
+                <h1 className="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:leading-9">
+                  {truck.tables}
+                </h1>
               </div>
               <div className="mt-1 h-10 flex items-center">
                 <div className="flex items-center">
