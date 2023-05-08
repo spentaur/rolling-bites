@@ -5,6 +5,7 @@ import { trucks, menuSections, menuItems } from "~/db/schema";
 import { eq, inArray } from "drizzle-orm";
 
 export const loader = async ({ context, params }) => {
+  console.log("test");
   const db = getDbFromContext(context);
 
   const truckData = await db
@@ -16,6 +17,8 @@ export const loader = async ({ context, params }) => {
     throw new Response("What a joke! Not found.", { status: 404 });
   }
 
+  console.log(truckData);
+
   const menuSectionsData = await db
     .select()
     .from(menuSections)
@@ -24,6 +27,8 @@ export const loader = async ({ context, params }) => {
   if (!menuSectionsData) {
     throw new Response("What a joke! Not found.", { status: 404 });
   }
+
+  console.log(truckData);
 
   const menuSectionsIds = menuSectionsData.map((item) => item.id);
 
