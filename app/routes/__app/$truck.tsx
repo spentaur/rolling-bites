@@ -7,8 +7,8 @@ import type { LoaderArgs } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import Fuse from "fuse.js";
 import { getDbFromContext } from "~/db/db.service.server";
-import { trucks } from "~/db/schema";
-import { and, asc, desc, eq, or } from "drizzle-orm";
+import { trucks, menuSections, menuItems } from "~/db/schema";
+import { and, asc, desc, eq, inArray, or } from "drizzle-orm";
 import {
   CloudArrowUpIcon,
   LockClosedIcon,
@@ -26,16 +26,60 @@ const tabs = [
 
 export const loader = async ({ context, params }) => {
   const db = getDbFromContext(context);
-  const data1 = await db
+
+  const truckData = await db
     .select()
     .from(trucks)
     .where(eq(trucks.path, `/${params.truck}`))
     .get();
-  if (!data1) {
+  if (!truckData) {
     throw new Response("What a joke! Not found.", { status: 404 });
   }
 
-  return json(data1);
+  const menuSectionsData = await db
+    .select()
+    .from(menuSections)
+    .where(eq(menuSections.truck_id, truckData.id))
+    .all();
+  if (!menuSectionsData) {
+    throw new Response("What a joke! Not found.", { status: 404 });
+  }
+
+  const menuSectionsIds = menuSectionsData.map((item) => item.id);
+
+  const menuItemsData = await db
+    .select()
+    .from(menuItems)
+    .where(inArray(menuItems.section_id, menuSectionsIds))
+    .all();
+  if (!menuItemsData) {
+    throw new Response("What a joke! Not found.", { status: 404 });
+  }
+
+  // Group items by section_id
+  const groupedItems = menuItemsData.reduce((acc, item) => {
+    acc[item.section_id] = acc[item.section_id] || [];
+    acc[item.section_id].push(item);
+    return acc;
+  }, {});
+
+  // Combine sections and grouped items
+  const menu = menuSectionsData.map((section) => {
+    return {
+      title: section.title,
+      description: section.description,
+      items: groupedItems[section.id].map(
+        ({ id, name, description, price }) => ({
+          id,
+          name,
+          description,
+          price,
+        })
+      ),
+    };
+  });
+
+  return json([truckData, menu]);
 };
 
 function classNames(...classes: string[]) {
@@ -45,7 +89,7 @@ function classNames(...classes: string[]) {
 export default function Profile() {
   const [alertActive, setAlertActive] = useState(false);
   const [open, setOpen] = useState(false);
-  const truck = useLoaderData<typeof loader>();
+  const [truck, menu] = useLoaderData<typeof loader>();
   return (
     <>
       <div className="bg-white">

@@ -17,7 +17,9 @@ function classNames(...classes: string[]) {
 }
 
 export default function About() {
-  const truck = useMatches().find((m) => m.id === "routes/__app/$truck")?.data;
+  const [truck, menu] = useMatches().find(
+    (m) => m.id === "routes/__app/$truck"
+  )?.data;
   // const isTruckOpen = isOpen(truck.schedule);
 
   return (
