@@ -25,7 +25,7 @@ const options = {
   findAllMatches: true,
   includeMatches: true,
   threshold: 0.3,
-  keys: ["name", "path", "about.location", "about.tags"],
+  keys: ["name", "path", "location", "tags"],
 };
 const fuse = new Fuse(data, options);
 const promotedFuse = new Fuse(data, { keys: ["id"] });
@@ -116,7 +116,7 @@ export const Search = (props: Props) => {
           </p>
         </div>
       )}
-      <div className="py-2.5 px-4">
+      {/* <div className="py-2.5 px-4">
         <div className="text-xs text-semibold text-logo-green-300">
           Promoted:
         </div>
@@ -136,7 +136,7 @@ export const Search = (props: Props) => {
             </div>
           </div>
         </Link>
-      </div>
+      </div> */}
       <div className="flex flex-wrap items-center bg-gray-50 py-2.5 px-4 text-xs">
         <Link to="/search" className="text-blue-500 hover:underline">
           Advanced Search

@@ -1,7 +1,71 @@
-import { useMatches } from "@remix-run/react";
+import { json } from "@remix-run/cloudflare";
+import { useLoaderData, useMatches } from "@remix-run/react";
+import { getDbFromContext } from "~/db/db.service.server";
+import { trucks, menuSections, menuItems } from "~/db/schema";
+import { eq, inArray } from "drizzle-orm";
+
+export const loader = async ({ context, params }) => {
+  const db = getDbFromContext(context);
+
+  const truckData = await db
+    .select({ truck_id: trucks.id })
+    .from(trucks)
+    .where(eq(trucks.path, `/${params.truck}`))
+    .get();
+  if (!truckData) {
+    throw new Response("What a joke! Not found.", { status: 404 });
+  }
+
+  const menuSectionsData = await db
+    .select()
+    .from(menuSections)
+    .where(eq(menuSections.truck_id, truckData.truck_id))
+    .all();
+  if (!menuSectionsData) {
+    throw new Response("What a joke! Not found.", { status: 404 });
+  }
+
+  const menuSectionsIds = menuSectionsData.map((item) => item.id);
+
+  const menuItemsData = await db
+    .select()
+    .from(menuItems)
+    .where(inArray(menuItems.section_id, menuSectionsIds))
+    .all();
+  if (!menuItemsData) {
+    throw new Response("What a joke! Not found.", { status: 404 });
+  }
+
+  // Group items by section_id
+  const groupedItems = menuItemsData.reduce((acc, item) => {
+    acc[item.section_id] = acc[item.section_id] || [];
+    acc[item.section_id].push(item);
+    return acc;
+  }, {});
+
+  // Combine sections and grouped items
+  const menu = menuSectionsData.map((section) => {
+    return {
+      title: section.title,
+      description: section.description,
+      items: groupedItems[section.id].map(
+        ({ id, name, description, price }) => ({
+          id,
+          name,
+          description,
+          price,
+        })
+      ),
+    };
+  });
+
+  console.log(menu);
+  return json(menu);
+};
 
 export default function Menu() {
   const truck = useMatches().find((m) => m.id === "routes/__app/$truck")?.data;
+  const menu = useLoaderData<typeof loader>();
 
   return (
     <>
@@ -21,7 +85,7 @@ export default function Menu() {
         )}
       </div>
       <div className="w-full px-4 pb-5 sm:px-0">
-        {truck.menu.map(
+        {menu.map(
           (section: {
             title: string;
             description: string | null | undefined;

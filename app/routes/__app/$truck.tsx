@@ -6,6 +6,9 @@ import { Outlet, Link, NavLink, useLoaderData } from "@remix-run/react";
 import type { LoaderArgs } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import Fuse from "fuse.js";
+import { getDbFromContext } from "~/db/db.service.server";
+import { trucks } from "~/db/schema";
+import { and, asc, desc, eq, or } from "drizzle-orm";
 import {
   CloudArrowUpIcon,
   LockClosedIcon,
@@ -22,25 +25,17 @@ const tabs = [
 ];
 
 export const loader = async ({ context, params }) => {
-  const ctx = context as Context;
-  const data = require("~/content/data/trucks.json");
-  const options = {
-    keys: ["path"],
-    useExtendedSearch: true,
-  };
-  const fuse = new Fuse(data, options);
-  const truck = fuse.search(`=/${params.truck}`);
-  if (!truck.length) {
+  const db = getDbFromContext(context);
+  const data1 = await db
+    .select()
+    .from(trucks)
+    .where(eq(trucks.path, `/${params.truck}`))
+    .get();
+  if (!data1) {
     throw new Response("What a joke! Not found.", { status: 404 });
   }
 
-  const ps = ctx.TRUCKS_DB.prepare(
-    "SELECT * FROM Trucks WHERE path='/watsonschicken'"
-  );
-  const data1 = await ps.first();
-  console.log(data1);
-
-  return json(truck[0].item);
+  return json(data1);
 };
 
 function classNames(...classes: string[]) {
