@@ -24,7 +24,7 @@ const tabs = [
   // { name: "Inspections", href: "inspections", current: false },
 ];
 
-export const loader = async ({ context, params }) => {
+export const loader = async ({ context, params }: LoaderArgs) => {
   const db = getDbFromContext(context);
 
   const truckData = await db
@@ -87,7 +87,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function Profile() {
-  const [alertActive, setAlertActive] = useState(false);
+  const [alertActive] = useState(false);
   const [open, setOpen] = useState(false);
   const [truck, menu] = useLoaderData<typeof loader>();
   return (
@@ -118,7 +118,7 @@ export default function Profile() {
               <div className="mt-1 h-10 flex items-center">
                 <div className="flex items-center">
                   <dl className="flex flex-col sm:flex-row sm:flex-wrap">
-                    {truck.verified && (
+                    {truck.verified !== 0 && (
                       <>
                         <dt className="sr-only">Account status</dt>
                         <dd className="flex items-center text-sm font-medium capitalize text-gray-500 sm:mr-6">
