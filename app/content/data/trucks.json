@@ -2,7 +2,7 @@
   {
     "id": "1",
     "name": "Watson's Chicken",
-    "path": "/watsonschicken",
+    "path": "watsonschicken",
     "location": "Champaign, IL",
     "tags": ["chicken", "tenders", "sandwiches", "fried chicken"],
     "avatar": "/images/watsons.svg"
@@ -11,7 +11,7 @@
   {
     "id": "2",
     "name": "Pastamania",
-    "path": "/pastamania",
+    "path": "pastamania",
     "location": "Champaign, IL",
     "tags": ["pasta", "sandwiches", "salads", "lasagna"],
     "avatar": "/images/pastamania.jpeg"
@@ -20,7 +20,7 @@
   {
     "id": "3",
     "name": "Smith Burger Co.",
-    "path": "/smithburgerco",
+    "path": "smithburgerco",
     "location": "Champaign, IL",
     "tags": ["burgers", "sandwiches", "fried food", "smash burgers"],
     "avatar": "/images/smithburger.png"
@@ -29,7 +29,7 @@
   {
     "id": "4",
     "name": "Flour and Fire Pizza",
-    "path": "/FlourandFirePizza",
+    "path": "FlourandFirePizza",
     "location": "Champaign, IL",
     "tags": ["wood fired", "pizza", "Neapolitan style"],
     "avatar": "/images/ffpizza.png"
@@ -38,7 +38,7 @@
   {
     "id": "5",
     "name": "Piato To Go",
-    "path": "/piato",
+    "path": "piatotogo",
     "location": "Urbana, IL",
     "tags": ["sandwiches", "smoothies"],
     "avatar": "/images/piato.jpeg"
@@ -47,7 +47,7 @@
   {
     "id": "6",
     "name": "The House of Brisket/Paris",
-    "path": "/thehouseofbrisketparis",
+    "path": "thehouseofbrisketparis",
     "location": "Paris, IL",
     "tags": ["bbq", "brisket"],
     "avatar": "/images/house-of-brisket.jpeg"
@@ -56,7 +56,7 @@
   {
     "id": "7",
     "name": "Burrito King",
-    "path": "/burritoking",
+    "path": "burritoking",
     "location": "Champaign, IL",
     "tags": ["mexican", "burritos", "tacos", "jarritos"],
     "avatar": "/images/burrito-king.jpeg"

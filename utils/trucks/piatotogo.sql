@@ -1,7 +1,7 @@
 INSERT INTO Trucks (
   id, name, path, banner, avatar, verified, description, location, website, instagram, facebookName, facebookPath, email, delivery, privateEvents
 ) VALUES (
-  5, 'Piato To Go', '/piato', '/images/piato-homepage.jpeg', '/images/piato.jpeg', 1, 'Piato is located at 804 E. Main St. Urbana, Il 61802. Serving delicious catering and box lunch meals!', 'Urbana, IL', 'piatocafe.com', NULL, 'Piato Cafe', 'https://www.facebook.com/profile.php?id=100063706864398', 'info@piatocafe.com', 0, 1
+  5, 'Piato To Go', 'piatotogo', '/images/piato-homepage.jpeg', '/images/piato.jpeg', 1, 'Piato is located at 804 E. Main St. Urbana, Il 61802. Serving delicious catering and box lunch meals!', 'Urbana, IL', 'piatocafe.com', NULL, 'Piato Cafe', 'https://www.facebook.com/profile.php?id=100063706864398', 'info@piatocafe.com', 0, 1
 );
 
 -- Menu Sections

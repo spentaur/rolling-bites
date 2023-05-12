@@ -1,6 +1,6 @@
 INSERT INTO Trucks (name, path, banner, avatar, verified, description, location, website, instagram, facebookName, facebookPath, email, delivery, privateEvents)
 VALUES 
-('Watson''s Chicken', '/watsonschicken', '/images/watsons-homepage.jpeg', '/images/watsons.svg', 1, '✨ Watson''s Chicken: Premier fried chicken tenders and sandwiches in Champaign, IL | Offering exceptional private event services | Consult our schedule for upcoming locations 📅 | Discover culinary delight at watsonschicken.com 🍽️', 'Champaign, IL', 'watsonschicken.com', 'watsonschicken', 'Watson''s Shack & Rail', 'https://www.facebook.com/watsonschicken', 'mothershiphospitality@gmail.com', 0, 1);
+('Watson''s Chicken', 'watsonschicken', '/images/watsons-homepage.jpeg', '/images/watsons.svg', 1, '✨ Watson''s Chicken: Premier fried chicken tenders and sandwiches in Champaign, IL | Offering exceptional private event services | Consult our schedule for upcoming locations 📅 | Discover culinary delight at watsonschicken.com 🍽️', 'Champaign, IL', 'watsonschicken.com', 'watsonschicken', 'Watson''s Shack & Rail', 'https://www.facebook.com/watsonschicken', 'mothershiphospitality@gmail.com', 0, 1);
 
 INSERT INTO MenuSections (truck_id, title, description, rank) VALUES (1, 'Tenders', 'Pickle-brined white meat tenders fried to a crispy perfection. Each tender basket comes with waffle fries and sauce.', 1);
 INSERT INTO MenuSections (truck_id, title, description, rank) VALUES (1, 'Sandwiches', 'All sandwiches served with waffle fries.', 2);

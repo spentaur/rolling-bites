@@ -1,7 +1,7 @@
 INSERT INTO Trucks (
   id, name, path, banner, avatar, verified, description, location, website, instagram, facebookName, facebookPath, email, delivery, privateEvents
 ) VALUES (
-  7, 'Burrito King', '/burritoking', '/images/burrito-king-homepage.jpeg', '/images/burrito-king.jpeg', 1, 'Burrito King is home of the best Mexican food in the Champaign-Urbana area. We are a favorite among students and locals', 'Champaign, IL', 'burritoking.us', NULL, 'Burrito King', 'https://www.facebook.com/burritokinguiuc/', 'info@burritoking.us', 0, 1
+  7, 'Burrito King', 'burritoking', '/images/burrito-king-homepage.jpeg', '/images/burrito-king.jpeg', 1, 'Burrito King is home of the best Mexican food in the Champaign-Urbana area. We are a favorite among students and locals', 'Champaign, IL', 'burritoking.us', NULL, 'Burrito King', 'https://www.facebook.com/burritokinguiuc/', 'info@burritoking.us', 0, 1
 );
 
 INSERT INTO MenuSections (truck_id, title, rank, description)

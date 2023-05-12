@@ -1,7 +1,7 @@
 INSERT INTO Trucks (
   id, name, path, banner, avatar, verified, description, location, website, instagram, facebookName, facebookPath, email, delivery, privateEvents
 ) VALUES (
-  2, 'Pastamania', '/pastamania', '/images/pastamania-homepage.jpeg', '/images/pastamania.jpeg', 1, 'Your go-to spot for delicious pastas, sandwiches, soups, salads, and lasagnas. 🚚 Find us on Grubhub, Uber Eats, and DoorDash. 🎉 Private events available. Serving Champaign-Urbana and surrounding areas!', 'Champaign, IL', 'pastamania.us', NULL, 'PastaMania', 'https://www.facebook.com/PastaManiaUIUC', 'info@pastamania.us', 1, 1
+  2, 'Pastamania', 'pastamania', '/images/pastamania-homepage.jpeg', '/images/pastamania.jpeg', 1, 'Your go-to spot for delicious pastas, sandwiches, soups, salads, and lasagnas. 🚚 Find us on Grubhub, Uber Eats, and DoorDash. 🎉 Private events available. Serving Champaign-Urbana and surrounding areas!', 'Champaign, IL', 'pastamania.us', NULL, 'PastaMania', 'https://www.facebook.com/PastaManiaUIUC', 'info@pastamania.us', 1, 1
 );
 
 INSERT INTO MenuSections (truck_id, title, rank, description) VALUES

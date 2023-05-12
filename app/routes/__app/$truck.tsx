@@ -8,7 +8,7 @@ import { json } from "@remix-run/cloudflare";
 import Fuse from "fuse.js";
 import { getDbFromContext } from "~/db/db.service.server";
 import { trucks, menuSections, menuItems } from "~/db/schema";
-import { and, asc, desc, eq, inArray, or } from "drizzle-orm";
+import { and, asc, desc, eq, inArray, or, sql } from "drizzle-orm";
 import {
   CloudArrowUpIcon,
   LockClosedIcon,
@@ -30,7 +30,7 @@ export const loader = async ({ context, params }: LoaderArgs) => {
   const truckData = await db
     .select()
     .from(trucks)
-    .where(eq(trucks.path, `/${params.truck}`))
+    .where(sql`lower(${trucks.path}) like lower('%${params.truck}%')`)
     .get();
   if (!truckData) {
     throw new Response("What a joke! Not found.", { status: 404 });

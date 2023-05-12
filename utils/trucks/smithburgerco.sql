@@ -1,7 +1,7 @@
 INSERT INTO Trucks (
   name, path, banner, avatar, verified, description, location, website, instagram, facebookName, facebookPath, email, delivery, privateEvents
 ) VALUES (
-  'Smith Burger Co.', '/smithburgerco', '/images/smithburger-homepage.jpeg', '/images/smithburger.png', 1, 'One of CU''s hottest food trailers featuring craft smash burgers 🤤 For catering requests, please visit our website!', 'Champaign, IL', 'smithburgerco.com', 'smithburgerco', 'Smith Burger Co.', 'https://www.facebook.com/smithburgerco', 'smithburgerco@gmail.com', 0, 1
+  'Smith Burger Co.', 'smithburgerco', '/images/smithburger-homepage.jpeg', '/images/smithburger.png', 1, 'One of CU''s hottest food trailers featuring craft smash burgers 🤤 For catering requests, please visit our website!', 'Champaign, IL', 'smithburgerco.com', 'smithburgerco', 'Smith Burger Co.', 'https://www.facebook.com/smithburgerco', 'smithburgerco@gmail.com', 0, 1
 );
 
 INSERT INTO MenuSections (truck_id, title, rank, description) VALUES

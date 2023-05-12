@@ -1,7 +1,7 @@
 INSERT INTO Trucks (
   name, path, banner, avatar, verified, description, location, website, instagram, facebookName, facebookPath, email, delivery, privateEvents
 ) VALUES (
-  'Flour and Fire Pizza', '/FlourandFirePizza', '/images/flourandfire-homepage.jpeg', '/images/ffpizza.png', 1, 'Mobile wood-fired pizza trailer serving Neapolitan style pizza to the Champaign-Urbana area', 'Champaign, IL', 'flourandfirepizza.com', 'flour_and_fire_pizza', 'Flour and Fire Pizza', 'https://www.facebook.com/FlourandFirePizza/', 'ffirepizza@gmail.com', 0, 1
+  'Flour and Fire Pizza', 'FlourandFirePizza', '/images/flourandfire-homepage.jpeg', '/images/ffpizza.png', 1, 'Mobile wood-fired pizza trailer serving Neapolitan style pizza to the Champaign-Urbana area', 'Champaign, IL', 'flourandfirepizza.com', 'flour_and_fire_pizza', 'Flour and Fire Pizza', 'https://www.facebook.com/FlourandFirePizza/', 'ffirepizza@gmail.com', 0, 1
 );
 
 -- MenuSections

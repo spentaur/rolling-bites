@@ -1,7 +1,7 @@
 INSERT INTO Trucks (
   name, path, banner, avatar, verified, description, location, website, instagram, facebookName, facebookPath, email, delivery, privateEvents
 ) VALUES (
-  'The House of Brisket/Paris', '/thehouseofbrisketparis', '/images/house-of-brisket-homepage.jpeg', '/images/house-of-brisket.jpeg', 0, 'We specialize in brisket with a unique flavor all its own. We are a mobile unit that sets up at different locations.', 'Paris, IL', 'thehouseofbrisketparis.com', NULL, 'The House of Brisket/Paris', 'https://www.facebook.com/thehouseofbrisketparis', 'thehouseofbrisketparis@gmail.com', 0, 1
+  'The House of Brisket/Paris', 'thehouseofbrisketparis', '/images/house-of-brisket-homepage.jpeg', '/images/house-of-brisket.jpeg', 0, 'We specialize in brisket with a unique flavor all its own. We are a mobile unit that sets up at different locations.', 'Paris, IL', 'thehouseofbrisketparis.com', NULL, 'The House of Brisket/Paris', 'https://www.facebook.com/thehouseofbrisketparis', 'thehouseofbrisketparis@gmail.com', 0, 1
 );
 
 INSERT INTO MenuSections (truck_id, title, rank)
