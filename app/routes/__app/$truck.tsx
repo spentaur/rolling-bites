@@ -30,11 +30,13 @@ export const loader = async ({ context, params }: LoaderArgs) => {
   const truckData = await db
     .select()
     .from(trucks)
-    .where(sql`lower(${trucks.path}) like lower('%${params.truck}%')`)
+    .where(sql`lower(${trucks.path}) like lower(${params.truck})`)
     .get();
   if (!truckData) {
     throw new Response("What a joke! Not found.", { status: 404 });
   }
+
+  console.log(truckData);
 
   const menuSectionsData = await db
     .select()
