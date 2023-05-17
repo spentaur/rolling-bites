@@ -9,18 +9,16 @@ import { Fragment } from "react";
 import { CalendarIcon, MapPinIcon } from "@heroicons/react/20/solid";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { useMatches } from "@remix-run/react";
-import { isCurrentShift } from "~/utils/search";
+import { formatUnixTime, isCurrentShift } from "~/utils/search";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Schedule() {
-  const truck = useMatches().find((m) => m.id === "routes/__app/$truck")?.data;
-  const filteredSchedule = truck.schedule.filter(
-    (event: { datetimeClose: string }) =>
-      new Date(event.datetimeClose) >= new Date()
-  );
+  const [truck, menu, schedule] = useMatches().find(
+    (m) => m.id === "routes/__app/$truck"
+  )?.data;
   return (
     <>
       <div className="px-4 py-5 sm:px-6">
@@ -44,20 +42,17 @@ export default function Schedule() {
 
       <div className="pb-5 px-4 sm:px-0">
         <ol className=" text-sm">
-          {filteredSchedule.length > 0 ? (
-            filteredSchedule.map(
+          {schedule.length > 0 ? (
+            schedule.map(
               (event: {
-                id: Key | null | undefined;
-                name: number;
-                datetimeOpen: string;
-                datetimeClose: string;
-                date: string;
-                time: string;
+                name: string;
+                datetimeOpen: number;
+                datetimeClose: number;
                 location: string;
                 description: string | null | undefined;
               }) => (
                 <li
-                  key={event.id}
+                  key={event.name}
                   className={classNames(
                     isCurrentShift(event) ? "bg-logo-green-100/20" : "",
                     "relative sm:px-6 flex space-x-6 py-3"
@@ -78,7 +73,19 @@ export default function Schedule() {
                         </dt>
                         <dd>
                           <time dateTime={event.datetimeOpen}>
-                            {event.date} <br /> {event.time}
+                            {
+                              formatUnixTime(
+                                event.datetimeOpen,
+                                event.datetimeClose
+                              ).date
+                            }{" "}
+                            <br />{" "}
+                            {
+                              formatUnixTime(
+                                event.datetimeOpen,
+                                event.datetimeClose
+                              ).time
+                            }
                           </time>
                         </dd>
                       </div>

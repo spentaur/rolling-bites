@@ -7,8 +7,14 @@ import type { LoaderArgs } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import Fuse from "fuse.js";
 import { getDbFromContext } from "~/db/db.service.server";
-import { trucks, menuSections, menuItems } from "~/db/schema";
-import { and, asc, desc, eq, inArray, or, sql } from "drizzle-orm";
+import {
+  trucks,
+  menuSections,
+  menuItems,
+  scheduleItems,
+  locations,
+} from "~/db/schema";
+import { and, asc, desc, eq, inArray, or, sql, lte, gte } from "drizzle-orm";
 import {
   CloudArrowUpIcon,
   LockClosedIcon,
@@ -24,7 +30,7 @@ const tabs = [
   // { name: "Inspections", href: "inspections", current: false },
 ];
 
-export const loader = async ({ context, params }: LoaderArgs) => {
+export const loader = async ({ context, params, request }: LoaderArgs) => {
   const db = getDbFromContext(context);
 
   const truckData = await db
@@ -36,7 +42,31 @@ export const loader = async ({ context, params }: LoaderArgs) => {
     throw new Response("What a joke! Not found.", { status: 404 });
   }
 
-  console.log(truckData);
+  const unixTimestamp = Math.floor(Date.now() / 1000);
+  const twoWeeksFromNowInSeconds = unixTimestamp + 1684208653;
+
+  const schedule = await db
+    .select({
+      datetimeOpen: scheduleItems.datetimeOpen,
+      datetimeClose: scheduleItems.datetimeClose,
+      description: scheduleItems.description,
+      name: locations.name,
+      location: locations.location,
+      lat: locations.lat,
+      lon: locations.lon,
+    })
+    .from(scheduleItems)
+    .where(
+      and(
+        eq(scheduleItems.truck_id, truckData.id),
+        lte(scheduleItems.datetimeClose, twoWeeksFromNowInSeconds),
+        gte(scheduleItems.datetimeClose, unixTimestamp)
+      )
+    )
+    .leftJoin(locations, eq(scheduleItems.location_id, locations.id))
+    .all();
+
+  console.log(request.headers.get("cf-timezone"));
 
   const menuSectionsData = await db
     .select()
@@ -81,7 +111,7 @@ export const loader = async ({ context, params }: LoaderArgs) => {
     };
   });
 
-  return json([truckData, menu]);
+  return json([truckData, menu, schedule]);
 };
 
 function classNames(...classes: string[]) {
@@ -91,7 +121,7 @@ function classNames(...classes: string[]) {
 export default function Profile() {
   const [alertActive] = useState(false);
   const [open, setOpen] = useState(false);
-  const [truck, menu] = useLoaderData<typeof loader>();
+  const [truck, menu, schedule] = useLoaderData<typeof loader>();
   return (
     <>
       <div className="bg-white">

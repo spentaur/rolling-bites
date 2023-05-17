@@ -38,10 +38,9 @@ CREATE TABLE IF NOT EXISTS Schedule (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   truck_id INTEGER,
   location_id INTEGER,
-  date TEXT NOT NULL,
-  time TEXT NOT NULL,
-  datetimeOpen TEXT NOT NULL,
-  datetimeClose TEXT NOT NULL,
+  datetimeOpen INTEGER NOT NULL,
+  datetimeClose INTEGER NOT NULL,
+  description TEXT,
   FOREIGN KEY (truck_id) REFERENCES Trucks(id),
   FOREIGN KEY (location_id) REFERENCES Locations(id)
 );

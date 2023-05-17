@@ -34,14 +34,15 @@ export const menuItems = sqliteTable("MenuItems", {
   price: real("price"),
 });
 
-export const schedule = sqliteTable("Schedule", {
+export const scheduleItems = sqliteTable("Schedule", {
   id: integer("id").primaryKey(),
   truck_id: integer("truck_id").references(() => trucks.id),
   location_id: integer("location_id").references(() => locations.id),
   date: text("date"),
   time: text("time"),
-  datetimeOpen: text("datetimeOpen"),
-  datetimeClose: text("datetimeClose"),
+  datetimeOpen: integer("datetimeOpen"),
+  datetimeClose: integer("datetimeClose"),
+  description: text("description"),
 });
 
 export const locations = sqliteTable("Locations", {

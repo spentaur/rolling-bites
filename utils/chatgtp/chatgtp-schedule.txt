@@ -1,66 +1,44 @@
-Please reformat the following data into JSON format, including the appropriate locations from the provided location data, removing the days that are closed or private, and adding "datetimeOpen" and "datetimeClose" fields in ISO format using the Central Time Zone (UTC-5:00). If the location is not found, the name might be slightly different. if you think the name is wrong, please correct it based on the names in the location data, and add a "- ?" to the end of the name in the formated data. if you think you cant find the event, which may be possible, set the location value to "NEEDED". And make sure the time is in the proper format: "10:30AM - 3:00PM" 
+Please reformat the following data into JSON format, removing the days that are closed or private, and adding "datetimeOpen" and "datetimeClose" fields in ISO format using the Central Time Zone (UTC-5:00). And make sure the time is in the proper format: "10:30AM - 3:00PM" 
 
-Original Data:
+Data To Be Processed:
 Mon 4/17: Private event Marathon
 Wed 4/19: Private event Marathon
 Thurs 4/20-Sat 4/22: EIU Doudna Charleston TH- 11:30-6, Fri
 10-6, Sat 12-6
 Sun 4/23: Private event Indiana State
 
-Location Data:
-{
-  "1004 West University Avenue": "1004 West University Avenue, Urbana, IL",
-  "Advance Auto": "110 N Vine St, Urbana, IL",
-  "Caliber Collision": "701 N Mattis Ave, Champaign, IL",
-  "Carle South Clinic": "601 W. University Ave, Urbana, IL",
-  "Carle Sports Medicine": "2300 S 1st St, Champaign, IL",
-  "Carle Orthopedics": "2300 S 1st St, Champaign, IL",
-  "Carle at the Fields": "3105 Fields South Dr, Champaign, IL",
-  "CRIS Healthy Aging": "4116 Fieldstone Rd, Champaign, IL",
-  "Downtown Mahomet": "E Main St, Mahomet, IL",
-  "Gibson Area Hospital": "1120 N Melvin St, Gibson City, IL",
-  "Riggs Brewery": "1901 S High Cross Rd, Urbana, IL",
-  "T+T Tavern": "101 N Century Blvd, Rantoul, IL",
-  "The Pines": "2860 S. Philo Rd, Urbana, IL",
-  "Triptych Brewing": "1703 Woodfield Dr, Savoy, IL",
-  "Wright & Green": "SW Corner Wright & Green, Champaign, IL",
-  "Rantoul Family Sports Complex": "744 N Murray Rd, Rantoul, IL",
-  "U of I Baseball": "601 E W Kirby Ave, Champaign, IL",
-  "Jiffy Lube": "1201 N Prospect Ave, Champaign, IL",
-  "Meadowbrook Church": "1902 S Duncan Rd, Champaign, IL",
-  "Don's Auto Center": "202 N Main St, Homer, IL 61849",
-  "Carle on Curtis": "1701 Curtis Rd, Champaign, IL 61822",
-  "Research Park": "1915 S 1st St, Champaign, IL 61820",
-  "Downtown Urbana": "101 E Main St, Urbana, IL 61801",
-  "Jarling's Custard Cup": "309 W Kirby Ave, Champaign, IL",
-  "Collective Pour": "340 N Neil St #101, Champaign, IL",
-  "Top Flight": "202 N Main St, Seymour, IL",
-  "Elks Lodge": "903 N Dunlap Ave, Savoy, IL",
-  "Probst Auto Body": "101 Norb Ave, Dieterich, IL",
-  "NuEra Urbana": "105 E University Ave, Urbana, IL",
-  "Robeson Elementary": "2501 Southmoor Dr, Champaign, IL",
-  "Rose Bowl Tavern": "106 N Race St, Urbana, IL"
-}
+Example Data:
+MONDAY MAY 15
+CLOSED
+TUESDAY MAY 16
+RESEARCH PARK 11AM - 1PM
+WEDNESDAY MAY 17
+MEYER CAPEL 11:30AM - 1PM
+TRIPTYCH WINGS! 5PM - 8PM
 
 
-Format: 
+Example Format: 
 [
   {
-    "id": 1,
-    "date": "Wednesday, March 22nd, 2023",
-    "time": "10:30AM - 1:30PM",
-    "datetimeOpen": "2023-03-22T10:30-05:00",
-    "datetimeClose": "2023-03-22T13:30-05:00",
-    "name": "Carle Orthopedics",
-    "location": "2300 S 1st St, Champaign, IL"
+    "date": "Tuesday, May 16th, 2023",
+    "time": "11:00AM - 1:00PM",
+    "datetimeOpen": "2023-05-16T11:00-05:00",
+    "datetimeClose": "2023-05-16T13:00-05:00",
+    "name": "Research Park",
   },
   {
-    "id": 2,
-    "date": "Wednesday, March 22nd, 2023",
-    "time": "4:30PM - 7:00PM",
-    "datetimeOpen": "2023-03-22T16:30-05:00",
-    "datetimeClose": "2023-03-22T19:00-05:00",
-    "name": "Downtown Mahomet",
-    "location": "E Main St, Mahomet, IL"
+    "date": "Wednesday, May 17th, 2023",
+    "time": "11:30AM - 1:00PM",
+    "datetimeOpen": "2023-05-17T11:30-05:00",
+    "datetimeClose": "2023-05-17T13:00-05:00",
+    "name": "Meyer Capel",
+  },
+  {
+    "id": 3,
+    "date": "Wednesday, May 17th, 2023",
+    "time": "5:00PM - 8:00PM",
+    "datetimeOpen": "2023-05-17T17:00-05:00",
+    "datetimeClose": "2023-05-17T20:00-05:00",
+    "name": "Triptych (WINGS!)",
   }
 ]

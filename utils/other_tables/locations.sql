@@ -29,4 +29,12 @@ INSERT INTO Locations (name, location, lat, lon) VALUES
   ('Probst Auto Body', '101 Norb Ave, Dieterich, IL', 39.065284, -88.391555),
   ('NuEra Urbana', '105 E University Ave, Urbana, IL', 40.11630972211808, -88.20734222666346),
   ('Robeson Elementary', '2501 Southmoor Dr, Champaign, IL', 40.090608950000004, -88.28743665462197),
-  ('Rose Bowl Tavern', '106 N Race St, Urbana, IL', 40.112889100000004, -88.2087609);
+  ('Rose Bowl Tavern', '106 N Race St, Urbana, IL', 40.112889100000004, -88.2087609),
+  ('Gibson Glo-Bingo', '207 N Lawrence St, Gibson City, IL', 40.46655860133991, -88.36629625519352);
+
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Meyer Capel', '306 W Church St, Champaign, IL', 40.118552227230005, -88.2476137608384);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Alto Vineyards', '4210 N Duncan Rd, Champaign, IL', 40.167226741129106, -88.29520481487366);
+
+
+-- INSERT INTO Locations (name, location, lat, lon) VALUES ('', '', , );
+
