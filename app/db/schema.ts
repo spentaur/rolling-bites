@@ -43,6 +43,8 @@ export const scheduleItems = sqliteTable("Schedule", {
   datetimeOpen: integer("datetimeOpen"),
   datetimeClose: integer("datetimeClose"),
   description: text("description"),
+  dateString: text("dateString"),
+  timeString: text("timeString"),
 });
 
 export const locations = sqliteTable("Locations", {

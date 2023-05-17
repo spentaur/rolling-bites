@@ -41,6 +41,8 @@ CREATE TABLE IF NOT EXISTS Schedule (
   datetimeOpen INTEGER NOT NULL,
   datetimeClose INTEGER NOT NULL,
   description TEXT,
+  dateString TEXT NOT NULL,
+  timeString TEXT NOT NULL,
   FOREIGN KEY (truck_id) REFERENCES Trucks(id),
   FOREIGN KEY (location_id) REFERENCES Locations(id)
 );

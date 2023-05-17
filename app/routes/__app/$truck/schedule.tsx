@@ -49,6 +49,8 @@ export default function Schedule() {
                 datetimeOpen: number;
                 datetimeClose: number;
                 location: string;
+                dateString: string;
+                timeString: string;
                 description: string | null | undefined;
               }) => (
                 <li
@@ -73,19 +75,7 @@ export default function Schedule() {
                         </dt>
                         <dd>
                           <time dateTime={event.datetimeOpen}>
-                            {
-                              formatUnixTime(
-                                event.datetimeOpen,
-                                event.datetimeClose
-                              ).date
-                            }{" "}
-                            <br />{" "}
-                            {
-                              formatUnixTime(
-                                event.datetimeOpen,
-                                event.datetimeClose
-                              ).time
-                            }
+                            {event.dateString} <br /> {event.timeString}
                           </time>
                         </dd>
                       </div>
