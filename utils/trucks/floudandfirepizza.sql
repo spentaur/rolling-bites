@@ -21,9 +21,8 @@ INSERT INTO MenuItems (section_id, name, description, price) VALUES (18, 'Garden
 INSERT INTO MenuItems (section_id, name, description, price) VALUES (18, 'Motz Lover', 'Fresh mozzarella on top of our shredded mozzarella all melted on top of our San Marzano tomato base', '$11.75');
 INSERT INTO MenuItems (section_id, name, description, price) VALUES (18, 'Hotta Ricotta', 'Sausage and basil over San Marzano sauce, topped with shredded mozzarella then finished with dollops of ricotta and a drizzle of hot honey', '$14.75');
 INSERT INTO MenuItems (section_id, name, description, price) VALUES (18, 'Meat-za', 'Pepperoni, sausage and bacon smothered by our shredded mozzarella on our San Marzano tomato base. Try it with Mike’s Hot Honey for an extra kick!', '$12.75');
-INSERT INTO MenuItems (section_id, name, description, price) VALUES (18, 'Cheese Pizza (Build Your Own)', 'Any of our toppings, any of our sauces--prepared your way', '$9.75');
 
--- Add-ons
+INSERT INTO MenuItems (section_id, name, description, price) VALUES (18, 'Cheese Pizza (Build Your Own)', 'Any of our toppings, any of our sauces--prepared your way', '$9.75');
 INSERT INTO MenuItems (section_id, name) VALUES (19, 'Red Sauce');
 INSERT INTO MenuItems (section_id, name) VALUES (19, 'White Sauce');
 INSERT INTO MenuItems (section_id, name) VALUES (19, 'BBQ Sauce');
@@ -33,6 +32,7 @@ INSERT INTO MenuItems (section_id, name, price) VALUES (19, 'Pepperoni', '$1.00'
 INSERT INTO MenuItems (section_id, name, price) VALUES (19, 'Chicken', '$1.00');
 INSERT INTO MenuItems (section_id, name, price) VALUES (19, 'Fresh Mozzarella', '$2.00');
 INSERT INTO MenuItems (section_id, name, price) VALUES (19, 'Extra Cheese', '$1.00');
+
 INSERT INTO MenuItems (section_id, name, price) VALUES (19, 'Olives', '$1.00');
 INSERT INTO MenuItems (section_id, name, price) VALUES (19, 'Fire Roasted Peppers', '$1.00');
 INSERT INTO MenuItems (section_id, name, price) VALUES (19, 'Mushrooms', '$1.00');

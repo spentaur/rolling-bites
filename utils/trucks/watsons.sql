@@ -20,6 +20,7 @@ INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (7, 2, '
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (8, 2, 'Tofu Po''boy', 'Crispy tofu served on a hoagie roll with mixed greens, dill pickles, red onion, and vegan remoulade.', '$13.00');
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (9, 3, 'Waffle Fries', NULL, '$4.00');
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (10, 3, 'Creamy Coleslaw', NULL, '$4.00');
+
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (11, 3, 'Mac & Cheese', NULL, '$4.00');
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (12, 4, 'Buffalo', NULL, '$1.00');
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (13, 4, 'Black Pepper Ranch', NULL, '$1.00');
@@ -30,6 +31,7 @@ INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (22, 5, 
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (23, 5, 'American Cheese', NULL, '$1.00');
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (24, 5, 'Pickles', NULL, '$1.00');
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (17, 6, 'Coke', NULL, '$3.00');
+
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (18, 6, 'Diet Coke', NULL, '$3.00');
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (19, 6, 'Sprite', NULL, '$3.00');
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (20, 6, 'Bottle Water', NULL, '$3.00');
