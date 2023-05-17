@@ -66,8 +66,7 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
     .leftJoin(locations, eq(scheduleItems.location_id, locations.id))
     .all();
 
-  const keys = Object.keys(request);
-  console.log(keys); // ['a', 'b', 'c']
+  console.log(request.cf.timezone);
 
   const menuSectionsData = await db
     .select()
