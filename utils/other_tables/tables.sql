@@ -7,11 +7,11 @@ CREATE TABLE IF NOT EXISTS Trucks (
   verified INTEGER NOT NULL,
   description TEXT NOT NULL,
   location TEXT NOT NULL,
-  website TEXT NOT NULL,
+  website TEXT,
   instagram TEXT,
   facebookName TEXT,
   facebookPath TEXT,
-  email TEXT NOT NULL,
+  email TEXT,
   delivery INTEGER NOT NULL,
   privateEvents INTEGER NOT NULL
 );

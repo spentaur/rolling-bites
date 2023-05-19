@@ -4,14 +4,14 @@ INSERT INTO Trucks (
   5, 'Piato To Go', 'piatotogo', '/images/piato-homepage.jpeg', '/images/piato.jpeg', 1, 'Piato is located at 804 E. Main St. Urbana, Il 61802. Serving delicious catering and box lunch meals!', 'Urbana, IL', 'piatocafe.com', NULL, 'Piato Cafe', 'https://www.facebook.com/profile.php?id=100063706864398', 'info@piatocafe.com', 0, 1
 );
 
--- Menu Sections
+
 INSERT INTO MenuSections (truck_id, title, rank) VALUES (5, 'Entrees', 21);
 INSERT INTO MenuSections (truck_id, title, rank) VALUES (5, 'Sides', 22);
 INSERT INTO MenuSections (truck_id, title, rank) VALUES (5, 'Smoothies', 23);
 INSERT INTO MenuSections (truck_id, title, rank) VALUES (5, 'Iced Coffee', 24);
 INSERT INTO MenuSections (truck_id, title, rank) VALUES (5, 'Beverages', 25);
 
--- Entrees
+
 INSERT INTO MenuItems (section_id, name, description, price) VALUES (21, 'Hawaiian Nachos', 'Tortilla Chips topped with Modelo Chicken, Pineapple Salsa & Hawaiian BBQ sauce', '$9.00');
 INSERT INTO MenuItems (section_id, name, price) VALUES (21, 'Homemade Chicken Fingers and Fries', '$9.00');
 INSERT INTO MenuItems (section_id, name, description, price) VALUES (21, 'Finding Nemo', 'Cod Tacos, Lettuce, Pineapple Salsa and Siracha Mayo', '$7.00');
@@ -31,33 +31,33 @@ INSERT INTO MenuItems (section_id, name, description, price) VALUES (21, 'Big Ki
 INSERT INTO MenuItems (section_id, name, description, price) VALUES (21, 'Little Kids Grilled Cheese', 'Grilled sourdough with Cheddar', '$4.00');
 INSERT INTO MenuItems (section_id, name, description, price) VALUES (21, 'The TBR', 'Turkey, Bacon, Ranch, Lettuce, Tomato and Cheddar in a Tortilla Wrap', '$8.00');
 
--- Sides
+
 INSERT INTO MenuItems (section_id, name, price) VALUES (22, 'Cilantro and Red Pepper Cole Slaw', '$3.00');
 INSERT INTO MenuItems (section_id, name, price) VALUES (22, 'Fresh Fruit', '$3.00');
 INSERT INTO MenuItems (section_id, name, price) VALUES (22, 'French Fries', '$3.00');
 INSERT INTO MenuItems (section_id, name, price) VALUES (22, 'Sweet Potato Fries', '$3.00');
 INSERT INTO MenuItems (section_id, name, price) VALUES (22, 'Homemade Chips and Caramelized Onion Dip', '$3.00');
 
--- Smoothies
+
 INSERT INTO MenuItems (section_id, name, price) VALUES (23, 'Strawberry', '$4.00');
 INSERT INTO MenuItems (section_id, name, price) VALUES (23, 'Strawberry Banana', '$4.00');
 INSERT INTO MenuItems (section_id, name, price) VALUES (23, 'Tropical', '$4.00');
 
--- Iced Coffee
+
 INSERT INTO MenuItems (section_id, name, price) VALUES (24, 'Iced Coffee', '$3.00');
 INSERT INTO MenuItems (section_id, name, price, description) VALUES (24, 'Add a Flavor Shot', '$0.50', 'Vanilla, Caramel, Irish Cream, Sugar Free Vanilla');
 
--- Coffee
+
 INSERT INTO MenuItems (section_id, name, price) VALUES (25, 'Coffee', '$3.00');
 
--- Tea
+
 INSERT INTO MenuItems (section_id, name, price) VALUES (25, 'Tea', '$3.00');
 
--- Sweet Tea
+
 INSERT INTO MenuItems (section_id, name, price) VALUES (25, 'Sweet Tea', '$3.00');
 
--- Sodas
+
 INSERT INTO MenuItems (section_id, name, price, description) VALUES (25, 'Sodas', '$1.50', 'Coke, Diet Coke, Pepsi, Diet Pepsi, Mountain Dew, Sprite, Dr. Pepper, Diet Dr. Pepper');
 
--- Bottled Water
+
 INSERT INTO MenuItems (section_id, name, price) VALUES (25, 'Bottled Water', '$1.00');

@@ -9,7 +9,6 @@ INSERT INTO MenuSections (truck_id, title, description, rank) VALUES (1, 'Sauces
 INSERT INTO MenuSections (truck_id, title, description, rank) VALUES (1, 'Additions', NULL, 5);
 INSERT INTO MenuSections (truck_id, title, description, rank) VALUES (1, 'Drinks', NULL, 6);
 
--- MenuItems
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (1, 1, '4 Tenders and 1 Sauce', NULL, '$10.00');
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (2, 1, '6 Tenders and 2 Sauces', NULL, '$15.00');
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (3, 2, 'Watson''s Hot', 'Crunchy chicken tenders dipped in Watson''s Hot, served on a brioche bun with creamy coleslaw, dill pickles, & comeback sauce.', '$14.00');
@@ -36,100 +35,3 @@ INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (18, 6, 
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (19, 6, 'Sprite', NULL, '$3.00');
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (20, 6, 'Bottle Water', NULL, '$3.00');
 INSERT INTO MenuItems (id, section_id, name, description, price) VALUES (21, 6, 'Iced Tea', NULL, '$3.00');
-
-
--- Schedule
-INSERT INTO
-  Schedule (truck_id, location_id, datetimeOpen, datetimeClose)
-VALUES
-  (
-    1,
-    (
-      SELECT
-        id
-      FROM
-        Locations
-      WHERE
-        name = 'Wright & Green'
-    ),
-    1681833600,
-    1681833600
-  ),
-  (
-    1,
-    (
-      SELECT
-        id
-      FROM
-        Locations
-      WHERE
-        name = 'Triptych Brewing'
-    ),
-    1681941600,
-    1681941600
-  ),
-  (
-    1,
-    (
-      SELECT
-        id
-      FROM
-        Locations
-      WHERE
-        name = 'Rose Bowl Tavern'
-    ),
-    1682026200,
-    1682026200
-  ),
-  (
-    1,
-    (
-      SELECT
-        id
-      FROM
-        Locations
-      WHERE
-        name = 'Gibson Area Hospital'
-    ),
-    1682091000,
-    1682091000
-  ),
-  (
-    1,
-    (
-      SELECT
-        id
-      FROM
-        Locations
-      WHERE
-        name = 'Gibson Glo-Bingo'
-    ),
-    1682110800,
-    1682110800
-  ),
-  (
-    1,
-    (
-      SELECT
-        id
-      FROM
-        Locations
-      WHERE
-        name = 'Rantoul Family Sports Complex'
-    ),
-    1682177400,
-    1682177400
-  ),
-  (
-    1,
-    (
-      SELECT
-        id
-      FROM
-        Locations
-      WHERE
-        name = 'Rantoul Family Sports Complex'
-    ),
-    1682263800,
-    1682263800
-  );

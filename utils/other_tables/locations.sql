@@ -34,6 +34,17 @@ INSERT INTO Locations (name, location, lat, lon) VALUES
 
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Meyer Capel', '306 W Church St, Champaign, IL', 40.118552227230005, -88.2476137608384);
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Alto Vineyards', '4210 N Duncan Rd, Champaign, IL', 40.167226741129106, -88.29520481487366);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Flora Design', '202 Northeast St, Mahomet, IL', 40.19489666283589, -88.39799021686505);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Company 421', '421 E Main St, Mahomet, IL', 40.1948491488144, -88.40320892884866);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Urbana Farmer''s Market', '201 Lincoln Square, Urbana, IL', 40.109884592136225, -88.20564808640562);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Urbana VFW', '1303 E Main St, Urbana, IL', 40.112675637836844, -88.19289658472339);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Terre Haute Regional Hospital', '3901 S 7th St, Terre Haute, IN', 39.419711552487094, -87.40839960781013);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('St Joseph IGA', '205 N Main St, St Joseph, IL', 40.11222629728761, -88.04251714394628);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Fast Stop Gas Station - Gibson City', '301 S West St, Gibson City, IL', 40.45663764216565, -88.38077046620803);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Harbor Freight Tools - Mattoon', '1201 Charleston Ave E, Mattoon, IL', 39.48318601046063, -88.33067575739602);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Legacy Harley-Davidson', '1315 Althoff Dr, Effingham, IL', 39.14711849897208, -88.51437690560346);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Morton Park', '1215 Division St, Charleston, IL', 39.484924801896824, -88.18041383968277);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Palestine, IL', 'Palestine, IL', 39.00358750208685, -87.61330560807026);
 
 
 -- INSERT INTO Locations (name, location, lat, lon) VALUES ('', '', , );

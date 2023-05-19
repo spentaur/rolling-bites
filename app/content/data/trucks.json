@@ -60,5 +60,14 @@
     "location": "Champaign, IL",
     "tags": ["mexican", "burritos", "tacos", "jarritos"],
     "avatar": "/images/burrito-king.jpeg"
+  },
+
+  {
+    "id": "8",
+    "name": "The Ribcage Food Truck",
+    "path": "ribcage",
+    "location": "St Joseph, IL",
+    "tags": ["bbq", "ribs", "pulled pork"],
+    "avatar": "/images/ribcage.jpg"
   }
 ]

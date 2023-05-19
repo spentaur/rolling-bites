@@ -10,7 +10,6 @@ INSERT INTO MenuSections (truck_id, title, rank, description) VALUES
 (3, 'Sides & Shareables', 3, NULL),
 (3, 'Drinks', 4,  NULL);
 
--- Smash Burgers
 INSERT INTO MenuItems (section_id, name, description, price) VALUES
 (14, 'Plain Jane', 'Double beef on a toasted bun', '$7.50'),
 (14, 'Average Joe', 'Double beef with American cheese', '$8.50'),
@@ -26,7 +25,6 @@ INSERT INTO MenuItems (section_id, name, description, price) VALUES
 (14, 'Rocky  Balboa', 'Double beef, sautéed onions & bell peppers, provolone cheese and marinara', '$11.00'),
 (14, 'Bacon Mac Attack', 'Double beef, bacon, pepper jack cheese topped with white cheddar pepper jack mac & cheese and southern sauce', '$11.00');
 
--- Sandwiches
 INSERT INTO MenuItems (section_id, name, description, price) VALUES
 (15, 'BBLT', 'Loads of bacon, lettuce, tomato, and mayo on Texas toast', '$9.00'),
 (15, 'Buffalo Chicken', 'Grilled or fried, tossed in spicy buffalo sauce with pepper jack cheese on a brioche bun', '$9.00'),
@@ -36,7 +34,6 @@ INSERT INTO MenuItems (section_id, name, description, price) VALUES
 (15, 'Chili Cheese Ripper', 'Deep fried hot dog topped with house made chili, American cheese and Onion on a toasted bun', '$7.75'),
 (15, 'Bacon Mac Attack Riper', 'Deep fried hot dog topped with bacon, white cheddar pepper jack mac & cheese and southern sauce on a toasted bun', '$7.50');
 
--- Sides & Shareables
 INSERT INTO MenuItems (section_id, name, description, price) VALUES
 (16, 'French Fries', NULL, '$2.25, $4.50'),
 (16, 'Cajun French Fries', NULL, '$2.25, $4.50'),
@@ -46,7 +43,6 @@ INSERT INTO MenuItems (section_id, name, description, price) VALUES
 (16, 'Jalepeno Poppers', 'w/ sweet chili dipping sauce', '$7.00'),
 (16, 'White Cheddar Pepper Jack Mac', NULL, '$5.00');
 
--- Drinks
 INSERT INTO MenuItems (section_id, name, description, price) VALUES
 (17, 'Canned Soda', NULL, '$1.50'),
 (17, 'Bottle Water', NULL, '$2.00');
