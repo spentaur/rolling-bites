@@ -26,268 +26,22 @@ import type { LoaderFunction } from "@remix-run/cloudflare";
 // import { json } from "@remix-run/cloudflare";
 import Fuse from "fuse.js";
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
+import {
+  trucks,
+  menuSections,
+  menuItems,
+  scheduleItems,
+  locations,
+} from "~/db/schema";
+import { and, asc, desc, eq, inArray } from "drizzle-orm";
+import { getDbFromContext } from "~/db/db.service.server";
+
 // or cloudflare/deno
 
-function getFoodTruckLocations(foodTruckData) {
-  const locations = new Set();
-  foodTruckData.schedule.forEach((event) => {
-    locations.add(event.location);
-  });
-  return Array.from(locations);
-}
-
-function createDateFromString(dateString) {
-  const cleanDateString = dateString.replace(/(,)?\s?(?:st|nd|rd|th)\b/g, "");
-  return cleanDateString;
-}
-
-function createTimeFromString(timeString, dateString) {
-  const [hour, minute] = timeString.split(":").map(Number);
-  const date = dateString ? new Date(dateString) : new Date();
-  date.setHours(hour, minute, 0, 0);
-  return date;
-}
-
-function formatDate(date) {
-  const year = date.getFullYear();
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const day = date.getDate().toString().padStart(2, "0");
-  return `${year}-${month}-${day}`;
-}
-
-function isTimeWithinRange(searchDate, searchTime, openTime, closeTime) {
-  const createDateWithOffset = (dateString) => {
-    const date = new Date(dateString);
-    const localOffset = date.getTimezoneOffset() * 60 * 1000;
-    const originalOffset =
-      -parseInt(dateString.slice(-5, -3), 10) * 60 * 60 * 1000;
-    date.setTime(date.getTime() - localOffset + originalOffset);
-    return date;
-  };
-
-  const dateTimeOpen = createDateWithOffset(openTime);
-  const dateTimeClose = createDateWithOffset(closeTime);
-
-  if (!searchDate) {
-    searchDate = formatDate(dateTimeOpen);
-  }
-
-  // Create a Date object from searchParams.date and adjust its time
-  const [searchHour, searchMinute] = searchTime.split(":").map(Number);
-  const searchDateTime = new Date(searchDate);
-  searchDateTime.setHours(searchHour, searchMinute, 0, 0);
-
-  // Apply the timezone offset from dateTimeOpen
-  searchDateTime.setTime(
-    searchDateTime.getTime() -
-      searchDateTime.getTimezoneOffset() * 60 * 1000 +
-      dateTimeOpen.getTimezoneOffset() * 60 * 1000
-  );
-
-  console.log(searchDateTime, dateTimeOpen, dateTimeClose);
-  console.log(searchDateTime >= dateTimeOpen);
-  console.log(searchDateTime <= dateTimeClose);
-
-  return searchDateTime >= dateTimeOpen && searchDateTime <= dateTimeClose;
-}
-
-function areDatesEqual(dateString1, dateString2) {
-  const date1 = new Date(dateString1);
-  const date2 = new Date(dateString2);
-  return date1.getTime() === date2.getTime();
-}
-
-function filterByCity(searchParams, item) {
-  if (
-    searchParams.city &&
-    !searchParams.time &&
-    !searchParams.date &&
-    !item.about.areasServed
-      .map((city) => city.toLowerCase())
-      .includes(searchParams.city.toLowerCase())
-  ) {
-    return false;
-  }
-  return true;
-}
-
-function filterByDate(searchParams, item) {
-  if (searchParams.date && !searchParams.city && !searchParams.time) {
-    const hasDateOpen = item.schedule.some((s) =>
-      areDatesEqual(createDateFromString(s.date), searchParams.date)
-    );
-    if (!hasDateOpen) {
-      return false;
-    }
-  }
-  return true;
-}
-
-function filterByCityAndDate(searchParams, item) {
-  if (searchParams.city && searchParams.date && !searchParams.time) {
-    const hasEventInCityOnDate = item.schedule.some((event) => {
-      const cityInLocation = event.location
-        .toLowerCase()
-        .includes(searchParams.city.toLowerCase());
-      const eventDateMatches = areDatesEqual(
-        createDateFromString(event.date),
-        searchParams.date
-      );
-
-      return cityInLocation && eventDateMatches;
-    });
-
-    if (!hasEventInCityOnDate) {
-      return false;
-    }
-  }
-  return true;
-}
-
-function filterByCityDateAndTime(searchParams, item) {
-  if (searchParams.city && searchParams.date && searchParams.time) {
-    const hasEventInCityOnDateAndTime = item.schedule.some((event) => {
-      const cityInLocation = event.location
-        .toLowerCase()
-        .includes(searchParams.city.toLowerCase());
-      const eventDateMatches = areDatesEqual(
-        createDateFromString(event.date),
-        searchParams.date
-      );
-      const eventTimeMatches = isTimeWithinRange(
-        searchParams.date,
-        searchParams.time,
-        event.datetimeOpen,
-        event.datetimeClose
-      );
-
-      console.log(
-        item.name,
-        cityInLocation,
-        eventDateMatches,
-        eventTimeMatches
-      );
-
-      return cityInLocation && eventDateMatches && eventTimeMatches;
-    });
-
-    if (!hasEventInCityOnDateAndTime) {
-      return false;
-    }
-  }
-  return true;
-}
-
-function filterByDateAndTime(searchParams, item) {
-  if (searchParams.date && searchParams.time && !searchParams.city) {
-    const hasEventOnDateAndTime = item.schedule.some((event) => {
-      const eventDateMatches = areDatesEqual(
-        createDateFromString(event.date),
-        searchParams.date
-      );
-      const eventTimeMatches = isTimeWithinRange(
-        searchParams.date,
-        searchParams.time,
-        event.datetimeOpen,
-        event.datetimeClose
-      );
-
-      return eventDateMatches && eventTimeMatches;
-    });
-
-    if (!hasEventOnDateAndTime) {
-      return false;
-    }
-  }
-  return true;
-}
-
-function filterByTime(searchParams, item) {
-  if (searchParams.time && !searchParams.date && !searchParams.city) {
-    const hasEventWithMatchingTime = item.schedule.some((event) => {
-      const eventTimeMatches = isTimeWithinRange(
-        null, // No specific date
-        searchParams.time,
-        event.datetimeOpen,
-        event.datetimeClose
-      );
-
-      return eventTimeMatches;
-    });
-
-    if (!hasEventWithMatchingTime) {
-      return false;
-    }
-  }
-  return true;
-}
-
-function filterByCityAndTime(searchParams, item) {
-  if (searchParams.city && searchParams.time && !searchParams.date) {
-    const hasEventInCityAtTime = item.schedule.some((event) => {
-      const cityInLocation = event.location
-        .toLowerCase()
-        .includes(searchParams.city.toLowerCase());
-      const eventTimeMatches = isTimeWithinRange(
-        null, // No specific date
-        searchParams.time,
-        event.datetimeOpen,
-        event.datetimeClose
-      );
-
-      return cityInLocation && eventTimeMatches;
-    });
-
-    if (!hasEventInCityAtTime) {
-      return false;
-    }
-  }
-  return true;
-}
-
-function filterByPrivateEvents(searchParams, item) {
-  if (searchParams.privateEvents) {
-    if (
-      item.about.privateEvents.toString() !==
-      searchParams.privateEvents.toString()
-    ) {
-      return false;
-    }
-  }
-  return true;
-}
-
-const cities = [
-  "Champaign, IL",
-  "Urbana, IL",
-  "Rantoul, IL",
-  "Mahomet, IL",
-  "Saint Joseph, IL",
-  "Monticello, IL",
-  "Savoy, IL",
-  "Tuscola, IL",
-  "Tolono, IL",
-  "Fisher, IL",
-  "Villa Grove, IL",
-  "Sidney, IL",
-  "Philo, IL",
-  "Hoopeston, IL",
-  "Gibson City, IL",
-  "Paxton, IL",
-  "Mattoon, IL",
-  "Charleston, IL",
-  "Danville, IL",
-  "Clinton, IL",
-  "Decatur, IL",
-  "Paris, IL",
-  "Homer, IL",
-  "Thomasboro, IL",
-];
-
-export let loader: LoaderFunction = ({ request }) => {
+export const loader = async ({ context, params, request }: LoaderArgs) => {
+  const db = getDbFromContext(context);
   const url = new URL(request.url);
   const search = new URLSearchParams(url.search);
-
   // Main filter function
   if (search.toString()) {
     const searchParams = {
@@ -299,75 +53,56 @@ export let loader: LoaderFunction = ({ request }) => {
     };
     const truckData = require("~/content/data/trucks.json");
     const options = {
-      keys: [
-        "about.description",
-        "about.location",
-        "about.website",
-        "about.instagram",
-        "about.facebook.name",
-        "about.email",
-        "about.tags",
-        "about.privateEvents",
-        "name",
-        "path",
-      ],
-      includeMatches: true,
-      includeScore: true,
+      keys: ["tags", "name", "path"],
       findAllMatches: true,
       threshold: 0.3,
     };
     const fuse = new Fuse(truckData, options);
     // Step 1: Search using Fuse.js based on keyword input
     let keywordResults;
+    let searchQuery = [];
 
     if (searchParams.keywords) {
       keywordResults = fuse.search(searchParams.keywords);
-    } else {
-      keywordResults = truckData.map((foodTruck, index) => ({
-        item: foodTruck,
-        refIndex: index,
-        matches: [], // Populate the matches array as needed
-        score: 0, // Provide the actual score value as needed
-      }));
+      let ids = keywordResults.map((obj) => obj.item.id);
+      searchQuery.push(inArray(trucks.id, ids));
     }
-    // ... (previous code)
 
-    // Step 2: Filter results based on form inputs
-    return keywordResults
-      .map((result) => result) // Return the whole object instead of just item
-      .filter((result) => {
-        const item = result.item;
+    const result = await db
+      .select()
+      .from(trucks)
+      .where(and(...searchQuery))
+      .limit(20)
+      .all();
+    if (!result) {
+      throw new Response("What a joke! Not found.", { status: 404 });
+    }
 
-        return (
-          filterByCity(searchParams, item) &&
-          filterByDate(searchParams, item) &&
-          filterByCityAndDate(searchParams, item) &&
-          filterByCityDateAndTime(searchParams, item) &&
-          filterByTime(searchParams, item) &&
-          filterByCityAndTime(searchParams, item) &&
-          filterByPrivateEvents(searchParams, item) &&
-          filterByDateAndTime(searchParams, item)
-        );
-      });
+    return result;
   }
 
   return null;
 };
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function Search() {
   const [selected, setSelected] = useState(null);
+  const [selectedLocation, setSelectedLocation] = useState(null);
   const [query, setQuery] = useState("");
+  const [queryLocation, setQueryLocation] = useState("");
   const transition = useTransition();
   const data = useLoaderData();
+  console.log(data);
   const [params] = useSearchParams();
   useEffect(() => {
     params.get("city") && setSelected(params.get("city"));
   }, [params]);
 
+  useEffect(() => {
+    params.get("location") && setSelectedLocation(params.get("location"));
+  }, [params]);
+
+  const cities = require("~/content/data/cities.json");
+  const locations = require("~/content/data/locations.json");
   const filteredCities =
     query === ""
       ? cities
@@ -376,6 +111,15 @@ export default function Search() {
             .toLowerCase()
             .replace(/\s+/g, "")
             .includes(query.toLowerCase().replace(/\s+/g, ""))
+        );
+  const filteredLocations =
+    queryLocation === ""
+      ? locations
+      : locations.filter((location) =>
+          location
+            .toLowerCase()
+            .replace(/\s+/g, "")
+            .includes(queryLocation.toLowerCase().replace(/\s+/g, ""))
         );
 
   return (
@@ -452,7 +196,7 @@ export default function Search() {
                             leaveTo="opacity-0"
                             afterLeave={() => setQuery("")}
                           >
-                            <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                            <Combobox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                               {filteredCities.length === 0 && query !== "" ? (
                                 <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
                                   Nothing found.
@@ -515,17 +259,19 @@ export default function Search() {
                     </label>
                     <div className="mt-2">
                       <Combobox
-                        value={selected}
-                        onChange={setSelected}
-                        name="city"
+                        value={selectedLocation}
+                        onChange={setSelectedLocation}
+                        name="location"
                         nullable
                       >
                         <div className="relative mt-1">
                           <div className="relative w-full cursor-default overflow-hidden rounded-md text-left">
                             <Combobox.Input
                               className="w-full border-none text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6 "
-                              onChange={(event) => setQuery(event.target.value)}
-                              placeholder="Castle Rock, ME"
+                              onChange={(event) =>
+                                setQueryLocation(event.target.value)
+                              }
+                              placeholder="Riggs Brewery"
                             />
                             <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                               <ChevronUpDownIcon
@@ -539,17 +285,18 @@ export default function Search() {
                             leave="transition ease-in duration-100"
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0"
-                            afterLeave={() => setQuery("")}
+                            afterLeave={() => setQueryLocation("")}
                           >
-                            <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                              {filteredCities.length === 0 && query !== "" ? (
+                            <Combobox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                              {filteredLocations.length === 0 &&
+                              queryLocation !== "" ? (
                                 <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
                                   Nothing found.
                                 </div>
                               ) : (
-                                filteredCities.map((city) => (
+                                filteredLocations.map((location) => (
                                   <Combobox.Option
-                                    key={city.id}
+                                    key={location.id}
                                     className={({ active }) =>
                                       `relative cursor-default select-none py-2 pl-10 pr-4 ${
                                         active
@@ -557,7 +304,7 @@ export default function Search() {
                                           : "text-gray-900"
                                       }`
                                     }
-                                    value={city}
+                                    value={location}
                                   >
                                     {({ selected, active }) => (
                                       <>
@@ -568,7 +315,7 @@ export default function Search() {
                                               : "font-normal"
                                           }`}
                                         >
-                                          {city}
+                                          {location}
                                         </span>
                                         {selected ? (
                                           <span
@@ -676,22 +423,22 @@ export default function Search() {
                   <ul className="max-w-xl mx-auto">
                     {data.map((item) => (
                       <li
-                        key={item.item.id}
+                        key={item.id}
                         className="flex hover:bg-gray-100 select-none rounded-xl p-3"
                       >
                         <Link
-                          to={item.item.path}
+                          to={`/${item.path}`}
                           className="flex hover:bg-gray-100 rounded-xl p-3"
                         >
                           <img
-                            src={item.item.avatar}
+                            src={item.avatar}
                             alt=""
                             className="h-14 w-14   object-contain flex-none rounded-full"
                           />
                           <div className="">
-                            <div className="ml-3">{item.item.name}</div>
+                            <div className="ml-3">{item.name}</div>
                             <div className="ml-3 text-xs text-gray-500">
-                              {item.item.about.description}
+                              {item.description}
                             </div>
                           </div>
                         </Link>

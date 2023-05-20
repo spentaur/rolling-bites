@@ -45,6 +45,7 @@ INSERT INTO Locations (name, location, lat, lon) VALUES ('Harbor Freight Tools -
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Legacy Harley-Davidson', '1315 Althoff Dr, Effingham, IL', 39.14711849897208, -88.51437690560346);
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Morton Park', '1215 Division St, Charleston, IL', 39.484924801896824, -88.18041383968277);
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Palestine, IL', 'Palestine, IL', 39.00358750208685, -87.61330560807026);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Carle Clinic Danville', '516 W Madison St, Danville, IL', 40.128615989015024, -87.63785895079558);
 
 
 -- INSERT INTO Locations (name, location, lat, lon) VALUES ('', '', , );
