@@ -38,13 +38,11 @@ export const scheduleItems = sqliteTable("Schedule", {
   id: integer("id").primaryKey(),
   truck_id: integer("truck_id").references(() => trucks.id),
   location_id: integer("location_id").references(() => locations.id),
-  date: text("date"),
-  time: text("time"),
+  dateString: text("dateString"),
+  timeString: text("timeString"),
   datetimeOpen: integer("datetimeOpen"),
   datetimeClose: integer("datetimeClose"),
   description: text("description"),
-  dateString: text("dateString"),
-  timeString: text("timeString"),
 });
 
 export const locations = sqliteTable("Locations", {

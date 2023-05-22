@@ -22,7 +22,7 @@ import {
   useSearchParams,
   Link,
 } from "@remix-run/react";
-import type { LoaderFunction } from "@remix-run/cloudflare";
+import type { LoaderArgs, LoaderFunction } from "@remix-run/cloudflare";
 // import { json } from "@remix-run/cloudflare";
 import Fuse from "fuse.js";
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
@@ -33,10 +33,73 @@ import {
   scheduleItems,
   locations,
 } from "~/db/schema";
-import { and, asc, desc, eq, inArray } from "drizzle-orm";
+import { and, asc, desc, eq, inArray, like, sql, gte, lte } from "drizzle-orm";
 import { getDbFromContext } from "~/db/db.service.server";
+const { DateTime } = require("luxon");
 
-// or cloudflare/deno
+function formatDate(dateString) {
+  const date = new Date(dateString);
+
+  // Define an array of month names
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  // Define an array of suffixes for the day
+  const daySuffixes = ["st", "nd", "rd", "th"];
+
+  // Get the day, month, and year
+  const day = date.getDate();
+  const month = date.getMonth();
+  const year = date.getFullYear();
+
+  // Get the day suffix based on the day
+  let daySuffix;
+  if (day === 1 || day === 21 || day === 31) {
+    daySuffix = daySuffixes[0];
+  } else if (day === 2 || day === 22) {
+    daySuffix = daySuffixes[1];
+  } else if (day === 3 || day === 23) {
+    daySuffix = daySuffixes[2];
+  } else {
+    daySuffix = daySuffixes[3];
+  }
+
+  // Get the weekday name
+  const weekday = date.toLocaleDateString("en-US", { weekday: "long" });
+
+  // Format the final date string
+  const formattedDate = `${weekday}, ${monthNames[month]} ${day}${daySuffix}, ${year}`;
+
+  return formattedDate;
+}
+
+function convertTime(timeStr, timezone) {
+  const dt = DateTime.local().setZone(timezone).toISODate();
+  // Parse the string into a Date object
+  var specifyOffsetAndOverrideZone = DateTime.fromSQL(`${dt} ` + timeStr, {
+    zone: timezone,
+  });
+  specifyOffsetAndOverrideZone = specifyOffsetAndOverrideZone.setZone("GMT");
+
+  // Format the hours and minutes, adding leading zeros as necessary
+  let hours = specifyOffsetAndOverrideZone.hour;
+  let minutes = specifyOffsetAndOverrideZone.minute;
+
+  // Combine and return the result
+  return hours + ":" + minutes;
+}
 
 export const loader = async ({ context, params, request }: LoaderArgs) => {
   const db = getDbFromContext(context);
@@ -46,6 +109,7 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
   if (search.toString()) {
     const searchParams = {
       city: search.get("city"),
+      location: search.get("location"),
       keywords: search.get("keywords"),
       date: search.get("date"),
       time: search.get("time"),
@@ -65,7 +129,67 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
     if (searchParams.keywords) {
       keywordResults = fuse.search(searchParams.keywords);
       let ids = keywordResults.map((obj) => obj.item.id);
-      searchQuery.push(inArray(trucks.id, ids));
+      if (ids.length > 0) {
+        searchQuery.push(inArray(trucks.id, ids));
+      } else {
+        return null;
+      }
+    }
+    if (searchParams.privateEvents) {
+      searchQuery.push(eq(trucks.privateEvents, 1));
+    }
+
+    const searchQuerySchedule = [];
+
+    if (searchParams.location) {
+      const citiesSearch = await db
+        .select()
+        .from(locations)
+        .where(eq(locations.name, searchParams.location))
+        .get();
+
+      if (citiesSearch) {
+        searchQuerySchedule.push(
+          eq(scheduleItems.location_id, citiesSearch["id"])
+        );
+      }
+    }
+
+    if (searchParams.date) {
+      searchQuerySchedule.push(
+        eq(scheduleItems.dateString, formatDate(searchParams.date))
+      );
+    }
+
+    if (searchParams.time) {
+      const searchTime = convertTime(searchParams.time, request.cf.timezone);
+      searchQuerySchedule.push(
+        sql`time(datetime("datetimeOpen", 'unixepoch')) <= ${searchTime}`
+      );
+      searchQuerySchedule.push(
+        sql`${searchTime} <= time(datetime("datetimeClose", 'unixepoch'))`
+      );
+    }
+
+    if (searchParams.location || searchParams.date || searchParams.time) {
+      const unixTimestamp = Math.floor(Date.now() / 1000);
+      const twoWeeksFromNowInSeconds = unixTimestamp + 1684208653;
+      searchQuerySchedule.push(
+        lte(scheduleItems.datetimeClose, twoWeeksFromNowInSeconds)
+      );
+      searchQuerySchedule.push(gte(scheduleItems.datetimeClose, unixTimestamp));
+      const result = await db
+        .select()
+        .from(scheduleItems)
+        .where(and(...searchQuerySchedule))
+        .all();
+      console.log(convertTime(searchParams.time, request.cf.timezone));
+      let truckIds = result.map((obj) => obj.truck_id);
+      if (truckIds.length > 0) {
+        searchQuery.push(inArray(trucks.id, truckIds));
+      } else {
+        return null;
+      }
     }
 
     const result = await db
@@ -91,27 +215,12 @@ export default function Search() {
   const [queryLocation, setQueryLocation] = useState("");
   const transition = useTransition();
   const data = useLoaderData();
-  console.log(data);
   const [params] = useSearchParams();
-  useEffect(() => {
-    params.get("city") && setSelected(params.get("city"));
-  }, [params]);
 
   useEffect(() => {
     params.get("location") && setSelectedLocation(params.get("location"));
   }, [params]);
-
-  const cities = require("~/content/data/cities.json");
   const locations = require("~/content/data/locations.json");
-  const filteredCities =
-    query === ""
-      ? cities
-      : cities.filter((city) =>
-          city
-            .toLowerCase()
-            .replace(/\s+/g, "")
-            .includes(query.toLowerCase().replace(/\s+/g, ""))
-        );
   const filteredLocations =
     queryLocation === ""
       ? locations
@@ -166,95 +275,6 @@ export default function Search() {
                       htmlFor="keywords"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
-                      City
-                    </label>
-                    <div className="mt-2">
-                      <Combobox
-                        value={selected}
-                        onChange={setSelected}
-                        name="city"
-                        nullable
-                      >
-                        <div className="relative mt-1">
-                          <div className="relative w-full cursor-default overflow-hidden rounded-md text-left">
-                            <Combobox.Input
-                              className="w-full border-none text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6 "
-                              onChange={(event) => setQuery(event.target.value)}
-                              placeholder="Castle Rock, ME"
-                            />
-                            <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
-                              <ChevronUpDownIcon
-                                className="h-5 w-5 text-gray-400"
-                                aria-hidden="true"
-                              />
-                            </Combobox.Button>
-                          </div>
-                          <Transition
-                            as={Fragment}
-                            leave="transition ease-in duration-100"
-                            leaveFrom="opacity-100"
-                            leaveTo="opacity-0"
-                            afterLeave={() => setQuery("")}
-                          >
-                            <Combobox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                              {filteredCities.length === 0 && query !== "" ? (
-                                <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
-                                  Nothing found.
-                                </div>
-                              ) : (
-                                filteredCities.map((city) => (
-                                  <Combobox.Option
-                                    key={city.id}
-                                    className={({ active }) =>
-                                      `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                                        active
-                                          ? "bg-teal-600 text-white"
-                                          : "text-gray-900"
-                                      }`
-                                    }
-                                    value={city}
-                                  >
-                                    {({ selected, active }) => (
-                                      <>
-                                        <span
-                                          className={`block truncate ${
-                                            selected
-                                              ? "font-medium"
-                                              : "font-normal"
-                                          }`}
-                                        >
-                                          {city}
-                                        </span>
-                                        {selected ? (
-                                          <span
-                                            className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
-                                              active
-                                                ? "text-white"
-                                                : "text-teal-600"
-                                            }`}
-                                          >
-                                            <CheckIcon
-                                              className="h-5 w-5"
-                                              aria-hidden="true"
-                                            />
-                                          </span>
-                                        ) : null}
-                                      </>
-                                    )}
-                                  </Combobox.Option>
-                                ))
-                              )}
-                            </Combobox.Options>
-                          </Transition>
-                        </div>
-                      </Combobox>
-                    </div>
-                  </div>
-                  <div className="pb-6">
-                    <label
-                      htmlFor="keywords"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
                       Location
                     </label>
                     <div className="mt-2">
@@ -271,7 +291,7 @@ export default function Search() {
                               onChange={(event) =>
                                 setQueryLocation(event.target.value)
                               }
-                              placeholder="Riggs Brewery"
+                              placeholder="Ten Forward"
                             />
                             <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                               <ChevronUpDownIcon
