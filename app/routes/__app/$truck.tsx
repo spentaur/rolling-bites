@@ -65,6 +65,7 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
         gte(scheduleItems.datetimeClose, unixTimestamp)
       )
     )
+    .orderBy(scheduleItems.datetimeOpen)
     .leftJoin(locations, eq(scheduleItems.location_id, locations.id))
     .all();
 

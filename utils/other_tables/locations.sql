@@ -46,6 +46,9 @@ INSERT INTO Locations (name, location, lat, lon) VALUES ('Legacy Harley-Davidson
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Morton Park', '1215 Division St, Charleston, IL', 39.484924801896824, -88.18041383968277);
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Palestine, IL', 'Palestine, IL', 39.00358750208685, -87.61330560807026);
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Carle Clinic Danville', '516 W Madison St, Danville, IL', 40.128615989015024, -87.63785895079558);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Medical Sciences Building', '506 S Mathews Ave, Urbana, IL', 40.108638321888854, -88.22524061443649);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Robeson Park', '1984 S Duncan Rd, Champaign, IL', 40.09094259999488, -88.29286688465737);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Carle Health on Fieldstone Administrative Center', '4116 Fieldstone Rd, Champaign, IL', 40.11682728803164, -88.3130561289299);
 
 
 -- INSERT INTO Locations (name, location, lat, lon) VALUES ('', '', , );
