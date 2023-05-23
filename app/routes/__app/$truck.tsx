@@ -45,6 +45,24 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
   const unixTimestamp = Math.floor(Date.now() / 1000);
   const twoWeeksFromNowInSeconds = unixTimestamp + 1684208653;
 
+  const currentShifts = await db
+    .select()
+    .from(scheduleItems)
+    .where(
+      and(
+        eq(scheduleItems.truck_id, truckData.id),
+        lte(scheduleItems.datetimeClose, unixTimestamp),
+        gte(scheduleItems.datetimeOpen, unixTimestamp)
+      )
+    )
+    .all();
+
+  if (currentShifts.length > 0) {
+    truckData.isOpen = true;
+  } else {
+    truckData.isOpen = false;
+  }
+
   const schedule = await db
     .select({
       datetimeOpen: scheduleItems.datetimeOpen,
@@ -194,7 +212,7 @@ export default function Profile() {
 
               <div className="flex-1 sm:hidden"></div>
 
-              <Menu
+              {/* <Menu
                 as="div"
                 className="relative inline-block text-left ml-auto"
               >
@@ -220,8 +238,8 @@ export default function Profile() {
                     <div className="py-1">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <Link
+                            to="report"
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900"
@@ -230,13 +248,13 @@ export default function Profile() {
                             )}
                           >
                             Report an issue
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                     </div>
                   </Menu.Items>
                 </Transition>
-              </Menu>
+              </Menu> */}
             </div>
           </div>
         </div>

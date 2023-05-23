@@ -41,7 +41,7 @@ export default function About() {
             </div>
           )}
 
-          <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">
+          {/* <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">
               <ClockIcon className="h-5 w-5" />
             </dt>
@@ -50,14 +50,14 @@ export default function About() {
                 to="schedule"
                 preventScrollReset={true}
                 className={classNames(
-                  truck.isOpen ? "text-logo-green-500" : "text-red-500",
+                  isTruckOpen ? "text-logo-green-500" : "text-red-500",
                   "hover:underline hover:cursor-pointer text-sm"
                 )}
               >
-                {truck.isOpen ? <>Open</> : <>Closed</>} now
+                {isTruckOpen ? <>Open</> : <>Closed</>} now
               </Link>
             </dd>
-          </div>
+          </div> */}
 
           {truck.website && (
             <div className="flex items-center space-x-3 py-3 px-4 sm:px-6">

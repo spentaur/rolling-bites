@@ -18,10 +18,10 @@ INSERT INTO Locations (name, location, lat, lon) VALUES
   ('U of I Baseball', '601 E W Kirby Ave, Champaign, IL', 40.09802, -88.251242),
   ('Jiffy Lube', '1201 N Prospect Ave, Champaign, IL', 40.1276017, -88.25840027525562),
   ('Meadowbrook Church', '1902 S Duncan Rd, Champaign, IL', 40.09246225, -88.29396421457233),
-  ('Don''s Auto Center', '202 N Main St, Homer, IL 61849', 40.0372836122449, -87.95816522448979),
-  ('Carle on Curtis', '1701 Curtis Rd, Champaign, IL 61822', 40.067874849999995, -88.2749925913688),
-  ('Research Park', '1915 S 1st St, Champaign, IL 61820', 40.3106792, -88.3467015),
-  ('Downtown Urbana', '101 E Main St, Urbana, IL 61801', 40.112403, -88.206152),
+  ('Don''s Auto Center', '202 N Main St, Homer, IL', 40.0372836122449, -87.95816522448979),
+  ('Carle on Curtis', '1701 Curtis Rd, Champaign, IL', 40.067874849999995, -88.2749925913688),
+  ('Research Park', '1915 S 1st St, Champaign, IL', 40.3106792, -88.3467015),
+  ('Downtown Urbana', '101 E Main St, Urbana, IL', 40.112403, -88.206152),
   ('Jarling''s Custard Cup', '309 W Kirby Ave, Champaign, IL', 40.09800436363636, -88.24688262626263),
   ('Collective Pour', '340 N Neil St #101, Champaign, IL', 40.11869185459889, -88.24344442808491),
   ('Top Flight', '202 N Main St, Seymour, IL', 40.09544, -88.426438),
@@ -49,6 +49,11 @@ INSERT INTO Locations (name, location, lat, lon) VALUES ('Carle Clinic Danville'
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Medical Sciences Building', '506 S Mathews Ave, Urbana, IL', 40.108638321888854, -88.22524061443649);
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Robeson Park', '1984 S Duncan Rd, Champaign, IL', 40.09094259999488, -88.29286688465737);
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Carle Health on Fieldstone Administrative Center', '4116 Fieldstone Rd, Champaign, IL', 40.11682728803164, -88.3130561289299);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Maple Point', '1000 N Union Dr, Monticello, IL 61856', 40.032785340728495, -88.56790956935274);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Unity West Elementary School', '1035 County Rd 600 N, Tolono, IL', 39.96568989132601, -88.26812323822077);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('CCAR Industries', '1530 Lincoln Ave, Charleston, IL', 39.483711166800624, -88.16549979999975);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Mattoon High School', '2521 Walnut Ave, Mattoon, IL', 39.474508073312975, -88.38687990000264);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Evansville Food Truck Festival', '23 Don Mattingly Way, Evansville, IN', 37.99291107858828, -87.56238503176252);
 
 
 -- INSERT INTO Locations (name, location, lat, lon) VALUES ('', '', , );
