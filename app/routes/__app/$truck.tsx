@@ -51,8 +51,8 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
     .where(
       and(
         eq(scheduleItems.truck_id, truckData.id),
-        lte(scheduleItems.datetimeClose, unixTimestamp),
-        gte(scheduleItems.datetimeOpen, unixTimestamp)
+        gte(scheduleItems.datetimeClose, unixTimestamp),
+        lte(scheduleItems.datetimeOpen, unixTimestamp)
       )
     )
     .all();

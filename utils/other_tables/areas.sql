@@ -1,4 +1,6 @@
-INSERT INTO Areas (area, lat, lon) VALUES
+INSERT INTO
+  Areas (area, lat, lon)
+VALUES
   ('Champaign, IL', 40.1164841, -88.2430932),
   ('Urbana, IL', 40.1117174, -88.207301),
   ('Rantoul, IL', 40.3083672, -88.1558785),
@@ -20,6 +22,6 @@ INSERT INTO Areas (area, lat, lon) VALUES
   ('Danville, IL', 40.125222, -87.6304614),
   ('Clinton, IL', 38.5896187, -89.420064),
   ('Decatur, IL', 39.8454163, -88.9524151),
-  ('Paris, IL', 39.61075330759491, -87.69558047415948),
+  ('Paris, IL', 48.8534951, 2.3483915),
   ('Homer, IL', 40.0347569, -87.9580892),
   ('Thomasboro, IL', 40.2417001, -88.1842134);
