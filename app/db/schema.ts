@@ -52,3 +52,10 @@ export const locations = sqliteTable("Locations", {
   lat: real("lat"),
   lon: real("lon"),
 });
+
+export const areas = sqliteTable("Areas", {
+  id: integer("id").primaryKey(),
+  area: text("area"),
+  lat: real("lat"),
+  lon: real("lon"),
+});

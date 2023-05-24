@@ -6,3 +6,4 @@ node_modules
 /public/build
 .env
 .wrangler/state/d1/TRUCKS_DB.sqlite3
+.dev.vars

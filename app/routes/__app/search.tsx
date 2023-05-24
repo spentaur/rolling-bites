@@ -15,6 +15,7 @@
 import { Transition, Combobox } from "@headlessui/react";
 import { Fragment, useEffect, useState } from "react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+
 import {
   Form,
   useTransition,
@@ -32,10 +33,36 @@ import {
   menuItems,
   scheduleItems,
   locations,
+  areas,
 } from "~/db/schema";
 import { and, asc, desc, eq, inArray, like, sql, gte, lte } from "drizzle-orm";
 import { getDbFromContext } from "~/db/db.service.server";
+// hello_algolia.js
+import algoliasearch from "algoliasearch/dist/algoliasearch-lite.esm.browser";
+import { createFetchRequester } from "@algolia/requester-fetch";
+
 const { DateTime } = require("luxon");
+
+function convertMilesToMeters(input: string): number | null {
+  // Regular expression to validate the input format
+  let regex = /^(\d+)\s*miles$/;
+
+  // Check if input matches the required format
+  if (!regex.test(input)) {
+    console.log(
+      'Input is not in the correct format. Please use the format "{number} miles".'
+    );
+    return null;
+  }
+
+  // Extract the number from the string
+  let miles = parseInt(input.split(" ")[0]);
+
+  // Convert miles to meters
+  let meters = Math.round(miles * 1609.34);
+
+  return meters;
+}
 
 function formatDate(dateString) {
   const date = new Date(dateString);
@@ -105,10 +132,16 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
   const db = getDbFromContext(context);
   const url = new URL(request.url);
   const search = new URLSearchParams(url.search);
+  const client = algoliasearch("9PCP9KPI2G", context.ALGOLIA_SEARCH, {
+    requester: createFetchRequester(),
+  });
+  const index = client.initIndex("Locations");
+
   // Main filter function
   if (search.toString()) {
     const searchParams = {
       city: search.get("city"),
+      within: search.get("within"),
       location: search.get("location"),
       keywords: search.get("keywords"),
       date: search.get("date"),
@@ -154,6 +187,23 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
         );
       }
     }
+    if (searchParams.city && searchParams.within) {
+      const { lat, lon } = await db
+        .select({ lat: areas.lat, lon: areas.lon })
+        .from(areas)
+        .where(eq(areas.area, searchParams.city))
+        .get();
+      if (!lat || !lon) {
+        return null;
+      }
+      const hits = await index.search("", {
+        aroundLatLng: `${lat}, ${lon}`,
+        aroundRadius: convertMilesToMeters(searchParams.within),
+        attributesToRetrieve: ["id"],
+      });
+      let ids = hits["hits"].map((obj) => obj.id);
+      searchQuerySchedule.push(inArray(scheduleItems.location_id, ids));
+    }
 
     if (searchParams.date) {
       searchQuerySchedule.push(
@@ -171,7 +221,12 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
       );
     }
 
-    if (searchParams.location || searchParams.date || searchParams.time) {
+    if (
+      searchParams.location ||
+      searchParams.date ||
+      searchParams.time ||
+      searchParams.city
+    ) {
       const unixTimestamp = Math.floor(Date.now() / 1000);
       const twoWeeksFromNowInSeconds = unixTimestamp + 1684208653;
       searchQuerySchedule.push(
@@ -183,7 +238,6 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
         .from(scheduleItems)
         .where(and(...searchQuerySchedule))
         .all();
-      console.log(convertTime(searchParams.time, request.cf.timezone));
       let truckIds = result.map((obj) => obj.truck_id);
       if (truckIds.length > 0) {
         searchQuery.push(inArray(trucks.id, truckIds));
@@ -370,6 +424,28 @@ export default function Search() {
                           </Transition>
                         </div>
                       </Combobox>
+                    </div>
+                  </div>
+                  <div className="pb-6">
+                    <label
+                      htmlFor="within"
+                      className="block text-sm font-medium leading-6 text-gray-900"
+                    >
+                      Within
+                    </label>
+                    <div className="mt-2">
+                      <select
+                        id="within"
+                        name="within"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                      >
+                        <option>5 miles</option>
+                        <option>15 miles</option>
+                        <option>25 miles</option>
+                        <option>50 miles</option>
+                        <option>100 miles</option>
+                        <option>150 miles</option>
+                      </select>
                     </div>
                   </div>
                   <div className="pb-6">

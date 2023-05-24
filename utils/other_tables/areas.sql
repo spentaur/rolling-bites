@@ -25,3 +25,10 @@ VALUES
   ('Paris, IL', 48.8534951, 2.3483915),
   ('Homer, IL', 40.0347569, -87.9580892),
   ('Thomasboro, IL', 40.2417001, -88.1842134);
+
+INSERT INTO Areas (area, lat, lon) VALUES ('Seymour, IL', 40.1069769, -88.4267245);
+INSERT INTO Areas (area, lat, lon) VALUES ('Dieterich, IL', 39.0619868, -88.3797668);
+INSERT INTO Areas (area, lat, lon) VALUES ('Terre Haute, IN', 39.4667025, -87.4139119);
+INSERT INTO Areas (area, lat, lon) VALUES ('Effingham, IL', 39.0520902, -88.6029006);
+INSERT INTO Areas (area, lat, lon) VALUES ('Palestine, IL', 39.0036537, -87.612802);
+INSERT INTO Areas (area, lat, lon) VALUES ('Evansville, IN', 37.9747645, -87.5558483);
