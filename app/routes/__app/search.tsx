@@ -132,7 +132,6 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
   const db = getDbFromContext(context);
   const url = new URL(request.url);
   const search = new URLSearchParams(url.search);
-  console.log(context);
   const client = algoliasearch("9PCP9KPI2G", context.ALGOLIA_SEARCH, {
     requester: createFetchRequester(),
   });
