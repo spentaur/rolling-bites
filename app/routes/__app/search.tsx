@@ -144,6 +144,7 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
       within: search.get("within"),
       location: search.get("location"),
       keywords: search.get("keywords"),
+      anyTime: search.get("anyTime"),
       date: search.get("date"),
       time: search.get("time"),
       privateEvents: search.get("privateEvents"),
@@ -200,6 +201,7 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
         aroundLatLng: `${lat}, ${lon}`,
         aroundRadius: convertMilesToMeters(searchParams.within),
         attributesToRetrieve: ["id"],
+        hitsPerPage: 1000,
       });
       let ids = hits["hits"].map((obj) => obj.id);
       searchQuerySchedule.push(inArray(scheduleItems.location_id, ids));
@@ -229,10 +231,14 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
     ) {
       const unixTimestamp = Math.floor(Date.now() / 1000);
       const twoWeeksFromNowInSeconds = unixTimestamp + 1684208653;
-      searchQuerySchedule.push(
-        lte(scheduleItems.datetimeClose, twoWeeksFromNowInSeconds)
-      );
-      searchQuerySchedule.push(gte(scheduleItems.datetimeClose, unixTimestamp));
+      if (!searchParams.anyTime) {
+        searchQuerySchedule.push(
+          lte(scheduleItems.datetimeClose, twoWeeksFromNowInSeconds)
+        );
+        searchQuerySchedule.push(
+          gte(scheduleItems.datetimeClose, unixTimestamp)
+        );
+      }
       const result = await db
         .select()
         .from(scheduleItems)
@@ -572,6 +578,29 @@ export default function Search() {
                         name="time"
                         defaultValue={params.get("time")}
                       />
+                    </div>
+                  </div>
+                  <div className="pb-6">
+                    <div className="flex items-start">
+                      <div className="flex h-6 items-center">
+                        <input
+                          id="comments"
+                          aria-describedby="comments-description"
+                          name="anyTime"
+                          type="checkbox"
+                          value="true"
+                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                          defaultChecked={params.get("anyTime") === "true"}
+                        />
+                      </div>
+                      <div className="ml-3 text-sm leading-6">
+                        <label
+                          htmlFor="comments"
+                          className="block text-sm font-medium leading-6 text-gray-900"
+                        >
+                          Any time
+                        </label>
+                      </div>
                     </div>
                   </div>
                   <div className="pb-6">
