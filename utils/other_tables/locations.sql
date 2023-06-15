@@ -54,6 +54,31 @@ INSERT INTO Locations (name, location, lat, lon) VALUES ('Unity West Elementary 
 INSERT INTO Locations (name, location, lat, lon) VALUES ('CCAR Industries', '1530 Lincoln Ave, Charleston, IL', 39.483711166800624, -88.16549979999975);
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Mattoon High School', '2521 Walnut Ave, Mattoon, IL', 39.474508073312975, -88.38687990000264);
 INSERT INTO Locations (name, location, lat, lon) VALUES ('Evansville Food Truck Festival', '23 Don Mattingly Way, Evansville, IN', 37.99291107858828, -87.56238503176252);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Sullivan Parkhill', '440 Anthony Dr, Champaign, IL', 37.99291107858828, -87.56238503176252);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Horizon RC Fest', '999 Iron Horse Pl, Monticello, IL', 40.05448156103546, -88.55877740000051);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Andrae''s Harley-Davidson', '2010 N Lincoln Ave, Urbana, IL', 40.13216389175144, -88.21846289999958);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Zahnd Park', '2502 S Staley Rd, Champaign, IL', 40.08110692802963, -88.31243231530549);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Gibson Health of Mahomet', '1504 Patton Dr, Mahomet, IL', 40.18634854459092, -88.38132400000332);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Mahomet Soda Fest', '511 E Main St, Mahomet, IL', 40.19425230465291, -88.40159592883542);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Hessel Park', '1400 Grandview Dr, Champaign, IL', 40.09920238299324, -88.25042021517807);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Oakland, Il', 'Oakland, Il', 39.657876201894275, -88.02764982399405);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Paxton Variety Liquors', '403 S Railroad Ave, Paxton, IL', 40.456886453869835, -88.09728487682331);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Triptych', '1703 Woodfield Dr, Savoy, IL', 40.0768564, -88.24927593162235),
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Riggs Beer Co.', '1901 S High Cross Rd, Urbana, IL', 40.093711482291475, -88.16212009451667),
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Riggs', '1901 S High Cross Rd, Urbana, IL', 40.093711482291475, -88.16212009451667),
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Riggs Beer Company', '1901 S High Cross Rd, Urbana, IL', 40.093711482291475, -88.16212009451667),
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Freedom Plaza', '511 E Main St, Mahomet, IL', 40.19434295334727, -88.40164937309379),
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Carle S. Clinic Urbana', '601 W. University Ave, Urbana, IL', 40.11653185019251, -88.21461966258319),
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Advance Auto Vine St. Urbana', '110 N Vine St, Urbana, IL', 40.1131959, -88.20431004153363)
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Zahnd Park in Champaign', '2502 S Staley Rd, Champaign, IL', 40.08110692802963, -88.31243231530549);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Gibson City Hospital', '1120 N Melvin St, Gibson City, IL', 40.4786488, -88.36962537556212),
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Mahomet Market', 'E Main St, Mahomet, IL', 40.1949595, -88.4031173),
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Carle Hospital South Clinic', '601 W. University Ave, Urbana, IL', 40.11653185019251, -88.21461966258319),
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Ogden', 'Ogden, IL', 40.11389119654278, -87.95574191030109),
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Carle Mattoon on Hurst', '2512 Hurst Dr, Mattoon, IL', 39.483408996981154, -88.30623769999991);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Paris on the square', '115 W Court St, Paris, IL', 39.611782581947644, -87.69561920351484);
+INSERT INTO Locations (name, location, lat, lon) VALUES ('Coles County Fairgrounds', 'Merchant''s Building, 603 W Madison Ave, Charleston, IL 61920', 39.49674666938004, -88.1891864250962);
+;
 
 
 -- INSERT INTO Locations (name, location, lat, lon) VALUES ('', '', , );
