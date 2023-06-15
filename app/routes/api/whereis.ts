@@ -16,11 +16,21 @@ export const loader = async ({ context, params, request }: LoaderArgs) => {
   const t = url.searchParams.get("t");
   const db = getDbFromContext(context);
 
+  const data = require("../../content/data/trucks.json");
+  const options = {
+    keys: ["name"],
+    useExtendedSearch: true,
+  };
+  const fuse = new Fuse(data, options);
+  const truck = fuse.search(`${t}`);
+  if (!truck.length) {
+    throw new Response("What a joke! Not found.", { status: 404 });
+  }
 
   const truckData = await db
     .select()
     .from(trucks)
-    .where(sql`lower(${trucks.path}) like lower(${t})`)
+    .where(sql`lower(${trucks.path}) like lower(${truck[0].item.path})`)
     .get();
   if (!truckData) {
     throw new Response("What a joke! Not found.", { status: 404 });
